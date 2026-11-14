@@ -1,8 +1,8 @@
 # Antifragile Portfolio: fund dashboard
 
 The website of our simulated fund for the Investment Game of *Institutional Investment Management*
-(MSc Finance, University of Groningen, 2026/27). It shows the fund value, positions, risk and our
-own rules, and whether we are respecting them.
+(MSc Finance, University of Groningen, 2026/27). It shows the fund value, positions, risk, our
+limits and the alerts they generate.
 
 Live site: https://antifragileportfolio.eu (GitHub Pages)
 

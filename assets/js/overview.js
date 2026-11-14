@@ -34,14 +34,14 @@
   const b = s.benchmark || {};
   const kpi = (label, value, sub = "", cls = "") => `<div class="kpi"><dt>${label}</dt><dd class="${cls}">${value}${sub ? `<small>${sub}</small>` : ""}</dd></div>`;
   document.getElementById("kpis").innerHTML = [
-    kpi("Return since inception", pctSigned(s.total_return), `${num(s.trading_days)} trading days, ${num(s.days_left)} days to go`, sign(s.total_return)),
+    kpi("Return since inception", pctSigned(s.total_return), `over ${num(s.trading_days)} trading days`, sign(s.total_return)),
     kpi(`Against ${esc(b.name || "benchmark")}`, s.excess_return == null ? "–" : pctSigned(s.excess_return), b.return == null ? "benchmark not loaded yet" : `benchmark ${pctSigned(b.return)}`, sign(s.excess_return)),
     kpi("Volatility, annualised", pct(s.volatility, 1), s.volatility_basis || "needs price history"),
     kpi("Sharpe ratio", s.sharpe == null ? "–" : num(s.sharpe, 2), s.sharpe == null ? "shown after 10 trading days" : "annualised, since inception"),
     kpi("Maximum drawdown", pct(s.max_drawdown, 2), "worst fall from a peak"),
     kpi("Cash", pct(s.cash_weight, 1), usd(s.cash)),
     kpi("Positions", num(s.n_positions), `${usd(s.invested)} invested`),
-    kpi("Rules respected", `${s.rules_ok} of ${s.rules_total}`, s.rules_ok === s.rules_total ? "all limits respected" : "see alerts below"),
+    kpi("Days to go", num(s.days_left), `the game ends on ${App.date(s.end_date)}`),
   ].join("");
 
   /* ---- PM note, alerts ---- */
@@ -49,12 +49,12 @@
   const breaches = alerts.alerts.filter((a) => a.severity === "breach").length;
   const warns = alerts.alerts.filter((a) => a.severity === "warning").length;
   document.getElementById("rules-score").innerHTML = alerts.alerts.length
-    ? `${breaches} ${breaches === 1 ? "breach" : "breaches"}, ${warns} ${warns === 1 ? "warning" : "warnings"}<small>${alerts.rules_ok} of ${alerts.rules_total} rules respected${alerts.rules_are_placeholder ? " (placeholder limits)" : ""}</small>`
-    : `All clear<small>${alerts.rules_ok} of ${alerts.rules_total} rules respected${alerts.rules_are_placeholder ? " (placeholder limits)" : ""}</small>`;
+    ? `${breaches} ${breaches === 1 ? "breach" : "breaches"}, ${warns} ${warns === 1 ? "warning" : "warnings"}`
+    : "Nothing needs attention";
   const label = { breach: "Breach", warning: "Warning", info: "Note" };
   document.getElementById("alerts").innerHTML = alerts.alerts.length
     ? alerts.alerts.map((a) => `<li class="alert"><span class="tag tag-${a.severity}">${label[a.severity]}</span><strong>${esc(a.title)}</strong><p>${esc(a.message)}</p></li>`).join("")
-    : `<li class="alert"><span class="tag tag-ok">OK</span><strong>No rule is breached</strong><p>Every limit on the Philosophy page is respected and no position has drifted beyond its threshold.</p></li>`;
+    : `<li class="alert"><span class="tag tag-ok">OK</span><strong>No alerts</strong><p>No limit is exceeded, no stop-loss is hit and no position has drifted beyond its threshold.</p></li>`;
 
   /* ---- holdings and sectors ---- */
   const top = pos.positions.slice(0, 10).map((p) => ({ name: p.name, sub: p.ticker, weight: p.weight }));
