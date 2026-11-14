@@ -2,11 +2,11 @@
 (async () => {
   await App.init("portfolio.html");
   const { usd, usdSigned, pct, pctSigned, sign, esc, num } = App;
-  const [s, pos, exp, reb, why, attr] = await Promise.all([
+  const [s, pos, exp, reb, why] = await Promise.all([
     App.data("summary.json"), App.data("positions.json", { positions: [], closed: [], transactions: [] }),
     App.data("exposures.json", { sector: [], country: [], asset_class: [] }),
     App.data("rebalance_suggestions.json", { table: [], suggestions: [] }),
-    App.getJSON("content/trade_rationale.json", { rationales: [] }), App.data("attribution.json", { available: false }),
+    App.getJSON("content/trade_rationale.json", { rationales: [] }),
   ]);
   if (!s) return;
   App.statusLine(document.getElementById("updated"), s);
@@ -61,24 +61,6 @@
   } else {
     document.getElementById("map-block").hidden = true;
     document.getElementById("wf-block").hidden = true;
-  }
-
-  /* attribution against the benchmark */
-  if (attr.available && window.echarts) {
-    document.getElementById("attr-block").hidden = false;
-    const pts = (v) => (v == null ? "–" : (v < 0 ? "−" : "+") + Math.abs(v * 100).toFixed(2) + " pts");
-    document.getElementById("attr-stats").innerHTML = [
-      stat("Fund return", pctSigned(attr.fund_return), "", sign(attr.fund_return)), stat("Benchmark return", pctSigned(attr.benchmark_return), "", sign(attr.benchmark_return)),
-      stat("Difference", pts(attr.active_return), "", sign(attr.active_return)), stat("From sector allocation", pts(attr.allocation), "", sign(attr.allocation)),
-      stat("From stock selection", pts(attr.selection), "", sign(attr.selection)),
-    ].join("");
-    const rows = attr.sectors.filter((r) => Math.abs(r.allocation) + Math.abs(r.selection) > 1e-6);
-    Viz.attribution(document.getElementById("attr-chart"), rows);
-    document.querySelector("#attr-table tbody").innerHTML = attr.sectors.map((r) => `<tr><td class="l"><b style="font-weight:500">${esc(r.sector)}</b></td>
-      <td>${pct(r.fund_weight, 1)}</td><td>${pct(r.benchmark_weight, 1)}</td><td class="${sign(r.fund_return)}">${r.fund_return == null ? "–" : pctSigned(r.fund_return, 1)}</td>
-      <td class="${sign(r.benchmark_return)}">${r.benchmark_return == null ? "–" : pctSigned(r.benchmark_return, 1)}</td>
-      <td class="${sign(r.allocation)}">${pts(r.allocation)}</td><td class="${sign(r.selection)}">${pts(r.selection)}</td></tr>`).join("");
-    document.getElementById("attr-note").textContent = `Weights are averages since the start. Sector returns come from the sector funds of the S&P 500${attr.weights_are_approximate ? ", with approximate benchmark sector weights" : ""}. ${Math.abs(attr.other) > 0.00005 ? `A remaining ${pts(attr.other)} comes from building the benchmark out of sector funds.` : ""}`;
   }
 
   /* exposures */

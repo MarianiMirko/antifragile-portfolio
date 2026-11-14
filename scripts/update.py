@@ -577,7 +577,8 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
         attr = {"available": True, "fund_return": total_return, "benchmark_return": bench_return, "active_return": active,
                 "allocation": a_tot, "selection": s_tot, "other": active - a_tot - s_tot,
                 "weights_are_approximate": bool(sector_bench.get("weights_are_approximate")), "sectors": rows_a}
-    write_json(out_dir / "attribution.json", attr)
+    if attr["available"]:
+        write_json(out_dir / "attribution.json", attr)
 
     # ---- targets and rebalancing proposals ---------------------------------
     thr = float(lim.get("drift_threshold", 0.02))
@@ -852,10 +853,6 @@ def main():
                       cfg, holdings, online=online)
     sector_bench = None
     if online:
-        try:
-            sector_bench = fetch_sector_benchmark(cfg, cfg["start_date"])
-        except Exception as exc:
-            print(f"sector benchmark download failed: {exc}", file=sys.stderr)
         try:
             write_json(out / "events.json", {"generated_at": now, "events": fetch_events([t for t in tickers if t != bench], cfg, now)})
         except Exception as exc:

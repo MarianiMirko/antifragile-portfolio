@@ -126,7 +126,7 @@ def main():
     for v in sb.values():
         v["return"] += adj
     res = U.compute(cfg, rules, targets, None, txs, po, pc, daily, meta, out, DEMO_NOW,
-                    demo=True, start_date=DEMO_START, sector_bench={"sectors": sb, "weights_are_approximate": True})
+                    demo=True, start_date=DEMO_START)
     ours = res["nav"]
     field = sorted([ours] + [round(capital * (1 + float(x)), 2) for x in rng.normal(0.008, 0.035, 11)], reverse=True)
     rank = field.index(ours) + 1

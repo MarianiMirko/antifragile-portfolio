@@ -144,21 +144,5 @@ const Viz = (() => {
     });
   }
 
-  /* ---- attribution: allocation and selection effect per sector, in percentage points ---- */
-  function attribution(el, rows) {
-    const chart = make(el);
-    el.style.height = Math.max(260, rows.length * 34 + 80) + "px"; chart.resize();
-    const series = (name, key, color) => ({ name, type: "bar", data: rows.map((r) => +(r[key] * 100).toFixed(3)), barGap: "10%", barCategoryGap: "32%", itemStyle: { color, borderRadius: 2 } });
-    chart.setOption({
-      grid: { left: 8, right: 24, top: 36, bottom: 8, containLabel: true },
-      legend: { top: 0, left: 0, icon: "circle", itemWidth: 9, itemHeight: 9, textStyle: { ...axisText, color: C.ink } },
-      tooltip: { ...tip, trigger: "axis", axisPointer: { type: "shadow", shadowStyle: { color: "rgba(17,38,74,0.05)" } },
-                 formatter: (items) => `<b>${App.esc(items[0].name)}</b><br>` + items.map((i) => `${i.seriesName}: ${(i.value < 0 ? "−" : "+") + Math.abs(i.value).toFixed(2)} pts`).join("<br>") },
-      xAxis: { type: "value", axisLabel: { ...axisText, formatter: (v) => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v) + " pts" }, splitLine: { lineStyle: { color: C.grid } } },
-      yAxis: { type: "category", inverse: true, data: rows.map((r) => r.sector), axisLine: { lineStyle: { color: C.muted } }, axisTick: { show: false }, axisLabel: { ...axisText, color: C.ink } },
-      series: [series("Allocation", "allocation", C.fund), series("Selection", "selection", C.bench)],
-    });
-  }
-
-  return { treemap, waterfall, bubbles, calendar, attribution };
+  return { treemap, waterfall, bubbles, calendar };
 })();

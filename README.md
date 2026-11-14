@@ -128,7 +128,7 @@ Items still marked as placeholders: fund name, benchmark (SPY) and every limit i
 
 `scripts/update.py` then writes: `summary.json`, `positions.json`, `candles_1h.json`,
 `candles_1d.json`, `exposures.json`, `risk.json`, `alerts.json`, `rebalance_suggestions.json`,
-`models.json`, `projection.json`, `attribution.json`, `events.json`, `nav_history.json` (persistent
+`models.json`, `projection.json`, `events.json`, `nav_history.json` (persistent
 15-minute history), `meta_cache.json` (sector and country per ticker) and `content_index.json`.
 
 `data/leaderboard.json` is also written by the MarketWatch sync. It stores our rank and the net
@@ -151,9 +151,6 @@ worth of every participant **as numbers only, without names**, because the site 
 - **Stress test** multiplies each position's weight by its beta and the chosen market move. The
   historical episodes use each holding's actual price move, or beta times the market move when the
   holding has no price history for that period.
-- **Attribution** splits the gap with the benchmark by sector into allocation and selection
-  (Brinson). Sector returns come from the eleven S&P 500 sector funds (XLK, XLF, ...), so it is
-  most accurate when the benchmark is the S&P 500.
 - **Earnings and ex-dividend dates** of the companies we hold or target are added to the Research
   calendar automatically.
 - **Benchmark** is rebased to the initial capital at the first bar of the game.
