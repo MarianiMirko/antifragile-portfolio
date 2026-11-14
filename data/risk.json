@@ -157,5 +157,6 @@
   "available": false
  },
  "positions": [],
- "correlation": null
+ "correlation": null,
+ "scenarios": []
 }

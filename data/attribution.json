@@ -1,0 +1,120 @@
+{
+ "available": true,
+ "fund_return": 0.0,
+ "benchmark_return": 0.016578,
+ "active_return": -0.016578,
+ "allocation": -0.030199,
+ "selection": 0.0,
+ "other": 0.013621,
+ "weights_are_approximate": false,
+ "sectors": [
+  {
+   "sector": "Technology",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.382338,
+   "fund_return": null,
+   "benchmark_return": 0.033629,
+   "allocation": -0.001311,
+   "selection": 0.0
+  },
+  {
+   "sector": "Financial Services",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.120312,
+   "fund_return": null,
+   "benchmark_return": 0.026592,
+   "allocation": 0.000434,
+   "selection": 0.0
+  },
+  {
+   "sector": "Healthcare",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.10251,
+   "fund_return": null,
+   "benchmark_return": 0.021916,
+   "allocation": 0.000849,
+   "selection": 0.0
+  },
+  {
+   "sector": "Consumer Cyclical",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.091909,
+   "fund_return": null,
+   "benchmark_return": 0.020412,
+   "allocation": 0.0009,
+   "selection": 0.0
+  },
+  {
+   "sector": "Communication Services",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.084208,
+   "fund_return": null,
+   "benchmark_return": 0.037217,
+   "allocation": -0.000591,
+   "selection": 0.0
+  },
+  {
+   "sector": "Industrials",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.076108,
+   "fund_return": null,
+   "benchmark_return": 0.037561,
+   "allocation": -0.00056,
+   "selection": 0.0
+  },
+  {
+   "sector": "Consumer Defensive",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.048805,
+   "fund_return": null,
+   "benchmark_return": 0.0252,
+   "allocation": 0.000244,
+   "selection": 0.0
+  },
+  {
+   "sector": "Energy",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.039104,
+   "fund_return": null,
+   "benchmark_return": 0.054203,
+   "allocation": -0.000939,
+   "selection": 0.0
+  },
+  {
+   "sector": "Utilities",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.020902,
+   "fund_return": null,
+   "benchmark_return": 0.021099,
+   "allocation": 0.00019,
+   "selection": 0.0
+  },
+  {
+   "sector": "Real Estate",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.018002,
+   "fund_return": null,
+   "benchmark_return": 0.008409,
+   "allocation": 0.000392,
+   "selection": 0.0
+  },
+  {
+   "sector": "Basic Materials",
+   "fund_weight": 0.0,
+   "benchmark_weight": 0.015802,
+   "fund_return": null,
+   "benchmark_return": 0.00539,
+   "allocation": 0.000392,
+   "selection": 0.0
+  },
+  {
+   "sector": "Cash",
+   "fund_weight": 1.0,
+   "benchmark_weight": 0.0,
+   "fund_return": 0.0,
+   "benchmark_return": null,
+   "allocation": -0.030199,
+   "selection": 0.0
+  }
+ ]
+}
