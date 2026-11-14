@@ -39,6 +39,20 @@ Z95 = 1.6448536269514722          # 95% one-sided normal quantile
 ES95_K = 2.0627128075074257       # normal pdf(Z95) / 0.05
 SIGN = {"buy": 1, "cover": 1, "sell": -1, "short": -1}
 MIN_DAYS_REALISED = 10            # trading days needed before realised vol / Sharpe are shown
+NYSE_HOLIDAYS = {"2026-11-26", "2026-12-25", "2027-01-01", "2027-01-18"}
+# historical stress windows: (id, name, first day, last day, approximate S&P 500 move used when prices are missing)
+SCENARIOS = [
+    ("covid", "Covid crash", "2020-02-19", "2020-03-23", -0.339),
+    ("bear2022", "2022 bear market", "2022-01-03", "2022-10-12", -0.254),
+    ("tariff2025", "April 2025 tariff shock", "2025-02-19", "2025-04-08", -0.189),
+]
+SECTOR_ETFS = {"Technology": "XLK", "Financial Services": "XLF", "Healthcare": "XLV", "Energy": "XLE",
+               "Industrials": "XLI", "Consumer Defensive": "XLP", "Consumer Cyclical": "XLY", "Basic Materials": "XLB",
+               "Utilities": "XLU", "Real Estate": "XLRE", "Communication Services": "XLC"}
+# approximate S&P 500 sector weights, used only if the live weights cannot be downloaded
+SECTOR_WEIGHTS_FALLBACK = {"Technology": 0.33, "Financial Services": 0.135, "Healthcare": 0.10, "Consumer Cyclical": 0.105,
+                           "Communication Services": 0.10, "Industrials": 0.085, "Consumer Defensive": 0.055, "Energy": 0.03,
+                           "Utilities": 0.025, "Real Estate": 0.02, "Basic Materials": 0.02}
 REGIONS = {
     "United States": "North America", "Canada": "North America",
     "Netherlands": "Europe", "Denmark": "Europe", "Germany": "Europe", "France": "Europe",
@@ -176,7 +190,7 @@ def fetch_yfinance(tickers, cfg):
         return df
 
     intr = grab(period="60d", interval="15m", auto_adjust=False, prepost=False)
-    day = grab(period="1y", interval="1d", auto_adjust=True)
+    day = grab(start="2019-12-02", interval="1d", auto_adjust=True)
 
     def pick(df, field):
         part = df[field].copy()
@@ -195,6 +209,63 @@ def fetch_yfinance(tickers, cfg):
     if missing:
         raise RuntimeError("no prices for " + ", ".join(missing))
     return po, pc, daily
+
+
+def fetch_sector_benchmark(cfg, start_date):
+    """Benchmark sector weights and sector returns since the start of the game (for the attribution)."""
+    import yfinance as yf
+
+    weights, approx = dict(SECTOR_WEIGHTS_FALLBACK), True
+    try:
+        raw = yf.Ticker(yahoo_symbol(cfg["benchmark"]["ticker"], cfg)).funds_data.sector_weightings or {}
+        norm = {"".join(c for c in k.lower() if c.isalpha()): k for k in SECTOR_ETFS}
+        norm["realestate"] = "Real Estate"
+        got = {norm["".join(c for c in k.lower() if c.isalpha())]: float(v) for k, v in raw.items()
+               if "".join(c for c in k.lower() if c.isalpha()) in norm}
+        if got and sum(got.values()) > 0.5:
+            weights, approx = got, False
+    except Exception as exc:
+        print(f"benchmark sector weights not available, using approximate ones: {exc}", file=sys.stderr)
+    tot = sum(weights.values())
+    etfs = list(SECTOR_ETFS.values())
+    px = yf.download(etfs, start=(pd.Timestamp(start_date) - pd.Timedelta(days=10)).strftime("%Y-%m-%d"),
+                     interval="1d", auto_adjust=True, progress=False, group_by="column")["Close"]
+    px.index = pd.DatetimeIndex(px.index).tz_localize(None).normalize()
+    before = px[px.index < pd.Timestamp(start_date)]
+    base = before.iloc[-1] if len(before) else px.iloc[0]
+    out = {}
+    for sector, etf in SECTOR_ETFS.items():
+        if sector in weights and etf in px.columns and not pd.isna(px[etf].iloc[-1]):
+            out[sector] = {"weight": weights[sector] / tot, "return": float(px[etf].iloc[-1] / base[etf] - 1)}
+    return {"sectors": out, "weights_are_approximate": approx}
+
+
+def fetch_events(tickers, cfg, now):
+    """Upcoming earnings and ex-dividend dates for the tickers we hold or target."""
+    import yfinance as yf
+
+    lo, hi = (now - pd.Timedelta(days=7)).date(), (pd.Timestamp(cfg["end_date"]) + pd.Timedelta(days=30)).date()
+    events = []
+    for t in tickers:
+        try:
+            cal = yf.Ticker(yahoo_symbol(t, cfg)).calendar or {}
+        except Exception as exc:
+            print(f"calendar lookup failed for {t}: {exc}", file=sys.stderr)
+            continue
+        dates = cal.get("Earnings Date") or []
+        for d in (dates if isinstance(dates, (list, tuple)) else [dates]):
+            events.append((d, t, "Earnings"))
+        if cal.get("Ex-Dividend Date"):
+            events.append((cal["Ex-Dividend Date"], t, "Ex-dividend date"))
+    out = []
+    for d, t, e in events:
+        try:
+            day = pd.Timestamp(d).date()
+        except Exception:
+            continue
+        if lo <= day <= hi:
+            out.append({"date": day.isoformat(), "ticker": t, "event": e})
+    return sorted(out, key=lambda x: (x["date"], x["ticker"]))
 
 
 def fetch_meta(tickers, cache, cfg, holdings, online=True):
@@ -260,11 +331,13 @@ def build_candles(bars):
 # the main calculation
 # ----------------------------------------------------------------------------
 def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, now,
-            status="ok", price_source="yfinance", demo=False, start_date=None):
+            status="ok", price_source="yfinance", demo=False, start_date=None, sector_bench=None):
     out_dir = Path(out_dir)
     capital = float(cfg["initial_capital"])
     bench = cfg["benchmark"]["ticker"]
     lim = rules["limits"]
+    daily_long = daily
+    daily = daily.tail(253) if daily is not None else None
     start = to_utc(pd.Timestamp(start_date or cfg["start_date"]))
     end_date = pd.Timestamp(cfg["end_date"])
 
@@ -387,6 +460,7 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
     # ---- risk at current weights (one year of daily history) ---------------
     ex = {"available": False}
     pos_risk, corr = [], None
+    sim_df, scenarios = None, []
     if daily is not None and held:
         R = daily[held].pct_change().dropna(how="any")
         if len(R) >= 30:
@@ -402,6 +476,7 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
             bser = daily[bench].pct_change().reindex(R.index) if bench in daily.columns else None
             if bser is not None and bser.notna().sum() > 30:
                 ex["beta"] = float(np.cov(sim, bser.fillna(0).values)[0, 1] / bser.var(ddof=1))
+            sim_df = pd.DataFrame({"p": sim, "b": bser.values if bser is not None else np.nan}, index=R.index)
             mrc = cov @ w
             for i, t in enumerate(held):
                 beta_i = None
@@ -412,15 +487,94 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
             pos_risk.sort(key=lambda r: -r["risk_contribution"])
             order = [r["ticker"] for r in sorted(pos_risk, key=lambda r: -r["weight"])]
             corr = {"tickers": order, "matrix": R[order].corr().round(3).values.tolist()}
+
+            # historical stress windows applied to today's weights
+            def window_return(col, d0, d1):
+                ser = daily_long[col].dropna() if col in daily_long.columns else pd.Series(dtype=float)
+                a, b = ser[ser.index <= pd.Timestamp(d0)], ser[ser.index <= pd.Timestamp(d1)]
+                if len(a) and len(b) and ser.index[0] <= pd.Timestamp(d0) and ser.index[-1] >= pd.Timestamp(d1):
+                    return float(b.iloc[-1] / a.iloc[-1] - 1)
+                return None
+
+            for sid, name, d0, d1, approx in SCENARIOS:
+                b_ret = window_return(bench, d0, d1)
+                b_used = b_ret if b_ret is not None else approx
+                rows_s, n_est = [], 0
+                for r in pos_risk:
+                    actual = window_return(r["ticker"], d0, d1)
+                    ret = actual if actual is not None else (r["beta"] if r["beta"] is not None else 1.0) * b_used
+                    n_est += actual is None
+                    rows_s.append({"ticker": r["ticker"], "return": ret, "impact": r["weight"] * ret, "estimated": actual is None})
+                fund = sum(x["impact"] for x in rows_s)
+                scenarios.append({"id": sid, "name": name, "start": d0, "end": d1, "benchmark_return": b_used,
+                                  "benchmark_is_approximate": b_ret is None, "fund_return": fund, "fund_usd": fund * nav,
+                                  "estimated_positions": n_est, "positions": sorted(rows_s, key=lambda x: x["impact"])})
     risk = {
         "as_of": as_of, "nav": nav,
         "realised": {"n_days": n_days, "min_days": MIN_DAYS_REALISED, "vol": realised_vol, "vol_20d": vol_20d,
                      "beta": realised_beta, "max_drawdown": max_dd, "sharpe": sharpe,
                      "rolling_vol_20d": [[d.strftime("%Y-%m-%d"), v] for d, v in rolling.items()],
                      "drawdown": [[int(k), v] for k, v in hdd.items()]},
-        "ex_ante": ex, "positions": pos_risk, "correlation": corr,
+        "ex_ante": ex, "positions": pos_risk, "correlation": corr, "scenarios": scenarios,
     }
     write_json(out_dir / "risk.json", risk)
+
+    # ---- where the fund could finish: bootstrap of the past year's daily returns, centred at zero
+    proj = {"available": False}
+    last_d = closes.index[-1]
+    future = [d for d in pd.bdate_range(last_d + pd.Timedelta(days=1), end_date) if d.strftime("%Y-%m-%d") not in NYSE_HOLIDAYS]
+    hist_b = daily[bench].pct_change().dropna() if daily is not None and bench in daily.columns else None
+    if future and (sim_df is not None or hist_b is not None):
+        if sim_df is not None:
+            src = sim_df.dropna(subset=["p"]).copy()
+            src["b"] = src["b"].fillna(0.0)
+        else:
+            src = pd.DataFrame({"p": 0.0, "b": hist_b})
+        P, B = src["p"].values - src["p"].mean(), src["b"].values - src["b"].mean()
+        rng = np.random.default_rng(int(last_d.strftime("%Y%m%d")))
+        pick = rng.integers(0, len(src), size=(5000, len(future)))
+        fund_paths = nav * np.cumprod(1 + P[pick], axis=1)
+        b0 = float(bcl.iloc[-1]) if len(bcl) else None
+        bench_paths = b0 * np.cumprod(1 + B[pick], axis=1) if b0 else None
+        bands = lambda arr: {f"p{q}": np.percentile(arr, q, axis=0).round(0).tolist() for q in (5, 25, 50, 75, 95)}
+        end = fund_paths[:, -1]
+        proj = {"available": True, "as_of": as_of, "start_value": nav, "benchmark_start_value": b0,
+                "dates": [d.strftime("%Y-%m-%d") for d in future], "fund": bands(fund_paths),
+                "benchmark": bands(bench_paths) if bench_paths is not None else None,
+                "prob_above_capital": float((end > capital).mean()),
+                "prob_above_benchmark": float((end > bench_paths[:, -1]).mean()) if bench_paths is not None else None,
+                "median_end": float(np.median(end)), "p5_end": float(np.percentile(end, 5)), "p95_end": float(np.percentile(end, 95)),
+                "paths": 5000, "lookback_days": len(src), "has_positions": sim_df is not None}
+    write_json(out_dir / "projection.json", proj)
+
+    # ---- attribution against the benchmark by sector (Brinson: allocation and selection)
+    attr = {"available": False}
+    if sector_bench and sector_bench.get("sectors") and bench_return is not None:
+        sb = sector_bench["sectors"]
+        rb = sum(v["weight"] * v["return"] for v in sb.values())
+        wp, contr = {}, {}
+        for t in traded:
+            sec = meta.get(t, {}).get("sector", "Unclassified")
+            wp[sec] = wp.get(sec, 0.0) + float((shares[t] * pc[t] / nav_c).mean())
+            price_t = float(pc[t].iloc[-1])
+            contr[sec] = contr.get(sec, 0.0) + (book[t]["shares"] * (price_t - book[t]["avg_cost"]) + book[t]["realized"]) / capital
+        rows_a = []
+        for sec in sorted(set(wp) | set(sb), key=lambda k: -(wp.get(k, 0) + sb.get(k, {}).get("weight", 0))):
+            w_p, w_b = wp.get(sec, 0.0), sb.get(sec, {}).get("weight", 0.0)
+            r_p = contr.get(sec, 0.0) / w_p if w_p > 1e-6 else None
+            r_b = sb[sec]["return"] if sec in sb else (r_p if r_p is not None else 0.0)
+            rows_a.append({"sector": sec, "fund_weight": w_p, "benchmark_weight": w_b, "fund_return": r_p,
+                           "benchmark_return": r_b if sec in sb else None,
+                           "allocation": (w_p - w_b) * (r_b - rb), "selection": w_p * ((r_p if r_p is not None else r_b) - r_b)})
+        w_cash = float((cash / nav_c).mean())
+        rows_a.append({"sector": "Cash", "fund_weight": w_cash, "benchmark_weight": 0.0, "fund_return": 0.0,
+                       "benchmark_return": None, "allocation": w_cash * (0.0 - rb), "selection": 0.0})
+        a_tot, s_tot = sum(r["allocation"] for r in rows_a), sum(r["selection"] for r in rows_a)
+        active = total_return - bench_return
+        attr = {"available": True, "fund_return": total_return, "benchmark_return": bench_return, "active_return": active,
+                "allocation": a_tot, "selection": s_tot, "other": active - a_tot - s_tot,
+                "weights_are_approximate": bool(sector_bench.get("weights_are_approximate")), "sectors": rows_a}
+    write_json(out_dir / "attribution.json", attr)
 
     # ---- targets and rebalancing proposals ---------------------------------
     thr = float(lim.get("drift_threshold", 0.02))
@@ -690,10 +844,22 @@ def main():
         po = pd.DataFrame({t: last[t] for t in cols}, index=grid)
         pc = po.copy()
 
+    online = not args.offline and source == "yfinance"
     meta = fetch_meta([t for t in tickers if t != bench], load_json(out / "meta_cache.json", {}) or {},
-                      cfg, holdings, online=not args.offline and source == "yfinance")
+                      cfg, holdings, online=online)
+    sector_bench = None
+    if online:
+        try:
+            sector_bench = fetch_sector_benchmark(cfg, cfg["start_date"])
+        except Exception as exc:
+            print(f"sector benchmark download failed: {exc}", file=sys.stderr)
+        try:
+            write_json(out / "events.json", {"generated_at": now, "events": fetch_events([t for t in tickers if t != bench], cfg, now)})
+        except Exception as exc:
+            print(f"events download failed: {exc}", file=sys.stderr)
     write_json(out / "meta_cache.json", meta)
-    res = compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out, now, status=status, price_source=source)
+    res = compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out, now, status=status, price_source=source,
+                  sector_bench=sector_bench)
     print(f"fund value {res['nav']:,.2f}  cash {res['cash']:,.2f}  positions {len(res['positions'])}  [{status}]")
 
 

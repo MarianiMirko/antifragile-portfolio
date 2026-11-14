@@ -84,7 +84,7 @@
    "id": "var",
    "rule": "One-day 95% VaR",
    "limit": "at most 2.5%",
-   "current": "1.60%",
+   "current": "1.62%",
    "status": "ok"
   },
   {

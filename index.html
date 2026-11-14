@@ -34,10 +34,12 @@
           <button type="button" data-style="mono" aria-pressed="false">Black and white</button>
         </div>
         <label class="check"><input type="checkbox" id="bench-toggle" checked><span class="swatch" aria-hidden="true"></span><span id="bench-label">Benchmark</span></label>
+        <label class="check"><input type="checkbox" id="trades-toggle" checked><span>Our trades</span></label>
       </div>
     </div>
     <div class="chart-readout" id="chart-readout" aria-live="off"></div>
     <div class="chart-box" id="nav-chart" role="img" aria-label="Candlestick chart of the fund value"></div>
+    <div class="trade-readout" id="trade-readout" aria-live="polite"></div>
   </section>
 
   <section class="block wrap cols-2">
@@ -62,6 +64,11 @@
       <ul class="bar-list" id="sectors"></ul>
       <p class="legend-note" id="sector-limit-note"></p>
     </div>
+  </section>
+  <section class="block wrap" id="rank-block" aria-labelledby="rank-title" hidden>
+    <div class="block-head"><div><h2 id="rank-title">Where we stand in the game</h2><p id="rank-intro"></p></div></div>
+    <dl class="stats" id="rank-stats" style="margin-bottom:22px"></dl>
+    <ol class="rank-list" id="rank-list"></ol>
   </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>

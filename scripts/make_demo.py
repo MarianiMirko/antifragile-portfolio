@@ -114,8 +114,34 @@ def main():
     U.write_json(out / "meta_cache.json", meta)
     for f in ("nav_history.json",):
         (out / f).unlink(missing_ok=True)
+    # invented sector benchmark, leaderboard and events so every chart has something to show
+    g = pc[pc.index >= U.to_utc(pd.Timestamp(DEMO_START))]
+    spy = float(g["SPY"].iloc[-1] / po.loc[g.index[0], "SPY"] - 1)
+    rng = np.random.default_rng(3)
+    tilt = {"Technology": .035, "Healthcare": -.045, "Energy": .01, "Financial Services": .02, "Industrials": .015,
+            "Consumer Defensive": -.03, "Basic Materials": -.02, "Communication Services": -.025}
+    wsum = sum(U.SECTOR_WEIGHTS_FALLBACK.values())
+    sb = {k: {"weight": w / wsum, "return": spy + tilt.get(k, float(rng.normal(0, .015)))} for k, w in U.SECTOR_WEIGHTS_FALLBACK.items()}
+    adj = spy - sum(v["weight"] * v["return"] for v in sb.values())
+    for v in sb.values():
+        v["return"] += adj
     res = U.compute(cfg, rules, targets, None, txs, po, pc, daily, meta, out, DEMO_NOW,
-                    demo=True, start_date=DEMO_START)
+                    demo=True, start_date=DEMO_START, sector_bench={"sectors": sb, "weights_are_approximate": True})
+    ours = res["nav"]
+    field = sorted([ours] + [round(capital * (1 + float(x)), 2) for x in rng.normal(0.008, 0.035, 11)], reverse=True)
+    rank = field.index(ours) + 1
+    hist = []
+    for i, d in enumerate(pd.bdate_range(DEMO_START, DEMO_NOW.tz_convert(ET).date())):
+        hist.append({"date": d.strftime("%Y-%m-%d"), "rank": int(np.clip(round(7 - 0.12 * i + rng.normal(0, 1.2)), 1, 12))})
+    hist[-1]["rank"] = rank
+    U.write_json(out / "leaderboard.json", {"as_of": DEMO_NOW, "players": 12, "our_rank": rank, "our_net_worth": ours,
+                                            "field": field, "history": hist})
+    U.write_json(out / "events.json", {"generated_at": DEMO_NOW, "events": [
+        {"date": "2026-11-17", "ticker": "XOM", "event": "Ex-dividend date"},
+        {"date": "2026-11-19", "ticker": "NVDA", "event": "Earnings"},
+        {"date": "2026-11-24", "ticker": "CAT", "event": "Ex-dividend date"},
+        {"date": "2026-12-03", "ticker": "AAPL", "event": "Ex-dividend date"},
+        {"date": "2026-12-10", "ticker": "ASML", "event": "Ex-dividend date"}]})
     U.write_json(out / "holdings.json", {
         "note": "Demo data, same format the MarketWatch sync writes to data/holdings.json",
         "as_of": DEMO_NOW.isoformat(), "source": "demo", "net_worth": res["nav"], "cash": res["cash"],

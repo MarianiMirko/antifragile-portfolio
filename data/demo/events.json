@@ -1,0 +1,30 @@
+{
+ "generated_at": "2026-11-13T21:00:00+00:00",
+ "events": [
+  {
+   "date": "2026-11-17",
+   "ticker": "XOM",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "NVDA",
+   "event": "Earnings"
+  },
+  {
+   "date": "2026-11-24",
+   "ticker": "CAT",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-03",
+   "ticker": "AAPL",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-10",
+   "ticker": "ASML",
+   "event": "Ex-dividend date"
+  }
+ ]
+}

@@ -116,6 +116,22 @@ dl { margin: 0; }
 .chart-empty { color: var(--muted); padding: 40px 0; }
 .viz { width: 100%; min-height: 200px; }
 
+.trade-readout { min-height: 2.6em; font-size: 0.92rem; margin-top: 10px; }
+.trade-readout p { margin: 0 0 6px; max-width: 90ch; }
+.rank-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.rank-row { display: grid; grid-template-columns: 2.4em 1fr 5.2em; gap: 14px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+.rank-n { color: var(--muted); font-family: var(--serif); }
+.rank-track { position: relative; height: 10px; background: linear-gradient(var(--muted), var(--muted)) center / 1px 100% no-repeat; }
+.rank-fill { position: absolute; top: 0; bottom: 0; background: #9AA7BA; border-radius: 2px; }
+.rank-v { text-align: right; }
+.rank-row.us { font-weight: 600; } .rank-row.us .rank-n { color: var(--ink); } .rank-row.us .rank-fill { background: var(--fund); }
+.stress { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.stress-result { font: 400 clamp(1.8rem, 4vw, 2.6rem)/1.15 var(--serif); margin: 14px 0 4px; }
+.stress input[type=range] { width: 100%; accent-color: var(--navy); margin: 18px 0 4px; }
+.stress-scale { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--muted); }
+.caveat { font-size: 0.88rem; color: var(--muted); max-width: 78ch; margin: 14px 0 0; }
+@media (max-width: 900px) { .stress { grid-template-columns: 1fr; gap: 32px; } }
+
 /* ---------- alerts and rules ---------- */
 .alert-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
 .alert { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
@@ -252,6 +268,7 @@ table.heat td.strong { color: #fff; }
   .bar-row, .bar-row:not(:has(.bar-rank)) { grid-template-columns: auto minmax(0, 1fr) 4.2em; row-gap: 6px; }
   .bar-row:not(:has(.bar-rank)) { grid-template-columns: minmax(0, 1fr) 4.2em; }
   .bar-track { grid-column: 1 / -1; grid-row: 2; }
+  #stress-bars .bar-track { grid-column: auto; grid-row: auto; }
   .chart-box { height: 320px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

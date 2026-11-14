@@ -2,9 +2,10 @@
 (async () => {
   await App.init("research.html");
   const { usd, pctSigned, sign, esc } = App;
-  const [idx, pos, cal, reb] = await Promise.all([
+  const [idx, pos, cal, reb, auto] = await Promise.all([
     App.getJSON("data/content_index.json", { fundamental: [], macro: [] }), App.data("positions.json", { positions: [] }),
     App.getJSON("content/macro/calendar.json", { events: [] }), App.data("rebalance_suggestions.json", { table: [] }),
+    App.data("events.json", { events: [] }),
   ]);
   const price = {};
   (reb.table || []).forEach((r) => { if (r.price) price[r.ticker] = r.price; });
@@ -50,6 +51,8 @@
       <div class="prose">${App.md(body)}</div></article>`).join("") : '<p class="chart-empty">No macro notes yet. Add a file to content/macro.</p>';
 
   const today = new Date().toISOString().slice(0, 10);
+  const autoRows = (auto.events || []).map((e) => ({ date: e.date, event: `${e.ticker} ${e.event.toLowerCase()}`, relevance: "Added automatically for a company we hold or target" }));
+  cal.events = [...(cal.events || []), ...autoRows.filter((a) => !(cal.events || []).some((m) => m.date === a.date && m.event.toUpperCase().includes(a.event.split(" ")[0])))];
   document.querySelector("#calendar tbody").innerHTML = (cal.events || []).sort((a, b) => a.date.localeCompare(b.date)).map((e) => `
     <tr class="${e.date < today ? "muted" : ""}"><td class="l">${App.date(e.date)}</td><td class="l wrap-cell" style="min-width:14ch"><b style="font-weight:500">${esc(e.event)}</b></td>
     <td class="l wrap-cell">${esc(e.relevance || "")}</td></tr>`).join("");

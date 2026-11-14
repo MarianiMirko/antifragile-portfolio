@@ -34,6 +34,35 @@
     </div>
   </section>
 
+  <section class="block wrap" aria-labelledby="proj-title" id="proj-block">
+    <div class="block-head"><div><h2 id="proj-title">Where we could finish</h2><p id="proj-intro"></p></div></div>
+    <dl class="stats" id="proj-stats" style="margin-bottom:22px"></dl>
+    <div class="chart-box" style="height:380px"><canvas id="proj-chart" role="img" aria-label="Fan chart of simulated fund values until the end of the game"></canvas></div>
+    <p class="caveat">Each path redraws days at random from the past year of returns at today's weights, with the average daily return set to zero. The fan shows how wide the range of outcomes is from risk alone. It is not a forecast.</p>
+  </section>
+
+  <section class="block wrap" aria-labelledby="stress-title" id="stress-block">
+    <div class="block-head"><div><h2 id="stress-title">Stress test</h2><p>Move the market and see what it would do to the fund, using each position's sensitivity to the benchmark (beta).</p></div></div>
+    <div class="stress">
+      <div>
+        <label for="stress-range">If the market moves by <b id="stress-move"></b></label>
+        <input type="range" id="stress-range" min="-30" max="15" step="1" value="-10">
+        <div class="stress-scale"><span>−30%</span><span>0%</span><span>+15%</span></div>
+        <p class="stress-result" id="stress-result"></p>
+        <p class="muted" id="stress-sub"></p>
+      </div>
+      <div><ul class="bar-list" id="stress-bars"></ul></div>
+    </div>
+    <h3 style="margin:36px 0 14px">What past sell-offs would do to today's portfolio</h3>
+    <div class="table-scroll">
+      <table class="data" id="scenarios">
+        <thead><tr><th class="l">Episode</th><th class="l">Period</th><th>Market</th><th>Fund</th><th>In dollars</th><th class="l">Hardest hit</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caveat" id="scenario-note"></p>
+  </section>
+
   <section class="block wrap" aria-labelledby="cal-title">
     <div class="block-head"><div><h2 id="cal-title">Daily returns</h2><p>One cell per trading day of the game, coloured by the fund's return that day.</p></div></div>
     <div id="calendar" class="viz" role="img" aria-label="Calendar of the fund's daily returns"></div>

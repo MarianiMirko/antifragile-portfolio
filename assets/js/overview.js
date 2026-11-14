@@ -2,11 +2,12 @@
 (async () => {
   const cfg = await App.init("index.html");
   const { usd, usdSigned, pct, pctSigned, sign, esc, num } = App;
-  const [s, alerts, pos, exp, c1h, c1d, note, rules] = await Promise.all([
+  const [s, alerts, pos, exp, c1h, c1d, note, rules, why, board] = await Promise.all([
     App.data("summary.json"), App.data("alerts.json", { alerts: [], rules: [] }), App.data("positions.json", { positions: [] }),
     App.data("exposures.json", { sector: [] }), App.data("candles_1h.json", { candles: [], benchmark: [] }),
     App.data("candles_1d.json", { candles: [], benchmark: [] }), App.getText("content/pm_note.md"),
     App.getJSON("config/rules.json", { limits: {} }),
+    App.getJSON("content/trade_rationale.json", { rationales: [] }), App.data("leaderboard.json"),
   ]);
   if (!s) { document.getElementById("nav-value").textContent = "No data yet"; return; }
 
@@ -66,6 +67,28 @@
   App.bars(document.getElementById("sectors"), exp.sector, { max: secMax, limit: lim });
   if (lim) document.getElementById("sector-limit-note").innerHTML = `<i aria-hidden="true"></i> Sector limit of ${pct(lim, 0)}`;
 
+  /* ---- game ranking: other participants are shown without names ---- */
+  if (board && board.field && board.field.length) {
+    const cap = s.initial_capital, field = board.field.map((v) => v / cap - 1);
+    const ours = board.our_net_worth / cap - 1, usIdx = board.field.findIndex((v) => Math.abs(v - board.our_net_worth) < 0.005);
+    const max = Math.max(...field.map(Math.abs), 0.001), median = [...field].sort((a, b) => a - b)[Math.floor(field.length / 2)];
+    const ord = (n) => n + (["th", "st", "nd", "rd"][(n % 100 > 10 && n % 100 < 14) ? 0 : n % 10] || "th");
+    document.getElementById("rank-block").hidden = false;
+    document.getElementById("rank-intro").textContent = `Return of each of the ${board.players} participants since the start, as read from MarketWatch on ${App.date(board.as_of)}. Other participants are shown without names.`;
+    const stat = (l, v, sub = "") => `<div class="stat"><dt>${l}</dt><dd>${v}${sub ? `<small>${sub}</small>` : ""}</dd></div>`;
+    document.getElementById("rank-stats").innerHTML = [
+      stat("Our rank", board.our_rank ? `${ord(board.our_rank)} of ${board.players}` : "Not ranked yet", board.our_rank ? "" : "MarketWatch ranks a player after the first trade"),
+      stat("Our return", pctSigned(ours)), stat("Leader", pctSigned(field[0]), `${usdSigned(board.field[0] - board.our_net_worth)} against us`),
+      stat("Median participant", pctSigned(median)),
+    ].join("");
+    document.getElementById("rank-list").innerHTML = field.map((r, i) => {
+      const w = Math.abs(r) / max * 50, us = i === usIdx;
+      return `<li class="rank-row${us ? " us" : ""}"><span class="rank-n">${us ? "Us" : i + 1}</span>
+        <span class="rank-track" aria-hidden="true"><span class="rank-fill" style="width:${Math.max(w, 0.4)}%;${r >= 0 ? "left:50%" : `right:50%`}"></span></span>
+        <span class="rank-v ${sign(r)}">${pctSigned(r)}</span></li>`;
+    }).join("");
+  }
+
   /* ---- candlestick chart ---- */
   const el = document.getElementById("nav-chart");
   const readout = document.getElementById("chart-readout");
@@ -93,7 +116,42 @@
 
   const shift = (rows) => rows.map((r) => ({ ...r, time: r.time + App.tzOffsetSec(r.time) }));
   const sets = { "1h": { c: shift(c1h.candles), b: shift(c1h.benchmark) }, "1d": { c: c1d.candles, b: c1d.benchmark } };
-  let tf = "1h", showBench = true;
+  let tf = "1h", showBench = true, showTrades = true;
+
+  /* our trades as markers on the candles; hovering a marked candle lists them with the reason */
+  const tradeBox = document.getElementById("trade-readout");
+  const txs = [...(pos.transactions || [])].reverse();
+  const isBuy = (t) => t.side === "buy" || t.side === "cover";
+  const nyDay = (iso) => new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date(iso));
+  const rkey = (d, t, sd) => `${String(d).slice(0, 10)}|${t}|${sd}`.toUpperCase();
+  const reasons = new Map((why.rationales || []).map((r) => [rkey(r.date, r.ticker, r.side), r.rationale]));
+  const raw = { "1h": c1h.candles, "1d": c1d.candles };
+  const tradeMap = { "1h": new Map(), "1d": new Map() };
+  function buildMarkers(key) {
+    const groups = new Map();
+    txs.forEach((t) => {
+      const ts = Date.parse(t.date) / 1000;
+      let idx = -1;
+      if (key === "1h") { for (let i = 0; i < raw[key].length && raw[key][i].time <= ts; i++) idx = i; }
+      else idx = raw[key].findIndex((c) => c.time === nyDay(t.date));
+      if (idx >= 0) { if (!groups.has(idx)) groups.set(idx, []); groups.get(idx).push(t); }
+    });
+    tradeMap[key].clear();
+    return [...groups.entries()].sort((a, b) => a[0] - b[0]).map(([idx, list]) => {
+      const time = sets[key].c[idx].time, up = list.filter(isBuy).length >= list.length / 2;
+      tradeMap[key].set(time, list);
+      return { time, position: up ? "belowBar" : "aboveBar", shape: up ? "arrowUp" : "arrowDown", color: C.navy,
+               text: list.length === 1 ? list[0].ticker : `${list.length} trades` };
+    });
+  }
+  function showTradesFor(time) {
+    const list = showTrades && time != null ? tradeMap[tf].get(time) : null;
+    if (!list) { tradeBox.innerHTML = txs.length && showTrades ? '<span class="muted">Arrows mark our trades. Point at one to see what we did and why.</span>' : ""; return; }
+    tradeBox.innerHTML = list.slice(0, 6).map((t) => {
+      const why_ = reasons.get(rkey(nyDay(t.date), t.ticker, t.side));
+      return `<p><span class="pill pill-${isBuy(t) ? "buy" : "sell"}">${isBuy(t) ? "Buy" : "Sell"}</span> <b>${num(t.shares)} ${esc(t.ticker)}</b> at ${usd(t.price, 2)}${why_ ? `. ${esc(why_)}` : ""}</p>`;
+    }).join("") + (list.length > 6 ? `<p class="muted">and ${list.length - 6} more on the Portfolio page</p>` : "");
+  }
   const fmtTime = (t) => typeof t === "string" ? App.date(t)
     : new Intl.DateTimeFormat("en-GB", { timeZone: "UTC", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(t * 1000));
   function showRow(c, bv) {
@@ -109,13 +167,16 @@
     candles.setData(d.c);
     bench.setData(showBench ? d.b : []);
     chart.timeScale().applyOptions({ timeVisible: tf === "1h" });
+    candles.setMarkers(showTrades ? buildMarkers(tf) : []);
     chart.timeScale().fitContent();
     const last = d.c[d.c.length - 1], lb = d.b[d.b.length - 1];
     showRow(last, lb && lb.value);
+    showTradesFor(null);
   }
   chart.subscribeCrosshairMove((p) => {
     const d = sets[tf];
-    if (!p.time) { const last = d.c[d.c.length - 1], lb = d.b[d.b.length - 1]; showRow(last, lb && lb.value); return; }
+    if (!p.time) { const last = d.c[d.c.length - 1], lb = d.b[d.b.length - 1]; showRow(last, lb && lb.value); showTradesFor(null); return; }
+    showTradesFor(p.time);
     const c = p.seriesData.get(candles), bv = p.seriesData.get(bench);
     showRow(c, bv && bv.value);
   });
@@ -131,5 +192,8 @@
   const toggle = document.getElementById("bench-toggle");
   if (!sets["1h"].b.length) { toggle.checked = false; toggle.disabled = true; showBench = false; }
   toggle.addEventListener("change", () => { showBench = toggle.checked; load(); });
+  const tt = document.getElementById("trades-toggle");
+  if (!txs.length) { tt.checked = false; tt.disabled = true; showTrades = false; }
+  tt.addEventListener("change", () => { showTrades = tt.checked; load(); });
   load();
 })();

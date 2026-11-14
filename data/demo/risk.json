@@ -900,105 +900,105 @@
  },
  "ex_ante": {
   "available": true,
-  "lookback_days": 264,
-  "vol": 0.153955,
-  "var_95_hist": 0.016027,
-  "es_95_hist": 0.017964,
-  "var_95_param": 0.015952,
-  "es_95_param": 0.020005,
-  "beta": 0.877403
+  "lookback_days": 252,
+  "vol": 0.154666,
+  "var_95_hist": 0.016228,
+  "es_95_hist": 0.018103,
+  "var_95_param": 0.016026,
+  "es_95_param": 0.020097,
+  "beta": 0.883562
  },
  "positions": [
   {
    "ticker": "NVDA",
    "weight": 0.084387,
-   "vol": 0.475371,
-   "beta": 1.693718,
-   "risk_contribution": 0.19261
+   "vol": 0.470713,
+   "beta": 1.783942,
+   "risk_contribution": 0.19439
   },
   {
    "ticker": "ASML",
    "weight": 0.053844,
-   "vol": 0.396461,
-   "beta": 1.609657,
-   "risk_contribution": 0.102441
+   "vol": 0.401529,
+   "beta": 1.642813,
+   "risk_contribution": 0.104076
   },
   {
    "ticker": "TSM",
    "weight": 0.054396,
-   "vol": 0.394991,
-   "beta": 1.501767,
-   "risk_contribution": 0.100639
+   "vol": 0.396808,
+   "beta": 1.512445,
+   "risk_contribution": 0.100206
   },
   {
    "ticker": "CAT",
    "weight": 0.090937,
-   "vol": 0.281949,
-   "beta": 1.053909,
-   "risk_contribution": 0.095538
+   "vol": 0.28163,
+   "beta": 1.050876,
+   "risk_contribution": 0.095906
   },
   {
    "ticker": "JPM",
    "weight": 0.101523,
-   "vol": 0.235628,
-   "beta": 1.019255,
-   "risk_contribution": 0.094042
+   "vol": 0.235638,
+   "beta": 1.011234,
+   "risk_contribution": 0.093593
   },
   {
    "ticker": "MSFT",
    "weight": 0.06897,
-   "vol": 0.252865,
-   "beta": 1.135836,
-   "risk_contribution": 0.092007
+   "vol": 0.253229,
+   "beta": 1.141919,
+   "risk_contribution": 0.091841
   },
   {
    "ticker": "AAPL",
    "weight": 0.062,
-   "vol": 0.280504,
-   "beta": 1.143435,
-   "risk_contribution": 0.085777
+   "vol": 0.277502,
+   "beta": 1.137778,
+   "risk_contribution": 0.084394
   },
   {
    "ticker": "XOM",
    "weight": 0.092623,
-   "vol": 0.238983,
-   "beta": 0.697845,
-   "risk_contribution": 0.070255
+   "vol": 0.23994,
+   "beta": 0.690116,
+   "risk_contribution": 0.068997
   },
   {
    "ticker": "LIN",
    "weight": 0.067506,
-   "vol": 0.202459,
-   "beta": 0.826526,
-   "risk_contribution": 0.0438
+   "vol": 0.204499,
+   "beta": 0.838432,
+   "risk_contribution": 0.04581
   },
   {
    "ticker": "UNH",
    "weight": 0.058088,
-   "vol": 0.308335,
-   "beta": 0.626566,
-   "risk_contribution": 0.042984
+   "vol": 0.310216,
+   "beta": 0.617098,
+   "risk_contribution": 0.043064
   },
   {
    "ticker": "PG",
    "weight": 0.07532,
-   "vol": 0.16626,
-   "beta": 0.445334,
-   "risk_contribution": 0.033217
+   "vol": 0.168794,
+   "beta": 0.455164,
+   "risk_contribution": 0.034355
   },
   {
    "ticker": "NVO",
    "weight": 0.051011,
-   "vol": 0.360264,
-   "beta": 0.396357,
-   "risk_contribution": 0.032707
+   "vol": 0.360637,
+   "beta": 0.373403,
+   "risk_contribution": 0.031421
   },
   {
    "ticker": "GLD",
    "weight": 0.084565,
-   "vol": 0.150786,
-   "beta": 0.082503,
-   "risk_contribution": 0.013984
+   "vol": 0.148098,
+   "beta": 0.059945,
+   "risk_contribution": 0.011947
   }
  ],
  "correlation": {
@@ -1020,199 +1020,474 @@
   "matrix": [
    [
     1.0,
-    0.27,
-    0.337,
-    0.068,
-    0.292,
-    0.302,
-    0.407,
-    0.392,
-    0.34,
-    0.204,
-    0.357,
-    0.344,
-    0.069
+    0.269,
+    0.327,
+    0.046,
+    0.319,
+    0.308,
+    0.414,
+    0.403,
+    0.341,
+    0.198,
+    0.353,
+    0.347,
+    0.044
    ],
    [
-    0.27,
+    0.269,
     1.0,
-    0.249,
-    0.001,
-    0.211,
-    0.217,
-    0.317,
-    0.276,
-    0.268,
-    0.162,
-    0.261,
-    0.275,
-    0.04
-   ],
-   [
-    0.337,
-    0.249,
-    1.0,
-    0.139,
-    0.33,
-    0.119,
-    0.385,
-    0.248,
-    0.325,
-    0.083,
-    0.304,
-    0.332,
-    0.094
-   ],
-   [
-    0.068,
-    0.001,
-    0.139,
-    1.0,
-    0.056,
-    -0.017,
-    0.075,
-    -0.038,
-    0.103,
-    0.011,
-    0.028,
-    0.072,
-    0.058
-   ],
-   [
-    0.292,
-    0.211,
-    0.33,
-    0.056,
-    1.0,
-    0.215,
-    0.615,
-    0.229,
-    0.578,
-    0.134,
-    0.501,
-    0.535,
-    0.092
-   ],
-   [
-    0.302,
-    0.217,
-    0.119,
-    -0.017,
-    0.215,
-    1.0,
-    0.309,
-    0.234,
-    0.237,
-    0.144,
+    0.259,
+    -0.012,
     0.21,
-    0.234,
-    0.114
+    0.233,
+    0.306,
+    0.288,
+    0.247,
+    0.143,
+    0.245,
+    0.269,
+    0.031
    ],
    [
-    0.407,
-    0.317,
-    0.385,
-    0.075,
-    0.615,
-    0.309,
+    0.327,
+    0.259,
     1.0,
-    0.315,
-    0.743,
-    0.209,
-    0.632,
-    0.68,
-    0.133
+    0.113,
+    0.371,
+    0.113,
+    0.382,
+    0.262,
+    0.342,
+    0.073,
+    0.297,
+    0.343,
+    0.081
    ],
    [
-    0.392,
-    0.276,
-    0.248,
-    -0.038,
-    0.229,
-    0.234,
-    0.315,
+    0.046,
+    -0.012,
+    0.113,
     1.0,
-    0.336,
-    0.144,
-    0.336,
-    0.336,
-    0.03
-   ],
-   [
-    0.34,
-    0.268,
-    0.325,
-    0.103,
-    0.578,
-    0.237,
-    0.743,
-    0.336,
-    1.0,
-    0.242,
-    0.611,
-    0.603,
-    0.095
-   ],
-   [
-    0.204,
-    0.162,
-    0.083,
-    0.011,
-    0.134,
-    0.144,
-    0.209,
-    0.144,
-    0.242,
-    1.0,
-    0.178,
-    0.201,
-    0.172
-   ],
-   [
-    0.357,
-    0.261,
-    0.304,
-    0.028,
-    0.501,
-    0.21,
-    0.632,
-    0.336,
-    0.611,
-    0.178,
-    1.0,
-    0.558,
-    0.164
-   ],
-   [
-    0.344,
-    0.275,
-    0.332,
-    0.072,
-    0.535,
-    0.234,
-    0.68,
-    0.336,
-    0.603,
-    0.201,
-    0.558,
-    1.0,
-    0.095
-   ],
-   [
-    0.069,
-    0.04,
-    0.094,
+    0.061,
+    -0.026,
+    0.05,
+    -0.022,
+    0.082,
+    0.016,
+    0.009,
     0.058,
-    0.092,
-    0.114,
-    0.133,
-    0.03,
-    0.095,
-    0.172,
-    0.164,
-    0.095,
+    0.041
+   ],
+   [
+    0.319,
+    0.21,
+    0.371,
+    0.061,
+    1.0,
+    0.229,
+    0.632,
+    0.243,
+    0.582,
+    0.155,
+    0.517,
+    0.541,
+    0.1
+   ],
+   [
+    0.308,
+    0.233,
+    0.113,
+    -0.026,
+    0.229,
+    1.0,
+    0.318,
+    0.233,
+    0.249,
+    0.157,
+    0.216,
+    0.243,
+    0.104
+   ],
+   [
+    0.414,
+    0.306,
+    0.382,
+    0.05,
+    0.632,
+    0.318,
+    1.0,
+    0.333,
+    0.745,
+    0.204,
+    0.632,
+    0.691,
+    0.131
+   ],
+   [
+    0.403,
+    0.288,
+    0.262,
+    -0.022,
+    0.243,
+    0.233,
+    0.333,
+    1.0,
+    0.356,
+    0.15,
+    0.353,
+    0.349,
+    0.035
+   ],
+   [
+    0.341,
+    0.247,
+    0.342,
+    0.082,
+    0.582,
+    0.249,
+    0.745,
+    0.356,
+    1.0,
+    0.242,
+    0.617,
+    0.611,
+    0.087
+   ],
+   [
+    0.198,
+    0.143,
+    0.073,
+    0.016,
+    0.155,
+    0.157,
+    0.204,
+    0.15,
+    0.242,
+    1.0,
+    0.17,
+    0.2,
+    0.175
+   ],
+   [
+    0.353,
+    0.245,
+    0.297,
+    0.009,
+    0.517,
+    0.216,
+    0.632,
+    0.353,
+    0.617,
+    0.17,
+    1.0,
+    0.569,
+    0.148
+   ],
+   [
+    0.347,
+    0.269,
+    0.343,
+    0.058,
+    0.541,
+    0.243,
+    0.691,
+    0.349,
+    0.611,
+    0.2,
+    0.569,
+    1.0,
+    0.102
+   ],
+   [
+    0.044,
+    0.031,
+    0.081,
+    0.041,
+    0.1,
+    0.104,
+    0.131,
+    0.035,
+    0.087,
+    0.175,
+    0.148,
+    0.102,
     1.0
    ]
   ]
- }
+ },
+ "scenarios": [
+  {
+   "id": "covid",
+   "name": "Covid crash",
+   "start": "2020-02-19",
+   "end": "2020-03-23",
+   "benchmark_return": -0.339,
+   "benchmark_is_approximate": true,
+   "fund_return": -0.299527,
+   "fund_usd": -3068494.90923,
+   "estimated_positions": 13,
+   "positions": [
+    {
+     "ticker": "NVDA",
+     "return": -0.604756,
+     "impact": -0.051034,
+     "estimated": true
+    },
+    {
+     "ticker": "JPM",
+     "return": -0.342808,
+     "impact": -0.034803,
+     "estimated": true
+    },
+    {
+     "ticker": "CAT",
+     "return": -0.356247,
+     "impact": -0.032396,
+     "estimated": true
+    },
+    {
+     "ticker": "ASML",
+     "return": -0.556914,
+     "impact": -0.029986,
+     "estimated": true
+    },
+    {
+     "ticker": "TSM",
+     "return": -0.512719,
+     "impact": -0.02789,
+     "estimated": true
+    },
+    {
+     "ticker": "MSFT",
+     "return": -0.38711,
+     "impact": -0.026699,
+     "estimated": true
+    },
+    {
+     "ticker": "AAPL",
+     "return": -0.385707,
+     "impact": -0.023914,
+     "estimated": true
+    },
+    {
+     "ticker": "XOM",
+     "return": -0.233949,
+     "impact": -0.021669,
+     "estimated": true
+    },
+    {
+     "ticker": "LIN",
+     "return": -0.284229,
+     "impact": -0.019187,
+     "estimated": true
+    },
+    {
+     "ticker": "UNH",
+     "return": -0.209196,
+     "impact": -0.012152,
+     "estimated": true
+    },
+    {
+     "ticker": "PG",
+     "return": -0.154301,
+     "impact": -0.011622,
+     "estimated": true
+    },
+    {
+     "ticker": "NVO",
+     "return": -0.126584,
+     "impact": -0.006457,
+     "estimated": true
+    },
+    {
+     "ticker": "GLD",
+     "return": -0.020321,
+     "impact": -0.001718,
+     "estimated": true
+    }
+   ]
+  },
+  {
+   "id": "bear2022",
+   "name": "2022 bear market",
+   "start": "2022-01-03",
+   "end": "2022-10-12",
+   "benchmark_return": -0.254,
+   "benchmark_is_approximate": true,
+   "fund_return": -0.224425,
+   "fund_usd": -2299108.280072,
+   "estimated_positions": 13,
+   "positions": [
+    {
+     "ticker": "NVDA",
+     "return": -0.453121,
+     "impact": -0.038238,
+     "estimated": true
+    },
+    {
+     "ticker": "JPM",
+     "return": -0.256853,
+     "impact": -0.026077,
+     "estimated": true
+    },
+    {
+     "ticker": "CAT",
+     "return": -0.266922,
+     "impact": -0.024273,
+     "estimated": true
+    },
+    {
+     "ticker": "ASML",
+     "return": -0.417275,
+     "impact": -0.022468,
+     "estimated": true
+    },
+    {
+     "ticker": "TSM",
+     "return": -0.384161,
+     "impact": -0.020897,
+     "estimated": true
+    },
+    {
+     "ticker": "MSFT",
+     "return": -0.290047,
+     "impact": -0.020005,
+     "estimated": true
+    },
+    {
+     "ticker": "AAPL",
+     "return": -0.288996,
+     "impact": -0.017918,
+     "estimated": true
+    },
+    {
+     "ticker": "XOM",
+     "return": -0.17529,
+     "impact": -0.016236,
+     "estimated": true
+    },
+    {
+     "ticker": "LIN",
+     "return": -0.212962,
+     "impact": -0.014376,
+     "estimated": true
+    },
+    {
+     "ticker": "UNH",
+     "return": -0.156743,
+     "impact": -0.009105,
+     "estimated": true
+    },
+    {
+     "ticker": "PG",
+     "return": -0.115612,
+     "impact": -0.008708,
+     "estimated": true
+    },
+    {
+     "ticker": "NVO",
+     "return": -0.094844,
+     "impact": -0.004838,
+     "estimated": true
+    },
+    {
+     "ticker": "GLD",
+     "return": -0.015226,
+     "impact": -0.001288,
+     "estimated": true
+    }
+   ]
+  },
+  {
+   "id": "tariff2025",
+   "name": "April 2025 tariff shock",
+   "start": "2025-02-19",
+   "end": "2025-04-08",
+   "benchmark_return": -0.189,
+   "benchmark_is_approximate": true,
+   "fund_return": -0.166993,
+   "fund_usd": -1710753.798951,
+   "estimated_positions": 13,
+   "positions": [
+    {
+     "ticker": "NVDA",
+     "return": -0.337165,
+     "impact": -0.028452,
+     "estimated": true
+    },
+    {
+     "ticker": "JPM",
+     "return": -0.191123,
+     "impact": -0.019403,
+     "estimated": true
+    },
+    {
+     "ticker": "CAT",
+     "return": -0.198616,
+     "impact": -0.018062,
+     "estimated": true
+    },
+    {
+     "ticker": "ASML",
+     "return": -0.310492,
+     "impact": -0.016718,
+     "estimated": true
+    },
+    {
+     "ticker": "TSM",
+     "return": -0.285852,
+     "impact": -0.015549,
+     "estimated": true
+    },
+    {
+     "ticker": "MSFT",
+     "return": -0.215823,
+     "impact": -0.014885,
+     "estimated": true
+    },
+    {
+     "ticker": "AAPL",
+     "return": -0.21504,
+     "impact": -0.013333,
+     "estimated": true
+    },
+    {
+     "ticker": "XOM",
+     "return": -0.130432,
+     "impact": -0.012081,
+     "estimated": true
+    },
+    {
+     "ticker": "LIN",
+     "return": -0.158464,
+     "impact": -0.010697,
+     "estimated": true
+    },
+    {
+     "ticker": "UNH",
+     "return": -0.116632,
+     "impact": -0.006775,
+     "estimated": true
+    },
+    {
+     "ticker": "PG",
+     "return": -0.086026,
+     "impact": -0.006479,
+     "estimated": true
+    },
+    {
+     "ticker": "NVO",
+     "return": -0.070573,
+     "impact": -0.0036,
+     "estimated": true
+    },
+    {
+     "ticker": "GLD",
+     "return": -0.01133,
+     "impact": -0.000958,
+     "estimated": true
+    }
+   ]
+  }
+ ]
 }

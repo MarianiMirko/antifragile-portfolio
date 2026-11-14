@@ -3,11 +3,12 @@
   await App.init("risk.html");
   App.chartDefaults();
   const { usd, pct, esc, num } = App, C = App.COLORS;
-  const [s, risk, models, ind, notes, rules, pos, c1d] = await Promise.all([
+  const [s, risk, models, ind, notes, rules, pos, c1d, proj] = await Promise.all([
     App.data("summary.json"), App.data("risk.json"), App.data("models.json", { models: [] }),
     App.getJSON("content/risk/indicators.json", { indicators: [] }), App.getText("content/risk/notes.md"),
     App.getJSON("config/rules.json", { limits: {} }),
-    App.data("positions.json", { positions: [] }), App.data("candles_1d.json", { candles: [] }),
+    App.data("positions.json", { positions: [] }), App.data("candles_1d.json", { candles: [], benchmark: [] }),
+    App.data("projection.json", { available: false }),
   ]);
   if (!s || !risk) return;
   App.statusLine(document.getElementById("updated"), s);
@@ -29,6 +30,74 @@
   document.getElementById("risk-basis").textContent = ex.available
     ? "VaR, expected shortfall, beta and the charts below \"at current weights\" apply today's portfolio to the past year of daily returns."
     : "Risk at current weights appears once the fund holds positions and prices have been downloaded.";
+
+  /* where we could finish: history plus a fan of simulated outcomes */
+  if (!proj.available) document.getElementById("proj-block").hidden = true;
+  else {
+    const usdM = (v) => "$" + (v / 1e6).toFixed(2) + "M";
+    document.getElementById("proj-intro").textContent = `${App.num(proj.paths)} simulated paths from today's value to ${App.date(s.end_date)}, ${proj.dates.length} trading days away.`;
+    document.getElementById("proj-stats").innerHTML = [
+      stat("Chance of beating the benchmark", proj.prob_above_benchmark == null ? "–" : pct(proj.prob_above_benchmark, 0), "at the end of the game"),
+      stat(`Chance of finishing above ${usdM(s.initial_capital)}`, pct(proj.prob_above_capital, 0), "the starting capital"),
+      stat("Median finish", usd(proj.median_end), "half of the paths end above this"),
+      stat("Likely range", `${usdM(proj.p5_end)} to ${usdM(proj.p95_end)}`, "9 paths in 10 end inside it"),
+    ].join("");
+    const hist = c1d.candles.slice(-20), hb = c1d.benchmark.slice(-20);
+    const labels = [...hist.map((c) => c.time), ...proj.dates], n0 = hist.length, pad = Array(n0 - 1).fill(null);
+    const fan = (arr, start) => [...pad, start, ...arr];
+    const band = (label, data, fill, bg) => ({ label, data, borderWidth: 0, pointRadius: 0, pointHoverRadius: 0, fill, backgroundColor: bg, band: true });
+    const ds = [
+      { label: "Fund value", data: [...hist.map((c) => c.close), ...proj.dates.map(() => null)], borderColor: C.fund, backgroundColor: C.fund },
+      { label: "Median path", data: fan(proj.fund.p50, proj.start_value), borderColor: C.fund, backgroundColor: C.fund, borderDash: [5, 4] },
+      band("95th percentile", fan(proj.fund.p95, proj.start_value), "+1", "rgba(31,95,184,0.10)"), band("5th percentile", fan(proj.fund.p5, proj.start_value), false),
+      band("75th percentile", fan(proj.fund.p75, proj.start_value), "+1", "rgba(31,95,184,0.16)"), band("25th percentile", fan(proj.fund.p25, proj.start_value), false),
+    ];
+    if (proj.benchmark && hb.length) {
+      ds.push({ label: "Benchmark", data: [...hb.map((c) => c.value), ...proj.dates.map(() => null)].slice(-labels.length), borderColor: C.bench, backgroundColor: C.bench });
+      ds.push({ label: "Benchmark median path", data: fan(proj.benchmark.p50, proj.benchmark_start_value), borderColor: C.bench, backgroundColor: C.bench, borderDash: [5, 4] });
+    }
+    new Chart(document.getElementById("proj-chart"), {
+      type: "line", data: { labels, datasets: ds },
+      options: {
+        plugins: {
+          legend: { position: "top", align: "start", labels: { filter: (i, d) => !d.datasets[i.datasetIndex].band } },
+          tooltip: { filter: (i) => i.parsed.y != null, callbacks: { title: (i) => App.date(i[0].label), label: (i) => ` ${i.dataset.label}: ${usd(i.parsed.y)}` } },
+        },
+        scales: { x: { grid: { display: false }, ticks: { maxTicksLimit: 8, maxRotation: 0, callback(v) { return App.date(this.getLabelForValue(v)).replace(/ \d{4}$/, ""); } } },
+                  y: { ticks: { callback: (v) => usdM(v) } } },
+      },
+    });
+  }
+
+  /* stress test: slider on the market move, then past episodes */
+  const sp = (risk.positions || []).map((p) => ({ ...p, beta: p.beta == null ? 1 : p.beta }));
+  if (!sp.length) document.getElementById("stress-block").hidden = true;
+  else {
+    const range = document.getElementById("stress-range");
+    const draw = () => {
+      const m = +range.value / 100, rows = sp.map((p) => ({ name: p.ticker, impact: p.weight * p.beta * m })), tot = rows.reduce((a, r) => a + r.impact, 0);
+      document.getElementById("stress-move").textContent = App.pctSigned(m, 0);
+      const el = document.getElementById("stress-result");
+      el.className = "stress-result " + App.sign(tot);
+      el.textContent = `${App.usdSigned(tot * nav)} (${App.pctSigned(tot)})`;
+      document.getElementById("stress-sub").textContent = `Estimated change in the fund value. Cash, ${pct(1 - sp.reduce((a, p) => a + p.weight, 0), 1)} of the fund, does not move.`;
+      rows.sort((a, b) => Math.abs(b.impact) - Math.abs(a.impact));
+      const max = Math.max(...rows.map((r) => Math.abs(r.impact)), 1e-9);
+      document.getElementById("stress-bars").innerHTML = rows.slice(0, 8).map((r) => `<li class="bar-row" style="grid-template-columns:4em minmax(40px,1fr) 7em"><span class="bar-name">${esc(r.name)}</span>
+        <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:${Math.abs(r.impact) / max * 100}%;background:${r.impact < 0 ? C.down : C.up}"></span></span>
+        <span class="bar-value">${App.usdSigned(r.impact * nav)}</span></li>`).join("");
+    };
+    range.addEventListener("input", draw); draw();
+    const sc = risk.scenarios || [];
+    document.querySelector("#scenarios tbody").innerHTML = sc.map((x) => `<tr><td class="l"><b style="font-weight:500">${esc(x.name)}</b></td>
+      <td class="l">${App.date(x.start)} to ${App.date(x.end)}</td><td class="${App.sign(x.benchmark_return)}">${App.pctSigned(x.benchmark_return, 1)}</td>
+      <td class="${App.sign(x.fund_return)}">${App.pctSigned(x.fund_return, 1)}</td><td class="${App.sign(x.fund_usd)}">${App.usdSigned(x.fund_usd)}</td>
+      <td class="l">${x.positions.slice(0, 3).map((p) => `${esc(p.ticker)} ${App.pctSigned(p.return, 0)}`).join(", ")}</td></tr>`).join("");
+    const est = sc.some((x) => x.estimated_positions);
+    document.getElementById("scenario-note").textContent = est
+      ? "Where a holding has no price history for an episode, its move is estimated as its beta times the market move."
+      : "Each holding's actual price move over the episode, applied to today's weights.";
+  }
 
   /* drawdown */
   const dd = re.drawdown || [];
