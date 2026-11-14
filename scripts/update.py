@@ -228,11 +228,14 @@ def fetch_sector_benchmark(cfg, start_date):
         print(f"benchmark sector weights not available, using approximate ones: {exc}", file=sys.stderr)
     tot = sum(weights.values())
     etfs = list(SECTOR_ETFS.values())
-    px = yf.download(etfs, start=(pd.Timestamp(start_date) - pd.Timedelta(days=10)).strftime("%Y-%m-%d"),
-                     interval="1d", auto_adjust=True, progress=False, group_by="column")["Close"]
-    px.index = pd.DatetimeIndex(px.index).tz_localize(None).normalize()
-    before = px[px.index < pd.Timestamp(start_date)]
-    base = before.iloc[-1] if len(before) else px.iloc[0]
+    raw = yf.download(etfs, start=(pd.Timestamp(start_date) - pd.Timedelta(days=10)).strftime("%Y-%m-%d"),
+                      interval="1d", auto_adjust=True, progress=False, group_by="column")
+    px, op = raw["Close"], raw["Open"]
+    for f in (px, op):
+        f.index = pd.DatetimeIndex(f.index).tz_localize(None).normalize()
+    # same basis as the benchmark line: the opening price of the first trading day of the game
+    since = op[op.index >= pd.Timestamp(start_date)]
+    base = since.iloc[0] if len(since) else px.iloc[0]
     out = {}
     for sector, etf in SECTOR_ETFS.items():
         if sector in weights and etf in px.columns and not pd.isna(px[etf].iloc[-1]):
