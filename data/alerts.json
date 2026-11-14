@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T17:05:39.988725+00:00",
+ "generated_at": "2026-11-14T17:07:30.232825+00:00",
  "alerts": [
   {
    "severity": "warning",
@@ -11,12 +11,6 @@
    "severity": "warning",
    "title": "Number of positions outside the range",
    "message": "The fund holds 0 positions; the range is 10 to 20.",
-   "ticker": null
-  },
-  {
-   "severity": "warning",
-   "title": "Prices are not up to date",
-   "message": "The price download failed, so the site shows the last prices read from MarketWatch.",
    "ticker": null
   }
  ],
