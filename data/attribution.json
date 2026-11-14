@@ -3,9 +3,9 @@
  "fund_return": 0.0,
  "benchmark_return": 0.016578,
  "active_return": -0.016578,
- "allocation": -0.030199,
+ "allocation": -0.021246,
  "selection": 0.0,
- "other": 0.013621,
+ "other": 0.004668,
  "weights_are_approximate": false,
  "sectors": [
   {
@@ -13,8 +13,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.382338,
    "fund_return": null,
-   "benchmark_return": 0.033629,
-   "allocation": -0.001311,
+   "benchmark_return": 0.028385,
+   "allocation": -0.00273,
    "selection": 0.0
   },
   {
@@ -22,8 +22,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.120312,
    "fund_return": null,
-   "benchmark_return": 0.026592,
-   "allocation": 0.000434,
+   "benchmark_return": 0.016456,
+   "allocation": 0.000576,
    "selection": 0.0
   },
   {
@@ -31,8 +31,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.10251,
    "fund_return": null,
-   "benchmark_return": 0.021916,
-   "allocation": 0.000849,
+   "benchmark_return": 0.013035,
+   "allocation": 0.000842,
    "selection": 0.0
   },
   {
@@ -40,8 +40,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.091909,
    "fund_return": null,
-   "benchmark_return": 0.020412,
-   "allocation": 0.0009,
+   "benchmark_return": 0.002423,
+   "allocation": 0.00173,
    "selection": 0.0
   },
   {
@@ -49,8 +49,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.084208,
    "fund_return": null,
-   "benchmark_return": 0.037217,
-   "allocation": -0.000591,
+   "benchmark_return": 0.022917,
+   "allocation": -0.000141,
    "selection": 0.0
   },
   {
@@ -58,8 +58,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.076108,
    "fund_return": null,
-   "benchmark_return": 0.037561,
-   "allocation": -0.00056,
+   "benchmark_return": 0.018281,
+   "allocation": 0.000226,
    "selection": 0.0
   },
   {
@@ -67,8 +67,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.048805,
    "fund_return": null,
-   "benchmark_return": 0.0252,
-   "allocation": 0.000244,
+   "benchmark_return": 0.023722,
+   "allocation": -0.000121,
    "selection": 0.0
   },
   {
@@ -76,8 +76,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.039104,
    "fund_return": null,
-   "benchmark_return": 0.054203,
-   "allocation": -0.000939,
+   "benchmark_return": 0.060571,
+   "allocation": -0.001538,
    "selection": 0.0
   },
   {
@@ -85,8 +85,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.020902,
    "fund_return": null,
-   "benchmark_return": 0.021099,
-   "allocation": 0.00019,
+   "benchmark_return": 0.008935,
+   "allocation": 0.000257,
    "selection": 0.0
   },
   {
@@ -94,8 +94,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.018002,
    "fund_return": null,
-   "benchmark_return": 0.008409,
-   "allocation": 0.000392,
+   "benchmark_return": -0.00135,
+   "allocation": 0.000407,
    "selection": 0.0
   },
   {
@@ -103,8 +103,8 @@
    "fund_weight": 0.0,
    "benchmark_weight": 0.015802,
    "fund_return": null,
-   "benchmark_return": 0.00539,
-   "allocation": 0.000392,
+   "benchmark_return": -0.009858,
+   "allocation": 0.000491,
    "selection": 0.0
   },
   {
@@ -113,7 +113,7 @@
    "benchmark_weight": 0.0,
    "fund_return": 0.0,
    "benchmark_return": null,
-   "allocation": -0.030199,
+   "allocation": -0.021246,
    "selection": 0.0
   }
  ]
