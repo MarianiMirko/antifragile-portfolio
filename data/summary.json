@@ -1,0 +1,43 @@
+{
+ "generated_at": "2026-11-14T17:05:39.988725+00:00",
+ "as_of": "2026-11-13T21:00:00+00:00",
+ "status": "stale",
+ "price_source": "marketwatch",
+ "demo": false,
+ "initial_capital": 10000000.0,
+ "nav": 10000000.0,
+ "cash": 10000000.0,
+ "cash_weight": 1.0,
+ "invested": 0,
+ "n_positions": 0,
+ "day_change": 0.0,
+ "day_change_pct": 0.0,
+ "total_change": 0.0,
+ "total_return": 0.0,
+ "benchmark": {
+  "ticker": "SPY",
+  "name": "S&P 500 (SPY)",
+  "return": null
+ },
+ "excess_return": null,
+ "volatility": null,
+ "volatility_basis": null,
+ "sharpe": null,
+ "max_drawdown": 0.0,
+ "trading_days": 5,
+ "realized_pnl": 0,
+ "unrealized_pnl": 0,
+ "start_date": "2026-11-08",
+ "end_date": "2026-12-17",
+ "days_left": 33,
+ "marketwatch": {
+  "net_worth": 10000000.0,
+  "as_of": "2026-11-14T17:38:00+01:00",
+  "rank": null,
+  "diff": 0.0,
+  "diff_pct": 0.0
+ },
+ "rules_ok": 7,
+ "rules_total": 9,
+ "n_alerts": 3
+}

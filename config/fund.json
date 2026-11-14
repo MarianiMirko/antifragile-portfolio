@@ -1,0 +1,16 @@
+{
+  "fund_name": "Antifragile Portfolio",
+  "fund_initials": "AP",
+  "fund_name_is_placeholder": true,
+  "tagline": "Student-managed fund, Institutional Investment Management, University of Groningen",
+  "domain": "antifragileportfolio.eu",
+  "initial_capital": 10000000,
+  "currency": "USD",
+  "benchmark": { "ticker": "SPY", "name": "S&P 500 (SPY)", "is_placeholder": true },
+  "start_date": "2026-11-08",
+  "end_date": "2026-12-17",
+  "risk_free_rate": 0.04,
+  "display_timezone": "Europe/Amsterdam",
+  "marketwatch_game": "iim202627",
+  "demo_mode": true
+}

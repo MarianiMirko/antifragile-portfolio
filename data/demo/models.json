@@ -1,0 +1,167 @@
+{
+ "generated_at": "2026-11-13T21:00:00+00:00",
+ "models": [
+  {
+   "id": "ewma_volatility",
+   "title": "EWMA volatility forecast",
+   "error": null,
+   "author": "Example model",
+   "description": "Short-term volatility forecast (EWMA, lambda 0.94) against each position's one-year average. Above 1.2x is flagged, above 1.5x is an alert.",
+   "metrics": [
+    {
+     "name": "Fund forecast volatility",
+     "value": "19.3%",
+     "signal": "caution",
+     "comment": "1.25x its one-year average of 15.4%"
+    },
+    {
+     "name": "Positions running hot",
+     "value": "3",
+     "signal": "normal",
+     "comment": "forecast above 1.2x the one-year average"
+    }
+   ],
+   "table": {
+    "columns": [
+     "Ticker",
+     "Weight",
+     "1-year vol",
+     "Forecast vol",
+     "Ratio"
+    ],
+    "rows": [
+     [
+      "JPM",
+      "10.2%",
+      "23.6%",
+      {
+       "v": "28.5%",
+       "signal": "caution"
+      },
+      "1.21x"
+     ],
+     [
+      "XOM",
+      "9.3%",
+      "23.9%",
+      {
+       "v": "22.7%",
+       "signal": "normal"
+      },
+      "0.95x"
+     ],
+     [
+      "CAT",
+      "9.1%",
+      "28.2%",
+      {
+       "v": "36.5%",
+       "signal": "caution"
+      },
+      "1.29x"
+     ],
+     [
+      "GLD",
+      "8.5%",
+      "15.1%",
+      {
+       "v": "13.4%",
+       "signal": "normal"
+      },
+      "0.89x"
+     ],
+     [
+      "NVDA",
+      "8.4%",
+      "47.5%",
+      {
+       "v": "62.9%",
+       "signal": "caution"
+      },
+      "1.32x"
+     ],
+     [
+      "PG",
+      "7.5%",
+      "16.6%",
+      {
+       "v": "15.0%",
+       "signal": "normal"
+      },
+      "0.90x"
+     ],
+     [
+      "MSFT",
+      "6.9%",
+      "25.3%",
+      {
+       "v": "24.4%",
+       "signal": "normal"
+      },
+      "0.97x"
+     ],
+     [
+      "LIN",
+      "6.8%",
+      "20.2%",
+      {
+       "v": "24.2%",
+       "signal": "normal"
+      },
+      "1.19x"
+     ],
+     [
+      "AAPL",
+      "6.2%",
+      "28.1%",
+      {
+       "v": "30.3%",
+       "signal": "normal"
+      },
+      "1.08x"
+     ],
+     [
+      "UNH",
+      "5.8%",
+      "30.8%",
+      {
+       "v": "36.0%",
+       "signal": "normal"
+      },
+      "1.17x"
+     ],
+     [
+      "TSM",
+      "5.4%",
+      "39.5%",
+      {
+       "v": "44.2%",
+       "signal": "normal"
+      },
+      "1.12x"
+     ],
+     [
+      "ASML",
+      "5.4%",
+      "39.6%",
+      {
+       "v": "41.5%",
+       "signal": "normal"
+      },
+      "1.05x"
+     ],
+     [
+      "NVO",
+      "5.1%",
+      "36.0%",
+      {
+       "v": "36.9%",
+       "signal": "normal"
+      },
+      "1.02x"
+     ]
+    ]
+   }
+  }
+ ]
+}

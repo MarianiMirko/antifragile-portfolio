@@ -1,0 +1,106 @@
+{
+ "sector": [
+  {
+   "name": "Technology",
+   "weight": 0.323598
+  },
+  {
+   "name": "Healthcare",
+   "weight": 0.109099
+  },
+  {
+   "name": "Financial Services",
+   "weight": 0.101523
+  },
+  {
+   "name": "Energy",
+   "weight": 0.092623
+  },
+  {
+   "name": "Industrials",
+   "weight": 0.090937
+  },
+  {
+   "name": "Funds & ETFs",
+   "weight": 0.084565
+  },
+  {
+   "name": "Consumer Defensive",
+   "weight": 0.07532
+  },
+  {
+   "name": "Basic Materials",
+   "weight": 0.067506
+  },
+  {
+   "name": "Cash",
+   "weight": 0.05483,
+   "is_cash": true
+  }
+ ],
+ "country": [
+  {
+   "name": "United States",
+   "weight": 0.701354
+  },
+  {
+   "name": "Global",
+   "weight": 0.084565
+  },
+  {
+   "name": "Taiwan",
+   "weight": 0.054396
+  },
+  {
+   "name": "Netherlands",
+   "weight": 0.053844
+  },
+  {
+   "name": "Denmark",
+   "weight": 0.051011
+  },
+  {
+   "name": "Cash",
+   "weight": 0.05483,
+   "is_cash": true
+  }
+ ],
+ "region": [
+  {
+   "name": "North America",
+   "weight": 0.701354
+  },
+  {
+   "name": "Europe",
+   "weight": 0.104855
+  },
+  {
+   "name": "Other",
+   "weight": 0.084565
+  },
+  {
+   "name": "Asia Pacific",
+   "weight": 0.054396
+  },
+  {
+   "name": "Cash",
+   "weight": 0.05483,
+   "is_cash": true
+  }
+ ],
+ "asset_class": [
+  {
+   "name": "Equity",
+   "weight": 0.860605
+  },
+  {
+   "name": "Gold ETF",
+   "weight": 0.084565
+  },
+  {
+   "name": "Cash",
+   "weight": 0.05483,
+   "is_cash": true
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2311264A%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%272%27/%3E%3C/svg%3E">
+<title>Philosophy and rules</title>
+</head>
+<body>
+<main>
+  <div class="page-head wrap">
+    <h1>Philosophy and rules</h1>
+    <p>What we believe, how we decide, and the limits we have set for ourselves.</p>
+  </div>
+  <section class="block wrap"><div class="prose" id="philosophy"></div></section>
+  <section class="block wrap" id="rules" aria-labelledby="rules-title">
+    <div class="block-head"><div><h2 id="rules-title">Our limits, and where we stand today</h2>
+      <p>The same numbers generate the alerts on the Overview page.</p></div><p class="rules-score" id="rules-score" style="margin:0"></p></div>
+    <p class="placeholder-flag" id="rules-placeholder" hidden>These limits are placeholders. Set the real ones in <code>config/rules.json</code>.</p>
+    <div class="table-scroll">
+      <table class="data" id="rules-table">
+        <thead><tr><th class="l">Rule</th><th class="l">Limit</th><th class="l">Today</th><th class="l">Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+  <section class="block wrap cols-2">
+    <div><div class="block-head"><h2>When we buy</h2></div><ol class="prose" id="buy"></ol></div>
+    <div><div class="block-head"><h2>When we sell</h2></div><ol class="prose" id="sell"></ol></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/philosophy.js"></script>
+</body>
+</html>

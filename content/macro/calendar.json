@@ -1,0 +1,9 @@
+{
+  "events": [
+    { "date": "2026-11-19", "event": "NVDA earnings", "relevance": "Largest position; expect a move of 6 to 8% either way" },
+    { "date": "2026-11-26", "event": "US Thanksgiving, markets closed", "relevance": "Thin liquidity on the 27th" },
+    { "date": "2026-12-04", "event": "US jobs report", "relevance": "Sets the tone for the Fed meeting" },
+    { "date": "2026-12-10", "event": "US CPI (November)", "relevance": "Rate-sensitive holdings: JPM, GLD" },
+    { "date": "2026-12-16", "event": "FOMC decision", "relevance": "Last trading day before the game ends" }
+  ]
+}

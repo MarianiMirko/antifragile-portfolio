@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2311264A%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%272%27/%3E%3C/svg%3E">
+<title>Risk</title>
+</head>
+<body>
+<main>
+  <div class="page-head wrap">
+    <h1>Volatility and risk</h1>
+    <p>How much the fund can lose on a bad day, where that risk comes from, and whether it is inside our limits.</p>
+    <p class="updated" id="updated"></p>
+  </div>
+
+  <section class="block wrap">
+    <dl class="stats" id="risk-stats"></dl>
+    <p class="legend-note" id="risk-basis"></p>
+  </section>
+
+  <section class="block wrap cols-2">
+    <div>
+      <div class="block-head"><div><h2>Drawdown</h2><p>Fall from the highest fund value reached so far.</p></div></div>
+      <div class="chart-sm"><canvas id="dd-chart" role="img" aria-label="Line chart of drawdown over time"></canvas></div>
+    </div>
+    <div>
+      <div class="block-head"><div><h2>Rolling volatility</h2><p>Annualised, over the last 20 trading days.</p></div></div>
+      <div class="chart-sm" id="vol-wrap"><canvas id="vol-chart" role="img" aria-label="Line chart of rolling 20-day volatility"></canvas></div>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="cal-title">
+    <div class="block-head"><div><h2 id="cal-title">Daily returns</h2><p>One cell per trading day of the game, coloured by the fund's return that day.</p></div></div>
+    <div id="calendar" class="viz" role="img" aria-label="Calendar of the fund's daily returns"></div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="rr-title" id="rr-block">
+    <div class="block-head"><div><h2 id="rr-title">Risk against return</h2><p>Each bubble is a position: further right is more volatile, higher up has earned more since we bought it. Bubble size is the weight in the fund; orange bubbles are below their purchase price.</p></div></div>
+    <div id="bubbles" class="viz" style="height:440px" role="img" aria-label="Bubble chart of volatility against return by position. The same figures are in the table below."></div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="rc-title">
+    <div class="block-head"><div><h2 id="rc-title">Where the risk comes from</h2>
+      <p>Each position's share of the fund's weight next to its share of the fund's risk. A position whose risk bar is longer than its weight bar adds more risk than its size suggests.</p></div></div>
+    <div class="chart-box" id="rc-wrap" style="height:460px"><canvas id="rc-chart" role="img" aria-label="Bar chart comparing weight and risk contribution by position"></canvas></div>
+    <div class="table-scroll" style="margin-top:24px">
+      <table class="data" id="rc-table">
+        <thead><tr><th class="l" data-sort>Ticker</th><th data-sort>Weight</th><th data-sort>Share of risk</th><th data-sort>Volatility</th><th data-sort>Beta</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="corr-title">
+    <div class="block-head"><div><h2 id="corr-title">Correlation between positions</h2><p>Daily returns over the past year. Red pairs move together, blue pairs move in opposite directions.</p></div></div>
+    <div class="table-scroll" style="border-top:0"><div id="corr"></div></div>
+    <div class="heat-key"><span>−1</span><i aria-hidden="true"></i><span>+1</span></div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="models-title">
+    <div class="block-head"><div><h2 id="models-title">Team models</h2><p>Models written by the team run automatically with every price update.</p></div></div>
+    <div id="models"></div>
+  </section>
+
+  <section class="block wrap cols-2">
+    <div>
+      <div class="block-head"><h2>Risk analyst's indicators</h2></div>
+      <div class="table-scroll">
+        <table class="data" id="indicators">
+          <thead><tr><th class="l">Indicator</th><th class="l">Value</th><th class="l">Signal</th><th class="l">Comment</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted" id="indicators-meta" style="margin-top:10px;font-size:.88rem"></p>
+    </div>
+    <div>
+      <div class="block-head"><h2>Risk analyst's note</h2></div>
+      <div class="prose" id="risk-notes"></div>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/viz.js"></script>
+<script src="assets/js/risk.js"></script>
+</body>
+</html>

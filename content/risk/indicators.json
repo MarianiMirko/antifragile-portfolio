@@ -1,0 +1,10 @@
+{
+  "updated": "2026-11-12",
+  "author": "Lorenzo",
+  "indicators": [
+    { "name": "VIX level", "value": "17.4", "signal": "normal", "comment": "Below the 20 threshold we use for cutting gross exposure" },
+    { "name": "VIX term structure", "value": "Contango", "signal": "normal", "comment": "No stress priced in for the next month" },
+    { "name": "GARCH(1,1) one-day forecast", "value": "0.92%", "signal": "normal", "comment": "Forecast portfolio volatility for tomorrow" },
+    { "name": "Tech-cluster average correlation", "value": "0.71", "signal": "caution", "comment": "Our five technology names behave like one large position" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "note": "Target weights as fractions of the fund (0.08 = 8%). Use CASH for the cash target. They should add up to 1. Leave targets empty until the team has agreed them.",
+  "example": {
+    "AAPL": 0.08,
+    "MSFT": 0.08,
+    "CASH": 0.05
+  },
+  "targets": {}
+}

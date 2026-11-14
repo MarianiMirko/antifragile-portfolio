@@ -1,0 +1,117 @@
+{
+ "note": "Demo data",
+ "transactions": [
+  {
+   "date": "2026-10-05T14:14:00+00:00",
+   "ticker": "NVDA",
+   "side": "buy",
+   "shares": 4750,
+   "price": 147.37
+  },
+  {
+   "date": "2026-10-05T14:29:00+00:00",
+   "ticker": "MSFT",
+   "side": "buy",
+   "shares": 1380,
+   "price": 505.64
+  },
+  {
+   "date": "2026-10-05T14:44:00+00:00",
+   "ticker": "AAPL",
+   "side": "buy",
+   "shares": 2370,
+   "price": 252.93
+  },
+  {
+   "date": "2026-10-05T14:59:00+00:00",
+   "ticker": "ASML",
+   "side": "buy",
+   "shares": 560,
+   "price": 890.1
+  },
+  {
+   "date": "2026-10-05T15:14:00+00:00",
+   "ticker": "TSM",
+   "side": "buy",
+   "shares": 1870,
+   "price": 266.8
+  },
+  {
+   "date": "2026-10-05T15:29:00+00:00",
+   "ticker": "JPM",
+   "side": "buy",
+   "shares": 3410,
+   "price": 263.8
+  },
+  {
+   "date": "2026-10-05T15:44:00+00:00",
+   "ticker": "UNH",
+   "side": "buy",
+   "shares": 1740,
+   "price": 460.46
+  },
+  {
+   "date": "2026-10-05T15:59:00+00:00",
+   "ticker": "NVO",
+   "side": "buy",
+   "shares": 9010,
+   "price": 66.6
+  },
+  {
+   "date": "2026-10-05T16:14:00+00:00",
+   "ticker": "XOM",
+   "side": "buy",
+   "shares": 7280,
+   "price": 109.86
+  },
+  {
+   "date": "2026-10-05T16:29:00+00:00",
+   "ticker": "CAT",
+   "side": "buy",
+   "shares": 1700,
+   "price": 471.71
+  },
+  {
+   "date": "2026-10-05T16:44:00+00:00",
+   "ticker": "PG",
+   "side": "buy",
+   "shares": 5110,
+   "price": 156.6
+  },
+  {
+   "date": "2026-10-05T16:59:00+00:00",
+   "ticker": "GLD",
+   "side": "buy",
+   "shares": 2210,
+   "price": 408.13
+  },
+  {
+   "date": "2026-10-05T17:14:00+00:00",
+   "ticker": "DIS",
+   "side": "buy",
+   "shares": 6060,
+   "price": 98.93
+  },
+  {
+   "date": "2026-10-21T14:29:00+00:00",
+   "ticker": "DIS",
+   "side": "sell",
+   "shares": 6060,
+   "price": 92.85
+  },
+  {
+   "date": "2026-10-21T14:59:00+00:00",
+   "ticker": "LIN",
+   "side": "buy",
+   "shares": 1530,
+   "price": 458.84
+  },
+  {
+   "date": "2026-11-04T20:14:00+00:00",
+   "ticker": "XOM",
+   "side": "buy",
+   "shares": 830,
+   "price": 120.62
+  }
+ ]
+}

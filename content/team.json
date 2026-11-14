@@ -1,0 +1,9 @@
+{
+  "team": [
+    { "name": "Mirko", "initials": "MM", "role": "Portfolio Manager, Trading & Monitoring", "bio": "Owns the positions, the rebalancing and the trade log. Approves every order." },
+    { "name": "Lorenzo", "initials": "L", "role": "Volatility & Risk", "bio": "Measures volatility, VaR and drawdown, and sizes positions against the limits." },
+    { "name": "Riccardo", "initials": "R", "role": "Backtesting", "bio": "Tests our buy and sell rules on history before we rely on them." },
+    { "name": "Andrea", "initials": "A", "role": "Macro & News", "bio": "Tracks the macro regime and the news that matters for what we hold." },
+    { "name": "Marek", "initials": "M", "role": "Short-term Fundamental Analysis", "bio": "Writes the thesis, valuation and target price for each company." }
+  ]
+}

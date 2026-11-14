@@ -1,0 +1,30 @@
+{
+ "sector": [
+  {
+   "name": "Cash",
+   "weight": 1.0,
+   "is_cash": true
+  }
+ ],
+ "country": [
+  {
+   "name": "Cash",
+   "weight": 1.0,
+   "is_cash": true
+  }
+ ],
+ "region": [
+  {
+   "name": "Cash",
+   "weight": 1.0,
+   "is_cash": true
+  }
+ ],
+ "asset_class": [
+  {
+   "name": "Cash",
+   "weight": 1.0,
+   "is_cash": true
+  }
+ ]
+}

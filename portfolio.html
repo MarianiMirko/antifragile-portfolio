@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2311264A%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%272%27/%3E%3C/svg%3E">
+<title>Portfolio</title>
+</head>
+<body>
+<main>
+  <div class="page-head wrap">
+    <h1>Portfolio</h1>
+    <p>What the fund holds, what each position has earned, and how far we are from our target weights.</p>
+    <p class="updated" id="updated"></p>
+  </div>
+
+  <section class="block wrap">
+    <dl class="stats five" id="totals"></dl>
+  </section>
+
+  <section class="block wrap" aria-labelledby="map-title" id="map-block">
+    <div class="block-head"><div><h2 id="map-title">Portfolio map</h2><p>One tile per position, sized by market value and grouped by sector. Green tiles gained, red tiles lost.</p></div>
+      <div class="seg" role="group" aria-label="Colour the map by">
+        <button type="button" data-map="total" aria-pressed="true">Since purchase</button>
+        <button type="button" data-map="day" aria-pressed="false">Last trading day</button>
+      </div></div>
+    <div id="map" class="viz" style="height:480px" role="img" aria-label="Treemap of positions by market value and return. The same figures are in the positions table below."></div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="pos-title">
+    <div class="block-head"><div><h2 id="pos-title">Positions</h2><p>Select a column heading to sort.</p></div></div>
+    <div class="table-scroll">
+      <table class="data" id="positions">
+        <thead><tr>
+          <th class="l" data-sort>Ticker</th><th class="l" data-sort>Sector</th><th data-sort>Shares</th>
+          <th data-sort>Avg cost</th><th data-sort>Price</th><th data-sort>Market value</th><th data-sort>Weight</th>
+          <th data-sort>Unrealised P&amp;L</th><th data-sort>Today</th><th data-sort>Contribution</th>
+        </tr></thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+    <p class="chart-empty" id="positions-empty" hidden>The fund is fully in cash. Positions appear here after the first trade is synced from MarketWatch.</p>
+  </section>
+
+  <section class="block wrap" aria-labelledby="wf-title" id="wf-block">
+    <div class="block-head"><div><h2 id="wf-title">What moved the fund</h2><p>From the starting capital to today's value: how much each position added or took away, including positions we have closed.</p></div></div>
+    <div id="waterfall" class="viz" role="img" aria-label="Waterfall chart of each position's contribution to the fund value. The same figures are in the Contribution column of the positions table."></div>
+  </section>
+
+  <section class="block wrap cols-3">
+    <div><div class="block-head"><h2>By sector</h2></div><ul class="bar-list" id="exp-sector"></ul></div>
+    <div><div class="block-head"><h2>By country</h2></div><ul class="bar-list" id="exp-country"></ul></div>
+    <div><div class="block-head"><h2>By asset class</h2></div><ul class="bar-list" id="exp-asset"></ul></div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="tgt-title">
+    <div class="block-head"><div><h2 id="tgt-title">Target weights and rebalancing</h2>
+      <p id="tgt-intro"></p></div></div>
+    <p class="placeholder-flag" id="tgt-placeholder" hidden>These target weights are invented for the demo. The real ones go in <code>content/targets.json</code>.</p>
+    <div class="table-scroll">
+      <table class="data" id="targets">
+        <thead><tr><th class="l">Ticker</th><th>Actual</th><th>Target</th><th>Difference</th><th class="l">Proposed trade</th><th>Shares</th><th>Approx. value</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="real-title" id="realized-block" hidden>
+    <div class="block-head"><h2 id="real-title">Closed positions</h2></div>
+    <div class="table-scroll">
+      <table class="data" id="realized">
+        <thead><tr><th class="l">Ticker</th><th class="l">Name</th><th>Realised P&amp;L</th><th>Contribution</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="log-title">
+    <div class="block-head"><div><h2 id="log-title">Trade log</h2><p>Every trade with the reason we made it and who approved it.</p></div></div>
+    <div class="table-scroll">
+      <table class="data" id="trades">
+        <thead><tr><th class="l">Date</th><th class="l">Ticker</th><th class="l">Side</th><th>Shares</th><th>Price</th><th>Amount</th><th class="l">Rationale</th><th class="l">Approved by</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="chart-empty" id="trades-empty" hidden>No trades yet.</p>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/viz.js"></script>
+<script src="assets/js/portfolio.js"></script>
+</body>
+</html>

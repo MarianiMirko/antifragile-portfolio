@@ -1,0 +1,92 @@
+{
+ "NVDA": {
+  "name": "NVIDIA Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "MSFT": {
+  "name": "Microsoft Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AAPL": {
+  "name": "Apple Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "ASML": {
+  "name": "ASML Holding N.V.",
+  "sector": "Technology",
+  "country": "Netherlands",
+  "asset_class": "Equity"
+ },
+ "TSM": {
+  "name": "Taiwan Semiconductor Manufacturing",
+  "sector": "Technology",
+  "country": "Taiwan",
+  "asset_class": "Equity"
+ },
+ "JPM": {
+  "name": "JPMorgan Chase & Co.",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "UNH": {
+  "name": "UnitedHealth Group",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "NVO": {
+  "name": "Novo Nordisk A/S",
+  "sector": "Healthcare",
+  "country": "Denmark",
+  "asset_class": "Equity"
+ },
+ "XOM": {
+  "name": "Exxon Mobil Corporation",
+  "sector": "Energy",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "CAT": {
+  "name": "Caterpillar Inc.",
+  "sector": "Industrials",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "PG": {
+  "name": "Procter & Gamble",
+  "sector": "Consumer Defensive",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "LIN": {
+  "name": "Linde plc",
+  "sector": "Basic Materials",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "GLD": {
+  "name": "SPDR Gold Shares",
+  "sector": "Funds & ETFs",
+  "country": "Global",
+  "asset_class": "Gold ETF"
+ },
+ "DIS": {
+  "name": "The Walt Disney Company",
+  "sector": "Communication Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "SPY": {
+  "name": "SPDR S&P 500 ETF",
+  "sector": "Funds & ETFs",
+  "country": "United States",
+  "asset_class": "ETF"
+ }
+}

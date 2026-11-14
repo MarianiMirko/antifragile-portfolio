@@ -1,0 +1,13 @@
+{
+ "generated_at": "2026-11-14T17:05:39.988725+00:00",
+ "models": [
+  {
+   "id": "ewma_volatility",
+   "title": "EWMA volatility forecast",
+   "error": null,
+   "author": "Example",
+   "description": "Needs price history and at least one position.",
+   "metrics": []
+  }
+ ]
+}

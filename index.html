@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2311264A%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%272%27/%3E%3C/svg%3E">
+<title>Overview</title>
+<meta name="description" content="Live value, performance and risk rules of our student-managed fund.">
+</head>
+<body>
+<main>
+  <section class="hero wrap" aria-labelledby="hero-label">
+    <p class="hero-label" id="hero-label">Market value of the fund</p>
+    <p class="hero-value"><span id="nav-value">–</span><span class="hero-ccy">USD</span></p>
+    <div class="hero-changes" id="hero-changes"></div>
+    <p class="updated" id="updated"></p>
+    <dl class="kpis" id="kpis"></dl>
+  </section>
+
+  <section class="block wrap" aria-labelledby="chart-title">
+    <div class="block-head">
+      <h2 id="chart-title">Fund value over time</h2>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Candle size">
+          <button type="button" data-tf="1h" aria-pressed="true">Hourly</button>
+          <button type="button" data-tf="1d" aria-pressed="false">Daily</button>
+        </div>
+        <div class="seg" role="group" aria-label="Candle colours">
+          <button type="button" data-style="colour" aria-pressed="true">Green and red</button>
+          <button type="button" data-style="mono" aria-pressed="false">Black and white</button>
+        </div>
+        <label class="check"><input type="checkbox" id="bench-toggle" checked><span class="swatch" aria-hidden="true"></span><span id="bench-label">Benchmark</span></label>
+      </div>
+    </div>
+    <div class="chart-readout" id="chart-readout" aria-live="off"></div>
+    <div class="chart-box" id="nav-chart" role="img" aria-label="Candlestick chart of the fund value"></div>
+  </section>
+
+  <section class="block wrap cols-2">
+    <div>
+      <div class="block-head"><h2>From the portfolio manager</h2></div>
+      <div class="pm-note" id="pm-note"></div>
+    </div>
+    <div>
+      <div class="block-head"><h2>Rules and alerts</h2><a href="philosophy.html#rules">All rules</a></div>
+      <p class="rules-score" id="rules-score"></p>
+      <ul class="alert-list" id="alerts"></ul>
+    </div>
+  </section>
+
+  <section class="block wrap cols-2">
+    <div>
+      <div class="block-head"><h2>Largest holdings</h2><a href="portfolio.html">All positions</a></div>
+      <ol class="bar-list" id="top-holdings"></ol>
+    </div>
+    <div>
+      <div class="block-head"><h2>Sector exposure</h2></div>
+      <ul class="bar-list" id="sectors"></ul>
+      <p class="legend-note" id="sector-limit-note"></p>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/overview.js"></script>
+</body>
+</html>

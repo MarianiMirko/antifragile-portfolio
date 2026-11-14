@@ -1,0 +1,91 @@
+{
+ "generated_at": "2026-11-14T17:05:39.988725+00:00",
+ "alerts": [
+  {
+   "severity": "warning",
+   "title": "Cash above the maximum",
+   "message": "Cash is 100.0%; the maximum is 20%.",
+   "ticker": null
+  },
+  {
+   "severity": "warning",
+   "title": "Number of positions outside the range",
+   "message": "The fund holds 0 positions; the range is 10 to 20.",
+   "ticker": null
+  },
+  {
+   "severity": "warning",
+   "title": "Prices are not up to date",
+   "message": "The price download failed, so the site shows the last prices read from MarketWatch.",
+   "ticker": null
+  }
+ ],
+ "rules": [
+  {
+   "id": "position",
+   "rule": "Largest single position",
+   "limit": "at most 10%",
+   "current": "no positions",
+   "status": "ok"
+  },
+  {
+   "id": "sector",
+   "rule": "Largest sector",
+   "limit": "at most 30%",
+   "current": "no positions",
+   "status": "ok"
+  },
+  {
+   "id": "cash",
+   "rule": "Cash",
+   "limit": "2% to 20%",
+   "current": "100.0%",
+   "status": "warning"
+  },
+  {
+   "id": "count",
+   "rule": "Number of positions",
+   "limit": "10 to 20",
+   "current": "0",
+   "status": "warning"
+  },
+  {
+   "id": "stop",
+   "rule": "Stop-loss",
+   "limit": "sell at -15% from average cost",
+   "current": "no positions",
+   "status": "ok"
+  },
+  {
+   "id": "var",
+   "rule": "One-day 95% VaR",
+   "limit": "at most 2.5%",
+   "current": "not available yet",
+   "status": "ok"
+  },
+  {
+   "id": "margin",
+   "rule": "Borrowing (margin)",
+   "limit": "not allowed",
+   "current": "none",
+   "status": "ok"
+  },
+  {
+   "id": "short",
+   "rule": "Short positions",
+   "limit": "not allowed",
+   "current": "none",
+   "status": "ok"
+  },
+  {
+   "id": "drift",
+   "rule": "Drift from target weight",
+   "limit": "rebalance beyond 1%",
+   "current": "no targets set",
+   "status": "ok"
+  }
+ ],
+ "rules_are_placeholder": true,
+ "rules_ok": 7,
+ "rules_total": 9
+}

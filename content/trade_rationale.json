@@ -1,0 +1,9 @@
+{
+  "note": "One entry per trade. Match the trade by date (YYYY-MM-DD), ticker and side. Shown in the trade log on the Portfolio page.",
+  "rationales": [
+    { "date": "2026-10-05", "ticker": "NVDA", "side": "buy", "rationale": "Core AI-capex holding. Sized at target weight; thesis and target price in Research.", "approved_by": "Mirko" },
+    { "date": "2026-10-05", "ticker": "GLD", "side": "buy", "rationale": "Antifragile sleeve: gold as a hedge against equity drawdowns and policy shocks.", "approved_by": "Mirko" },
+    { "date": "2026-10-21", "ticker": "DIS", "side": "sell", "rationale": "Thesis broken after guidance cut; exited in full rather than wait for the stop-loss.", "approved_by": "Mirko" },
+    { "date": "2026-10-21", "ticker": "LIN", "side": "buy", "rationale": "Replaces DIS: defensive pricing power, low correlation with our technology holdings.", "approved_by": "Mirko" }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+ "note": "Demo data, same format the MarketWatch sync writes to data/holdings.json",
+ "as_of": "2026-11-13T21:00:00+00:00",
+ "source": "demo",
+ "net_worth": 10244453.1,
+ "cash": 561703.1,
+ "buying_power": null,
+ "cash_borrowed": 0,
+ "short_reserve": 0,
+ "rank": null,
+ "positions": [
+  {
+   "ticker": "JPM",
+   "name": "JPMorgan Chase & Co.",
+   "shares": 3410.0,
+   "avg_cost": 263.8,
+   "last_price": 305.0
+  },
+  {
+   "ticker": "XOM",
+   "name": "Exxon Mobil Corporation",
+   "shares": 8110.0,
+   "avg_cost": 110.9612,
+   "last_price": 117.0
+  },
+  {
+   "ticker": "CAT",
+   "name": "Caterpillar Inc.",
+   "shares": 1700.0,
+   "avg_cost": 471.71,
+   "last_price": 548.0
+  },
+  {
+   "ticker": "GLD",
+   "name": "SPDR Gold Shares",
+   "shares": 2210.0,
+   "avg_cost": 408.13,
+   "last_price": 392.0
+  },
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA Corporation",
+   "shares": 4750.0,
+   "avg_cost": 147.37,
+   "last_price": 182.0
+  },
+  {
+   "ticker": "PG",
+   "name": "Procter & Gamble",
+   "shares": 5110.0,
+   "avg_cost": 156.6,
+   "last_price": 151.0
+  },
+  {
+   "ticker": "MSFT",
+   "name": "Microsoft Corporation",
+   "shares": 1380.0,
+   "avg_cost": 505.64,
+   "last_price": 512.0
+  },
+  {
+   "ticker": "LIN",
+   "name": "Linde plc",
+   "shares": 1530.0,
+   "avg_cost": 458.84,
+   "last_price": 452.0
+  },
+  {
+   "ticker": "AAPL",
+   "name": "Apple Inc.",
+   "shares": 2370.0,
+   "avg_cost": 252.93,
+   "last_price": 268.0
+  },
+  {
+   "ticker": "UNH",
+   "name": "UnitedHealth Group",
+   "shares": 1740.0,
+   "avg_cost": 460.46,
+   "last_price": 342.0
+  },
+  {
+   "ticker": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing",
+   "shares": 1870.0,
+   "avg_cost": 266.8,
+   "last_price": 298.0
+  },
+  {
+   "ticker": "ASML",
+   "name": "ASML Holding N.V.",
+   "shares": 560.0,
+   "avg_cost": 890.1,
+   "last_price": 985.0
+  },
+  {
+   "ticker": "NVO",
+   "name": "Novo Nordisk A/S",
+   "shares": 9010.0,
+   "avg_cost": 66.6,
+   "last_price": 58.0
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "fundamental": [
+  "ASML.md",
+  "MSFT.md",
+  "XOM.md"
+ ],
+ "macro": [
+  "2026-11-03-earnings.md",
+  "2026-11-10-regime.md"
+ ],
+ "backtest": [
+  "momentum-quality.md"
+ ]
+}
