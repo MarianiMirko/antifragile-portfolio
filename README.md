@@ -29,7 +29,9 @@ MarketWatch (login needed)          Yahoo Finance prices            The team
   figures do not wait for them; a page calls `await App.libs` just before the first thing that needs
   a library. ECharts, the largest file, loads in the background and its charts are drawn when it
   arrives (`assets/js/viz.js`). `config/fund.json` is kept for five minutes per browser tab, so a
-  change to it can take a few minutes to show.
+  change to it can take a few minutes to show. The pages load our scripts and the stylesheet with a version
+  number (`app.js?v=2`): **raise it in every page when a script or the stylesheet changes in a way the
+  pages depend on**, otherwise a visitor can get a new page with an old script for up to ten minutes.
 - **Prices update without anyone's computer.** `.github/workflows/update.yml` runs every hour while
   the US market is open (14:35 to 20:35 UTC) and once after the close, Monday to Friday.
 - **Positions come from MarketWatch**, which needs a login, so a Claude scheduled task reads them in
