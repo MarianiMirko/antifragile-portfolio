@@ -92,7 +92,7 @@ const App = (() => {
         <nav class="site-nav" aria-label="Main">${links}</nav>
       </div>`;
     document.body.prepend(header);
-    if (c.demo_mode) {
+    if (c.demo_mode && current !== "private.html") {
       const b = document.createElement("div");
       b.className = "demo-banner";
       b.innerHTML = `<div class="wrap"><strong>Demo data.</strong> The portfolio, prices and notes shown here are invented to show how the site works. They are not the fund's real holdings.</div>`;
