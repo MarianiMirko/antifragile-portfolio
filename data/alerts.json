@@ -1,59 +1,173 @@
 {
- "generated_at": "2026-11-15T12:39:48.362884+00:00",
+ "generated_at": "2026-11-15T17:30:28.133339+00:00",
  "alerts": [
   {
    "severity": "warning",
    "title": "Cash above the maximum",
-   "message": "Cash is 100.0%; the maximum is 20%.",
+   "message": "Cash is 100.0%; the maximum is 60%.",
    "ticker": null
   },
   {
    "severity": "warning",
    "title": "Number of positions outside the range",
-   "message": "The fund holds 0 positions; the range is 10 to 20.",
+   "message": "The fund holds 0 positions; the range is 40 to 60.",
    "ticker": null
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MSFT: buy 2,100 shares",
+   "message": "MSFT is 11.0% below its 11.0% target (threshold 1.0%). Proposed: buy 2,100 shares (about $1,101,051).",
+   "ticker": "MSFT"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AAPL: buy 2,717 shares",
+   "message": "AAPL is 9.7% below its 9.7% target (threshold 1.0%). Proposed: buy 2,717 shares (about $968,339).",
+   "ticker": "AAPL"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance GOOGL: buy 3,263 shares",
+   "message": "GOOGL is 9.7% below its 9.7% target (threshold 1.0%). Proposed: buy 3,263 shares (about $965,163).",
+   "ticker": "GOOGL"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AMZN: buy 3,247 shares",
+   "message": "AMZN is 8.7% below its 8.7% target (threshold 1.0%). Proposed: buy 3,247 shares (about $865,683).",
+   "ticker": "AMZN"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance META: buy 984 shares",
+   "message": "META is 6.3% below its 6.3% target (threshold 1.0%). Proposed: buy 984 shares (about $631,718).",
+   "ticker": "META"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AMD: buy 1,036 shares",
+   "message": "AMD is 5.5% below its 5.5% target (threshold 1.0%). Proposed: buy 1,036 shares (about $553,317).",
+   "ticker": "AMD"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance PLTR: buy 2,672 shares",
+   "message": "PLTR is 4.5% below its 4.5% target (threshold 1.0%). Proposed: buy 2,672 shares (about $448,843).",
+   "ticker": "PLTR"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance ASML: buy 250 shares",
+   "message": "ASML is 3.8% below its 3.8% target (threshold 1.0%). Proposed: buy 250 shares (about $373,700).",
+   "ticker": "ASML"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance BABA: buy 3,972 shares",
+   "message": "BABA is 3.8% below its 3.8% target (threshold 1.0%). Proposed: buy 3,972 shares (about $374,917).",
+   "ticker": "BABA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AVGO: buy 935 shares",
+   "message": "AVGO is 3.2% below its 3.2% target (threshold 1.0%). Proposed: buy 935 shares (about $324,090).",
+   "ticker": "AVGO"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance LLY: buy 147 shares",
+   "message": "LLY is 2.1% below its 2.1% target (threshold 1.0%). Proposed: buy 147 shares (about $212,358).",
+   "ticker": "LLY"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance TSLA: buy 536 shares",
+   "message": "TSLA is 2.1% below its 2.1% target (threshold 1.0%). Proposed: buy 536 shares (about $209,115).",
+   "ticker": "TSLA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance BRK.B: buy 346 shares",
+   "message": "BRK.B is 2.1% below its 2.1% target (threshold 1.0%). Proposed: buy 346 shares (about $205,220).",
+   "ticker": "BRK.B"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance JPM: buy 492 shares",
+   "message": "JPM is 1.7% below its 1.7% target (threshold 1.0%). Proposed: buy 492 shares (about $170,389).",
+   "ticker": "JPM"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 216 shares",
+   "message": "MU is 1.7% below its 1.7% target (threshold 1.0%). Proposed: buy 216 shares (about $168,134).",
+   "ticker": "MU"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance V: buy 314 shares",
+   "message": "V is 1.3% below its 1.3% target (threshold 1.0%). Proposed: buy 314 shares (about $133,717).",
+   "ticker": "V"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance XOM: buy 764 shares",
+   "message": "XOM is 1.3% below its 1.3% target (threshold 1.0%). Proposed: buy 764 shares (about $130,354).",
+   "ticker": "XOM"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance JNJ: buy 446 shares",
+   "message": "JNJ is 1.3% below its 1.3% target (threshold 1.0%). Proposed: buy 446 shares (about $127,581).",
+   "ticker": "JNJ"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance WMT: buy 820 shares",
+   "message": "WMT is 1.1% below its 1.1% target (threshold 1.0%). Proposed: buy 820 shares (about $105,067).",
+   "ticker": "WMT"
   }
  ],
  "rules": [
   {
    "id": "position",
    "rule": "Largest single position",
-   "limit": "at most 10%",
+   "limit": "at most 15%",
    "current": "no positions",
    "status": "ok"
   },
   {
    "id": "sector",
    "rule": "Largest sector",
-   "limit": "at most 30%",
+   "limit": "at most 60%",
    "current": "no positions",
    "status": "ok"
   },
   {
    "id": "cash",
    "rule": "Cash",
-   "limit": "2% to 20%",
+   "limit": "0% to 60%",
    "current": "100.0%",
    "status": "warning"
   },
   {
    "id": "count",
    "rule": "Number of positions",
-   "limit": "10 to 20",
+   "limit": "40 to 60",
    "current": "0",
    "status": "warning"
   },
   {
    "id": "stop",
    "rule": "Stop-loss",
-   "limit": "sell at -15% from average cost",
+   "limit": "sell at -30% from average cost",
    "current": "no positions",
    "status": "ok"
   },
   {
    "id": "var",
    "rule": "One-day 95% VaR",
-   "limit": "at most 2.5%",
+   "limit": "at most 4.1%",
    "current": "not available yet",
    "status": "ok"
   },
@@ -75,11 +189,11 @@
    "id": "drift",
    "rule": "Drift from target weight",
    "limit": "rebalance beyond 1%",
-   "current": "no targets set",
-   "status": "ok"
+   "current": "largest is -11.0 pts (MSFT)",
+   "status": "warning"
   }
  ],
- "rules_are_placeholder": true,
- "rules_ok": 7,
+ "rules_are_placeholder": false,
+ "rules_ok": 6,
  "rules_total": 9
 }

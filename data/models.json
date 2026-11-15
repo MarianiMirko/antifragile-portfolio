@@ -1,6 +1,14 @@
 {
- "generated_at": "2026-11-15T12:39:48.362884+00:00",
+ "generated_at": "2026-11-15T17:30:28.133339+00:00",
  "models": [
+  {
+   "id": "allocation_plan",
+   "title": "Allocation plan: S&P 500 replica and IPO sleeve",
+   "error": null,
+   "author": "Lorenzo, with the replica study by Riccardo",
+   "description": "The model did not complete its last run (SystemExit: Download failed for INTC. Nothing is simulated in its place. Retry, or run with 'frozen'.). The figures below are from its previous run.",
+   "metrics": []
+  },
   {
    "id": "ewma_volatility",
    "title": "EWMA volatility forecast",

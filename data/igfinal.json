@@ -1,0 +1,5 @@
+{
+ "status": "error",
+ "message": "The model did not complete its last run (SystemExit: Download failed for INTC. Nothing is simulated in its place. Retry, or run with 'frozen'.). The figures below are from its previous run.",
+ "checked_at": "2026-11-15T17:30:20+00:00"
+}

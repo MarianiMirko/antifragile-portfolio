@@ -76,5 +76,263 @@
   "sector": "Unclassified",
   "country": "Unknown",
   "asset_class": "Equity"
+ },
+ "GOOGL": {
+  "name": "Alphabet Inc.",
+  "sector": "Communication Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AMZN": {
+  "name": "Amazon.com, Inc.",
+  "sector": "Consumer Cyclical",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AVGO": {
+  "name": "Broadcom Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "META": {
+  "name": "Meta Platforms, Inc.",
+  "sector": "Communication Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "LLY": {
+  "name": "Eli Lilly and Company",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "TSLA": {
+  "name": "Tesla, Inc.",
+  "sector": "Consumer Cyclical",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "BRK.B": {
+  "name": "Berkshire Hathaway Inc.",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AMD": {
+  "name": "Advanced Micro Devices, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "MU": {
+  "name": "Micron Technology, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "V": {
+  "name": "Visa Inc.",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "JNJ": {
+  "name": "Johnson & Johnson",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "WMT": {
+  "name": "Walmart Inc.",
+  "sector": "Consumer Defensive",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "MA": {
+  "name": "Mastercard Incorporated",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "ABBV": {
+  "name": "AbbVie Inc.",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "COST": {
+  "name": "Costco Wholesale Corporation",
+  "sector": "Consumer Defensive",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "CVX": {
+  "name": "Chevron Corporation",
+  "sector": "Energy",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "CSCO": {
+  "name": "Cisco Systems, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "PLTR": {
+  "name": "Palantir Technologies Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "KO": {
+  "name": "The Coca-Cola Company",
+  "sector": "Consumer Defensive",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "MRK": {
+  "name": "Merck & Co., Inc.",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "HD": {
+  "name": "The Home Depot, Inc.",
+  "sector": "Consumer Cyclical",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "GE": {
+  "name": "GE Aerospace",
+  "sector": "Industrials",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "BAC": {
+  "name": "Bank of America Corporation",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "PM": {
+  "name": "Philip Morris International Inc.",
+  "sector": "Consumer Defensive",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "INTC": {
+  "name": "Intel Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AMAT": {
+  "name": "Applied Materials, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "LRCX": {
+  "name": "Lam Research Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "TXN": {
+  "name": "Texas Instruments Incorporated",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "RTX": {
+  "name": "RTX Corporation",
+  "sector": "Industrials",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "GS": {
+  "name": "The Goldman Sachs Group, Inc.",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "PANW": {
+  "name": "Palo Alto Networks, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "NFLX": {
+  "name": "Netflix, Inc.",
+  "sector": "Communication Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "WFC": {
+  "name": "Wells Fargo & Company",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "TMO": {
+  "name": "Thermo Fisher Scientific Inc.",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "AMGN": {
+  "name": "Amgen Inc.",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "ORCL": {
+  "name": "Oracle Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "CRWD": {
+  "name": "CrowdStrike Holdings, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "IBM": {
+  "name": "International Business Machines Corporation",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "MS": {
+  "name": "Morgan Stanley",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "GEV": {
+  "name": "GE Vernova Inc.",
+  "sector": "Industrials",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "ANET": {
+  "name": "Arista Networks, Inc.",
+  "sector": "Technology",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "GILD": {
+  "name": "Gilead Sciences, Inc.",
+  "sector": "Healthcare",
+  "country": "United States",
+  "asset_class": "Equity"
+ },
+ "BABA": {
+  "name": "Alibaba Group Holding Limited",
+  "sector": "Consumer Cyclical",
+  "country": "China",
+  "asset_class": "Equity"
  }
 }
