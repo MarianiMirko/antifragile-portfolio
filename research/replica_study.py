@@ -210,6 +210,19 @@ def main():
     eq.to_csv(K.RESULTS / "replica_A50x_curve.csv")
     pd.DataFrame({k: v for k, v in last_weights.items() if k in ("A50x", "M50x", "B50x", "S50x", "C50x")}).round(5).to_csv(K.RESULTS / "replica_latest_weights.csv")
 
+    # the portfolios one would buy today (last price in the database), and how each spreads over the sectors
+    c = cap.iloc[-1].dropna(); c = c[px.iloc[-253][c.index].notna()]; w = c / c.sum(); wx = w.drop(labels=[t for t in EXCLUDE if t in w.index])
+    a = wx.sort_values(ascending=False).head(50); a = a / a.sum(); sx = stratified(w, sectors, 50, EXCLUDE)
+    today = pd.DataFrame({"sector": sectors.reindex(w.index), "index_weight": w, "A50x": a, "S50x": sx})
+    today = today[today[["A50x", "S50x"]].notna().any(axis=1)].sort_values("index_weight", ascending=False)
+    today.index.name = "ticker"; today.round(5).to_csv(K.RESULTS / "replica_today.csv")
+    sec_tab = pd.DataFrame({"index": w.groupby(sectors.reindex(w.index)).sum(), "A50x": a.groupby(sectors.reindex(a.index)).sum(),
+                            "S50x": sx.groupby(sectors.reindex(sx.index)).sum()}).fillna(0).sort_values("index", ascending=False)
+    sec_tab.index.name = "sector"; sec_tab.round(4).to_csv(K.RESULTS / "replica_sectors_today.csv")
+    K.log("\nSector weights today (index | 50 largest ex NVDA | 50 spread over sectors):")
+    for r in sec_tab.itertuples():
+        K.log(f"  {r.Index:26s} {100 * r.index:5.1f}%  {100 * r.A50x:5.1f}%  {100 * r.S50x:5.1f}%")
+
     cols = ["names", "beta", "beta_year_min", "beta_year_max", "te", "month_gap_p05", "month_gap_p95", "month_gap_beyond_1pt", "gap_when_index_up_3"]
     K.log("\n" + f"{'method':8s} names  beta  [yr min..max]   TE    month gap 5%..95%   >1pt   gap when index >+3%")
     for name, s in out.items():
