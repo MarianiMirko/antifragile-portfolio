@@ -31,6 +31,18 @@ XETRA_FILES = [
     "https://www.cashmarket.deutsche-boerse.com/resource/blob/1528/latest/data/t7-xetr-allTradableInstruments.csv",
 ]
 MIN_ASSETS = 1_000_000_000
+# Fund size comes in the fund's own currency. Euro and dollar funds are compared with 1 billion as they are;
+# share classes in the currencies below are converted to euros first (rough rates, only the order of magnitude matters).
+FX_TO_EUR = {"JPY": 0.0055, "KRW": 0.0006, "INR": 0.010, "HUF": 0.0025, "CZK": 0.040, "SEK": 0.090, "NOK": 0.085,
+             "DKK": 0.134, "CNY": 0.120, "CNH": 0.120, "MXN": 0.045, "PLN": 0.230}
+
+
+def size_in_euros(item):
+    words = set(str(item.get("long_name") or "").upper().replace("(", " ").replace(")", " ").split())
+    for code, rate in FX_TO_EUR.items():
+        if code in words:
+            return item["assets"] * rate
+    return item["assets"]
 MAX_TOTAL_ROWS = 6_400_000        # all price rows in the database, stocks included (about 430 MB)
 BATCH_TICKERS = 40
 CHUNK_ROWS = 5000
@@ -145,6 +157,8 @@ def main():
     with ThreadPoolExecutor(max_workers=6) as pool:
         sized = list(pool.map(fund_size, universe))
     have = [s for s in sized if s["assets"]]
+    for s in have:
+        s["assets"] = size_in_euros(s)
     big = sorted([s for s in have if s["assets"] >= MIN_ASSETS], key=lambda s: -s["assets"])
     print(f"fund size found for {len(have):,} of {len(sized):,}; {len(big):,} have at least 1 billion")
     if len(have) < 0.3 * len(sized):

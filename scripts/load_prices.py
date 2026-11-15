@@ -11,9 +11,9 @@ Needs two environment variables:
   python scripts/load_prices.py --days 15              only the latest days (weekly refresh)
 
 Prices are closing prices adjusted for splits and dividends, from Yahoo Finance.
-Only companies that are in the index today are included: companies that left the
-index or were delisted are missing, so long backtests on this data look better
-than reality (survivorship bias).
+Only companies that are still listed are kept: a stock with no price in the last
+10 days is removed from the database, history included. Long backtests on this data
+therefore look better than reality (survivorship bias).
 """
 import argparse
 import io
@@ -63,19 +63,25 @@ def main():
 
     # securities: keep the ids already in the database, give new tickers the next free id
     comp = constituents()
-    known = {r["ticker"]: r["id"] for r in with_retry(lambda: db.table("securities").select("id,ticker").execute()).data}
+    existing = with_retry(lambda: db.table("securities").select("id,ticker,asset_class").execute()).data
+    known = {r["ticker"]: r["id"] for r in existing}
+    us_in_db = {r["ticker"]: r["id"] for r in existing if r.get("asset_class") == "US stock"}
     next_id = max(known.values(), default=0) + 1
     rows = []
     for r in comp.itertuples():
         if r.ticker not in known:
             known[r.ticker] = next_id
             next_id += 1
-        rows.append({"id": known[r.ticker], "ticker": r.ticker, "name": r.name, "sector": r.sector, "industry": r.industry})
+        rows.append({"id": known[r.ticker], "ticker": r.ticker, "name": r.name, "sector": r.sector, "industry": r.industry,
+                     "asset_class": "US stock", "currency": "USD"})
     with_retry(lambda: db.table("securities").upsert(rows, on_conflict="id").execute())
     print(f"{len(rows)} securities, loading prices from {start}")
 
     total = 0
-    tickers = list(comp["ticker"])
+    # also refresh stocks already in the database that have left the index, so we can tell
+    # "left the index but still listed" (kept) from "no longer listed" (removed below)
+    tickers = sorted(set(comp["ticker"]) | set(us_in_db))
+    last_seen = {}
     for i in range(0, len(tickers), BATCH_TICKERS):
         batch = tickers[i:i + BATCH_TICKERS]
         symbols = {t: t.replace(".", "-") for t in batch}
@@ -107,9 +113,24 @@ def main():
         else:
             for sid, _first, last in stats:
                 with_retry(lambda: db.table("securities").update({"last_date": last}).eq("id", sid).execute())
+        for sid, _first, last in stats:
+            last_seen[sid] = last
         total += len(payload)
         print(f"  {min(i + BATCH_TICKERS, len(tickers))}/{len(tickers)} tickers, {total:,} rows so far", flush=True)
         time.sleep(1)
+    # keep only stocks that are still listed: a stock with no price in the last 10 days is removed
+    if last_seen:
+        newest = pd.Timestamp(max(last_seen.values()))
+        us_ids = {known[t]: t for t in tickers}
+        gone = [(sid, t) for sid, t in us_ids.items()
+                if sid not in last_seen or pd.Timestamp(last_seen[sid]) < newest - pd.Timedelta(days=10)]
+        if len(gone) > 25:
+            print(f"{len(gone)} stocks look delisted at once, which is more likely a download problem: nothing removed", file=sys.stderr)
+        else:
+            for sid, t in gone:
+                with_retry(lambda: db.table("prices_daily").delete().eq("security_id", sid).execute())
+                with_retry(lambda: db.table("securities").delete().eq("id", sid).execute())
+                print(f"  removed {t}: no longer listed")
     print(f"done: {total:,} price rows")
 
 
