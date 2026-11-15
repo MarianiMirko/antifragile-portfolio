@@ -1,0 +1,41 @@
+ipo,ipo_ticker,first_trading_day,friend,tier,link
+VMware,VMW,2007-08-14,INTC,1,Bought a $218.5m stake a month before the IPO
+VMware,VMW,2007-08-14,CSCO,1,Bought a $150m stake a month before the IPO
+Facebook,FB,2012-05-18,MSFT,2,Held 1.6% since 2007 and was its advertising partner
+Snap,SNAP,2017-03-02,CMCSA,1,NBCUniversal bought $500m of shares in the IPO
+Snap,SNAP,2017-03-02,GOOGL,2,CapitalG investor and $2bn cloud contract
+Dropbox,DBX,2018-03-23,CRM,1,Bought $100m of shares in a placement tied to the IPO
+Lyft,LYFT,2019-03-29,GOOGL,1,CapitalG held about 5%
+Lyft,LYFT,2019-03-29,GM,1,Held about 8%
+Zoom,ZM,2019-04-18,CRM,1,Bought $100m of shares in a placement tied to the IPO
+Uber,UBER,2019-05-10,GOOGL,1,Held about 5%
+Uber,UBER,2019-05-10,PYPL,1,Bought $500m of shares in a placement tied to the IPO
+CrowdStrike,CRWD,2019-06-12,GOOGL,1,CapitalG held 11.1% before the offering
+Snowflake,SNOW,2020-09-16,CRM,1,Bought $250m of shares in a placement tied to the IPO
+Snowflake,SNOW,2020-09-16,BRK-B,1,Bought $250m in a placement tied to the IPO plus shares from a holder
+C3.ai,AI,2020-12-09,MSFT,1,Bought $50m of shares in a placement tied to the IPO
+C3.ai,AI,2020-12-09,BKR,1,Baker Hughes was a large shareholder and its main commercial partner
+Didi,DIDI,2021-06-30,UBER,1,Held 12.8%
+Rivian,RIVN,2021-11-10,AMZN,1,Held about 20% and had ordered 100000 vans
+Rivian,RIVN,2021-11-10,F,1,Held about 12%
+Nubank,NU,2021-12-09,BRK-B,2,Invested $750m in the year of the IPO
+Mobileye,MBLY,2022-10-26,INTC,1,Parent company
+Arm,ARM,2023-09-14,AAPL,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,AMD,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,CDNS,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,GOOGL,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,INTC,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,NVDA,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,SNPS,1,Cornerstone investor named in the prospectus
+Arm,ARM,2023-09-14,TSM,1,Cornerstone investor named in the prospectus
+Instacart,CART,2023-09-19,PEP,1,Bought $175m of preferred shares in a placement tied to the IPO
+Reddit,RDDT,2024-03-21,GOOGL,2,Data-licensing partner ($60m a year)
+Rubrik,RBRK,2024-04-25,MSFT,2,Equity investor and cloud partner
+CoreWeave,CRWV,2025-03-28,NVDA,1,Held about 6% and anchored the IPO with a $250m order
+CoreWeave,CRWV,2025-03-28,MSFT,1,Customer behind 62% of revenue
+Circle,CRCL,2025-06-05,COIN,2,Shareholder and revenue-sharing partner
+Circle,CRCL,2025-06-05,BLK,2,Manages its reserves and was reported to seek 10% of the IPO
+Cerebras,CBRS,2026-05-14,AMD,2,Investor in the last private round
+SpaceX,SPCX,2026-06-12,GOOGL,1,Held 6.1% at the end of 2025 (about 5% after the xAI merger)
+SpaceX,SPCX,2026-06-12,TSLA,2,Held 19m shares; same controlling shareholder
+SpaceX,SPCX,2026-06-12,SATS,2,EchoStar received SpaceX shares for its spectrum
