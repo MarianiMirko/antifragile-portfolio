@@ -1,7 +1,8 @@
 {
- "generated_at": "2026-11-15T17:31:56.819058+00:00",
+ "generated_at": "2026-11-15T19:48:58.489670+00:00",
  "nav": 10000000.0,
  "drift_threshold": 0.01,
+ "min_order_value": 10000.0,
  "note": "Proposals only. No order is placed until the portfolio manager approves it.",
  "targets_are_placeholder": false,
  "table": [
@@ -128,10 +129,10 @@
    "weight": 0.0,
    "target_weight": 0.03242,
    "drift": -0.03242,
-   "price": 346.619995,
+   "price": 346.640015,
    "action": "buy",
    "shares": 935,
-   "est_value": 324089.695435,
+   "est_value": 324108.413696,
    "flag": true,
    "blocked": null
   },
@@ -262,7 +263,7 @@
    "action": "buy",
    "shares": 149,
    "est_value": 98535.189636,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -275,7 +276,7 @@
    "action": "buy",
    "shares": 329,
    "est_value": 97110.934418,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -288,7 +289,7 @@
    "action": "buy",
    "shares": 81,
    "est_value": 89619.212769,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -301,7 +302,7 @@
    "action": "buy",
    "shares": 363,
    "est_value": 79823.697784,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -314,7 +315,7 @@
    "action": "buy",
    "shares": 786,
    "est_value": 75173.03952,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -327,7 +328,7 @@
    "action": "buy",
    "shares": 429,
    "est_value": 72869.940262,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -340,7 +341,7 @@
    "action": "buy",
    "shares": 711,
    "est_value": 70580.967613,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -353,7 +354,7 @@
    "action": "buy",
    "shares": 166,
    "est_value": 67661.601013,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -366,7 +367,7 @@
    "action": "buy",
    "shares": 458,
    "est_value": 67683.239441,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -379,7 +380,7 @@
    "action": "buy",
    "shares": 186,
    "est_value": 64876.797729,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -392,7 +393,7 @@
    "action": "buy",
    "shares": 193,
    "est_value": 64043.187408,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -405,7 +406,7 @@
    "action": "buy",
    "shares": 1203,
    "est_value": 61365.027981,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -418,7 +419,7 @@
    "action": "buy",
    "shares": 287,
    "est_value": 57110.131577,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -427,11 +428,11 @@
    "weight": 0.0,
    "target_weight": 0.00569,
    "drift": -0.00569,
-   "price": 59.665001,
+   "price": 59.66,
    "action": "buy",
    "shares": 953,
-   "est_value": 56860.745872,
-   "flag": false,
+   "est_value": 56855.979855,
+   "flag": true,
    "blocked": null
   },
   {
@@ -444,7 +445,7 @@
    "action": "buy",
    "shares": 152,
    "est_value": 56278.0,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -457,7 +458,7 @@
    "action": "buy",
    "shares": 241,
    "est_value": 54444.310883,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -466,11 +467,11 @@
    "weight": 0.0,
    "target_weight": 0.00534,
    "drift": -0.00534,
-   "price": 303.679993,
+   "price": 303.649994,
    "action": "buy",
    "shares": 175,
-   "est_value": 53143.998718,
-   "flag": false,
+   "est_value": 53138.748932,
+   "flag": true,
    "blocked": null
   },
   {
@@ -483,7 +484,7 @@
    "action": "buy",
    "shares": 86,
    "est_value": 51612.04126,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -496,7 +497,7 @@
    "action": "buy",
    "shares": 251,
    "est_value": 49843.58046,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -509,7 +510,7 @@
    "action": "buy",
    "shares": 54,
    "est_value": 49481.010132,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -522,7 +523,7 @@
    "action": "buy",
    "shares": 152,
    "est_value": 48959.200928,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -531,11 +532,11 @@
    "weight": 0.0,
    "target_weight": 0.00488,
    "drift": -0.00488,
-   "price": 62.150002,
+   "price": 62.139999,
    "action": "buy",
    "shares": 785,
-   "est_value": 48787.751198,
-   "flag": false,
+   "est_value": 48779.899521,
+   "flag": true,
    "blocked": null
   },
   {
@@ -548,7 +549,7 @@
    "action": "buy",
    "shares": 563,
    "est_value": 48446.151718,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -561,7 +562,7 @@
    "action": "buy",
    "shares": 69,
    "est_value": 48324.148315,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -574,7 +575,7 @@
    "action": "buy",
    "shares": 101,
    "est_value": 47032.769989,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -587,7 +588,7 @@
    "action": "buy",
    "shares": 372,
    "est_value": 46646.938751,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -600,7 +601,7 @@
    "action": "buy",
    "shares": 85,
    "est_value": 44716.801453,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -613,7 +614,7 @@
    "action": "buy",
    "shares": 192,
    "est_value": 43509.120117,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -626,7 +627,7 @@
    "action": "buy",
    "shares": 174,
    "est_value": 43011.060425,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -639,7 +640,7 @@
    "action": "buy",
    "shares": 221,
    "est_value": 42138.069595,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -652,7 +653,7 @@
    "action": "buy",
    "shares": 50,
    "est_value": 40145.498657,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -665,7 +666,7 @@
    "action": "buy",
    "shares": 204,
    "est_value": 40257.359253,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -678,7 +679,7 @@
    "action": "buy",
    "shares": 232,
    "est_value": 38987.600708,
-   "flag": false,
+   "flag": true,
    "blocked": null
   },
   {
@@ -705,7 +706,7 @@
    "est_value": 1101050.994873,
    "flag": true,
    "blocked": null,
-   "reason": "MSFT is 11.0% below its 11.0% target (threshold 1.0%)."
+   "reason": "MSFT is 11.0% below its 11.0% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "AAPL",
@@ -719,7 +720,7 @@
    "est_value": 968338.783417,
    "flag": true,
    "blocked": null,
-   "reason": "AAPL is 9.7% below its 9.7% target (threshold 1.0%)."
+   "reason": "AAPL is 9.7% below its 9.7% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "GOOGL",
@@ -733,7 +734,7 @@
    "est_value": 965162.797882,
    "flag": true,
    "blocked": null,
-   "reason": "GOOGL is 9.7% below its 9.7% target (threshold 1.0%)."
+   "reason": "GOOGL is 9.7% below its 9.7% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "AMZN",
@@ -747,7 +748,7 @@
    "est_value": 865682.622437,
    "flag": true,
    "blocked": null,
-   "reason": "AMZN is 8.7% below its 8.7% target (threshold 1.0%)."
+   "reason": "AMZN is 8.7% below its 8.7% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "META",
@@ -761,7 +762,7 @@
    "est_value": 631718.150391,
    "flag": true,
    "blocked": null,
-   "reason": "META is 6.3% below its 6.3% target (threshold 1.0%)."
+   "reason": "META is 6.3% below its 6.3% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "AMD",
@@ -775,7 +776,7 @@
    "est_value": 553317.267822,
    "flag": true,
    "blocked": null,
-   "reason": "AMD is 5.5% below its 5.5% target (threshold 1.0%)."
+   "reason": "AMD is 5.5% below its 5.5% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "PLTR",
@@ -789,7 +790,7 @@
    "est_value": 448842.548584,
    "flag": true,
    "blocked": null,
-   "reason": "PLTR is 4.5% below its 4.5% target (threshold 1.0%)."
+   "reason": "PLTR is 4.5% below its 4.5% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "ASML",
@@ -803,7 +804,7 @@
    "est_value": 373700.012207,
    "flag": true,
    "blocked": null,
-   "reason": "ASML is 3.8% below its 3.8% target (threshold 1.0%)."
+   "reason": "ASML is 3.8% below its 3.8% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "BABA",
@@ -817,7 +818,7 @@
    "est_value": 374917.077576,
    "flag": true,
    "blocked": null,
-   "reason": "BABA is 3.8% below its 3.8% target (threshold 1.0%)."
+   "reason": "BABA is 3.8% below its 3.8% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "AVGO",
@@ -825,13 +826,13 @@
    "weight": 0.0,
    "target_weight": 0.03242,
    "drift": -0.03242,
-   "price": 346.619995,
+   "price": 346.640015,
    "action": "buy",
    "shares": 935,
-   "est_value": 324089.695435,
+   "est_value": 324108.413696,
    "flag": true,
    "blocked": null,
-   "reason": "AVGO is 3.2% below its 3.2% target (threshold 1.0%)."
+   "reason": "AVGO is 3.2% below its 3.2% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "LLY",
@@ -845,7 +846,7 @@
    "est_value": 212358.403564,
    "flag": true,
    "blocked": null,
-   "reason": "LLY is 2.1% below its 2.1% target (threshold 1.0%)."
+   "reason": "LLY is 2.1% below its 2.1% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "TSLA",
@@ -859,7 +860,7 @@
    "est_value": 209115.096924,
    "flag": true,
    "blocked": null,
-   "reason": "TSLA is 2.1% below its 2.1% target (threshold 1.0%)."
+   "reason": "TSLA is 2.1% below its 2.1% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "BRK.B",
@@ -873,7 +874,7 @@
    "est_value": 205219.518311,
    "flag": true,
    "blocked": null,
-   "reason": "BRK.B is 2.1% below its 2.1% target (threshold 1.0%)."
+   "reason": "BRK.B is 2.1% below its 2.1% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "JPM",
@@ -887,7 +888,7 @@
    "est_value": 170389.443604,
    "flag": true,
    "blocked": null,
-   "reason": "JPM is 1.7% below its 1.7% target (threshold 1.0%)."
+   "reason": "JPM is 1.7% below its 1.7% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "MU",
@@ -901,7 +902,7 @@
    "est_value": 168134.405273,
    "flag": true,
    "blocked": null,
-   "reason": "MU is 1.7% below its 1.7% target (threshold 1.0%)."
+   "reason": "MU is 1.7% below its 1.7% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "V",
@@ -915,7 +916,7 @@
    "est_value": 133716.901917,
    "flag": true,
    "blocked": null,
-   "reason": "V is 1.3% below its 1.3% target (threshold 1.0%)."
+   "reason": "V is 1.3% below its 1.3% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "XOM",
@@ -929,7 +930,7 @@
    "est_value": 130353.67627,
    "flag": true,
    "blocked": null,
-   "reason": "XOM is 1.3% below its 1.3% target (threshold 1.0%)."
+   "reason": "XOM is 1.3% below its 1.3% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "JNJ",
@@ -943,7 +944,7 @@
    "est_value": 127580.526733,
    "flag": true,
    "blocked": null,
-   "reason": "JNJ is 1.3% below its 1.3% target (threshold 1.0%)."
+   "reason": "JNJ is 1.3% below its 1.3% target (orders under $10,000 are skipped)."
   },
   {
    "ticker": "WMT",
@@ -957,7 +958,469 @@
    "est_value": 105066.604004,
    "flag": true,
    "blocked": null,
-   "reason": "WMT is 1.1% below its 1.1% target (threshold 1.0%)."
+   "reason": "WMT is 1.1% below its 1.1% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "MA",
+   "name": "Mastercard Incorporated",
+   "weight": 0.0,
+   "target_weight": 0.00986,
+   "drift": -0.00986,
+   "price": 661.309998,
+   "action": "buy",
+   "shares": 149,
+   "est_value": 98535.189636,
+   "flag": true,
+   "blocked": null,
+   "reason": "MA is 1.0% below its 1.0% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "ABBV",
+   "name": "AbbVie Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00973,
+   "drift": -0.00973,
+   "price": 295.170013,
+   "action": "buy",
+   "shares": 329,
+   "est_value": 97110.934418,
+   "flag": true,
+   "blocked": null,
+   "reason": "ABBV is 1.0% below its 1.0% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "COST",
+   "name": "Costco Wholesale Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00906,
+   "drift": -0.00906,
+   "price": 1106.410034,
+   "action": "buy",
+   "shares": 81,
+   "est_value": 89619.212769,
+   "flag": true,
+   "blocked": null,
+   "reason": "COST is 0.9% below its 0.9% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "CVX",
+   "name": "Chevron Corporation",
+   "weight": 0.0,
+   "target_weight": 0.008,
+   "drift": -0.008,
+   "price": 219.899994,
+   "action": "buy",
+   "shares": 363,
+   "est_value": 79823.697784,
+   "flag": true,
+   "blocked": null,
+   "reason": "CVX is 0.8% below its 0.8% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "CSCO",
+   "name": "Cisco Systems, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00752,
+   "drift": -0.00752,
+   "price": 95.639999,
+   "action": "buy",
+   "shares": 786,
+   "est_value": 75173.03952,
+   "flag": true,
+   "blocked": null,
+   "reason": "CSCO is 0.8% below its 0.8% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "PG",
+   "name": "PG",
+   "weight": 0.0,
+   "target_weight": 0.0073,
+   "drift": -0.0073,
+   "price": 169.860001,
+   "action": "buy",
+   "shares": 429,
+   "est_value": 72869.940262,
+   "flag": true,
+   "blocked": null,
+   "reason": "PG is 0.7% below its 0.7% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "KO",
+   "name": "The Coca-Cola Company",
+   "weight": 0.0,
+   "target_weight": 0.00706,
+   "drift": -0.00706,
+   "price": 99.269997,
+   "action": "buy",
+   "shares": 711,
+   "est_value": 70580.967613,
+   "flag": true,
+   "blocked": null,
+   "reason": "KO is 0.7% below its 0.7% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "UNH",
+   "name": "UNH",
+   "weight": 0.0,
+   "target_weight": 0.0068,
+   "drift": -0.0068,
+   "price": 407.600006,
+   "action": "buy",
+   "shares": 166,
+   "est_value": 67661.601013,
+   "flag": true,
+   "blocked": null,
+   "reason": "UNH is 0.7% below its 0.7% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "MRK",
+   "name": "Merck & Co., Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00678,
+   "drift": -0.00678,
+   "price": 147.779999,
+   "action": "buy",
+   "shares": 458,
+   "est_value": 67683.239441,
+   "flag": true,
+   "blocked": null,
+   "reason": "MRK is 0.7% below its 0.7% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "HD",
+   "name": "The Home Depot, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00649,
+   "drift": -0.00649,
+   "price": 348.799988,
+   "action": "buy",
+   "shares": 186,
+   "est_value": 64876.797729,
+   "flag": true,
+   "blocked": null,
+   "reason": "HD is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "GE",
+   "name": "GE Aerospace",
+   "weight": 0.0,
+   "target_weight": 0.00642,
+   "drift": -0.00642,
+   "price": 331.829987,
+   "action": "buy",
+   "shares": 193,
+   "est_value": 64043.187408,
+   "flag": true,
+   "blocked": null,
+   "reason": "GE is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "BAC",
+   "name": "Bank of America Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00614,
+   "drift": -0.00614,
+   "price": 51.009998,
+   "action": "buy",
+   "shares": 1203,
+   "est_value": 61365.027981,
+   "flag": true,
+   "blocked": null,
+   "reason": "BAC is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "PM",
+   "name": "Philip Morris International Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00573,
+   "drift": -0.00573,
+   "price": 198.990005,
+   "action": "buy",
+   "shares": 287,
+   "est_value": 57110.131577,
+   "flag": true,
+   "blocked": null,
+   "reason": "PM is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "INTC",
+   "name": "Intel Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00569,
+   "drift": -0.00569,
+   "price": 59.66,
+   "action": "buy",
+   "shares": 953,
+   "est_value": 56855.979855,
+   "flag": true,
+   "blocked": null,
+   "reason": "INTC is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "AMAT",
+   "name": "Applied Materials, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00565,
+   "drift": -0.00565,
+   "price": 370.25,
+   "action": "buy",
+   "shares": 152,
+   "est_value": 56278.0,
+   "flag": true,
+   "blocked": null,
+   "reason": "AMAT is 0.6% below its 0.6% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "LRCX",
+   "name": "Lam Research Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00546,
+   "drift": -0.00546,
+   "price": 225.910004,
+   "action": "buy",
+   "shares": 241,
+   "est_value": 54444.310883,
+   "flag": true,
+   "blocked": null,
+   "reason": "LRCX is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "TXN",
+   "name": "Texas Instruments Incorporated",
+   "weight": 0.0,
+   "target_weight": 0.00534,
+   "drift": -0.00534,
+   "price": 303.649994,
+   "action": "buy",
+   "shares": 175,
+   "est_value": 53138.748932,
+   "flag": true,
+   "blocked": null,
+   "reason": "TXN is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "CAT",
+   "name": "CAT",
+   "weight": 0.0,
+   "target_weight": 0.00521,
+   "drift": -0.00521,
+   "price": 600.140015,
+   "action": "buy",
+   "shares": 86,
+   "est_value": 51612.04126,
+   "flag": true,
+   "blocked": null,
+   "reason": "CAT is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "RTX",
+   "name": "RTX Corporation",
+   "weight": 0.0,
+   "target_weight": 0.005,
+   "drift": -0.005,
+   "price": 198.580002,
+   "action": "buy",
+   "shares": 251,
+   "est_value": 49843.58046,
+   "flag": true,
+   "blocked": null,
+   "reason": "RTX is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "GS",
+   "name": "The Goldman Sachs Group, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00497,
+   "drift": -0.00497,
+   "price": 916.315002,
+   "action": "buy",
+   "shares": 54,
+   "est_value": 49481.010132,
+   "flag": true,
+   "blocked": null,
+   "reason": "GS is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "PANW",
+   "name": "Palo Alto Networks, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00491,
+   "drift": -0.00491,
+   "price": 322.100006,
+   "action": "buy",
+   "shares": 152,
+   "est_value": 48959.200928,
+   "flag": true,
+   "blocked": null,
+   "reason": "PANW is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "NFLX",
+   "name": "Netflix, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00488,
+   "drift": -0.00488,
+   "price": 62.139999,
+   "action": "buy",
+   "shares": 785,
+   "est_value": 48779.899521,
+   "flag": true,
+   "blocked": null,
+   "reason": "NFLX is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "WFC",
+   "name": "Wells Fargo & Company",
+   "weight": 0.0,
+   "target_weight": 0.00485,
+   "drift": -0.00485,
+   "price": 86.050003,
+   "action": "buy",
+   "shares": 563,
+   "est_value": 48446.151718,
+   "flag": true,
+   "blocked": null,
+   "reason": "WFC is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "TMO",
+   "name": "Thermo Fisher Scientific Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00484,
+   "drift": -0.00484,
+   "price": 700.349976,
+   "action": "buy",
+   "shares": 69,
+   "est_value": 48324.148315,
+   "flag": true,
+   "blocked": null,
+   "reason": "TMO is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "AMGN",
+   "name": "Amgen Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00473,
+   "drift": -0.00473,
+   "price": 465.67099,
+   "action": "buy",
+   "shares": 101,
+   "est_value": 47032.769989,
+   "flag": true,
+   "blocked": null,
+   "reason": "AMGN is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "ORCL",
+   "name": "Oracle Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00467,
+   "drift": -0.00467,
+   "price": 125.394997,
+   "action": "buy",
+   "shares": 372,
+   "est_value": 46646.938751,
+   "flag": true,
+   "blocked": null,
+   "reason": "ORCL is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "LIN",
+   "name": "LIN",
+   "weight": 0.0,
+   "target_weight": 0.00451,
+   "drift": -0.00451,
+   "price": 526.080017,
+   "action": "buy",
+   "shares": 85,
+   "est_value": 44716.801453,
+   "flag": true,
+   "blocked": null,
+   "reason": "LIN is 0.5% below its 0.5% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "CRWD",
+   "name": "CrowdStrike Holdings, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00437,
+   "drift": -0.00437,
+   "price": 226.610001,
+   "action": "buy",
+   "shares": 192,
+   "est_value": 43509.120117,
+   "flag": true,
+   "blocked": null,
+   "reason": "CRWD is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "IBM",
+   "name": "International Business Machines Corporation",
+   "weight": 0.0,
+   "target_weight": 0.00431,
+   "drift": -0.00431,
+   "price": 247.190002,
+   "action": "buy",
+   "shares": 174,
+   "est_value": 43011.060425,
+   "flag": true,
+   "blocked": null,
+   "reason": "IBM is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "MS",
+   "name": "Morgan Stanley",
+   "weight": 0.0,
+   "target_weight": 0.00422,
+   "drift": -0.00422,
+   "price": 190.669998,
+   "action": "buy",
+   "shares": 221,
+   "est_value": 42138.069595,
+   "flag": true,
+   "blocked": null,
+   "reason": "MS is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "GEV",
+   "name": "GE Vernova Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00408,
+   "drift": -0.00408,
+   "price": 802.909973,
+   "action": "buy",
+   "shares": 50,
+   "est_value": 40145.498657,
+   "flag": true,
+   "blocked": null,
+   "reason": "GEV is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "ANET",
+   "name": "Arista Networks, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.00404,
+   "drift": -0.00404,
+   "price": 197.339996,
+   "action": "buy",
+   "shares": 204,
+   "est_value": 40257.359253,
+   "flag": true,
+   "blocked": null,
+   "reason": "ANET is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
+  },
+  {
+   "ticker": "GILD",
+   "name": "Gilead Sciences, Inc.",
+   "weight": 0.0,
+   "target_weight": 0.0039,
+   "drift": -0.0039,
+   "price": 168.050003,
+   "action": "buy",
+   "shares": 232,
+   "est_value": 38987.600708,
+   "flag": true,
+   "blocked": null,
+   "reason": "GILD is 0.4% below its 0.4% target (orders under $10,000 are skipped)."
   }
  ]
 }
