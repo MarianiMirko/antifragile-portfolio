@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T02:17:06.597204+00:00",
+ "generated_at": "2026-11-15T12:00:09.551084+00:00",
  "as_of": "2026-11-13T21:00:00+00:00",
  "status": "ok",
  "price_source": "yfinance",
@@ -29,7 +29,7 @@
  "unrealized_pnl": 0,
  "start_date": "2026-11-08",
  "end_date": "2026-12-17",
- "days_left": 33,
+ "days_left": 32,
  "marketwatch": {
   "net_worth": 10000000.0,
   "as_of": "2026-11-14T17:38:00+01:00",
