@@ -1,13 +1,1382 @@
 {
- "generated_at": "2026-11-15T17:30:28.133339+00:00",
+ "generated_at": "2026-11-15T17:31:56.819058+00:00",
  "models": [
   {
    "id": "allocation_plan",
    "title": "Allocation plan: S&P 500 replica and IPO sleeve",
    "error": null,
    "author": "Lorenzo, with the replica study by Riccardo",
-   "description": "The model did not complete its last run (SystemExit: Download failed for INTC. Nothing is simulated in its place. Retry, or run with 'frozen'.). The figures below are from its previous run.",
-   "metrics": []
+   "description": "70% of the fund follows the S&P 500 through its 50 largest companies; 30% is a sleeve of AI and IPO-related names held until the exit rule fires. The model checks the plan's limits, simulates the chance of finishing above max(0, S&P 500) and writes the target weights and the trade list. It reprices at each daily close.",
+   "metrics": [
+    {
+     "name": "Against the benchmark, max(0, S&P 500)",
+     "value": "-1.88%",
+     "signal": "caution",
+     "comment": "Fund +0.00%, S&P 500 +1.88% from the start level of 7,422.24. Closing prices of 2026-11-13."
+    },
+    {
+     "name": "Probability of the bonus",
+     "value": "24%",
+     "comment": "Chance of finishing above max(0, S&P 500) with 23 trading days left, at 100% equity. The S&P 500 ends above its start in 73% of the simulated paths."
+    },
+    {
+     "name": "Phase of the plan",
+     "value": "Sleeve on",
+     "comment": "30% of the fund in AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR, BABA. The sleeve is sold once the fund is 0.5% ahead of the benchmark, or after the close of 2026-11-19 (the IPO date), whichever comes first."
+    },
+    {
+     "name": "Equity exposure the model picks",
+     "value": "100%",
+     "comment": "Inside the 40% to 100% band, the rest in cash. Beta of the target book 1.23; final return between -8.8% and +10.7% in 90% of paths."
+    },
+    {
+     "name": "Risk of trailing the S&P 500",
+     "value": "3.30%",
+     "signal": "normal",
+     "comment": "Five-day expected shortfall at 97.5% of the target book against the index; limit 4.00%. The book we hold now: 6.98%."
+    },
+    {
+     "name": "Plan constraints, book we hold now",
+     "value": "Breach",
+     "signal": "alert",
+     "comment": "In breach: Net equity exposure, Active ES (5-day, 97.5%). "
+    },
+    {
+     "name": "Orders to reach the target",
+     "value": "52",
+     "comment": "Turnover 100% of the fund. Nothing is traded until the portfolio manager approves each order."
+    },
+    {
+     "name": "Replica",
+     "value": "50 companies",
+     "comment": "At index weights: the largest S&P 500 companies without NVDA. Beta 1.11 and tracking error 5.1% a year over the last two years."
+    },
+    {
+     "name": "To confirm with the lecturer",
+     "value": "ASML and BABA",
+     "signal": "caution",
+     "comment": "Listed in the US but not S&P 500 constituents, and the case names the constituents as the universe."
+    }
+   ],
+   "table": {
+    "columns": [
+     "Book",
+     "Constraint",
+     "Value",
+     "Limit",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Current",
+      "Net equity exposure",
+      "0.0%",
+      "40% to 100%",
+      {
+       "v": "BREACH",
+       "signal": "alert"
+      }
+     ],
+     [
+      "Current",
+      "Largest single position",
+      "0.0%",
+      "15%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Current",
+      "Number of tickers",
+      0,
+      60,
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Current",
+      "Gross short",
+      "0.0%",
+      "0%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Current",
+      "Cash",
+      "100.0%",
+      ">= 0%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Current",
+      "Active ES (5-day, 97.5%)",
+      "6.98%",
+      "4.00%",
+      {
+       "v": "BREACH",
+       "signal": "alert"
+      }
+     ],
+     [
+      "Target",
+      "Net equity exposure",
+      "100.0%",
+      "40% to 100%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Target",
+      "Largest single position",
+      "11.0%",
+      "15%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Target",
+      "Number of tickers",
+      52,
+      60,
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Target",
+      "Gross short",
+      "0.0%",
+      "0%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Target",
+      "Cash",
+      "0.0%",
+      ">= 0%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ],
+     [
+      "Target",
+      "Active ES (5-day, 97.5%)",
+      "3.30%",
+      "4.00%",
+      {
+       "v": "OK",
+       "signal": "normal"
+      }
+     ]
+    ]
+   },
+   "tables": [
+    {
+     "title": "Trade list to reach the target (52 orders)",
+     "table": {
+      "columns": [
+       "Ticker",
+       "Last close",
+       "Shares now",
+       "Target shares",
+       "Order, shares",
+       "Order, USD",
+       "Weight now, %",
+       "Target weight, %",
+       "Weight in the replica, %",
+       "Action"
+      ],
+      "rows": [
+       [
+        "MSFT",
+        "523.88",
+        "0",
+        "2102",
+        "2102",
+        "1,101,196",
+        "0",
+        "11.01",
+        "10.37",
+        "BUY"
+       ],
+       [
+        "AAPL",
+        "356.27",
+        "0",
+        "2718",
+        "2718",
+        "968,342",
+        "0",
+        "9.68",
+        "13.84",
+        "BUY"
+       ],
+       [
+        "GOOGL",
+        "295.77",
+        "0",
+        "3263",
+        "3263",
+        "965,097",
+        "0",
+        "9.65",
+        "8.43",
+        "BUY"
+       ],
+       [
+        "AMZN",
+        "266.66",
+        "0",
+        "3247",
+        "3247",
+        "865,845",
+        "0",
+        "8.66",
+        "7.01",
+        "BUY"
+       ],
+       [
+        "META",
+        "641.69",
+        "0",
+        "985",
+        "985",
+        "632,065",
+        "0",
+        "6.32",
+        "3.67",
+        "BUY"
+       ],
+       [
+        "AMD",
+        "534.06",
+        "0",
+        "1036",
+        "1036",
+        "553,286",
+        "0",
+        "5.54",
+        "2.55",
+        "BUY"
+       ],
+       [
+        "PLTR",
+        "167.99",
+        "0",
+        "2672",
+        "2672",
+        "448,869",
+        "0",
+        "4.49",
+        "1.06",
+        "BUY"
+       ],
+       [
+        "ASML",
+        "1495.16",
+        "0",
+        "250",
+        "250",
+        "373,790",
+        "0",
+        "3.75",
+        "0",
+        "BUY"
+       ],
+       [
+        "BABA",
+        "94.38",
+        "0",
+        "3973",
+        "3973",
+        "374,972",
+        "0",
+        "3.75",
+        "0",
+        "BUY"
+       ],
+       [
+        "AVGO",
+        "347.01",
+        "0",
+        "934",
+        "934",
+        "324,107",
+        "0",
+        "3.24",
+        "4.63",
+        "BUY"
+       ],
+       [
+        "LLY",
+        "1443.50",
+        "0",
+        "147",
+        "147",
+        "212,194",
+        "0",
+        "2.13",
+        "3.05",
+        "BUY"
+       ],
+       [
+        "TSLA",
+        "390.22",
+        "0",
+        "536",
+        "536",
+        "209,158",
+        "0",
+        "2.1",
+        "2.99",
+        "BUY"
+       ],
+       [
+        "BRK.B",
+        "592.94",
+        "0",
+        "346",
+        "346",
+        "205,157",
+        "0",
+        "2.05",
+        "2.94",
+        "BUY"
+       ],
+       [
+        "JPM",
+        "346.19",
+        "0",
+        "492",
+        "492",
+        "170,325",
+        "0",
+        "1.7",
+        "2.43",
+        "BUY"
+       ],
+       [
+        "MU",
+        "778.31",
+        "0",
+        "216",
+        "216",
+        "168,115",
+        "0",
+        "1.69",
+        "2.41",
+        "BUY"
+       ],
+       [
+        "V",
+        "425.76",
+        "0",
+        "314",
+        "314",
+        "133,689",
+        "0",
+        "1.34",
+        "1.91",
+        "BUY"
+       ],
+       [
+        "XOM",
+        "170.59",
+        "0",
+        "764",
+        "764",
+        "130,331",
+        "0",
+        "1.3",
+        "1.86",
+        "BUY"
+       ],
+       [
+        "JNJ",
+        "285.75",
+        "0",
+        "447",
+        "447",
+        "127,730",
+        "0",
+        "1.28",
+        "1.83",
+        "BUY"
+       ],
+       [
+        "WMT",
+        "128.09",
+        "0",
+        "820",
+        "820",
+        "105,034",
+        "0",
+        "1.05",
+        "1.5",
+        "BUY"
+       ],
+       [
+        "MA",
+        "661.19",
+        "0",
+        "149",
+        "149",
+        "98,517",
+        "0",
+        "0.99",
+        "1.41",
+        "BUY"
+       ],
+       [
+        "ABBV",
+        "295.03",
+        "0",
+        "329",
+        "329",
+        "97,065",
+        "0",
+        "0.97",
+        "1.39",
+        "BUY"
+       ],
+       [
+        "COST",
+        "1106.21",
+        "0",
+        "81",
+        "81",
+        "89,603",
+        "0",
+        "0.91",
+        "1.29",
+        "BUY"
+       ],
+       [
+        "CVX",
+        "219.89",
+        "0",
+        "363",
+        "363",
+        "79,820",
+        "0",
+        "0.8",
+        "1.14",
+        "BUY"
+       ],
+       [
+        "CSCO",
+        "95.64",
+        "0",
+        "786",
+        "786",
+        "75,173",
+        "0",
+        "0.75",
+        "1.07",
+        "BUY"
+       ],
+       [
+        "PG",
+        "169.80",
+        "0",
+        "430",
+        "430",
+        "73,014",
+        "0",
+        "0.73",
+        "1.04",
+        "BUY"
+       ],
+       [
+        "KO",
+        "99.25",
+        "0",
+        "711",
+        "711",
+        "70,567",
+        "0",
+        "0.71",
+        "1.01",
+        "BUY"
+       ],
+       [
+        "UNH",
+        "407.46",
+        "0",
+        "166",
+        "166",
+        "67,638",
+        "0",
+        "0.68",
+        "0.97",
+        "BUY"
+       ],
+       [
+        "MRK",
+        "147.76",
+        "0",
+        "458",
+        "458",
+        "67,674",
+        "0",
+        "0.68",
+        "0.97",
+        "BUY"
+       ],
+       [
+        "HD",
+        "348.69",
+        "0",
+        "186",
+        "186",
+        "64,856",
+        "0",
+        "0.65",
+        "0.93",
+        "BUY"
+       ],
+       [
+        "GE",
+        "331.81",
+        "0",
+        "193",
+        "193",
+        "64,039",
+        "0",
+        "0.64",
+        "0.92",
+        "BUY"
+       ],
+       [
+        "BAC",
+        "51.02",
+        "0",
+        "1203",
+        "1203",
+        "61,377",
+        "0",
+        "0.61",
+        "0.88",
+        "BUY"
+       ],
+       [
+        "PM",
+        "198.96",
+        "0",
+        "288",
+        "288",
+        "57,300",
+        "0",
+        "0.57",
+        "0.82",
+        "BUY"
+       ],
+       [
+        "INTC",
+        "59.66",
+        "0",
+        "952",
+        "952",
+        "56,796",
+        "0",
+        "0.57",
+        "0.81",
+        "BUY"
+       ],
+       [
+        "AMAT",
+        "370.50",
+        "0",
+        "152",
+        "152",
+        "56,316",
+        "0",
+        "0.56",
+        "0.81",
+        "BUY"
+       ],
+       [
+        "LRCX",
+        "225.92",
+        "0",
+        "241",
+        "241",
+        "54,447",
+        "0",
+        "0.55",
+        "0.78",
+        "BUY"
+       ],
+       [
+        "TXN",
+        "303.60",
+        "0",
+        "175",
+        "175",
+        "53,130",
+        "0",
+        "0.53",
+        "0.76",
+        "BUY"
+       ],
+       [
+        "CAT",
+        "600.20",
+        "0",
+        "86",
+        "86",
+        "51,617",
+        "0",
+        "0.52",
+        "0.74",
+        "BUY"
+       ],
+       [
+        "RTX",
+        "198.58",
+        "0",
+        "251",
+        "251",
+        "49,844",
+        "0",
+        "0.5",
+        "0.71",
+        "BUY"
+       ],
+       [
+        "GS",
+        "916.56",
+        "0",
+        "54",
+        "54",
+        "49,494",
+        "0",
+        "0.5",
+        "0.71",
+        "BUY"
+       ],
+       [
+        "PANW",
+        "322.24",
+        "0",
+        "152",
+        "152",
+        "48,980",
+        "0",
+        "0.49",
+        "0.7",
+        "BUY"
+       ],
+       [
+        "NFLX",
+        "62.15",
+        "0",
+        "784",
+        "784",
+        "48,726",
+        "0",
+        "0.49",
+        "0.7",
+        "BUY"
+       ],
+       [
+        "WFC",
+        "86.05",
+        "0",
+        "563",
+        "563",
+        "48,446",
+        "0",
+        "0.49",
+        "0.69",
+        "BUY"
+       ],
+       [
+        "TMO",
+        "700.22",
+        "0",
+        "69",
+        "69",
+        "48,315",
+        "0",
+        "0.48",
+        "0.69",
+        "BUY"
+       ],
+       [
+        "AMGN",
+        "465.67",
+        "0",
+        "101",
+        "101",
+        "47,033",
+        "0",
+        "0.47",
+        "0.68",
+        "BUY"
+       ],
+       [
+        "ORCL",
+        "125.35",
+        "0",
+        "372",
+        "372",
+        "46,630",
+        "0",
+        "0.47",
+        "0.67",
+        "BUY"
+       ],
+       [
+        "LIN",
+        "526.06",
+        "0",
+        "85",
+        "85",
+        "44,715",
+        "0",
+        "0.45",
+        "0.64",
+        "BUY"
+       ],
+       [
+        "CRWD",
+        "226.61",
+        "0",
+        "193",
+        "193",
+        "43,736",
+        "0",
+        "0.44",
+        "0.62",
+        "BUY"
+       ],
+       [
+        "IBM",
+        "247.13",
+        "0",
+        "174",
+        "174",
+        "43,001",
+        "0",
+        "0.43",
+        "0.62",
+        "BUY"
+       ],
+       [
+        "MS",
+        "190.65",
+        "0",
+        "221",
+        "221",
+        "42,134",
+        "0",
+        "0.42",
+        "0.6",
+        "BUY"
+       ],
+       [
+        "GEV",
+        "803.13",
+        "0",
+        "50",
+        "50",
+        "40,157",
+        "0",
+        "0.41",
+        "0.58",
+        "BUY"
+       ],
+       [
+        "ANET",
+        "197.29",
+        "0",
+        "204",
+        "204",
+        "40,247",
+        "0",
+        "0.4",
+        "0.58",
+        "BUY"
+       ],
+       [
+        "GILD",
+        "168.08",
+        "0",
+        "231",
+        "231",
+        "38,826",
+        "0",
+        "0.39",
+        "0.56",
+        "BUY"
+       ]
+      ]
+     },
+     "note": "Whole shares at the last close; the count changes with the price on the day. Market orders only."
+    },
+    {
+     "title": "Bonus probability by equity exposure",
+     "table": {
+      "columns": [
+       "Exposure",
+       "Beta",
+       "P(bonus)",
+       "Expected excess",
+       "Excess, 5% to 95%",
+       "Expected final return",
+       "Final return, 5% to 95%"
+      ],
+      "rows": [
+       [
+        "40%",
+        "0.56",
+        "8.0%",
+        "-2.80%",
+        "-6.3% to 0.5%",
+        "0.36%",
+        "-4.6% to 5.4%"
+       ],
+       [
+        "45%",
+        "0.62",
+        "8.4%",
+        "-2.77%",
+        "-6.2% to 0.5%",
+        "0.39%",
+        "-4.9% to 5.8%"
+       ],
+       [
+        "50%",
+        "0.67",
+        "8.8%",
+        "-2.74%",
+        "-6.2% to 0.5%",
+        "0.42%",
+        "-5.2% to 6.3%"
+       ],
+       [
+        "55%",
+        "0.73",
+        "9.4%",
+        "-2.70%",
+        "-6.3% to 0.7%",
+        "0.46%",
+        "-5.6% to 6.7%"
+       ],
+       [
+        "60%",
+        "0.79",
+        "10.2%",
+        "-2.67%",
+        "-6.4% to 0.8%",
+        "0.49%",
+        "-5.9% to 7.1%"
+       ],
+       [
+        "65%",
+        "0.84",
+        "11.3%",
+        "-2.64%",
+        "-6.6% to 0.9%",
+        "0.52%",
+        "-6.3% to 7.6%"
+       ],
+       [
+        "70%",
+        "0.90",
+        "12.8%",
+        "-2.61%",
+        "-6.9% to 1.1%",
+        "0.55%",
+        "-6.6% to 8.0%"
+       ],
+       [
+        "75%",
+        "0.95",
+        "14.5%",
+        "-2.58%",
+        "-7.1% to 1.3%",
+        "0.58%",
+        "-7.0% to 8.5%"
+       ],
+       [
+        "80%",
+        "1.01",
+        "16.2%",
+        "-2.55%",
+        "-7.4% to 1.6%",
+        "0.61%",
+        "-7.3% to 8.9%"
+       ],
+       [
+        "85%",
+        "1.07",
+        "18.1%",
+        "-2.52%",
+        "-7.7% to 1.9%",
+        "0.64%",
+        "-7.7% to 9.3%"
+       ],
+       [
+        "90%",
+        "1.12",
+        "20.0%",
+        "-2.49%",
+        "-8.1% to 2.1%",
+        "0.67%",
+        "-8.0% to 9.8%"
+       ],
+       [
+        "95%",
+        "1.18",
+        "22.0%",
+        "-2.46%",
+        "-8.4% to 2.5%",
+        "0.70%",
+        "-8.4% to 10.3%"
+       ],
+       [
+        "100%",
+        "1.23",
+        "23.8%",
+        "-2.43%",
+        "-8.8% to 2.8%",
+        "0.73%",
+        "-8.8% to 10.7%"
+       ]
+      ]
+     },
+     "note": "20,000 simulated paths to the last close of the game, built from five-day blocks of real past days."
+    },
+    {
+     "title": "If the S&P 500 start level is a different one",
+     "table": {
+      "columns": [
+       "S&P start level",
+       "S&P return so far",
+       "Excess vs benchmark",
+       "Best P(bonus)",
+       "at exposure"
+      ],
+      "rows": [
+       [
+        "Open 9 Nov (7422.24)",
+        "1.88%",
+        "-1.88%",
+        "23.8%",
+        "100%"
+       ],
+       [
+        "Close 6 Nov (7376.86)",
+        "2.51%",
+        "-2.51%",
+        "18.0%",
+        "100%"
+       ],
+       [
+        "Close 9 Nov (7549.94)",
+        "0.16%",
+        "-0.16%",
+        "40.7%",
+        "100%"
+       ]
+      ]
+     },
+     "note": "The start level of the benchmark is still to be confirmed with the lecturer."
+    },
+    {
+     "title": "Risk of the target book (five days, 97.5%)",
+     "table": {
+      "columns": [
+       "Book",
+       "Measure",
+       "Absolute",
+       "Absolute, USD",
+       "Active vs S&P"
+      ],
+      "rows": [
+       [
+        "Target",
+        "ES conditional (decision measure)",
+        "11.86%",
+        "1,185,854",
+        "3.30%"
+       ],
+       [
+        "Target",
+        "  90% interval",
+        "9.88% to 13.18%",
+        "987,568 to 1,318,101",
+        "2.71% to 3.77%"
+       ],
+       [
+        "Target",
+        "ES historical, unconditional",
+        "8.47%",
+        "846,806",
+        "2.57%"
+       ],
+       [
+        "Target",
+        "ES normal",
+        "7.01%",
+        "700,626",
+        "2.52%"
+       ],
+       [
+        "Target",
+        "ES Student-t, fitted (nu 3.7 / 6.6)",
+        "8.42%",
+        "841,630",
+        "2.84%"
+       ],
+       [
+        "Target",
+        "ES t(4), as in the reference code",
+        "8.46%",
+        "846,298",
+        "3.05%"
+       ],
+       [
+        "Target",
+        "VaR historical",
+        "5.42%",
+        "541,532",
+        "2.00%"
+       ],
+       [
+        "Target",
+        "Expectile",
+        "4.27%",
+        "426,579",
+        "1.39%"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Where the risk of trailing the index comes from",
+     "table": {
+      "columns": [
+       "Leg",
+       "Euler",
+       "Euler share",
+       "Shapley",
+       "Shapley share",
+       "Stand-alone ES"
+      ],
+      "rows": [
+       [
+        "Replica tracking error",
+        "1.304%",
+        "39.5%",
+        "0.957%",
+        "29.0%",
+        "1.768%"
+       ],
+       [
+        "Sleeve: Production (AMD)",
+        "0.566%",
+        "17.2%",
+        "0.552%",
+        "16.7%",
+        "1.085%"
+       ],
+       [
+        "Sleeve: Proxy (ASML)",
+        "0.165%",
+        "5.0%",
+        "0.235%",
+        "7.1%",
+        "0.730%"
+       ],
+       [
+        "Sleeve: Software (MSFT, GOOGL, AMZN, META)",
+        "1.229%",
+        "37.2%",
+        "0.957%",
+        "29.0%",
+        "1.708%"
+       ],
+       [
+        "Sleeve: Government (PLTR)",
+        "0.691%",
+        "20.9%",
+        "0.555%",
+        "16.8%",
+        "1.003%"
+       ],
+       [
+        "Sleeve: China / HK (BABA)",
+        "0.357%",
+        "10.8%",
+        "0.293%",
+        "8.9%",
+        "0.687%"
+       ],
+       [
+        "Sleeve funding (less replica)",
+        "-1.010%",
+        "-30.6%",
+        "-0.247%",
+        "-7.5%",
+        "2.576%"
+       ]
+      ]
+     },
+     "note": "Each leg's contribution to the five-day active expected shortfall, by two allocation methods."
+    },
+    {
+     "title": "Largest contributions by position",
+     "table": {
+      "columns": [
+       "Position",
+       "Weight",
+       "Active ES contribution",
+       "90% interval",
+       "Share of active ES"
+      ],
+      "rows": [
+       [
+        "SP500",
+        "-100.0%",
+        "-2.064%",
+        "-3.315% to -0.836%",
+        "-62.5%"
+       ],
+       [
+        "GOOGL",
+        "9.7%",
+        "1.054%",
+        "0.615% to 1.331%",
+        "31.9%"
+       ],
+       [
+        "AMD",
+        "5.5%",
+        "0.836%",
+        "0.362% to 1.392%",
+        "25.3%"
+       ],
+       [
+        "PLTR",
+        "4.5%",
+        "0.828%",
+        "0.519% to 1.089%",
+        "25.1%"
+       ],
+       [
+        "AMZN",
+        "8.7%",
+        "0.707%",
+        "0.521% to 0.863%",
+        "21.4%"
+       ],
+       [
+        "META",
+        "6.3%",
+        "0.588%",
+        "0.342% to 0.940%",
+        "17.8%"
+       ],
+       [
+        "MSFT",
+        "11.0%",
+        "0.483%",
+        "0.236% to 0.737%",
+        "14.6%"
+       ],
+       [
+        "BABA",
+        "3.8%",
+        "0.357%",
+        "0.258% to 0.443%",
+        "10.8%"
+       ],
+       [
+        "AVGO",
+        "3.2%",
+        "0.266%",
+        "0.121% to 0.386%",
+        "8.1%"
+       ],
+       [
+        "ASML",
+        "3.8%",
+        "0.165%",
+        "0.006% to 0.374%",
+        "5.0%"
+       ],
+       [
+        "TSLA",
+        "2.1%",
+        "0.150%",
+        "0.072% to 0.276%",
+        "4.5%"
+       ],
+       [
+        "LLY",
+        "2.1%",
+        "-0.105%",
+        "-0.215% to 0.011%",
+        "-3.2%"
+       ],
+       [
+        "MU",
+        "1.7%",
+        "0.088%",
+        "-0.130% to 0.270%",
+        "2.7%"
+       ],
+       [
+        "AAPL",
+        "9.7%",
+        "0.065%",
+        "-0.202% to 0.403%",
+        "2.0%"
+       ]
+      ]
+     }
+    },
+    {
+     "title": "Stress tests: target book against the S&P 500",
+     "table": {
+      "columns": [
+       "Scenario",
+       "Type",
+       "S&P 500",
+       "Target book",
+       "Book minus S&P",
+       "Book minus max(0, S&P)"
+      ],
+      "rows": [
+       [
+        "Q4 2018 sell-off (3 Oct - 24 Dec 2018)",
+        "Historical replay",
+        "-19.6%",
+        "-22.1%",
+        "-2.5%",
+        "-22.1%"
+       ],
+       [
+        "COVID crash (19 Feb - 23 Mar 2020)",
+        "Historical replay",
+        "-33.6%",
+        "-28.6%",
+        "5.0%",
+        "-28.6%"
+       ],
+       [
+        "2022 bear market (3 Jan - 14 Oct 2022)",
+        "Historical replay",
+        "-25.3%",
+        "-32.2%",
+        "-6.9%",
+        "-32.2%"
+       ],
+       [
+        "Volatility spike (1 - 5 Aug 2024)",
+        "Historical replay",
+        "-6.1%",
+        "-7.0%",
+        "-1.0%",
+        "-7.0%"
+       ],
+       [
+        "Tariff shock (2 - 8 Apr 2025)",
+        "Historical replay",
+        "-11.5%",
+        "-12.8%",
+        "-1.3%",
+        "-12.8%"
+       ],
+       [
+        "Worst 1-day active loss in the last 504 days (to 2026-02-04)",
+        "Historical worst",
+        "-0.5%",
+        "-2.2%",
+        "-1.7%",
+        "-2.2%"
+       ],
+       [
+        "Worst 5-day active loss in the last 504 days (to 2026-02-10)",
+        "Historical worst",
+        "0.3%",
+        "-2.5%",
+        "-2.8%",
+        "-2.8%"
+       ],
+       [
+        "IPO disappoints: AI names sold",
+        "Hypothetical",
+        "-3.0%",
+        "-5.6%",
+        "-2.6%",
+        "-5.6%"
+       ],
+       [
+        "Money rotates from AI holders into ANT",
+        "Hypothetical",
+        "0.0%",
+        "-1.7%",
+        "-1.7%",
+        "-1.7%"
+       ],
+       [
+        "China shock: BABA -15%",
+        "Hypothetical",
+        "-1.0%",
+        "-1.7%",
+        "-0.7%",
+        "-1.7%"
+       ],
+       [
+        "Broad market -10%",
+        "Hypothetical",
+        "-10.0%",
+        "-11.8%",
+        "-1.8%",
+        "-11.8%"
+       ],
+       [
+        "AI rally into the listing",
+        "Hypothetical",
+        "2.0%",
+        "3.9%",
+        "1.9%",
+        "1.9%"
+       ]
+      ]
+     },
+     "note": "Historical replays hold today's target weights through the episode. The hypothetical shocks are assumptions."
+    }
+   ],
+   "links": [
+    {
+     "label": "Open the model's full dashboard, with charts",
+     "href": "data/igfinal/dashboard.html"
+    }
+   ]
   },
   {
    "id": "ewma_volatility",
