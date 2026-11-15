@@ -6,11 +6,19 @@
   "domain": "antifragileportfolio.eu",
   "initial_capital": 10000000,
   "currency": "USD",
-  "benchmark": { "ticker": "SPY", "name": "S&P 500 (SPY)", "is_placeholder": true },
+  "benchmark": {
+    "ticker": "SPY",
+    "name": "S&P 500 (SPY)",
+    "is_placeholder": true
+  },
   "start_date": "2026-11-08",
   "end_date": "2026-12-17",
   "risk_free_rate": 0.04,
   "display_timezone": "Europe/Amsterdam",
   "marketwatch_game": "iim202627",
-  "demo_mode": true
+  "demo_mode": true,
+  "private_area": {
+    "supabase_url": "https://djrmmlsfqwowkcdxghwp.supabase.co",
+    "supabase_publishable_key": "sb_publishable_8IvpYKrvlKxe4aqymMftEg_O50owcAh"
+  }
 }

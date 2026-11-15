@@ -3,7 +3,7 @@ const App = (() => {
   const PAGES = [
     ["index.html", "Overview"], ["portfolio.html", "Portfolio"], ["risk.html", "Risk"],
     ["research.html", "Research"], ["backtest.html", "Backtest"],
-    ["philosophy.html", "Philosophy"], ["team.html", "Team"],
+    ["philosophy.html", "Philosophy"], ["team.html", "Team"], ["private.html", "Private"],
   ];
   const COLORS = {
     ink: "#0B1524", navy: "#11264A", muted: "#5B6778", rule: "#D8DEE6", grid: "#EDF0F4",

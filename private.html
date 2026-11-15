@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2311264A%27/%3E%3Crect x=%277%27 y=%277%27 width=%2718%27 height=%2718%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%272%27/%3E%3C/svg%3E">
+<title>Private area</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<main>
+  <div class="page-head wrap">
+    <h1>Private area</h1>
+    <p id="private-intro">For the team only. Sign in to see the database and the analyses run on it.</p>
+  </div>
+
+  <section class="block wrap" id="state-loading"><p class="muted">Checking your session.</p></section>
+
+  <section class="block wrap" id="state-signedout" hidden>
+    <div class="auth">
+      <div class="seg" role="group" aria-label="Sign in or create an account" style="margin-bottom:22px">
+        <button type="button" data-auth="in" aria-pressed="true">Sign in</button>
+        <button type="button" data-auth="up" aria-pressed="false">Create account</button>
+      </div>
+      <form id="auth-form" novalidate>
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" minlength="8" required>
+        <p class="hint" id="auth-hint">Use the email and password you registered with.</p>
+        <button class="btn" type="submit" id="auth-submit">Sign in</button>
+        <p class="form-msg" id="auth-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="block wrap" id="state-nokey" hidden>
+    <div class="auth">
+      <h2>Enter your access key</h2>
+      <p class="muted" style="margin:10px 0 18px">You are signed in as <b id="who-nokey"></b>. To open the private area, enter the access key you were given. You only need to do this once.</p>
+      <form id="key-form" novalidate>
+        <label for="key">Access key</label>
+        <input id="key" type="text" autocomplete="off" spellcheck="false" placeholder="AP-XXXXX-XXXXX-XXXXX-XXXXX" required>
+        <button class="btn" type="submit">Unlock the private area</button>
+        <p class="form-msg" id="key-msg" role="status"></p>
+      </form>
+      <p style="margin-top:22px"><button class="link-btn" type="button" data-signout>Sign out</button></p>
+    </div>
+  </section>
+
+  <div id="state-member" hidden>
+    <section class="block wrap">
+      <p class="updated">Signed in as <b id="who" style="font-weight:500;color:var(--ink)"></b> <button class="link-btn" type="button" data-signout>Sign out</button></p>
+    </section>
+    <section class="block wrap" aria-labelledby="an-title">
+      <div class="block-head"><div><h2 id="an-title">Analyses</h2><p>Analyses run on request on the private database, newest first.</p></div></div>
+      <div id="analyses"></div>
+    </section>
+    <section class="block wrap" aria-labelledby="snap-title">
+      <div class="block-head"><div><h2 id="snap-title">Portfolio history</h2><p>One row per trading day.</p></div></div>
+      <div class="table-scroll"><table class="data" id="snapshots">
+        <thead><tr><th class="l">Date</th><th>Fund value</th><th>Cash</th><th>Invested</th><th>Positions</th><th>Day return</th><th>Benchmark, rebased</th></tr></thead><tbody></tbody></table></div>
+    </section>
+    <section class="block wrap" aria-labelledby="tr-title">
+      <div class="block-head"><h2 id="tr-title">Trades</h2></div>
+      <div class="table-scroll"><table class="data" id="ptrades">
+        <thead><tr><th class="l">Date</th><th class="l">Ticker</th><th class="l">Side</th><th>Shares</th><th>Price</th><th>Amount</th><th class="l">Rationale</th><th class="l">Approved by</th></tr></thead><tbody></tbody></table></div>
+      <p class="chart-empty" id="ptrades-empty" hidden>No trades recorded yet.</p>
+    </section>
+    <section class="block wrap" aria-labelledby="wl-title">
+      <div class="block-head"><h2 id="wl-title">Watchlist</h2></div>
+      <div class="table-scroll"><table class="data" id="watch">
+        <thead><tr><th class="l">Ticker</th><th class="l">Name</th><th class="l">Note</th><th class="l">Added</th></tr></thead><tbody></tbody></table></div>
+      <p class="chart-empty" id="watch-empty" hidden>The watchlist is empty.</p>
+    </section>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/private.js"></script>
+</body>
+</html>

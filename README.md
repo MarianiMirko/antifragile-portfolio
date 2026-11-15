@@ -101,6 +101,20 @@ Each indicator has `name`, `value`, `signal` (`normal`, `caution` or `alert`) an
 One entry per trade, matched to the trade log by `date` (YYYY-MM-DD, New York date), `ticker` and
 `side`. Trades without an entry show "Rationale not written yet".
 
+## Private area
+
+`private.html` is a login-protected page backed by a Supabase database (project `antifragile-portfolio`).
+
+- Anyone can create an account with email and password, but an account sees nothing until it is
+  unlocked **once** with a one-time access key. Keys are handed out by Mirko.
+- The database stores only a fingerprint (SHA-256) of each key, never the key itself. The keys are
+  kept in a local file outside this repository.
+- Every table is protected row by row on the server: only unlocked members can read, and nobody can
+  write from the website. Data and analyses are loaded by Claude on request.
+- The Supabase address and publishable key in `config/fund.json` are public by design.
+
+Tables: `analyses`, `trades`, `portfolio_snapshots`, `position_snapshots`, `prices_daily`, `watchlist`.
+
 ## Settings
 
 | File | What it holds |
