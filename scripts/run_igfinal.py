@@ -26,6 +26,7 @@ import os
 import runpy
 import shutil
 import sys
+import time as time_module
 import traceback
 from datetime import datetime, time, timedelta, timezone
 from pathlib import Path
@@ -130,8 +131,19 @@ def main():
     try:
         old_argv = sys.argv
         sys.argv = ["run_dashboard.py", mode]
-        with contextlib.redirect_stdout(log):
-            g = runpy.run_path(str(MODEL / "run_dashboard.py"), run_name="__main__")
+        for attempt in range(1, 5):
+            try:
+                with contextlib.redirect_stdout(log):
+                    g = runpy.run_path(str(MODEL / "run_dashboard.py"), run_name="__main__")
+                break
+            except SystemExit as exc:
+                # Yahoo sometimes fails on one ticker of a large parallel download (on a fresh machine its
+                # time-zone cache is locked by the other threads). The model stops before writing anything,
+                # so it is safe to run it again.
+                if "Download failed" not in str(exc) or attempt == 4:
+                    raise
+                print(f"allocation model: attempt {attempt} stopped ({exc}); trying again")
+                time_module.sleep(6)
     except BaseException as exc:                          # SystemExit included: the model stops that way when a download fails
         if isinstance(exc, KeyboardInterrupt):
             raise
