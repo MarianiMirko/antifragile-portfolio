@@ -1,4 +1,4 @@
 {
-  "note": "Written by the MarketWatch sync. One entry per executed order. side is buy, sell, short or cover.",
-  "transactions": []
+ "note": "Written by the MarketWatch sync. One entry per executed order. side is buy, sell, short or cover.",
+ "transactions": []
 }

@@ -158,6 +158,13 @@ Items still marked as placeholders: fund name, benchmark (SPY) and every limit i
 `data/leaderboard.json` is also written by the MarketWatch sync. It stores our rank and the net
 worth of every participant **as numbers only, without names**, because the site is public.
 
+The sync is a Claude scheduled task that runs every evening after the US close on Mirko's
+computer (it is skipped when the computer is off) and on request after a trade. It only reads the
+Portfolio and Rankings pages of the game, never places an order, and hands what it read to
+`scripts/marketwatch_sync.py`, which checks the reading and writes the three files. The script
+refuses a ranking that contains anything but numbers and a transaction history shorter than the
+one already saved.
+
 ## How the numbers are calculated
 
 - **Fund value.** Positions over time are rebuilt by replaying the transaction log on the initial
