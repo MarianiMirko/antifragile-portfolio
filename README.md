@@ -24,6 +24,12 @@ MarketWatch (login needed)          Yahoo Finance prices            The team
 
 - **No server, no database.** The site is plain HTML, CSS and JavaScript. Charts load from a CDN
   (TradingView Lightweight Charts, Chart.js, Apache ECharts, marked).
+- **Built to load fast.** Fonts are served from the site itself (`assets/fonts/`). Our own scripts run
+  first and fetch the data while the chart libraries are still downloading, so the header and the
+  figures do not wait for them; a page calls `await App.libs` just before the first thing that needs
+  a library. ECharts, the largest file, loads in the background and its charts are drawn when it
+  arrives (`assets/js/viz.js`). `config/fund.json` is kept for five minutes per browser tab, so a
+  change to it can take a few minutes to show.
 - **Prices update without anyone's computer.** `.github/workflows/update.yml` runs every hour while
   the US market is open (14:35 to 20:35 UTC) and once after the close, Monday to Friday.
 - **Positions come from MarketWatch**, which needs a login, so a Claude scheduled task reads them in

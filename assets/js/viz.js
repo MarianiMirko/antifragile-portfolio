@@ -144,5 +144,10 @@ const Viz = (() => {
     });
   }
 
-  return { treemap, waterfall, bubbles, calendar };
+  /* ECharts is by far the largest file of the site, so it loads in the background. A chart asked for
+     before it has arrived is drawn as soon as it does. */
+  const waiting = [];
+  const whenLoaded = (draw) => (...args) => { if (window.echarts) draw(...args); else waiting.push(() => draw(...args)); };
+  window.addEventListener("echarts-loaded", () => waiting.splice(0).forEach((run) => run()));
+  return { treemap: whenLoaded(treemap), waterfall: whenLoaded(waterfall), bubbles: whenLoaded(bubbles), calendar: whenLoaded(calendar) };
 })();

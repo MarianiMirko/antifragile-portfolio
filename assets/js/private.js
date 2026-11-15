@@ -2,6 +2,7 @@
    The address and key below are public by design; the data is protected on the server, row by row. */
 (async () => {
   const cfg = await App.init("private.html");
+  await App.libs;
   const { esc, usd, num, pctSigned, sign } = App;
   const $ = (id) => document.getElementById(id);
   const states = ["loading", "signedout", "nokey", "member"];

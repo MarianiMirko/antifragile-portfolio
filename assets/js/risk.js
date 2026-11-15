@@ -1,7 +1,6 @@
 /* Risk page */
 (async () => {
   await App.init("risk.html");
-  App.chartDefaults();
   const { usd, pct, esc, num } = App, C = App.COLORS;
   const [s, risk, models, ind, notes, rules, pos, c1d, proj] = await Promise.all([
     App.data("summary.json"), App.data("risk.json"), App.data("models.json", { models: [] }),
@@ -30,6 +29,9 @@
   document.getElementById("risk-basis").textContent = ex.available
     ? "VaR, expected shortfall, beta and the charts below \"at current weights\" apply today's portfolio to the past year of daily returns."
     : "Risk at current weights appears once the fund holds positions and prices have been downloaded.";
+
+  await App.libs;          // the figures above need no library; the charts below do
+  App.chartDefaults();
 
   /* where we could finish: history plus a fan of simulated outcomes */
   if (!proj.available) document.getElementById("proj-block").hidden = true;
@@ -131,7 +133,7 @@
   }
 
   /* calendar of daily returns and risk/return bubbles */
-  if (window.echarts) {
+  {
     const days = c1d.candles.map((c, i) => [c.time, c.close / (i ? c1d.candles[i - 1].close : s.initial_capital) - 1]);
     if (days.length) Viz.calendar(document.getElementById("calendar"), days, s.start_date, s.end_date);
     const byT = Object.fromEntries(pos.positions.map((p) => [p.ticker, p]));

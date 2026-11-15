@@ -46,6 +46,7 @@
   ].join("");
 
   /* ---- PM note, alerts ---- */
+  await App.libs;          // the figures above need no library; the note (markdown) and the chart below do
   document.getElementById("pm-note").innerHTML = App.md(note) || '<p class="muted">No note yet.</p>';
   const breaches = alerts.alerts.filter((a) => a.severity === "breach").length;
   const warns = alerts.alerts.filter((a) => a.severity === "warning").length;

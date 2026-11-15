@@ -1,11 +1,12 @@
 /* Backtest page: one entry per markdown file in content/backtest */
 (async () => {
   await App.init("backtest.html");
-  App.chartDefaults();
   const { esc } = App, C = App.COLORS;
   const RESERVED = new Set(["title", "author", "updated", "period", "equity_csv"]);
   const idx = await App.getJSON("data/content_index.json", { backtest: [] });
   const files = await Promise.all((idx.backtest || []).map((f) => App.getText("content/backtest/" + f)));
+  await App.libs;
+  App.chartDefaults();
   const items = files.map(App.frontMatter);
   const root = document.getElementById("backtests");
   if (!items.length) { root.innerHTML = '<p class="chart-empty">No backtests yet. Add a file to content/backtest.</p>'; return; }

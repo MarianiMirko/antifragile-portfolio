@@ -7,6 +7,7 @@
     App.getJSON("content/macro/calendar.json", { events: [] }), App.data("rebalance_suggestions.json", { table: [] }),
     App.data("events.json", { events: [] }),
   ]);
+  await App.libs;
   const price = {};
   (reb.table || []).forEach((r) => { if (r.price) price[r.ticker] = r.price; });
   pos.positions.forEach((p) => { price[p.ticker] = p.price; });

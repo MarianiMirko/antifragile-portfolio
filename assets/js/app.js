@@ -83,7 +83,7 @@ const App = (() => {
       `<a href="${href}"${href === current ? ' aria-current="page"' : ""}>${label}</a>`).join("");
     // The logo (a version drawn for the navy band) and the name set as a wordmark: first word bold, the rest light.
     const [first, ...rest] = String(c.fund_name || "").split(" ");
-    const brandMark = `<img class="brand-logo" src="assets/img/logo-on-navy.png" alt="" width="40" height="40">`;
+    const brandMark = `<img class="brand-logo" src="assets/img/logo-on-navy.webp" alt="" width="40" height="40">`;
     const brandName = `<span class="brand-name"><b>${esc(first)}</b>${rest.length ? " " + esc(rest.join(" ")) : ""}</span>`;
     const header = document.createElement("header");
     header.className = "site-header";
@@ -116,14 +116,46 @@ const App = (() => {
     document.body.append(footer);
   }
 
+  /* The chart and markdown libraries load after our own code, so the header and the data requests do not
+     wait for them. A page awaits App.libs before it draws anything that needs one of them. */
+  const libs = new Promise((done) => {
+    if (document.readyState === "complete") return done();
+    document.addEventListener("DOMContentLoaded", done, { once: true });
+    window.addEventListener("load", done, { once: true });
+  });
+
+  /* The settings are kept for five minutes in this browser tab: going from page to page starts
+     drawing at once, while a fresh copy is fetched for the next page. */
+  const CFG_KEY = "ap-config", CFG_TTL = 5 * 60 * 1000;
+  async function config() {
+    const fresh = fetch("config/fund.json").then((r) => (r.ok ? r.json() : null)).catch(() => null).then((c) => {
+      try { if (c) sessionStorage.setItem(CFG_KEY, JSON.stringify({ t: Date.now(), c })); } catch (e) { /* storage unavailable */ }
+      return c;
+    });
+    try {
+      const kept = JSON.parse(sessionStorage.getItem(CFG_KEY) || "null");
+      if (kept && kept.c && Date.now() - kept.t < CFG_TTL) return kept.c;
+    } catch (e) { /* storage unavailable or damaged: use the network */ }
+    return fresh;
+  }
+
   async function init(current) {
-    state.cfg = await getJSON("config/fund.json");
+    state.cfg = await config();
     if (!state.cfg) {
       document.body.innerHTML = '<p style="padding:2rem">Could not load config/fund.json. Open the site through a web server, not as a local file.</p>';
       throw new Error("no config");
     }
     state.base = state.cfg.demo_mode ? "data/demo/" : "data/";
     chrome(current);
+    /* fetch a page when the pointer reaches its link, so the click finds it ready */
+    document.querySelectorAll(".site-nav a").forEach((a) => {
+      const warm = () => {
+        if (a.dataset.warm || a.getAttribute("aria-current")) return;
+        a.dataset.warm = "1";
+        const l = document.createElement("link"); l.rel = "prefetch"; l.href = a.getAttribute("href"); document.head.append(l);
+      };
+      a.addEventListener("pointerenter", warm); a.addEventListener("touchstart", warm, { passive: true });
+    });
     return state.cfg;
   }
 
@@ -186,7 +218,7 @@ const App = (() => {
     Chart.defaults.interaction = { mode: "index", intersect: false };
   }
 
-  return { init, getJSON, getText, data, num, usd, usdSigned, pct, pctSigned, sign, esc, dateTime, date,
+  return { init, libs, getJSON, getText, data, num, usd, usdSigned, pct, pctSigned, sign, esc, dateTime, date,
            tzOffsetSec, frontMatter, md, bars, sortable, statusLine, chartDefaults, COLORS,
            get cfg() { return state.cfg; } };
 })();

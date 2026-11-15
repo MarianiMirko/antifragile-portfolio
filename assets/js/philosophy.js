@@ -5,6 +5,7 @@
   const [text, rules, alerts] = await Promise.all([
     App.getText("content/philosophy.md"), App.getJSON("config/rules.json", {}), App.data("alerts.json", { rules: [] }),
   ]);
+  await App.libs;
   document.getElementById("philosophy").innerHTML = App.md(text);
   document.querySelector("#rules-table tbody").innerHTML = (alerts.rules || []).map((r) => `<tr>
     <td class="l"><b style="font-weight:500">${esc(r.rule)}</b></td><td class="l">${esc(r.limit)}</td><td class="l">${esc(r.current)}</td></tr>`).join("");

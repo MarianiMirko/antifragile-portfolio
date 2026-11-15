@@ -48,7 +48,7 @@
   }
 
   /* portfolio map and contribution waterfall */
-  if (window.echarts && pos.positions.length) {
+  if (pos.positions.length) {
     const mapEl = document.getElementById("map");
     Viz.treemap(mapEl, pos.positions, pos.cash, "total");
     document.querySelectorAll("[data-map]").forEach((btn) => btn.addEventListener("click", () => {
