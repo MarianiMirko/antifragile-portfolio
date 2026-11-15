@@ -81,13 +81,17 @@ const App = (() => {
     document.title = `${document.title} | ${c.fund_name}`;
     const links = PAGES.map(([href, label]) =>
       `<a href="${href}"${href === current ? ' aria-current="page"' : ""}>${label}</a>`).join("");
+    // The logo (a version drawn for the navy band) and the name set as a wordmark: first word bold, the rest light.
+    const [first, ...rest] = String(c.fund_name || "").split(" ");
+    const brandMark = `<img class="brand-logo" src="assets/img/logo-on-navy.png" alt="" width="40" height="40">`;
+    const brandName = `<span class="brand-name"><b>${esc(first)}</b>${rest.length ? " " + esc(rest.join(" ")) : ""}</span>`;
     const header = document.createElement("header");
     header.className = "site-header";
     header.innerHTML = `
       <div class="wrap header-inner">
         <a class="brand" href="index.html" aria-label="${esc(c.fund_name)}, home">
-          <span class="brand-mark" aria-hidden="true">${esc(c.fund_initials || "")}</span>
-          <span class="brand-name">${esc(c.fund_name)}</span>
+          ${brandMark}
+          ${brandName}
         </a>
         <nav class="site-nav" aria-label="Main">${links}</nav>
       </div>`;
@@ -103,8 +107,7 @@ const App = (() => {
     footer.innerHTML = `
       <div class="wrap footer-inner">
         <div>
-          <div class="brand"><span class="brand-mark" aria-hidden="true">${esc(c.fund_initials || "")}</span>
-          <span class="brand-name">${esc(c.fund_name)}</span></div>
+          <div class="brand">${brandMark}${brandName}</div>
           <p>${esc(c.tagline || "")}</p>
         </div>
         <p class="footer-note">A simulated portfolio run on the MarketWatch Virtual Stock Exchange for a university course.

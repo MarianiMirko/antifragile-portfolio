@@ -16,6 +16,7 @@
   --bench: #C4741A;
   --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --brand: "Sora", "IBM Plex Sans", system-ui, sans-serif;
   --wrap: 1180px;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -43,11 +44,9 @@ small { font-size: 0.82rem; color: var(--muted); }
 .site-header { background: var(--navy); color: #fff; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
-.brand-mark {
-  width: 34px; height: 34px; border: 1.5px solid #fff; display: grid; place-items: center;
-  font: 500 0.95rem/1 var(--serif); letter-spacing: 0.02em;
-}
-.brand-name { font: 400 1.18rem/1 var(--serif); letter-spacing: 0.005em; white-space: nowrap; }
+.brand-logo { width: 40px; height: 40px; display: block; flex: none; }
+.brand-name { font: 300 1.3rem/1 var(--brand); letter-spacing: -0.015em; white-space: nowrap; }
+.brand-name b { font-weight: 600; }
 .site-nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
 .site-nav::-webkit-scrollbar { display: none; }
 .site-nav a {
