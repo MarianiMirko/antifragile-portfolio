@@ -83,14 +83,17 @@
   /* ---- stock price database: pick a company, see its history ---- */
   let pxChart = null;
   async function loadPrices() {
-    const { data: secs, error } = await sb.from("securities").select("ticker,name,sector,first_date,last_date").order("ticker");
+    const { data: secs, error } = await sb.from("securities").select("ticker,name,sector,asset_class,assets,currency,first_date,last_date").order("ticker").limit(5000);
     if (error || !secs || !secs.length) return;          // not loaded yet: keep the section hidden
     $("px-block").hidden = false;
     App.chartDefaults();
     const first = secs.map((x) => x.first_date).filter(Boolean).sort()[0];
-    $("px-intro").textContent = `Daily prices of ${secs.length} S&P 500 companies${first ? ", going back to " + App.date(first) : ""}. Ask Claude for any analysis on them.`;
+    const groups = {};
+    secs.forEach((x) => (groups[x.asset_class || "Other"] = groups[x.asset_class || "Other"] || []).push(x));
+    const parts = Object.entries(groups).map(([k, v]) => `${v.length} ${k}${v.length === 1 ? "" : "s"}`).join(" and ");
+    $("px-intro").textContent = `Daily prices of ${parts}${first ? ", going back to " + App.date(first) : ""}. Ask Claude for any analysis on them.`;
     const sel = $("px-ticker");
-    sel.innerHTML = secs.map((x) => `<option value="${esc(x.ticker)}">${esc(x.ticker)}, ${esc(x.name || "")}</option>`).join("");
+    sel.innerHTML = Object.entries(groups).map(([k, v]) => `<optgroup label="${esc(k)}s">${v.map((x) => `<option value="${esc(x.ticker)}">${esc(x.ticker)}, ${esc(x.name || "")}</option>`).join("")}</optgroup>`).join("");
     const draw = async () => {
       const sec = secs.find((x) => x.ticker === sel.value);
       const { data } = await sb.rpc("monthly_prices", { p_ticker: sel.value });
@@ -100,8 +103,8 @@
       const years = last && firstRow ? (new Date(last.month) - new Date(firstRow.month)) / 31557600000 : 0;
       const cagr = years > 1 ? Math.pow(last.close / firstRow.close, 1 / years) - 1 : null;
       $("px-stats").innerHTML = [
-        stat("Sector", esc(sec.sector || "–")), stat("History from", sec.first_date ? App.date(sec.first_date) : "–", sec.last_date ? "to " + App.date(sec.last_date) : ""),
-        stat("Latest price", last ? usd(last.close, 2) : "–"), stat("Growth per year", cagr == null ? "–" : pctSigned(cagr, 1), "including dividends, since the first date"),
+        sec.assets ? stat("Fund size", (sec.currency === "EUR" ? "€" : "$") + (sec.assets / 1e9).toFixed(1) + " bn", esc(sec.asset_class || "")) : stat("Sector", esc(sec.sector || "–")), stat("History from", sec.first_date ? App.date(sec.first_date) : "–", sec.last_date ? "to " + App.date(sec.last_date) : ""),
+        stat("Latest price", last ? (sec.currency === "EUR" ? "€" + num(last.close, 2) : usd(last.close, 2)) : "–"), stat("Growth per year", cagr == null ? "–" : pctSigned(cagr, 1), "including dividends, since the first date"),
       ].join("");
       if (pxChart) pxChart.destroy();
       pxChart = new Chart($("px-chart"), {

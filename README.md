@@ -121,6 +121,10 @@ It needs the repository secret `SUPABASE_SECRET_KEY`. Run it once by hand with `
 `1980-01-01`; after that it adds the new prices every Friday night. Only companies in the index
 today are included, so long backtests on this data are flattered by survivorship bias.
 
+European ETFs are added by the workflow **Load European ETFs** (`scripts/load_etfs.py`): every ETF
+listed in EUR on Xetra whose fund size on Yahoo Finance is at least 1 billion, largest first, until
+the row budget that keeps the database inside the free plan's 500 MB is reached.
+
 ## Settings
 
 | File | What it holds |
