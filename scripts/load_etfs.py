@@ -85,7 +85,7 @@ def fund_size(item):
 
 
 def count_rows(db):
-    return with_retry(lambda: db.table("prices_daily").select("security_id", count="estimated", head=True).execute()).count or 0
+    return with_retry(lambda: db.table("prices_daily").select("security_id", count="exact", head=True).execute()).count or 0
 
 
 def load_prices(db, items, start, full, budget):
