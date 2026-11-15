@@ -1,6 +1,6 @@
 {
   "is_placeholder": false,
-  "note": "Limits of the investment plan as monitored by IGfinal (config.py). Sector and stop-loss limits are proposals: the plan is an index replica plus a sleeve, so it has no stop-losses and its technology weight follows the index.",
+  "note": "Limits and rules of the investment plan. The limits are monitored by the allocation model (models/igfinal/config.py); the buy and sell rules were set by the portfolio manager on 15 November 2026.",
   "limits": {
     "max_position_weight": 0.15,
     "max_sector_weight": 0.6,
@@ -12,17 +12,20 @@
     "drift_threshold": 0.01,
     "max_var_95_1d": 0.0413,
     "allow_margin": false,
-    "allow_short": false
+    "allow_short": false,
+    "min_order_value": 10000
   },
   "buy_criteria": [
-    "Replica: the 50 largest S&P 500 companies without NVDA, at index weights while we are behind",
-    "Sleeve: 30% of the fund in AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR, BABA until the IPO date (2026-11-19)",
-    "Every order comes from the IGfinal trade list and is recorded in the transaction log"
+    "Core, 70% of the fund: a replica of the S&P 500 with beta 1, made of 50 of its largest companies without NVDA. Its job is to follow the index; it is not a bet.",
+    "Sleeve, 30% of the fund: AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR and BABA in equal parts, bought on 16 November and held until the Anthropic IPO.",
+    "A company wanted by both parts is held once, with the two weights added together.",
+    "Every order is approved by the portfolio manager and recorded in the trade log with its reason."
   ],
   "sell_criteria": [
-    "Exit: sell the whole sleeve once the fund is 0.5% ahead of max(0, S&P 500), or on the IPO date",
-    "After the exit: hold the replica at minimum-tracking-error weights",
-    "Cash rule: equity between 40% and 100%, set by the simulated probability of finishing above max(0, S&P 500)",
-    "A breached limit on the dashboard is fixed before any other trade"
+    "The whole sleeve is sold on the day of the IPO, Thursday 19 November, after the New York open, even if the IPO is postponed. There is no earlier exit.",
+    "On Friday 20 November the cash from the sale is invested and the whole fund is brought back to the beta-1 replica.",
+    "From the following week the fund is brought back to its target weights every Friday before the open, always fully invested.",
+    "An order smaller than $10,000 (0.1% of the fund) is not placed: it costs a commission and changes almost nothing.",
+    "A breached limit on the dashboard is fixed before any other trade."
   ]
 }

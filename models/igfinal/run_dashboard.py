@@ -50,7 +50,7 @@ OUT = os.path.join("output", str(asof)); os.makedirs(OUT, exist_ok=True)
 # ---- 3. exit rule and replica ---------------------------------------------------
 # The sleeve is sold for good once the lead reaches EXIT_TRIGGER, or on the IPO date
 exitf = "state/sleeve_exit.csv"; ex = pd.read_csv(exitf) if os.path.exists(exitf) else None
-if ex is None and have_h and excess_t >= C.EXIT_TRIGGER:
+if C.EXIT_TRIGGER is not None and ex is None and have_h and excess_t >= C.EXIT_TRIGGER:      # None = no early exit (config.py)
     ex = pd.DataFrame({"date": [str(asof)], "reason": [f"lead of {pct(excess_t)} reached the exit trigger of {pct(C.EXIT_TRIGGER)}"]}); ex.to_csv(exitf, index=False)
 exited = ex is not None and date.fromisoformat(str(ex["date"][0])) <= asof
 _, ph_mult, ph_label = L.current_phase(max(asof, C.GAME_START))
@@ -76,6 +76,8 @@ L1 = active_loss(L.combine_weights(w_rep, a_s, 1)); te_scale = L.ewma_sigma(L1, 
 sim = lambda Rp0, Rm0: L.simulate_bonus(e_grid, Y, rm, Rp0, Rm0, days_left, vix * C.VIX_HAIRCUT, C.MARKET_DRIFT_ANN, C.ALPHA_VIEW, C.CASH_RATE_ANN, te_scale)
 PB = sim(Rp_t, Rm_t)
 best = PB[PB.P_bonus >= PB.P_bonus.max() - 0.005]; e_star = float(best.exposure[best.E_excess.idxmax()]); pb_star = PB[PB.exposure == e_star].iloc[0]
+if getattr(C, "FULLY_INVESTED", False):              # plan rule: always fully invested; the table above stays as information
+    e_star = float(e_grid.max()); pb_star = PB[PB.exposure == e_star].iloc[0]
 rows = []
 for nm, lvl in C.SP_START_ALTERNATIVES.items():
     r0 = sp_now / lvl - 1; x = sim(Rp_t, r0)
@@ -88,6 +90,8 @@ w_tgt = L.combine_weights(w_rep, a_s, e_star); w_tgt = w_tgt[w_tgt.abs() > 1e-6]
 tk = list(dict.fromkeys(list(w_tgt.index) + list(pos.index)))
 cur_sh = pos.reindex(tk).fillna(0.0); tgt_w = w_tgt.reindex(tk).fillna(0.0)
 tgt_sh = np.trunc(tgt_w * nw / px[tk]); w_cur = cur_sh * px[tk] / nw
+_small = ((tgt_sh - cur_sh).abs() * px[tk]) < getattr(C, "MIN_ORDER_USD", 0)     # plan rule: orders too small to matter are not placed
+tgt_sh = tgt_sh.where(~_small, cur_sh)
 trades = pd.DataFrame({"ticker": [t.replace("-", ".") for t in tk], "price": px[tk].round(2).values, "cur_shares": cur_sh.values, "tgt_shares": tgt_sh.values,
                        "trade": (tgt_sh - cur_sh).values, "trade_usd": ((tgt_sh - cur_sh) * px[tk]).round().values, "cur_w": (100 * w_cur).round(2).values,
                        "tgt_w": (100 * tgt_w).round(2).values, "replica_w": (100 * w_rep.reindex(tk).fillna(0)).round(2).values})
@@ -112,9 +116,11 @@ json.dump({"is_placeholder": False,
            "buy_criteria": [f"Replica: the {C.REPLICA_N} largest S&P 500 companies without {', '.join(C.REPLICA_EXCLUDE)}, at index weights while we are behind",
                             f"Sleeve: {pct(C.SLEEVE_SIZE, 0)} of the fund in {', '.join(C.SLEEVE)} until the IPO date ({C.IPO_DATE})",
                             "Every order comes from the IGfinal trade list and is recorded in the transaction log"],
-           "sell_criteria": [f"Exit: sell the whole sleeve once the fund is {pct(C.EXIT_TRIGGER, 1)} ahead of max(0, S&P 500), or on the IPO date",
+           "sell_criteria": [(f"Exit: sell the whole sleeve once the fund is {pct(C.EXIT_TRIGGER, 1)} ahead of max(0, S&P 500), or on the IPO date" if C.EXIT_TRIGGER is not None
+                              else "Exit: sell the whole sleeve on the IPO day, after the New York open. No early exit"),
                              "After the exit: hold the replica at minimum-tracking-error weights",
-                             f"Cash rule: equity between {pct(C.EXPOSURE_MIN, 0)} and {pct(C.EXPOSURE_MAX, 0)}, set by the simulated probability of finishing above max(0, S&P 500)",
+                             ("Always fully invested; orders smaller than " + money(getattr(C, "MIN_ORDER_USD", 0)) + " USD are not placed" if getattr(C, "FULLY_INVESTED", False) else
+                              f"Cash rule: equity between {pct(C.EXPOSURE_MIN, 0)} and {pct(C.EXPOSURE_MAX, 0)}, set by the simulated probability of finishing above max(0, S&P 500)"),
                              "A breached limit on the dashboard is fixed before any other trade"]},
           open("site_export/rules.json", "w"), indent=2)
 
@@ -283,9 +289,11 @@ body = "".join([
     (f'<li class="WARNING">{" and ".join(C.NOT_IN_SP500)} are US-listed but not S&amp;P 500 constituents. The case says the universe is the constituents: confirm they are allowed.</li>' if sleeve_on and C.NOT_IN_SP500 else ""),
     f"<li>Replica: {len(w_rep)} largest S&amp;P 500 companies without {', '.join(C.REPLICA_EXCLUDE)}, " + ("at index weights (catch-up phase: beta close to 1)" if rep_method == "index" else "at minimum-tracking-error weights (holding phase: smallest drift from the index)")
     + f". Beta over the window {beta_rep:.2f}, tracking error {pct(te_rep, 1)} a year.</li>",
-    f"<li>Exit rule: the sleeve is sold once the lead over the benchmark reaches {pct(C.EXIT_TRIGGER, 1)} or on the IPO date. Today the excess is {pct(excess_t)}"
+    (f"<li>Exit rule: the sleeve is sold once the lead over the benchmark reaches {pct(C.EXIT_TRIGGER, 1)} or on the IPO date. Today the excess is {pct(excess_t)}" if C.EXIT_TRIGGER is not None
+     else f"<li>Exit rule: the sleeve is sold on the IPO day, after the New York open; there is no early exit. Today the excess is {pct(excess_t)}")
     + (": <b>exit already made</b>" if exited else (" (no holdings recorded)" if not have_h else ": not reached")) + f". Active ES with the sleeve {pct(es_full)}, replica alone {pct(es_zero)}, monitoring limit {pct(budget)}.</li>",
-    f"<li>Equity exposure with the highest bonus probability inside the {pct(C.EXPOSURE_MIN, 0)}-{pct(C.EXPOSURE_MAX, 0)} band: <b>{pct(e_star, 0)}</b>.</li>",
+    (f"<li>Equity exposure: <b>{pct(e_star, 0)}</b>, always fully invested (plan rule). Section 2 shows what the simulation says for lower exposures.</li>" if getattr(C, "FULLY_INVESTED", False) else
+     f"<li>Equity exposure with the highest bonus probability inside the {pct(C.EXPOSURE_MIN, 0)}-{pct(C.EXPOSURE_MAX, 0)} band: <b>{pct(e_star, 0)}</b>.</li>"),
     f"<li>{ntr} orders to reach the target, turnover {pct(turnover, 0)} of net worth, cash after trades about {money(cash_after)}.</li></ul>",
     "<h2>1. Investment-plan constraints</h2>", H.table(LIM, status=True),
     '<p class="note">Limits are set in config.py (LIMITS, exposure band, active-ES limits). The case says constraints are assessed daily, so run this every day the book changes.</p>',
@@ -315,7 +323,7 @@ pd.set_option("display.width", 220); pd.set_option("display.max_columns", 20); p
 ln = lambda: print("-" * 110)
 ln(); print(f" INVESTMENT GAME | as of {asof} | {days_left} trading days left | {origin}"); ln()
 print(f" Net worth {money(nw)} | return {pct(Rp_t)} | S&P {pct(Rm_t)} | benchmark {pct(bench_t)} | excess {pct(excess_t)} | VIX {pct(vix, 1)}")
-print(f" Replica: {len(w_rep)} names, {rep_method} weights, TE {pct(te_rep)}/yr, beta {beta_rep:.2f} | {ph_label} | exit trigger {pct(C.EXIT_TRIGGER, 1)} | "
+print(f" Replica: {len(w_rep)} names, {rep_method} weights, TE {pct(te_rep)}/yr, beta {beta_rep:.2f} | {ph_label} | exit trigger {'none' if C.EXIT_TRIGGER is None else pct(C.EXIT_TRIGGER, 1)} | "
       f"active ES with sleeve {pct(es_full)}, replica {pct(es_zero)}, limit {pct(budget)} | sleeve {pct(C.SLEEVE_SIZE * ph_mult * s, 0)} of portfolio")
 print(f" Exposure e* = {e_star:.2f} | P(bonus) {pct(pb_star.P_bonus, 1)} | P(S&P ends up) {pct(PB.attrs['P_market_up'], 1)} | {ntr} orders, turnover {pct(turnover, 0)}"); ln()
 for t_ in (PBf, start_sens, LIM, RISK, LEGf, EULf.head(10), STf):

@@ -48,8 +48,12 @@ def run(ctx):
         phase_value, phase_note = "Replica only", f"The sleeve was sold for good on {ph['exit_date']}: {ph['exit_reason']}."
     elif ph["sleeve_on"]:
         phase_value = "Sleeve on"
-        phase_note = (f"{pct(ph['sleeve_size'], 0)} of the fund in {', '.join(ph['sleeve'])}. The sleeve is sold once the fund is {pct(ph['exit_trigger'], 1)} ahead of the "
-                      f"benchmark, or after the close of {ph['ipo_date']} (the IPO date), whichever comes first.")
+        phase_note = f"{pct(ph['sleeve_size'], 0)} of the fund in {', '.join(ph['sleeve'])}. "
+        if ph.get("exit_trigger") is None:
+            phase_note += f"The whole sleeve is sold on the IPO day ({ph['ipo_date']}), after the New York open. There is no earlier exit."
+        else:
+            phase_note += (f"The sleeve is sold once the fund is {pct(ph['exit_trigger'], 1)} ahead of the benchmark, or on the IPO day "
+                           f"({ph['ipo_date']}), whichever comes first.")
     else:
         phase_value, phase_note = "Replica only", ph["label"] + "."
     weights = "index weights" if rep["method"] == "index" else "minimum-tracking-error weights"
@@ -62,9 +66,10 @@ def run(ctx):
          "comment": f"Chance of finishing above max(0, S&P 500) with {d['days_left']} trading days left, at {pct(ex['chosen'], 0)} equity. "
                     f"The S&P 500 ends above its start in {pct(ex['p_market_up'], 0)} of the simulated paths."},
         {"name": "Phase of the plan", "value": phase_value, "comment": phase_note},
-        {"name": "Equity exposure the model picks", "value": pct(ex["chosen"], 0),
-         "comment": f"Inside the {pct(ex['min'], 0)} to {pct(ex['max'], 0)} band, the rest in cash. Beta of the target book {ex['beta']:.2f}; "
-                    f"final return between {pct(ex['return_q05'], 1, True)} and {pct(ex['return_q95'], 1, True)} in 90% of paths."},
+        {"name": "Equity exposure", "value": pct(ex["chosen"], 0),
+         "comment": ("The plan is always fully invested. " if ex.get("fully_invested") else f"Inside the {pct(ex['min'], 0)} to {pct(ex['max'], 0)} band, the rest in cash. ")
+                    + f"Beta of the target book {ex['beta']:.2f}; final return between {pct(ex['return_q05'], 1, True)} and "
+                      f"{pct(ex['return_q95'], 1, True)} in 90% of paths."},
         {"name": "Risk of trailing the S&P 500", "value": pct(es["target_book"]),
          "signal": "alert" if es_use > 1 else "caution" if es_use > 0.9 else "normal",
          "comment": f"Five-day expected shortfall at 97.5% of the target book against the index; limit {pct(es['limit'])}. "
@@ -74,7 +79,9 @@ def run(ctx):
          "comment": ("In breach: " + ", ".join(breaches) + ". ") * bool(breaches) + ("Close to the limit: " + ", ".join(warnings) + ". ") * bool(warnings)
                     or "Every limit of the plan is respected."},
         {"name": "Orders to reach the target", "value": str(d["orders"]["count"]),
-         "comment": f"Turnover {pct(d['orders']['turnover'], 0)} of the fund. Nothing is traded until the portfolio manager approves each order."},
+         "comment": f"Turnover {pct(d['orders']['turnover'], 0)} of the fund"
+                    + (f"; orders below ${d['orders']['min_order_usd']:,.0f} are left out" if d["orders"].get("min_order_usd") else "")
+                    + ". Nothing is traded until the portfolio manager approves each order."},
         {"name": "Replica", "value": f"{rep['names']} companies",
          "comment": f"At {weights}: the largest S&P 500 companies without {', '.join(rep['excluded']) or 'exclusions'}. Beta {rep['beta']:.2f} and tracking error "
                     f"{pct(rep['tracking_error'], 1)} a year over the last two years."},

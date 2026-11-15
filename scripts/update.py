@@ -582,6 +582,7 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
 
     # ---- targets and rebalancing proposals ---------------------------------
     thr = float(lim.get("drift_threshold", 0.02))
+    min_order = float(lim.get("min_order_value") or 0)      # with this set, an order is proposed when it is worth placing
     table, suggestions = [], []
     by_ticker = {p["ticker"]: p for p in positions}
     for t in sorted(set(tgt) | set(by_ticker), key=lambda k: (k == "CASH", -tgt.get(k, 0), k)):
@@ -601,18 +602,19 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
         if p and n > 0 and p["unrealized_pct"] <= lim["stop_loss_pct"]:
             n = 0                                   # never propose adding to a position that hit its stop-loss
             blocked = "Stop-loss hit: no top-up"
-        flag = abs(drift) > thr and t in tgt and n != 0
+        worth = (abs(n) * price >= min_order) if (min_order and price) else abs(drift) > thr
+        flag = worth and t in tgt and n != 0
         row = {"ticker": t, "name": meta.get(t, {}).get("name", t), "weight": w_now, "target_weight": tgt.get(t),
                "drift": drift if t in tgt else None, "price": price,
                "action": ("buy" if n > 0 else "sell") if n else None, "shares": abs(n),
                "est_value": abs(n) * price if price else None, "flag": flag, "blocked": blocked}
         table.append(row)
         if flag:
-            suggestions.append({**row, "reason": f"{t} is {pct(abs(drift))} {'above' if drift > 0 else 'below'} its "
-                                f"{pct(w_tgt)} target (threshold {pct(thr)})."})
+            suggestions.append({**row, "reason": f"{t} is {pct(abs(drift))} {'above' if drift > 0 else 'below'} its {pct(w_tgt)} target"
+                                + (f" (orders under ${min_order:,.0f} are skipped)." if min_order else f" (threshold {pct(thr)}).")})
     suggestions.sort(key=lambda s: -abs(s["drift"]))
     write_json(out_dir / "rebalance_suggestions.json", {
-        "generated_at": now, "nav": nav, "drift_threshold": thr,
+        "generated_at": now, "nav": nav, "drift_threshold": thr, "min_order_value": min_order or None,
         "note": "Proposals only. No order is placed until the portfolio manager approves it.",
         "targets_are_placeholder": bool((targets or {}).get("is_placeholder")),
         "table": table, "suggestions": suggestions})
@@ -688,7 +690,7 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
 
     drifts = [r for r in table if r.get("drift") is not None and r["ticker"] != "CASH"]
     maxd = max(drifts, key=lambda r: abs(r["drift"])) if drifts else None
-    rule("drift", "Drift from target weight", f"rebalance beyond {pct(thr, 0)}",
+    rule("drift", "Drift from target weight", f"orders of ${min_order:,.0f} or more" if min_order else f"rebalance beyond {pct(thr, 0)}",
          f"largest is {maxd['drift'] * 100:+.1f} pts ({maxd['ticker']})" if maxd else "no targets set",
          not suggestions, "warning")
     for s in suggestions:

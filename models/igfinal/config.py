@@ -30,7 +30,8 @@ INDEX_WEIGHTS_FILE = "input/sp500_index_weights.csv"   # SPY holdings of 12 Nov 
 REPLICA_N = 50
 REPLICA_EXCLUDE = ["NVDA"]
 REPLICA_CATCH_UP = "index"     # while the sleeve is on
-REPLICA_HOLD = "min_te"        # after the sleeve is sold
+REPLICA_HOLD = "index"         # after the sleeve is sold. Was "min_te"; the portfolio manager asked on 15 Nov for the replica
+                               # of the team's study in both phases, pending the result of the research in research/
 W_MIN, W_MAX = 0.005, 0.15     # bounds for the "min_te" weights
 REPLICA_LOOKBACK = 504
 
@@ -44,8 +45,11 @@ _SW = "Software (MSFT, GOOGL, AMZN, META)"
 THEMES = {"AMD": "Production (AMD)", "ASML": "Proxy (ASML)", "MSFT": _SW, "GOOGL": _SW, "AMZN": _SW, "META": _SW,
           "PLTR": "Government (PLTR)", "BABA": "China / HK (BABA)"}
 NOT_IN_SP500 = ["ASML", "BABA"]   # US-listed, but not index constituents: check they are allowed
+# Portfolio manager, 15 Nov: the sleeve is sold on the IPO day itself (Thu 19 Nov) after the New York open, even if
+# the IPO is postponed. The run made on the close of LAST_SLEEVE_CLOSE therefore already shows the sale in its trade list.
+LAST_SLEEVE_CLOSE = date(2026, 11, 18)
 PHASES = [(GAME_START, 1.00, "Speculative sleeve on, until the IPO"),
-          (IPO_DATE, 0.00, "After the IPO: pure S&P 500 replica")]
+          (LAST_SLEEVE_CLOSE, 0.00, "Sleeve sold on the IPO day (Thu 19 Nov, after the New York open): S&P 500 replica only")]
 
 # ---- Risk model ---------------------------------------------------------------
 CONF = 0.975        # ES level
@@ -57,12 +61,16 @@ N_BOOT = 500        # bootstrap replications for the intervals
 # ---- Exit rule and monitoring limits ---------------------------------------------
 # Once the book is EXIT_TRIGGER ahead of the dual benchmark, sell the sleeve and hold the replica.
 # The exit is permanent (recorded in state/sleeve_exit.csv; delete that file to re-open the sleeve).
-EXIT_TRIGGER = 0.005
+EXIT_TRIGGER = None        # was 0.005. Portfolio manager, 15 Nov: no early exit, the sleeve is held to the IPO day. A number
+                           # (0.005 = half a point) brings the early exit back.
 ACTIVE_ES_LIMIT = 0.04     # monitoring limit, 5-day 97.5% ES of (portfolio - S&P), sleeve on
 REPLICA_ES_LIMIT = 0.03    # the same, replica only
 
 # ---- Equity exposure decision (dual benchmark simulation) ---------------------
 EXPOSURE_MIN, EXPOSURE_MAX = 0.40, 1.00
+FULLY_INVESTED = True      # portfolio manager, 15 Nov: always 100% invested. The simulation below is still run and shown,
+                           # but it no longer sets a cash share. False brings the cash rule back.
+MIN_ORDER_USD = 10_000     # portfolio manager, 15 Nov: an order smaller than this is not placed (commission of 10 per order)
 N_SIM = 20000
 VIX_HAIRCUT = 0.80         # realised vol has averaged ~0.8 x VIX (validate.py); 1 = use VIX as is
 MARKET_DRIFT_ANN = 0.06    # expected S&P return per year used in the simulation (0 = no view)

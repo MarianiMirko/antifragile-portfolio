@@ -113,9 +113,11 @@ One entry per trade, matched to the trade log by `date` (YYYY-MM-DD, New York da
 ## The allocation model
 
 The plan of the fund is a model, not a list typed by hand. `models/igfinal/` is Lorenzo's toolkit,
-kept exactly as he wrote it: 70% of the fund in a replica of the S&P 500 (its 50 largest companies
-without NVIDIA, from Riccardo's replica study) and 30% in a sleeve of AI and IPO-related names, with
-an exit rule and a cash rule. Its benchmark is the one of the game: max(0, S&P 500 return).
+with the few changes listed in `models/igfinal/CHANGES.md`: 70% of the fund in a replica of the S&P 500
+(its 50 largest companies without NVIDIA, from Riccardo's replica study) and 30% in a sleeve of AI and
+IPO-related names, sold on the day of the Anthropic IPO. Its benchmark is the one of the game:
+max(0, S&P 500 return). The rules the portfolio manager set are in `config/rules.json` and are shown on
+the Philosophy page; `research/` holds the studies behind them.
 
 Before every site update the workflow runs `scripts/run_igfinal.py`, which:
 

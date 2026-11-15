@@ -70,7 +70,9 @@
 
   /* targets and rebalancing */
   document.getElementById("tgt-intro").textContent = reb.table.length
-    ? `We propose a trade when a position is more than ${pct(reb.drift_threshold, 0)} of the fund away from its target. These are proposals: the portfolio manager approves every order before it is placed.`
+    ? (reb.min_order_value
+      ? `We propose a trade when bringing a position back to its target takes an order of at least ${usd(reb.min_order_value)}. Smaller orders are not placed: each one costs a commission and changes almost nothing. These are proposals: the portfolio manager approves every order before it is placed.`
+      : `We propose a trade when a position is more than ${pct(reb.drift_threshold, 0)} of the fund away from its target. These are proposals: the portfolio manager approves every order before it is placed.`)
     : "No target weights are set yet. Add them to content/targets.json and this table fills in.";
   if (!reb.table.some((r) => r.target_weight != null)) document.getElementById("tgt-intro").textContent = "No target weights are set yet. Add them to content/targets.json and this table fills in.";
   document.getElementById("tgt-placeholder").hidden = !reb.targets_are_placeholder;
