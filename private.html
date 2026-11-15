@@ -60,6 +60,14 @@
       <div class="block-head"><div><h2 id="an-title">Analyses</h2><p>Analyses run on request on the private database, newest first.</p></div></div>
       <div id="analyses"></div>
     </section>
+    <section class="block wrap" aria-labelledby="px-title" id="px-block" hidden>
+      <div class="block-head"><div><h2 id="px-title">Stock price database</h2><p id="px-intro"></p></div>
+        <div class="controls"><label for="px-ticker" style="font-size:.9rem">Company</label>
+          <select id="px-ticker" class="select"></select></div></div>
+      <dl class="stats" id="px-stats" style="margin-bottom:20px"></dl>
+      <div class="chart-box" style="height:360px"><canvas id="px-chart" role="img" aria-label="Line chart of the selected company's month-end price"></canvas></div>
+      <p class="caveat">Closing prices adjusted for splits and dividends, shown at month end on a logarithmic scale. Only companies in the index today are included, so companies that failed or left the index are missing.</p>
+    </section>
     <section class="block wrap" aria-labelledby="snap-title">
       <div class="block-head"><div><h2 id="snap-title">Portfolio history</h2><p>One row per trading day.</p></div></div>
       <div class="table-scroll"><table class="data" id="snapshots">
@@ -80,6 +88,7 @@
   </div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/private.js"></script>

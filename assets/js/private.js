@@ -80,6 +80,45 @@
       <td class="l wrap-cell">${esc(w.note || "")}</td><td class="l">${App.date(w.added_at)}</td></tr>`).join("");
   }
 
+  /* ---- stock price database: pick a company, see its history ---- */
+  let pxChart = null;
+  async function loadPrices() {
+    const { data: secs, error } = await sb.from("securities").select("ticker,name,sector,first_date,last_date").order("ticker");
+    if (error || !secs || !secs.length) return;          // not loaded yet: keep the section hidden
+    $("px-block").hidden = false;
+    App.chartDefaults();
+    const first = secs.map((x) => x.first_date).filter(Boolean).sort()[0];
+    $("px-intro").textContent = `Daily prices of ${secs.length} S&P 500 companies${first ? ", going back to " + App.date(first) : ""}. Ask Claude for any analysis on them.`;
+    const sel = $("px-ticker");
+    sel.innerHTML = secs.map((x) => `<option value="${esc(x.ticker)}">${esc(x.ticker)}, ${esc(x.name || "")}</option>`).join("");
+    const draw = async () => {
+      const sec = secs.find((x) => x.ticker === sel.value);
+      const { data } = await sb.rpc("monthly_prices", { p_ticker: sel.value });
+      const rows = data || [];
+      const stat = (l, v, sub = "") => `<div class="stat"><dt>${l}</dt><dd>${v}${sub ? `<small>${sub}</small>` : ""}</dd></div>`;
+      const last = rows[rows.length - 1], firstRow = rows[0];
+      const years = last && firstRow ? (new Date(last.month) - new Date(firstRow.month)) / 31557600000 : 0;
+      const cagr = years > 1 ? Math.pow(last.close / firstRow.close, 1 / years) - 1 : null;
+      $("px-stats").innerHTML = [
+        stat("Sector", esc(sec.sector || "–")), stat("History from", sec.first_date ? App.date(sec.first_date) : "–", sec.last_date ? "to " + App.date(sec.last_date) : ""),
+        stat("Latest price", last ? usd(last.close, 2) : "–"), stat("Growth per year", cagr == null ? "–" : pctSigned(cagr, 1), "including dividends, since the first date"),
+      ].join("");
+      if (pxChart) pxChart.destroy();
+      pxChart = new Chart($("px-chart"), {
+        type: "line",
+        data: { labels: rows.map((r) => r.month), datasets: [{ label: sel.value, data: rows.map((r) => r.close), borderColor: App.COLORS.fund, tension: 0 }] },
+        options: {
+          plugins: { legend: { display: false }, tooltip: { callbacks: { title: (i) => App.date(i[0].label), label: (i) => ` ${usd(i.parsed.y, 2)}` } } },
+          scales: { x: { grid: { display: false }, ticks: { maxTicksLimit: 8, maxRotation: 0, callback(v) { return String(this.getLabelForValue(v)).slice(0, 4); } } },
+                    y: { type: "logarithmic", ticks: { callback: (v) => "$" + v } } },
+        },
+      });
+    };
+    sel.addEventListener("change", draw);
+    if (secs.some((x) => x.ticker === "AAPL")) sel.value = "AAPL";
+    draw();
+  }
+
   /* ---- which screen to show ---- */
   async function route() {
     const { data: { session } } = await sb.auth.getSession();
@@ -90,6 +129,7 @@
     $("who").textContent = email;
     show("member");
     loadData();
+    loadPrices();
   }
   sb.auth.onAuthStateChange((event) => { if (["SIGNED_IN", "SIGNED_OUT"].includes(event)) setTimeout(route, 0); });
   route();

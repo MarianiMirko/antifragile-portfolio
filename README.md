@@ -113,7 +113,13 @@ One entry per trade, matched to the trade log by `date` (YYYY-MM-DD, New York da
   write from the website. Data and analyses are loaded by Claude on request.
 - The Supabase address and publishable key in `config/fund.json` are public by design.
 
-Tables: `analyses`, `trades`, `portfolio_snapshots`, `position_snapshots`, `prices_daily`, `watchlist`.
+Tables: `analyses`, `trades`, `portfolio_snapshots`, `position_snapshots`, `watchlist`, `securities`
+and `prices_daily` (daily adjusted closing prices of the S&P 500 companies since 1980).
+
+The price history is loaded by the GitHub workflow **Load stock prices** (`scripts/load_prices.py`).
+It needs the repository secret `SUPABASE_SECRET_KEY`. Run it once by hand with `since` set to
+`1980-01-01`; after that it adds the new prices every Friday night. Only companies in the index
+today are included, so long backtests on this data are flattered by survivorship bias.
 
 ## Settings
 
