@@ -1,0 +1,48 @@
+scenario,ticker,shock
+IPO disappoints: AI names sold,^GSPC,-0.03
+IPO disappoints: AI names sold,OTHER,-0.02
+IPO disappoints: AI names sold,AMD,-0.12
+IPO disappoints: AI names sold,ASML,-0.08
+IPO disappoints: AI names sold,PLTR,-0.15
+IPO disappoints: AI names sold,BABA,-0.06
+IPO disappoints: AI names sold,GOOGL,-0.09
+IPO disappoints: AI names sold,AMZN,-0.08
+IPO disappoints: AI names sold,MSFT,-0.05
+IPO disappoints: AI names sold,META,-0.05
+IPO disappoints: AI names sold,NVDA,-0.10
+IPO disappoints: AI names sold,AVGO,-0.12
+Money rotates from AI holders into ANT,^GSPC,0.00
+Money rotates from AI holders into ANT,OTHER,0.005
+Money rotates from AI holders into ANT,GOOGL,-0.05
+Money rotates from AI holders into ANT,AMZN,-0.05
+Money rotates from AI holders into ANT,MSFT,-0.03
+Money rotates from AI holders into ANT,META,-0.03
+Money rotates from AI holders into ANT,PLTR,-0.08
+Money rotates from AI holders into ANT,AMD,-0.04
+China shock: BABA -15%,^GSPC,-0.01
+China shock: BABA -15%,OTHER,-0.01
+China shock: BABA -15%,BABA,-0.15
+China shock: BABA -15%,ASML,-0.05
+Broad market -10%,^GSPC,-0.10
+Broad market -10%,OTHER,-0.10
+Broad market -10%,AMD,-0.20
+Broad market -10%,PLTR,-0.25
+Broad market -10%,ASML,-0.15
+Broad market -10%,BABA,-0.14
+Broad market -10%,NVDA,-0.16
+Broad market -10%,AVGO,-0.16
+Broad market -10%,TSLA,-0.18
+Broad market -10%,PG,-0.04
+Broad market -10%,JNJ,-0.04
+Broad market -10%,WMT,-0.05
+AI rally into the listing,^GSPC,0.02
+AI rally into the listing,OTHER,0.01
+AI rally into the listing,AMD,0.10
+AI rally into the listing,ASML,0.06
+AI rally into the listing,PLTR,0.12
+AI rally into the listing,BABA,0.05
+AI rally into the listing,GOOGL,0.07
+AI rally into the listing,AMZN,0.07
+AI rally into the listing,MSFT,0.04
+AI rally into the listing,META,0.04
+AI rally into the listing,NVDA,0.06

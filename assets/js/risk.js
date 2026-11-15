@@ -182,6 +182,8 @@
   /* team models */
   const sigLabel = { normal: "Normal", caution: "Caution", alert: "Alert" };
   const cell = (c) => (c && typeof c === "object") ? `<td class="${c.signal && c.signal !== "normal" ? "cell-" + c.signal : ""}">${esc(c.v)}</td>` : `<td>${esc(c)}</td>`;
+  const modelTable = (t) => `<div class="table-scroll"><table class="data"><thead><tr>${t.columns.map((c, i) => `<th class="${i ? "" : "l"}">${esc(c)}</th>`).join("")}</tr></thead>
+    <tbody>${t.rows.map((r) => `<tr>${r.map((c, i) => i ? cell(c) : `<td class="l ticker">${esc(c && typeof c === "object" ? c.v : c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   document.getElementById("models").innerHTML = models.models.length ? models.models.map((m) => `
     <article class="model">
       <h3>${esc(m.title)}</h3>
@@ -190,8 +192,10 @@
       ${m.error ? `<p class="error-box">This model failed on the last run: ${esc(m.error)}</p>` : ""}
       ${(m.metrics || []).length ? `<div class="model-metrics">${m.metrics.map((x) => `<div class="model-metric"><div class="n">${esc(x.name)}</div>
         <div class="v">${esc(x.value)} ${x.signal ? `<span class="tag tag-${esc(x.signal)}">${sigLabel[x.signal] || esc(x.signal)}</span>` : ""}</div>${x.comment ? `<p>${esc(x.comment)}</p>` : ""}</div>`).join("")}</div>` : ""}
-      ${m.table ? `<div class="table-scroll"><table class="data"><thead><tr>${m.table.columns.map((c, i) => `<th class="${i ? "" : "l"}">${esc(c)}</th>`).join("")}</tr></thead>
-        <tbody>${m.table.rows.map((r) => `<tr>${r.map((c, i) => i ? cell(c) : `<td class="l ticker">${esc(typeof c === "object" ? c.v : c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : ""}
+      ${m.table ? modelTable(m.table) : ""}
+      ${(m.tables || []).map((x) => `<details class="model-more"><summary>${esc(x.title)}</summary>
+        ${x.note ? `<p class="muted">${esc(x.note)}</p>` : ""}${modelTable(x.table)}</details>`).join("")}
+      ${(m.links || []).map((x) => `<p class="model-link"><a href="${esc(x.href)}">${esc(x.label)}</a></p>`).join("")}
     </article>`).join("") : '<p class="chart-empty">No model has been added yet. Put a Python file in the models folder and it will run with every update.</p>';
 
   /* analyst's indicators and note */

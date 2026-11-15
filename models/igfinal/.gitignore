@@ -1,0 +1,7 @@
+# written on every run, not kept in the repository
+data/
+site_export/
+input/holdings.csv
+output/20*/
+output/validation/
+__pycache__/

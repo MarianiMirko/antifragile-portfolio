@@ -21,6 +21,9 @@ def run(ctx):
     }
 ```
 
+A model may also return `"tables": [{"title": ..., "note": ..., "table": {...}}]` for extra tables, shown folded
+under their title, and `"links": [{"label": ..., "href": ...}]`.
+
 `signal` is `normal`, `caution` or `alert` and controls the highlighting on the site.
 A table cell is either a plain value or `{"v": value, "signal": ...}` to highlight it.
 
@@ -34,6 +37,9 @@ What is inside `ctx`:
 | `nav`, `cash` | fund value and cash in USD |
 | `benchmark` | benchmark ticker (its prices are in `daily`) |
 | `config`, `rules` | the contents of `config/fund.json` and `config/rules.json` |
+
+`allocation_plan.py` shows the results of the allocation model in `igfinal/` (see the main README).
+Folders are not scanned, so `igfinal/` is not run as a model.
 
 Extra Python packages go in `requirements.txt`. Files whose name starts with `_` are ignored.
 If a model crashes, the site shows the error for that model and everything else still updates.

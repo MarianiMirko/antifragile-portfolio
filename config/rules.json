@@ -1,29 +1,28 @@
 {
-  "is_placeholder": true,
-  "note": "Placeholder limits. Replace with the limits from Case Study 1. The same numbers drive the alerts on the site.",
+  "is_placeholder": false,
+  "note": "Limits of the investment plan as monitored by IGfinal (config.py). Sector and stop-loss limits are proposals: the plan is an index replica plus a sleeve, so it has no stop-losses and its technology weight follows the index.",
   "limits": {
-    "max_position_weight": 0.1,
-    "max_sector_weight": 0.3,
-    "min_cash_weight": 0.02,
-    "max_cash_weight": 0.2,
-    "min_positions": 10,
-    "max_positions": 20,
-    "stop_loss_pct": -0.15,
+    "max_position_weight": 0.15,
+    "max_sector_weight": 0.6,
+    "min_cash_weight": 0,
+    "max_cash_weight": 0.6,
+    "min_positions": 40,
+    "max_positions": 60,
+    "stop_loss_pct": -0.3,
     "drift_threshold": 0.01,
-    "max_var_95_1d": 0.025,
+    "max_var_95_1d": 0.0413,
     "allow_margin": false,
     "allow_short": false
   },
   "buy_criteria": [
-    "A written thesis by the fundamental analyst with a target price and at least 10% upside",
-    "Position size fits within the single-name and sector limits after the trade",
-    "The risk analyst confirms portfolio VaR stays within its limit",
-    "The portfolio manager approves and records the rationale in the trade log"
+    "Replica: the 50 largest S&P 500 companies without NVDA, at index weights while we are behind",
+    "Sleeve: 30% of the fund in AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR, BABA until the IPO date (2026-11-19)",
+    "Every order comes from the IGfinal trade list and is recorded in the transaction log"
   ],
   "sell_criteria": [
-    "Price reaches the target and the thesis is not upgraded",
-    "Stop-loss: the position falls 15% below its average cost",
-    "The thesis is broken (earnings, guidance or macro regime change)",
-    "A limit is breached and trimming is the cheapest way back inside it"
+    "Exit: sell the whole sleeve once the fund is 0.5% ahead of max(0, S&P 500), or on the IPO date",
+    "After the exit: hold the replica at minimum-tracking-error weights",
+    "Cash rule: equity between 40% and 100%, set by the simulated probability of finishing above max(0, S&P 500)",
+    "A breached limit on the dashboard is fixed before any other trade"
   ]
 }

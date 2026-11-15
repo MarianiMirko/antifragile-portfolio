@@ -1,0 +1,101 @@
+rank,ticker,company,sp500_weight_pct
+1,AAPL,Apple Inc,7.904
+2,MSFT,Microsoft Corp,5.927
+3,GOOGL,Alphabet Inc Cl A,4.818
+4,AMZN,Amazon.Com Inc,4.006
+5,AVGO,Broadcom Inc,2.646
+6,META,Meta Platforms Inc Class A,2.099
+7,LLY,Eli Lilly + Co,1.741
+8,TSLA,Tesla Inc,1.71
+9,BRK-B,Berkshire Hathaway Inc Cl B,1.677
+10,AMD,Advanced Micro Devices,1.458
+11,JPM,Jpmorgan Chase + Co,1.391
+12,MU,Micron Technology Inc,1.376
+13,V,Visa Inc Class A Shares,1.093
+14,XOM,Exxonmobil Holdings Corp,1.065
+15,JNJ,Johnson + Johnson,1.043
+16,WMT,Walmart Inc,0.858
+17,MA,Mastercard Inc   A,0.805
+18,ABBV,Abbvie Inc,0.794
+19,COST,Costco Wholesale Corp,0.739
+20,CVX,Chevron Corp,0.653
+21,CSCO,Cisco Systems Inc,0.614
+22,PLTR,Palantir Technologies Inc A,0.603
+23,PG,Procter + Gamble Co/The,0.596
+24,KO,Coca Cola Co/The,0.576
+25,UNH,Unitedhealth Group Inc,0.555
+26,MRK,Merck + Co. Inc.,0.553
+27,HD,Home Depot Inc,0.53
+28,GE,General Electric,0.524
+29,BAC,Bank Of America Corp,0.501
+30,PM,Philip Morris International,0.468
+31,INTC,Intel Corp,0.464
+32,AMAT,Applied Materials Inc,0.461
+33,LRCX,Lam Research Corp,0.446
+34,TXN,Texas Instruments Inc,0.436
+35,CAT,Caterpillar Inc,0.425
+36,RTX,Rtx Corp,0.408
+37,GS,Goldman Sachs Group Inc,0.406
+38,PANW,Palo Alto Networks Inc,0.401
+39,NFLX,Netflix Inc,0.398
+40,WFC,Wells Fargo + Co,0.396
+41,TMO,Thermo Fisher Scientific Inc,0.395
+42,AMGN,Amgen Inc,0.386
+43,ORCL,Oracle Corp,0.381
+44,LIN,Linde Plc,0.368
+45,CRWD,Crowdstrike Holdings Inc   A,0.357
+46,IBM,Intl Business Machines Corp,0.352
+47,MS,Morgan Stanley,0.344
+48,GEV,Ge Vernova Inc,0.333
+49,ANET,Arista Networks Inc,0.33
+50,GILD,Gilead Sciences Inc,0.318
+51,C,Citigroup Inc,0.317
+52,KLAC,Kla Corp,0.314
+53,DIS,Walt Disney Co/The,0.311
+54,ADI,Analog Devices Inc,0.304
+55,APH,Amphenol Corp Cl A,0.3
+56,PEP,Pepsico Inc,0.296
+57,MCD,Mcdonald S Corp,0.295
+58,VZ,Verizon Communications Inc,0.295
+59,QCOM,Qualcomm Inc,0.289
+60,ABT,Abbott Laboratories,0.283
+61,UNP,Union Pacific Corp,0.276
+62,CRM,Salesforce Inc,0.272
+63,NEE,Nextera Energy Inc,0.271
+64,WELL,Welltower Inc,0.27
+65,BLK,Blackrock Inc,0.268
+66,DE,Deere + Co,0.26
+67,COP,Conocophillips,0.257
+68,AXP,American Express Co,0.256
+69,PFE,Pfizer Inc,0.251
+70,ISRG,Intuitive Surgical Inc,0.237
+71,ACN,Accenture Plc Cl A,0.233
+72,T,At+T Inc,0.232
+73,TJX,Tjx Companies Inc,0.229
+74,SCHW,Schwab (Charles) Corp,0.227
+75,DHR,Danaher Corp,0.222
+76,MRVL,Marvell Technology Inc,0.22
+77,SPGI,S+P Global Inc,0.216
+78,UBER,Uber Technologies Inc,0.216
+79,ETN,Eaton Corp Plc,0.213
+80,VRTX,Vertex Pharmaceuticals Inc,0.21
+81,PGR,Progressive Corp,0.209
+82,SNDK,Sandisk Corp,0.209
+83,BA,Boeing Co/The,0.207
+84,CB,Chubb Ltd,0.199
+85,MO,Altria Group Inc,0.199
+86,LOW,Lowe S Cos Inc,0.195
+87,BMY,Bristol Myers Squibb Co,0.194
+88,MCK,Mckesson Corp,0.191
+89,STX,Seagate Technology Holdings,0.189
+90,MDT,Medtronic Plc,0.189
+91,LMT,Lockheed Martin Corp,0.187
+92,ADP,Automatic Data Processing,0.187
+93,PLD,Prologis Inc,0.187
+94,SBUX,Starbucks Corp,0.186
+95,BKNG,Booking Holdings Inc,0.185
+96,PH,Parker Hannifin Corp,0.184
+97,COF,Capital One Financial Corp,0.181
+98,NEM,Newmont Corp,0.181
+99,MPC,Marathon Petroleum Corp,0.177
+100,CVS,Cvs Health Corp,0.175

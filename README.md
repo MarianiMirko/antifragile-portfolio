@@ -40,10 +40,11 @@ The site refreshes within a few minutes.
 |---|---|---|
 | Mirko | Message on the home page | `content/pm_note.md` |
 | Mirko | Reason for each trade | `content/trade_rationale.json` |
-| Mirko | Target weights | `content/targets.json` |
+| Mirko | Target weights | written by the allocation model; see below to set them by hand |
 | Lorenzo | Indicators table | `content/risk/indicators.json` |
 | Lorenzo | Risk note | `content/risk/notes.md` |
-| Lorenzo | Python models | `models/` (see `models/README.md`) |
+| Lorenzo | Allocation model and its settings | `models/igfinal/` (`config.py` holds every assumption) |
+| Lorenzo | Other Python models | `models/` (see `models/README.md`) |
 | Marek | One file per company | `content/fundamental/TICKER.md` |
 | Andrea | Macro notes | `content/macro/YYYY-MM-DD-title.md` |
 | Andrea | Event calendar | `content/macro/calendar.json` |
@@ -101,6 +102,33 @@ Each indicator has `name`, `value`, `signal` (`normal`, `caution` or `alert`) an
 One entry per trade, matched to the trade log by `date` (YYYY-MM-DD, New York date), `ticker` and
 `side`. Trades without an entry show "Rationale not written yet".
 
+## The allocation model
+
+The plan of the fund is a model, not a list typed by hand. `models/igfinal/` is Lorenzo's toolkit,
+kept exactly as he wrote it: 70% of the fund in a replica of the S&P 500 (its 50 largest companies
+without NVIDIA, from Riccardo's replica study) and 30% in a sleeve of AI and IPO-related names, with
+an exit rule and a cash rule. Its benchmark is the one of the game: max(0, S&P 500 return).
+
+Before every site update the workflow runs `scripts/run_igfinal.py`, which:
+
+1. writes the positions read from MarketWatch into `models/igfinal/input/holdings.csv`;
+2. runs `models/igfinal/run_dashboard.py` on Yahoo closing prices;
+3. copies the target weights into `content/targets.json`, so **Target weights and rebalancing** on
+   the Portfolio page shows what to trade;
+4. saves the results in `data/igfinal.json` (Risk page, under Team models) and the model's own
+   dashboard in `data/igfinal/dashboard.html`.
+
+The model prices the fund at the last completed session, so its numbers change once a day, with the
+run of 22:30 UTC. If a trade is made after that close the model waits for the session to end
+(positions and prices must belong to the same moment, or its permanent exit rule could fire on a
+number that is not real). The exit, once made, is recorded in `models/igfinal/state/sleeve_exit.csv`;
+the robot commits that folder and the model's logs.
+
+To change the plan (sleeve names and size, IPO date, exit trigger, replica method, limits), edit
+`models/igfinal/config.py`. To set target weights by hand instead, put `"source": "manual"` in
+`content/targets.json`: the model then leaves that file alone. `config/rules.json` holds the limits
+exported by the model on 13 November and is not rewritten.
+
 ## Private area
 
 `private.html` is a login-protected page backed by a Supabase database (project `antifragile-portfolio`).
@@ -131,9 +159,10 @@ the row budget that keeps the database inside the free plan's 500 MB is reached.
 |---|---|
 | `config/fund.json` | Fund name, initial capital (10,000,000 USD), benchmark, start and end date, `demo_mode` |
 | `config/rules.json` | Risk limits and buy/sell criteria. **The same numbers generate the alerts.** |
-| `content/targets.json` | Target weights. Empty until the team agrees them. |
+| `content/targets.json` | Target weights, written by the allocation model. |
 
-Items still marked as placeholders: fund name, benchmark (SPY) and every limit in `config/rules.json`.
+Items still marked as placeholders: fund name and benchmark. The site measures the fund against SPY;
+the benchmark of the game, max(0, S&P 500) from its start level, is the one the allocation model uses.
 
 ## Data files (generated, do not edit by hand)
 
@@ -149,6 +178,8 @@ Items still marked as placeholders: fund name, benchmark (SPY) and every limit i
 ```
 
 `side` is `buy`, `sell`, `short` or `cover`. A date without a time zone is read as New York time.
+
+`data/igfinal.json` and `data/igfinal/` are written by the allocation model (previous section).
 
 `scripts/update.py` then writes: `summary.json`, `positions.json`, `candles_1h.json`,
 `candles_1d.json`, `exposures.json`, `risk.json`, `alerts.json`, `rebalance_suggestions.json`,
