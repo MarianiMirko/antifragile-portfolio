@@ -208,7 +208,7 @@
     document.getElementById("corr-stats").innerHTML = `<div class="stat"><dt>Average correlation</dt><dd>${num(avg, 2)}<small>between any two positions</small></dd></div>
       <div class="stat"><dt>Pairs that move apart</dt><dd>${num(neg)}<small>of ${num(pairs.length)} pairs below zero</small></dd></div>`;
     document.getElementById("corr-top").innerHTML = [...pairs].sort((x, y) => y.v - x.v).slice(0, 5)
-      .map((p) => `<li><b>${esc(p.a)}</b> and <b>${esc(p.b)}</b><span>${num(p.v, 2)}</span></li>`).join("");
+      .map((p) => `<li><span><b>${esc(p.a)}</b> and <b>${esc(p.b)}</b></span><span>${num(p.v, 2)}</span></li>`).join("");
     document.getElementById("corr-open").addEventListener("click", () => { document.getElementById("corr-full").hidden = false; document.getElementById("corr-open").hidden = true; document.getElementById("corr-full").scrollIntoView({ behavior: "smooth", block: "start" }); });
     document.getElementById("corr-close").addEventListener("click", () => { document.getElementById("corr-full").hidden = true; document.getElementById("corr-open").hidden = false; document.getElementById("corr-mini").scrollIntoView({ block: "start" }); });
   }
