@@ -8,11 +8,11 @@ Annual return: 17.3%
 S&P 500 annual return: 15.0%
 Beta: 1.03
 Tracking error: 4.7%
-Max drawdown: −28.5%
+Max drawdown: −30.1%
 ---
 **The rule.** Hold the 50 largest companies in the S&P 500, leaving out NVIDIA, at their index weights scaled up to 100%. The portfolio is rebuilt at the end of every month with the weights of that day and held for one month. The benchmark is the S&P 500 with dividends reinvested. This is the method behind the 70% replica of our plan, and the portfolio we hold after the IPO sleeve is sold.
 
-**What it shows.** Over almost ten years (119 monthly portfolios) the replica moved with the index: correlation 0.97, beta 1.03 on average, volatility 17.8% a year against 17.2% for the index, worst fall −28.5% against −31.7% and between 0.97 and 1.13 in every single year. In a typical month it ended within about 2 points of the index (from −1.8% to +2.3% in nine months out of ten). The beta is a little above 1 because the replica holds more technology and communication services than the index and almost no utilities or real estate.
+**What it shows.** Over almost ten years (119 monthly portfolios) the replica moved with the index: correlation 0.97, beta 1.03 on average, worst fall −30.1% against −33.8% for the index and between 0.97 and 1.13 in every single year. In a typical month it ended within about 2 points of the index (from −1.8% to +2.3% in nine months out of ten). The beta is a little above 1 because the replica holds more technology and communication services than the index and almost no utilities or real estate.
 
 **Why we use it.** We started the game behind the benchmark, so we need a replica that follows the market closely but still moves a little more than it. In about 9% of the months this replica beat the index by more than 1.88 points, the gap we had to close at the start.
 
