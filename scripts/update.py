@@ -233,7 +233,16 @@ def fetch_yfinance(tickers, cfg):
     missing = [t for t in tickers if pc[t].dropna().empty]
     if missing:
         raise RuntimeError("no prices for " + ", ".join(missing))
+    try:                                   # 5-minute closes: only for the highs and lows (shadows) of the candles
+        p5 = pick(grab(period="60d", interval="5m", auto_adjust=False, prepost=False), "Close")
+        p5.index = (p5.index.tz_localize(ET) if p5.index.tz is None else p5.index).tz_convert("UTC")
+        FIVE_MIN["prices"] = p5
+    except Exception as exc:
+        print(f"5-minute prices failed, candles without shadows: {exc}", file=sys.stderr)
     return po, pc, daily
+
+
+FIVE_MIN = {"prices": None}
 
 
 def fetch_sector_benchmark(cfg, start_date):
@@ -328,8 +337,10 @@ def build_candles(bars):
     """bars: DataFrame indexed by UTC bar start with columns o, c, b (benchmark, may be NaN)."""
     loc = bars.copy()
     loc.index = loc.index.tz_convert(ET)
-    loc["hi"] = loc[["o", "c"]].max(axis=1)
-    loc["lo"] = loc[["o", "c"]].min(axis=1)
+    hi = loc["hi"] if "hi" in loc else pd.Series(np.nan, index=loc.index)
+    lo = loc["lo"] if "lo" in loc else pd.Series(np.nan, index=loc.index)
+    loc["hi"] = pd.concat([loc["o"], loc["c"], hi], axis=1).max(axis=1)
+    loc["lo"] = pd.concat([loc["o"], loc["c"], lo], axis=1).min(axis=1)
     day = loc.index.normalize()
     mins = loc.index.hour * 60 + loc.index.minute - 570
     bucket = np.clip(mins // 60, 0, None)
@@ -384,13 +395,35 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
 
     # ---- persistent history: old bars survive when the data source drops them
     hist_path = out_dir / "nav_history.json"
-    hist = {int(r[0]): r[1:] for r in (load_json(hist_path, {}) or {}).get("bars", [])}
+    hist = {int(r[0]): (list(r[1:]) + [None, None])[:5] for r in (load_json(hist_path, {}) or {}).get("bars", [])}
+    # highs and lows inside each 15-minute bar, from the 5-minute closes of the positions held at that moment
+    hi15 = lo15 = None
+    p5 = FIVE_MIN.get("prices")
+    try:
+        if p5 is not None and traded and not p5.empty and len(grid):
+            p5 = p5.reindex(columns=traded)
+            g5 = p5.index[(p5.index >= grid[0]) & (p5.index <= now)]
+            if len(g5):
+                px5 = p5.loc[g5].ffill().fillna(pc[traded].reindex(g5, method="ffill"))
+                sh5 = shares.reindex(g5, method="ffill").fillna(0.0)
+                ca5 = cash.reindex(g5, method="ffill").fillna(capital)
+                v5 = ca5 + (sh5 * px5).sum(axis=1, min_count=1)
+                key = v5.index.floor("15min")
+                hi15, lo15 = v5.groupby(key).max(), v5.groupby(key).min()
+    except Exception as exc:                       # the candles simply have no shadows this time
+        print(f"5-minute highs and lows skipped: {exc}", file=sys.stderr)
+        hi15 = lo15 = None
     for ts, o, c, b in zip(grid, nav_o, nav_c, bench_rebased):
-        hist[int(ts.timestamp())] = [round(float(o), 2), round(float(c), 2), None if pd.isna(b) else round(float(b), 2)]
+        old = hist.get(int(ts.timestamp()), [None] * 5)
+        hi = hi15.get(ts) if hi15 is not None else old[3]          # keep the stored shadow when 5-minute prices are missing
+        lo = lo15.get(ts) if lo15 is not None else old[4]
+        hist[int(ts.timestamp())] = [round(float(o), 2), round(float(c), 2), None if pd.isna(b) else round(float(b), 2),
+                                     None if hi is None or pd.isna(hi) else round(float(hi), 2),
+                                     None if lo is None or pd.isna(lo) else round(float(lo), 2)]
     rows = sorted(hist.items())
-    write_json(hist_path, {"note": "15-minute fund value: [unix time, open, close, benchmark rebased]. Generated file.",
+    write_json(hist_path, {"note": "15-minute fund value: [unix time, open, close, benchmark rebased, high, low]. Generated file.",
                            "bars": [[k] + v for k, v in rows]}, compact=True)
-    bars = pd.DataFrame([v for _, v in rows], columns=["o", "c", "b"],
+    bars = pd.DataFrame([v for _, v in rows], columns=["o", "c", "b", "hi", "lo"],
                         index=pd.to_datetime([k for k, _ in rows], unit="s", utc=True)).astype(float)
 
     hourly, hourly_b, dcandles, daily_b = build_candles(bars)
