@@ -211,6 +211,13 @@ def main():
     eq.to_csv(K.RESULTS / "replica_A50x_curve.csv")
     pd.DataFrame({k: v for k, v in last_weights.items() if k in ("A50x", "M50x", "B50x", "S50x", "C50x")}).round(5).to_csv(K.RESULTS / "replica_latest_weights.csv")
 
+    # Riccardo's replica with the risk rules of Lorenzo's model (separate file, same data)
+    try:
+        import replica_risk_rules
+        replica_risk_rules.run(px, R, rb_all, cap, days, forms, nxt, EXCLUDE, min_te)
+    except Exception as exc:                       # never lose the main study because of this one
+        K.log(f"Lorenzo's rules study failed: {exc!r}")
+
     # the portfolios one would buy today (last price in the database), and how each spreads over the sectors
     c = cap.iloc[-1].dropna(); c = c[px.iloc[-253][c.index].notna()]; w = c / c.sum(); wx = w.drop(labels=[t for t in EXCLUDE if t in w.index])
     a = wx.sort_values(ascending=False).head(50); a = a / a.sum(); sx = stratified(w, sectors, 50, EXCLUDE)
