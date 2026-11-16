@@ -125,6 +125,31 @@ def normalise_transactions(raw):
     return sorted(out, key=lambda t: t["ts"])
 
 
+def reconcile_cash(txs, holdings, capital):
+    """Make the fund's cash equal the cash MarketWatch reports.
+
+    MarketWatch charges a commission on every order and executes at prices with more decimals than it
+    shows, so cash rebuilt from the trade log drifts a little from the real one. When the last reading
+    holds the same positions as the trade log and was taken after the last trade, the gap is spread
+    evenly over the orders as a fee. Otherwise nothing changes."""
+    mw_cash = holdings.get("cash")
+    if not txs or mw_cash is None or not holdings.get("as_of") or holdings.get("source") != "marketwatch":
+        return txs
+    book, cash = replay_book(txs, capital)
+    mw_pos = {p["ticker"].upper(): float(p["shares"]) for p in holdings.get("positions", [])}
+    ours = {t: b["shares"] for t, b in book.items() if b["shares"] != 0}
+    if mw_pos != ours or to_utc(holdings.get("as_of")) < txs[-1]["ts"]:
+        print("cash not reconciled: MarketWatch positions differ from the trade log", file=sys.stderr)
+        return txs
+    gap = cash - float(mw_cash)
+    if abs(gap) > 50 * len(txs):                  # far more than commissions and rounding: leave it visible
+        print(f"cash not reconciled: gap {gap:,.2f} too large", file=sys.stderr)
+        return txs
+    for t in txs:
+        t["fee"] += gap / len(txs)
+    return txs
+
+
 def replay_book(txs, capital):
     """Average-cost book: final shares, average cost, realised P&L and cash."""
     book, cash = {}, float(capital)
@@ -817,6 +842,7 @@ def main():
     targets = load_json(ROOT / "content" / "targets.json", {"targets": {}})
     holdings = load_json(ROOT / "data" / "holdings.json", {"positions": []})
     txs = normalise_transactions(load_json(ROOT / "data" / "transactions.json", {"transactions": []}))
+    txs = reconcile_cash(txs, holdings, cfg["initial_capital"])
     out = ROOT / "data"
     now = pd.Timestamp(datetime.now(timezone.utc))
     bench = cfg["benchmark"]["ticker"]
