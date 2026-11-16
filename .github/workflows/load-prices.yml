@@ -1,5 +1,5 @@
 name: Load stock prices
-
+# Schedule re-registered from the GitHub website by Mirko (16 Nov 2026).
 on:
   workflow_dispatch:
     inputs:
