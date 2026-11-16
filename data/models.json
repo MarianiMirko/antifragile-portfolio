@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T10:44:44.734329+00:00",
+ "generated_at": "2026-11-16T15:50:57.584581+00:00",
  "models": [
   {
    "id": "allocation_plan",
@@ -8,6 +8,12 @@
    "author": "Lorenzo, with the replica study by Riccardo",
    "description": "70% of the fund follows the S&P 500 through its 50 largest companies; 30% is a sleeve of AI and IPO-related names held until the exit rule fires. The model checks the plan's limits, simulates the chance of finishing above max(0, S&P 500) and writes the target weights and the trade list. It reprices at each daily close.",
    "metrics": [
+    {
+     "name": "Model status",
+     "value": "Waiting",
+     "signal": "caution",
+     "comment": "52 trade(s) were made after the close of 2026-11-13, the last session the model can price. It runs again once the session of the trade has closed."
+    },
     {
      "name": "Against the benchmark, max(0, S&P 500)",
      "value": "-1.88%",
@@ -1382,9 +1388,553 @@
    "id": "ewma_volatility",
    "title": "EWMA volatility forecast",
    "error": null,
-   "author": "Example",
-   "description": "Needs price history and at least one position.",
-   "metrics": []
+   "author": "Example model",
+   "description": "Short-term volatility forecast (EWMA, lambda 0.94) against each position's one-year average. Above 1.2x is flagged, above 1.5x is an alert.",
+   "metrics": [
+    {
+     "name": "Fund forecast volatility",
+     "value": "25.2%",
+     "signal": "caution",
+     "comment": "1.42x its one-year average of 17.8%"
+    },
+    {
+     "name": "Positions running hot",
+     "value": "12",
+     "signal": "normal",
+     "comment": "forecast above 1.2x the one-year average"
+    }
+   ],
+   "table": {
+    "columns": [
+     "Ticker",
+     "Weight",
+     "1-year vol",
+     "Forecast vol",
+     "Ratio"
+    ],
+    "rows": [
+     [
+      "MSFT",
+      "10.9%",
+      "33.9%",
+      {
+       "v": "33.6%",
+       "signal": "normal"
+      },
+      "0.99x"
+     ],
+     [
+      "AAPL",
+      "9.6%",
+      "24.9%",
+      {
+       "v": "25.1%",
+       "signal": "normal"
+      },
+      "1.01x"
+     ],
+     [
+      "GOOGL",
+      "9.4%",
+      "33.5%",
+      {
+       "v": "42.3%",
+       "signal": "caution"
+      },
+      "1.26x"
+     ],
+     [
+      "AMZN",
+      "8.5%",
+      "33.9%",
+      {
+       "v": "35.7%",
+       "signal": "normal"
+      },
+      "1.05x"
+     ],
+     [
+      "META",
+      "6.2%",
+      "41.6%",
+      {
+       "v": "41.3%",
+       "signal": "normal"
+      },
+      "0.99x"
+     ],
+     [
+      "AMD",
+      "5.3%",
+      "73.4%",
+      {
+       "v": "108.5%",
+       "signal": "caution"
+      },
+      "1.48x"
+     ],
+     [
+      "PLTR",
+      "4.3%",
+      "59.9%",
+      {
+       "v": "55.8%",
+       "signal": "normal"
+      },
+      "0.93x"
+     ],
+     [
+      "BABA",
+      "3.6%",
+      "41.4%",
+      {
+       "v": "44.0%",
+       "signal": "normal"
+      },
+      "1.06x"
+     ],
+     [
+      "ASML",
+      "3.6%",
+      "48.8%",
+      {
+       "v": "56.3%",
+       "signal": "normal"
+      },
+      "1.15x"
+     ],
+     [
+      "AVGO",
+      "3.1%",
+      "48.7%",
+      {
+       "v": "66.1%",
+       "signal": "caution"
+      },
+      "1.36x"
+     ],
+     [
+      "LLY",
+      "2.1%",
+      "35.2%",
+      {
+       "v": "34.5%",
+       "signal": "normal"
+      },
+      "0.98x"
+     ],
+     [
+      "BRK.B",
+      "2.0%",
+      "15.0%",
+      {
+       "v": "18.3%",
+       "signal": "caution"
+      },
+      "1.22x"
+     ],
+     [
+      "TSLA",
+      "2.0%",
+      "45.4%",
+      {
+       "v": "53.6%",
+       "signal": "normal"
+      },
+      "1.18x"
+     ],
+     [
+      "JPM",
+      "1.7%",
+      "22.7%",
+      {
+       "v": "24.2%",
+       "signal": "normal"
+      },
+      "1.07x"
+     ],
+     [
+      "MU",
+      "1.6%",
+      "84.3%",
+      {
+       "v": "93.7%",
+       "signal": "normal"
+      },
+      "1.11x"
+     ],
+     [
+      "V",
+      "1.3%",
+      "23.0%",
+      {
+       "v": "24.3%",
+       "signal": "normal"
+      },
+      "1.06x"
+     ],
+     [
+      "XOM",
+      "1.3%",
+      "27.1%",
+      {
+       "v": "28.4%",
+       "signal": "normal"
+      },
+      "1.05x"
+     ],
+     [
+      "JNJ",
+      "1.3%",
+      "21.1%",
+      {
+       "v": "25.4%",
+       "signal": "caution"
+      },
+      "1.21x"
+     ],
+     [
+      "WMT",
+      "1.0%",
+      "26.9%",
+      {
+       "v": "25.1%",
+       "signal": "normal"
+      },
+      "0.93x"
+     ],
+     [
+      "MA",
+      "1.0%",
+      "23.5%",
+      {
+       "v": "25.6%",
+       "signal": "normal"
+      },
+      "1.09x"
+     ],
+     [
+      "ABBV",
+      "1.0%",
+      "25.2%",
+      {
+       "v": "20.7%",
+       "signal": "normal"
+      },
+      "0.82x"
+     ],
+     [
+      "COST",
+      "0.9%",
+      "20.4%",
+      {
+       "v": "22.2%",
+       "signal": "normal"
+      },
+      "1.09x"
+     ],
+     [
+      "CVX",
+      "0.8%",
+      "24.6%",
+      {
+       "v": "24.9%",
+       "signal": "normal"
+      },
+      "1.01x"
+     ],
+     [
+      "CSCO",
+      "0.7%",
+      "37.0%",
+      {
+       "v": "47.4%",
+       "signal": "caution"
+      },
+      "1.28x"
+     ],
+     [
+      "PG",
+      "0.7%",
+      "21.1%",
+      {
+       "v": "23.6%",
+       "signal": "normal"
+      },
+      "1.12x"
+     ],
+     [
+      "KO",
+      "0.7%",
+      "18.9%",
+      {
+       "v": "18.7%",
+       "signal": "normal"
+      },
+      "0.99x"
+     ],
+     [
+      "UNH",
+      "0.7%",
+      "34.4%",
+      {
+       "v": "23.9%",
+       "signal": "normal"
+      },
+      "0.69x"
+     ],
+     [
+      "MRK",
+      "0.7%",
+      "29.8%",
+      {
+       "v": "28.9%",
+       "signal": "normal"
+      },
+      "0.97x"
+     ],
+     [
+      "HD",
+      "0.6%",
+      "27.9%",
+      {
+       "v": "33.9%",
+       "signal": "caution"
+      },
+      "1.21x"
+     ],
+     [
+      "GE",
+      "0.6%",
+      "34.6%",
+      {
+       "v": "37.8%",
+       "signal": "normal"
+      },
+      "1.09x"
+     ],
+     [
+      "BAC",
+      "0.6%",
+      "22.3%",
+      {
+       "v": "24.8%",
+       "signal": "normal"
+      },
+      "1.11x"
+     ],
+     [
+      "PM",
+      "0.6%",
+      "28.4%",
+      {
+       "v": "27.0%",
+       "signal": "normal"
+      },
+      "0.95x"
+     ],
+     [
+      "AMAT",
+      "0.5%",
+      "63.9%",
+      {
+       "v": "80.8%",
+       "signal": "caution"
+      },
+      "1.27x"
+     ],
+     [
+      "INTC",
+      "0.5%",
+      "84.8%",
+      {
+       "v": "110.9%",
+       "signal": "caution"
+      },
+      "1.31x"
+     ],
+     [
+      "TXN",
+      "0.5%",
+      "44.6%",
+      {
+       "v": "52.4%",
+       "signal": "normal"
+      },
+      "1.18x"
+     ],
+     [
+      "LRCX",
+      "0.5%",
+      "69.1%",
+      {
+       "v": "90.2%",
+       "signal": "caution"
+      },
+      "1.31x"
+     ],
+     [
+      "CAT",
+      "0.5%",
+      "41.4%",
+      {
+       "v": "53.9%",
+       "signal": "caution"
+      },
+      "1.30x"
+     ],
+     [
+      "RTX",
+      "0.5%",
+      "25.8%",
+      {
+       "v": "27.2%",
+       "signal": "normal"
+      },
+      "1.06x"
+     ],
+     [
+      "NFLX",
+      "0.5%",
+      "36.3%",
+      {
+       "v": "34.0%",
+       "signal": "normal"
+      },
+      "0.94x"
+     ],
+     [
+      "WFC",
+      "0.5%",
+      "25.9%",
+      {
+       "v": "22.6%",
+       "signal": "normal"
+      },
+      "0.87x"
+     ],
+     [
+      "GS",
+      "0.5%",
+      "32.8%",
+      {
+       "v": "35.7%",
+       "signal": "normal"
+      },
+      "1.09x"
+     ],
+     [
+      "TMO",
+      "0.5%",
+      "30.1%",
+      {
+       "v": "30.7%",
+       "signal": "normal"
+      },
+      "1.02x"
+     ],
+     [
+      "PANW",
+      "0.5%",
+      "51.3%",
+      {
+       "v": "59.0%",
+       "signal": "normal"
+      },
+      "1.15x"
+     ],
+     [
+      "AMGN",
+      "0.5%",
+      "28.7%",
+      {
+       "v": "27.4%",
+       "signal": "normal"
+      },
+      "0.96x"
+     ],
+     [
+      "LIN",
+      "0.4%",
+      "18.9%",
+      {
+       "v": "16.8%",
+       "signal": "normal"
+      },
+      "0.89x"
+     ],
+     [
+      "ORCL",
+      "0.4%",
+      "59.8%",
+      {
+       "v": "71.7%",
+       "signal": "normal"
+      },
+      "1.20x"
+     ],
+     [
+      "IBM",
+      "0.4%",
+      "48.2%",
+      {
+       "v": "25.8%",
+       "signal": "normal"
+      },
+      "0.53x"
+     ],
+     [
+      "CRWD",
+      "0.4%",
+      "57.4%",
+      {
+       "v": "59.3%",
+       "signal": "normal"
+      },
+      "1.03x"
+     ],
+     [
+      "MS",
+      "0.4%",
+      "29.4%",
+      {
+       "v": "34.0%",
+       "signal": "normal"
+      },
+      "1.15x"
+     ],
+     [
+      "GILD",
+      "0.4%",
+      "27.3%",
+      {
+       "v": "30.2%",
+       "signal": "normal"
+      },
+      "1.11x"
+     ],
+     [
+      "GEV",
+      "0.4%",
+      "55.5%",
+      {
+       "v": "65.5%",
+       "signal": "normal"
+      },
+      "1.18x"
+     ],
+     [
+      "ANET",
+      "0.4%",
+      "57.3%",
+      {
+       "v": "79.5%",
+       "signal": "caution"
+      },
+      "1.39x"
+     ]
+    ]
+   }
   }
  ]
 }
