@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/site.css?v=2">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
 <link rel="preload" href="config/fund.json" as="fetch" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -34,10 +34,10 @@
     <div id="map" class="viz" style="height:480px" role="img" aria-label="Treemap of positions by market value and return. The same figures are in the positions table below."></div>
   </section>
 
-  <section class="block wrap" aria-labelledby="pos-title">
+  <section class="block wrap wide" aria-labelledby="pos-title">
     <div class="block-head"><div><h2 id="pos-title">Positions</h2><p>Select a column heading to sort.</p></div></div>
     <div class="table-scroll">
-      <table class="data" id="positions">
+      <table class="data compact" id="positions">
         <thead><tr>
           <th class="l" data-sort>Ticker</th><th class="l" data-sort>Sector</th><th data-sort>Shares</th>
           <th data-sort>Avg cost</th><th data-sort>Price</th><th data-sort>Market value</th><th data-sort>Weight</th>
@@ -51,7 +51,7 @@
   </section>
 
   <section class="block wrap" aria-labelledby="wf-title" id="wf-block">
-    <div class="block-head"><div><h2 id="wf-title">What moved the fund</h2><p>From the starting capital to today's value: how much each position added or took away, including positions we have closed.</p></div></div>
+    <div class="block-head"><div><h2 id="wf-title">What moved the fund</h2><p>From the starting capital to today's value: our five best and five worst positions, with all the others in one bar.</p></div></div>
     <div id="waterfall" class="viz" role="img" aria-label="Waterfall chart of each position's contribution to the fund value. The same figures are in the Contribution column of the positions table."></div>
   </section>
 
@@ -84,19 +84,19 @@
   </section>
 
   <section class="block wrap" aria-labelledby="log-title">
-    <div class="block-head"><div><h2 id="log-title">Trade log</h2><p>Every trade with the reason we made it and who approved it.</p></div></div>
+    <div class="block-head"><div><h2 id="log-title">Trade log</h2><p>Every trade and who approved it.</p></div></div>
     <div class="table-scroll">
       <table class="data" id="trades">
-        <thead><tr><th class="l">Date</th><th class="l">Ticker</th><th class="l">Side</th><th>Shares</th><th>Price</th><th>Amount</th><th class="l">Rationale</th><th class="l">Approved by</th></tr></thead>
+        <thead><tr><th class="l">Date</th><th class="l">Ticker</th><th class="l">Side</th><th>Shares</th><th>Price</th><th>Amount</th><th class="l">Approved by</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <p class="chart-empty" id="trades-empty" hidden>No trades yet.</p>
   </section>
 </main>
-<script defer src="assets/js/app.js?v=2"></script>
-<script defer src="assets/js/viz.js?v=2"></script>
-<script defer src="assets/js/portfolio.js?v=2"></script>
+<script defer src="assets/js/app.js?v=3"></script>
+<script defer src="assets/js/viz.js?v=3"></script>
+<script defer src="assets/js/portfolio.js?v=3"></script>
 <script async src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js" onload="window.dispatchEvent(new Event('echarts-loaded'))"></script>
 </body>
 </html>

@@ -41,6 +41,11 @@ a { color: var(--navy); text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--fund); outline-offset: 2px; }
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+.wrap.wide { max-width: 1440px; }
+.nobr { white-space: nowrap; }
+.caveat.caveat-full { max-width: none; }
+table.data.compact th, table.data.compact td { padding-right: 12px; font-size: 0.88rem; }
+table.data.compact td.ticker small { white-space: normal; min-width: 16ch; max-width: 24ch; font-weight: 400; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0; text-wrap: balance; }
 h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); letter-spacing: -0.015em; }
 h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); letter-spacing: -0.01em; }

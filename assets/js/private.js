@@ -123,6 +123,20 @@
     draw();
   }
 
+  /* ---- alerts: limits, stop-losses and drift, from the public data files ---- */
+  async function loadAlerts() {
+    const al = await App.data("alerts.json", { alerts: [] });
+    const list = al.alerts || [];
+    const breaches = list.filter((a) => a.severity === "breach").length, warns = list.filter((a) => a.severity === "warning").length;
+    $("rules-score").textContent = list.length
+      ? `${breaches} ${breaches === 1 ? "breach" : "breaches"}, ${warns} ${warns === 1 ? "warning" : "warnings"}`
+      : "Nothing needs attention";
+    const label = { breach: "Breach", warning: "Warning", info: "Note" };
+    $("alerts").innerHTML = list.length
+      ? list.map((a) => `<li class="alert"><span class="tag tag-${esc(a.severity)}">${label[a.severity] || "Note"}</span><strong>${esc(a.title)}</strong><p>${esc(a.message)}</p></li>`).join("")
+      : `<li class="alert"><span class="tag tag-ok">OK</span><strong>No alerts</strong><p>No limit is exceeded, no stop-loss is hit and no position has drifted beyond its threshold.</p></li>`;
+  }
+
   /* ---- which screen to show ---- */
   async function route() {
     const { data: { session } } = await sb.auth.getSession();
@@ -132,6 +146,7 @@
     if (error || !ok) { $("who-nokey").textContent = email; show("nokey"); return; }
     $("who").textContent = email;
     show("member");
+    loadAlerts();
     loadData();
     loadPrices();
   }

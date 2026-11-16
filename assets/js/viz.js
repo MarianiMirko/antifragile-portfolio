@@ -59,9 +59,9 @@ const Viz = (() => {
   }
 
   /* ---- waterfall: from the starting capital to today's value, one step per position ---- */
-  function waterfall(el, capital, steps, nav) {
+  function waterfall(el, capital, steps, nav, opts = {}) {
     const chart = make(el);
-    const sorted = [...steps].sort((a, b) => b.value - a.value);
+    const sorted = opts.keepOrder ? [...steps] : [...steps].sort((a, b) => b.value - a.value);
     const cats = ["Starting capital", ...sorted.map((s) => s.name), "Fund value today"];
     const base = [], up = [], down = [], total = [];
     let run = capital;

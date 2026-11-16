@@ -48,15 +48,7 @@
   /* ---- PM note, alerts ---- */
   await App.libs;          // the figures above need no library; the note (markdown) and the chart below do
   document.getElementById("pm-note").innerHTML = App.md(note) || '<p class="muted">No note yet.</p>';
-  const breaches = alerts.alerts.filter((a) => a.severity === "breach").length;
-  const warns = alerts.alerts.filter((a) => a.severity === "warning").length;
-  document.getElementById("rules-score").innerHTML = alerts.alerts.length
-    ? `${breaches} ${breaches === 1 ? "breach" : "breaches"}, ${warns} ${warns === 1 ? "warning" : "warnings"}`
-    : "Nothing needs attention";
-  const label = { breach: "Breach", warning: "Warning", info: "Note" };
-  document.getElementById("alerts").innerHTML = alerts.alerts.length
-    ? alerts.alerts.map((a) => `<li class="alert"><span class="tag tag-${a.severity}">${label[a.severity]}</span><strong>${esc(a.title)}</strong><p>${esc(a.message)}</p></li>`).join("")
-    : `<li class="alert"><span class="tag tag-ok">OK</span><strong>No alerts</strong><p>No limit is exceeded, no stop-loss is hit and no position has drifted beyond its threshold.</p></li>`;
+  /* alerts are shown in the private area (private.html), not here */
 
   /* ---- holdings and sectors ---- */
   const top = pos.positions.slice(0, 10).map((p) => ({ name: p.name, sub: p.ticker, weight: p.weight }));

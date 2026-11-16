@@ -57,7 +57,14 @@
     }));
     const steps = pos.positions.map((p) => ({ name: p.ticker, full: p.name, value: p.unrealized + p.realized }))
       .concat(pos.closed.map((c) => ({ name: c.ticker + " (closed)", full: c.name, value: c.realized, closed: true })));
-    Viz.waterfall(document.getElementById("waterfall"), s.initial_capital, steps, pos.nav);
+    const ranked = [...steps].sort((a, b) => b.value - a.value);
+    let shown = ranked;
+    if (ranked.length > 10) {
+      const rest = ranked.slice(5, -5), restSum = rest.reduce((a, x) => a + x.value, 0);
+      shown = [...ranked.slice(0, 5), { name: `Other ${rest.length} positions`, full: `The other ${rest.length} positions together`, value: restSum },
+               ...ranked.slice(-5)];
+    }
+    Viz.waterfall(document.getElementById("waterfall"), s.initial_capital, shown, pos.nav, { keepOrder: true });
   } else {
     document.getElementById("map-block").hidden = true;
     document.getElementById("wf-block").hidden = true;
@@ -108,7 +115,6 @@
       return `<tr><td class="l">${App.dateTime(t.date)}</td><td class="l ticker">${esc(t.ticker)}</td>
         <td class="l"><span class="pill pill-${t.side === "buy" || t.side === "cover" ? "buy" : "sell"}">${side[t.side]}</span></td>
         <td>${num(t.shares)}</td><td>${usd(t.price, 2)}</td><td>${usd(t.amount)}</td>
-        <td class="l wrap-cell">${r ? esc(r.rationale) : '<span class="muted">Rationale not written yet</span>'}</td>
         <td class="l">${r ? esc(r.approved_by || "") : ""}</td></tr>`;
     }).join("");
   }

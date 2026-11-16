@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/site.css?v=2">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
 <link rel="preload" href="config/fund.json" as="fetch" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -59,6 +59,10 @@
     <section class="block wrap">
       <p class="updated">Signed in as <b id="who" style="font-weight:500;color:var(--ink)"></b> <button class="link-btn" type="button" data-signout>Sign out</button></p>
     </section>
+    <section class="block wrap" aria-labelledby="al-title">
+      <div class="block-head"><div><h2 id="al-title">Alerts</h2><p class="rules-score" id="rules-score"></p></div><a href="philosophy.html#rules">Our limits</a></div>
+      <ul class="alert-list" id="alerts"></ul>
+    </section>
     <section class="block wrap" aria-labelledby="an-title">
       <div class="block-head"><div><h2 id="an-title">Analyses</h2><p>Analyses run on request on the private database, newest first.</p></div></div>
       <div id="analyses"></div>
@@ -90,8 +94,8 @@
     </section>
   </div>
 </main>
-<script defer src="assets/js/app.js?v=2"></script>
-<script defer src="assets/js/private.js?v=2"></script>
+<script defer src="assets/js/app.js?v=3"></script>
+<script defer src="assets/js/private.js?v=3"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
