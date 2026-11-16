@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-16T13:15:15+00:00",
+  "generated": "2026-11-16T17:26:38+00:00",
   "benchmark": "S&P 500 total return index (^SP500TR, Yahoo Finance)",
   "weights_source": "SPY holdings published by State Street",
   "first_portfolio": "2016-12-30",
