@@ -1,5 +1,5 @@
 name: Update fund data
-
+# Schedule re-registered from the GitHub website by Mirko (16 Nov 2026).
 on:
   schedule:
     # Times are UTC. US market hours are 14:30-21:00 UTC in winter (15:30-22:00 in Italy / the Netherlands).
