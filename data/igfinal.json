@@ -2,7 +2,7 @@
  "status": "waiting",
  "message": "52 trade(s) were made after the close of 2026-11-13, the last session the model can price. It runs again once the session of the trade has closed.",
  "generated_at": "2026-11-16T10:44:27+00:00",
- "checked_at": "2026-11-16T15:58:48+00:00",
+ "checked_at": "2026-11-16T16:00:45+00:00",
  "asof": "2026-11-13",
  "origin": "live Yahoo Finance prices, last date 2026-11-13 (copy saved as data/snapshots/prices_2026-11-13.csv)",
  "days_left": 23,
