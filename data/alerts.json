@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T19:49:45.369368+00:00",
+ "generated_at": "2026-11-16T00:07:24.388647+00:00",
  "alerts": [
   {
    "severity": "warning",
@@ -70,7 +70,7 @@
   {
    "severity": "warning",
    "title": "Rebalance AVGO: buy 935 shares",
-   "message": "AVGO is 3.2% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 935 shares (about $324,108).",
+   "message": "AVGO is 3.2% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 935 shares (about $324,090).",
    "ticker": "AVGO"
   },
   {
@@ -208,7 +208,7 @@
   {
    "severity": "warning",
    "title": "Rebalance INTC: buy 953 shares",
-   "message": "INTC is 0.6% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 953 shares (about $56,856).",
+   "message": "INTC is 0.6% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 953 shares (about $56,861).",
    "ticker": "INTC"
   },
   {
@@ -226,7 +226,7 @@
   {
    "severity": "warning",
    "title": "Rebalance TXN: buy 175 shares",
-   "message": "TXN is 0.5% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 175 shares (about $53,139).",
+   "message": "TXN is 0.5% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 175 shares (about $53,144).",
    "ticker": "TXN"
   },
   {
@@ -256,7 +256,7 @@
   {
    "severity": "warning",
    "title": "Rebalance NFLX: buy 785 shares",
-   "message": "NFLX is 0.5% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 785 shares (about $48,780).",
+   "message": "NFLX is 0.5% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 785 shares (about $48,788).",
    "ticker": "NFLX"
   },
   {

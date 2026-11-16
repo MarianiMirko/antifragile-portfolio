@@ -1,12 +1,12 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-15T19:49:38+00:00",
- "checked_at": "2026-11-15T19:49:38+00:00",
+ "generated_at": "2026-11-16T00:07:17+00:00",
+ "checked_at": "2026-11-16T00:07:17+00:00",
  "asof": "2026-11-13",
  "origin": "live Yahoo Finance prices, last date 2026-11-13 (copy saved as data/snapshots/prices_2026-11-13.csv)",
  "days_left": 23,
- "holdings_as_of": "2026-11-15T13:39:00+01:00",
+ "holdings_as_of": "2026-11-16T01:06:00+01:00",
  "has_positions": false,
  "standing": {
   "net_worth": 10000000.0,
@@ -49,7 +49,7 @@
   "excluded": [
    "NVDA"
   ],
-  "beta": 1.114734314789136,
+  "beta": 1.1147343147891364,
   "tracking_error": 0.05064515623341155
  },
  "exposure": {
@@ -58,9 +58,9 @@
   "max": 1.0,
   "fully_invested": true,
   "p_bonus": 0.2375,
-  "beta": 1.2323469387409693,
+  "beta": 1.2323469387409691,
   "p_market_up": 0.7314,
-  "expected_return": 0.007343044272236372,
+  "expected_return": 0.00734304427223637,
   "return_q05": -0.08758239598196643,
   "return_q95": 0.10696190449167935
  },

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T19:49:45.369368+00:00",
+ "generated_at": "2026-11-16T00:07:24.388647+00:00",
  "as_of": "2026-11-13T21:00:00+00:00",
  "status": "ok",
  "price_source": "yfinance",
@@ -32,7 +32,7 @@
  "days_left": 32,
  "marketwatch": {
   "net_worth": 10000000.0,
-  "as_of": "2026-11-15T13:39:00+01:00",
+  "as_of": "2026-11-16T01:06:00+01:00",
   "rank": null,
   "diff": 0.0,
   "diff_pct": 0.0
