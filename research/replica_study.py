@@ -98,6 +98,7 @@ def stats(rp, rb, gaps, bench_m):
         "excess_ann": float(d.mean() * 252),
         "month_gap_p05": float(gaps.quantile(.05)), "month_gap_median": float(gaps.median()), "month_gap_p95": float(gaps.quantile(.95)),
         "month_gap_beyond_1pt": float((gaps.abs() > 0.01).mean()),
+        "month_gap_above_1_88": float((gaps >= 0.0188).mean()), "month_gap_below_minus_1_88": float((gaps <= -0.0188).mean()),
         "gap_when_index_up_3": float(up.mean()) if len(up) else None, "gap_when_index_down_3": float(down.mean()) if len(down) else None,
         "months": int(len(gaps)), "by_year": by_year,
     }
