@@ -1,93 +1,97 @@
 {
  "sector": [
   {
-   "name": "Unclassified",
-   "weight": 0.294031
-  },
-  {
    "name": "Technology",
-   "weight": 0.192473
+   "weight": 0.434383
   },
   {
    "name": "Communication Services",
-   "weight": 0.160487
+   "weight": 0.160302
   },
   {
    "name": "Consumer Cyclical",
-   "weight": 0.147877
-  },
-  {
-   "name": "Healthcare",
-   "weight": 0.063841
+   "weight": 0.147621
   },
   {
    "name": "Financial Services",
-   "weight": 0.063435
+   "weight": 0.080035
+  },
+  {
+   "name": "Healthcare",
+   "weight": 0.070466
   },
   {
    "name": "Consumer Defensive",
-   "weight": 0.032114
-  },
-  {
-   "name": "Industrials",
-   "weight": 0.015125
+   "weight": 0.039404
   },
   {
    "name": "Energy",
-   "weight": 0.007863
+   "weight": 0.020598
+  },
+  {
+   "name": "Industrials",
+   "weight": 0.020029
+  },
+  {
+   "name": "Basic Materials",
+   "weight": 0.004458
   },
   {
    "name": "Cash",
-   "weight": 0.022754,
+   "weight": 0.022703,
    "is_cash": true
   }
  ],
  "country": [
   {
    "name": "United States",
-   "weight": 0.64682
-  },
-  {
-   "name": "Unknown",
-   "weight": 0.294031
+   "weight": 0.900943
   },
   {
    "name": "China",
-   "weight": 0.036395
+   "weight": 0.036284
+  },
+  {
+   "name": "Netherlands",
+   "weight": 0.035612
+  },
+  {
+   "name": "Ireland",
+   "weight": 0.004458
   },
   {
    "name": "Cash",
-   "weight": 0.022754,
+   "weight": 0.022703,
    "is_cash": true
   }
  ],
  "region": [
   {
    "name": "North America",
-   "weight": 0.64682
+   "weight": 0.900943
   },
   {
-   "name": "Other",
-   "weight": 0.294031
+   "name": "Europe",
+   "weight": 0.04007
   },
   {
    "name": "Asia Pacific",
-   "weight": 0.036395
+   "weight": 0.036284
   },
   {
    "name": "Cash",
-   "weight": 0.022754,
+   "weight": 0.022703,
    "is_cash": true
   }
  ],
  "asset_class": [
   {
    "name": "Equity",
-   "weight": 0.977246
+   "weight": 0.977297
   },
   {
    "name": "Cash",
-   "weight": 0.022754,
+   "weight": 0.022703,
    "is_cash": true
   }
  ]

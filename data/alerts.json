@@ -1,59 +1,59 @@
 {
- "generated_at": "2026-11-16T15:50:57.584581+00:00",
+ "generated_at": "2026-11-16T15:58:48.730466+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 92 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 92 shares (about $26,568).",
+   "title": "Rebalance GOOGL: buy 95 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 95 shares (about $27,472).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 52 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 52 shares (about $26,572).",
+   "title": "Rebalance AMD: buy 50 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 50 shares (about $25,643).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance ASML: buy 13 shares",
-   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,622).",
-   "ticker": "ASML"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance AMZN: buy 71 shares",
-   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 71 shares (about $18,598).",
+   "title": "Rebalance AMZN: buy 76 shares",
+   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 76 shares (about $19,926).",
    "ticker": "AMZN"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 98 shares",
-   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 98 shares (about $15,941).",
-   "ticker": "PLTR"
+   "title": "Rebalance ASML: buy 13 shares",
+   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,672).",
+   "ticker": "ASML"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AVGO: buy 42 shares",
-   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 42 shares (about $14,002).",
-   "ticker": "AVGO"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance META: buy 21 shares",
-   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 21 shares (about $13,238).",
+   "title": "Rebalance META: buy 23 shares",
+   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 23 shares (about $14,510).",
    "ticker": "META"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 15 shares",
-   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 15 shares (about $11,007).",
-   "ticker": "MU"
+   "title": "Rebalance AVGO: buy 42 shares",
+   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 42 shares (about $14,035).",
+   "ticker": "AVGO"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 119 shares",
-   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 119 shares (about $10,946).",
+   "title": "Rebalance PLTR: buy 80 shares",
+   "message": "PLTR is 0.1% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 80 shares (about $13,128).",
+   "ticker": "PLTR"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance BABA: buy 131 shares",
+   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 131 shares (about $12,040).",
    "ticker": "BABA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 14 shares",
+   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 14 shares (about $10,331).",
+   "ticker": "MU"
   }
  ],
  "rules": [
@@ -61,14 +61,14 @@
    "id": "position",
    "rule": "Largest single position",
    "limit": "at most 15%",
-   "current": "10.9% (MSFT)",
+   "current": "11.0% (MSFT)",
    "status": "ok"
   },
   {
    "id": "sector",
    "rule": "Largest sector",
    "limit": "at most 60%",
-   "current": "29.4% (Unclassified)",
+   "current": "43.4% (Technology)",
    "status": "ok"
   },
   {
