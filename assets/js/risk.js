@@ -149,14 +149,19 @@
     document.getElementById("rc-wrap").style.height = "auto";
     document.getElementById("rc-table").closest(".table-scroll").hidden = true;
   } else {
-    document.getElementById("rc-wrap").style.height = Math.max(260, pr.length * 34 + 70) + "px";
-    new Chart(document.getElementById("rc-chart"), {
+    const TOP = 10;
+    let showAll = false, rcChart = null;
+    const drawRisk = () => {
+    const list = showAll ? pr : pr.slice(0, TOP);
+    document.getElementById("rc-wrap").style.height = Math.max(260, list.length * 34 + 70) + "px";
+    if (rcChart) rcChart.destroy();
+    rcChart = new Chart(document.getElementById("rc-chart"), {
       type: "bar",
       data: {
-        labels: pr.map((p) => p.ticker),
+        labels: list.map((p) => p.ticker),
         datasets: [
-          { label: "Share of weight", data: pr.map((p) => p.weight * 100), backgroundColor: C.fund, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: "start", barPercentage: 0.82, categoryPercentage: 0.72, borderColor: "#fff", borderWidth: { top: 1, bottom: 1 } },
-          { label: "Share of risk", data: pr.map((p) => p.risk_contribution * 100), backgroundColor: C.bench, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: "start", barPercentage: 0.82, categoryPercentage: 0.72, borderColor: "#fff", borderWidth: { top: 1, bottom: 1 } },
+          { label: "Share of weight", data: list.map((p) => p.weight * 100), backgroundColor: C.fund, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: "start", barPercentage: 0.82, categoryPercentage: 0.72, borderColor: "#fff", borderWidth: { top: 1, bottom: 1 } },
+          { label: "Share of risk", data: list.map((p) => p.risk_contribution * 100), backgroundColor: C.bench, borderRadius: { topRight: 4, bottomRight: 4 }, borderSkipped: "start", barPercentage: 0.82, categoryPercentage: 0.72, borderColor: "#fff", borderWidth: { top: 1, bottom: 1 } },
         ],
       },
       options: {
@@ -165,17 +170,48 @@
         scales: { x: { ticks: { callback: (v) => v + "%" } }, y: { grid: { display: false }, ticks: { color: C.ink, font: { weight: 600 } } } },
       },
     });
-    document.querySelector("#rc-table tbody").innerHTML = pr.map((p) => `<tr>
+    document.querySelector("#rc-table tbody").innerHTML = list.map((p) => `<tr>
       <td class="l ticker" data-v="${esc(p.ticker)}">${esc(p.ticker)}</td><td data-v="${p.weight}">${pct(p.weight, 1)}</td>
       <td data-v="${p.risk_contribution}">${pct(p.risk_contribution, 1)}</td><td data-v="${p.vol}">${pct(p.vol, 1)}</td>
       <td data-v="${p.beta ?? ""}">${p.beta == null ? "–" : num(p.beta, 2)}</td></tr>`).join("");
+    const more = document.getElementById("rc-more");
+    more.hidden = pr.length <= TOP;
+    more.textContent = showAll ? `Show only the top ${TOP}` : `Show all ${pr.length} positions`;
+    };
+    drawRisk();
     App.sortable(document.getElementById("rc-table"));
+    document.getElementById("rc-more").addEventListener("click", () => { showAll = !showAll; drawRisk(); });
   }
 
   /* correlation heat map: blue (negative) - grey (zero) - red (positive) */
   const corr = risk.correlation;
   const mix = (a, b, t) => a.map((x, i) => Math.round(x + (b[i] - x) * t));
   const colour = (v) => { const mid = [240, 239, 236], pos = [181, 52, 42], neg = [36, 89, 168]; return `rgb(${mix(mid, v >= 0 ? pos : neg, Math.min(1, Math.abs(v))).join(",")})`; };
+  if (!corr) document.getElementById("corr-mini").innerHTML = '<p class="chart-empty">Nothing to show while the fund is fully in cash.</p>';
+  else {
+    const n = corr.tickers.length, cv = document.getElementById("corr-canvas"), tipEl = document.getElementById("corr-tip");
+    const size = Math.min(340, cv.parentElement.clientWidth || 340), cellPx = size / n, dpr = window.devicePixelRatio || 1;
+    cv.width = size * dpr; cv.height = size * dpr; cv.style.width = cv.style.height = size + "px";
+    const ctx = cv.getContext("2d"); ctx.scale(dpr, dpr);
+    corr.matrix.forEach((row, i) => row.forEach((v, j) => { ctx.fillStyle = i === j ? "#E3E7EC" : colour(v); ctx.fillRect(j * cellPx, i * cellPx, Math.ceil(cellPx), Math.ceil(cellPx)); }));
+    cv.addEventListener("mousemove", (e) => {
+      const r = cv.getBoundingClientRect(), j = Math.floor((e.clientX - r.left) / cellPx), i = Math.floor((e.clientY - r.top) / cellPx);
+      if (i < 0 || j < 0 || i >= n || j >= n) { tipEl.hidden = true; return; }
+      tipEl.textContent = i === j ? corr.tickers[i] : `${corr.tickers[i]} and ${corr.tickers[j]}: ${corr.matrix[i][j].toFixed(2)}`;
+      tipEl.style.left = (e.clientX - r.left + 12) + "px"; tipEl.style.top = (e.clientY - r.top + 12) + "px"; tipEl.hidden = false;
+    });
+    cv.addEventListener("mouseleave", () => { tipEl.hidden = true; });
+    const pairs = [];
+    for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) pairs.push({ a: corr.tickers[i], b: corr.tickers[j], v: corr.matrix[i][j] });
+    const avg = pairs.reduce((s, p) => s + p.v, 0) / (pairs.length || 1);
+    const neg = pairs.filter((p) => p.v < 0).length;
+    document.getElementById("corr-stats").innerHTML = `<div class="stat"><dt>Average correlation</dt><dd>${num(avg, 2)}<small>between any two positions</small></dd></div>
+      <div class="stat"><dt>Pairs that move apart</dt><dd>${num(neg)}<small>of ${num(pairs.length)} pairs below zero</small></dd></div>`;
+    document.getElementById("corr-top").innerHTML = [...pairs].sort((x, y) => y.v - x.v).slice(0, 5)
+      .map((p) => `<li><b>${esc(p.a)}</b> and <b>${esc(p.b)}</b><span>${num(p.v, 2)}</span></li>`).join("");
+    document.getElementById("corr-open").addEventListener("click", () => { document.getElementById("corr-full").hidden = false; document.getElementById("corr-open").hidden = true; document.getElementById("corr-full").scrollIntoView({ behavior: "smooth", block: "start" }); });
+    document.getElementById("corr-close").addEventListener("click", () => { document.getElementById("corr-full").hidden = true; document.getElementById("corr-open").hidden = false; document.getElementById("corr-mini").scrollIntoView({ block: "start" }); });
+  }
   document.getElementById("corr").innerHTML = corr ? `<table class="heat"><thead><tr><th></th>${corr.tickers.map((t) => `<th scope="col">${esc(t)}</th>`).join("")}</tr></thead><tbody>${
     corr.matrix.map((row, i) => `<tr><th scope="row">${esc(corr.tickers[i])}</th>${row.map((v, j) =>
       `<td style="background:${i === j ? "#E3E7EC" : colour(v)}" class="${i !== j && Math.abs(v) > 0.55 ? "strong" : ""}" title="${esc(corr.tickers[i])} and ${esc(corr.tickers[j])}: ${v.toFixed(2)}">${i === j ? "" : v.toFixed(2)}</td>`).join("")}</tr>`).join("")

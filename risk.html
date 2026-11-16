@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/site.css?v=3">
+<link rel="stylesheet" href="assets/css/site.css?v=4">
 <link rel="preload" href="config/fund.json" as="fetch" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/ibm-plex-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -78,7 +78,7 @@
 
   <section class="block wrap" aria-labelledby="rc-title">
     <div class="block-head"><div><h2 id="rc-title">Where the risk comes from</h2>
-      <p>Each position's share of the fund's weight next to its share of the fund's risk. A position whose risk bar is longer than its weight bar adds more risk than its size suggests.</p></div></div>
+      <p>The ten positions that carry the most risk: each one's share of the fund's weight next to its share of the fund's risk. A position whose risk bar is longer than its weight bar adds more risk than its size suggests.</p></div></div>
     <div class="chart-box" id="rc-wrap" style="height:460px"><canvas id="rc-chart" role="img" aria-label="Bar chart comparing weight and risk contribution by position"></canvas></div>
     <div class="table-scroll" style="margin-top:24px">
       <table class="data" id="rc-table">
@@ -86,12 +86,25 @@
         <tbody></tbody>
       </table>
     </div>
+    <p style="margin-top:14px"><button class="link-btn" type="button" id="rc-more" hidden></button></p>
   </section>
 
   <section class="block wrap" aria-labelledby="corr-title">
-    <div class="block-head"><div><h2 id="corr-title">Correlation between positions</h2><p>Daily returns over the past year. Red pairs move together, blue pairs move in opposite directions.</p></div></div>
-    <div class="table-scroll" style="border-top:0"><div id="corr"></div></div>
-    <div class="heat-key"><span>−1</span><i aria-hidden="true"></i><span>+1</span></div>
+    <div class="block-head"><div><h2 id="corr-title">Correlation between positions</h2><p>Daily returns over the past year. Red pairs move together, blue pairs move in opposite directions. Point at a square to read a pair.</p></div></div>
+    <div class="corr-mini" id="corr-mini">
+      <div class="corr-thumb"><canvas id="corr-canvas" role="img" aria-label="Small heat map of the correlation between every pair of positions"></canvas><div class="corr-tip" id="corr-tip" hidden></div>
+        <div class="heat-key"><span>−1</span><i aria-hidden="true"></i><span>+1</span></div></div>
+      <div class="corr-side">
+        <dl class="stats" id="corr-stats"></dl>
+        <h3 style="margin:22px 0 8px;font-size:1rem">Pairs that move most together</h3>
+        <ol class="corr-pairs" id="corr-top"></ol>
+        <button class="link-btn" type="button" id="corr-open">Open the full matrix with every value</button>
+      </div>
+    </div>
+    <div class="corr-full" id="corr-full" hidden>
+      <p><button class="link-btn" type="button" id="corr-close">Close the full matrix</button></p>
+      <div class="table-scroll" style="border-top:0"><div id="corr"></div></div>
+    </div>
   </section>
 
   <section class="block wrap" aria-labelledby="models-title">
@@ -116,9 +129,9 @@
     </div>
   </section>
 </main>
-<script defer src="assets/js/app.js?v=3"></script>
-<script defer src="assets/js/viz.js?v=3"></script>
-<script defer src="assets/js/risk.js?v=3"></script>
+<script defer src="assets/js/app.js?v=4"></script>
+<script defer src="assets/js/viz.js?v=4"></script>
+<script defer src="assets/js/risk.js?v=4"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"></script>
 <script async src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js" onload="window.dispatchEvent(new Event('echarts-loaded'))"></script>

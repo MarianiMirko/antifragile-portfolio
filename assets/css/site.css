@@ -233,6 +233,15 @@ table.heat thead th { text-align: center; }
 table.heat td { width: 46px; height: 34px; text-align: center; color: var(--ink); }
 table.heat td.strong { color: #fff; }
 .heat-key { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); margin-top: 12px; }
+.corr-mini { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 48px; align-items: start; }
+.corr-thumb { position: relative; }
+.corr-thumb canvas { display: block; cursor: crosshair; border: 1px solid var(--rule); }
+.corr-tip { position: absolute; pointer-events: none; background: var(--ink); color: #fff; font-size: 0.8rem; padding: 5px 9px; border-radius: 4px; white-space: nowrap; z-index: 2; }
+.corr-pairs { margin: 0 0 18px; padding: 0; list-style: none; border-top: 1px solid var(--rule); max-width: 420px; }
+.corr-pairs li { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; }
+.corr-pairs b { font-weight: 600; }
+.corr-full { margin-top: 28px; }
+@media (max-width: 720px) { .corr-mini { grid-template-columns: 1fr; gap: 28px; } }
 .heat-key i { display: block; width: 180px; height: 10px; background: linear-gradient(90deg, #2459A8, #F0EFEC 50%, #B5342A); }
 
 /* ---------- cards used for research, backtests, team ---------- */
