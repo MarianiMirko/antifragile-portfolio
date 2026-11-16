@@ -1,9 +1,397 @@
 {
   "note": "One entry per trade. Match the trade by date (YYYY-MM-DD), ticker and side. Shown in the trade log on the Portfolio page.",
   "rationales": [
-    { "date": "2026-10-05", "ticker": "NVDA", "side": "buy", "rationale": "Core AI-capex holding. Sized at target weight; thesis and target price in Research.", "approved_by": "Mirko" },
-    { "date": "2026-10-05", "ticker": "GLD", "side": "buy", "rationale": "Antifragile sleeve: gold as a hedge against equity drawdowns and policy shocks.", "approved_by": "Mirko" },
-    { "date": "2026-10-21", "ticker": "DIS", "side": "sell", "rationale": "Thesis broken after guidance cut; exited in full rather than wait for the stop-loss.", "approved_by": "Mirko" },
-    { "date": "2026-10-21", "ticker": "LIN", "side": "buy", "rationale": "Replaces DIS: defensive pricing power, low correlation with our technology holdings.", "approved_by": "Mirko" }
+    {
+      "date": "2026-10-05",
+      "ticker": "NVDA",
+      "side": "buy",
+      "rationale": "Core AI-capex holding. Sized at target weight; thesis and target price in Research.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-10-05",
+      "ticker": "GLD",
+      "side": "buy",
+      "rationale": "Antifragile sleeve: gold as a hedge against equity drawdowns and policy shocks.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-10-21",
+      "ticker": "DIS",
+      "side": "sell",
+      "rationale": "Thesis broken after guidance cut; exited in full rather than wait for the stop-loss.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-10-21",
+      "ticker": "LIN",
+      "side": "buy",
+      "rationale": "Replaces DIS: defensive pricing power, low correlation with our technology holdings.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "MSFT",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AAPL",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "GOOGL",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AMZN",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "META",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AMD",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "PLTR",
+      "side": "buy",
+      "rationale": "S&P 500 replica (index weight within the 70%) plus the 3.75% IPO sleeve, held in one position. The sleeve part is sold on 19 Nov after the New York open. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "ASML",
+      "side": "buy",
+      "rationale": "IPO sleeve: 3.75% of the fund, held until the Anthropic IPO and sold on 19 Nov after the New York open. Not in the S&P 500. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "BABA",
+      "side": "buy",
+      "rationale": "IPO sleeve: 3.75% of the fund, held until the Anthropic IPO and sold on 19 Nov after the New York open. Not in the S&P 500. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AVGO",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "LLY",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "TSLA",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "BRK.B",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "JPM",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "MU",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "V",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "XOM",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "JNJ",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "WMT",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "MA",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "ABBV",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "COST",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "CVX",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "CSCO",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "PG",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "KO",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "UNH",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "MRK",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "HD",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "GE",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "BAC",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "PM",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "INTC",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AMAT",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "LRCX",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "TXN",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "CAT",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "RTX",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "GS",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "PANW",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "NFLX",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "WFC",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "TMO",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "AMGN",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "ORCL",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "LIN",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "CRWD",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "IBM",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "MS",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "GEV",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "ANET",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-16",
+      "ticker": "GILD",
+      "side": "buy",
+      "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
+      "approved_by": "Mirko"
+    }
   ]
 }
