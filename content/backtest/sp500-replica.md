@@ -1,5 +1,5 @@
 ---
-title: S&P 500 replica, the 50 largest companies without NVIDIA
+title: S&P 500 replica
 author: Riccardo
 updated: 2026-11-16
 period: Dec 2016 to Nov 2026, weekly
@@ -17,5 +17,3 @@ Max drawdown: −28.5%
 **Why we use it.** We started the game behind the benchmark, so we need a replica that follows the market closely but still moves a little more than it. In about 9% of the months this replica beat the index by more than 1.88 points, the gap we had to close at the start.
 
 **Read with care.** The test only uses companies that are in the index today, so firms that left the index or failed are missing. That makes the replica's extra return of about 2 points a year look better than it would have been: it is not an edge we count on. A version with 50 stocks spread across sectors followed the index more tightly (tracking error 3.2% a year, beta 1.00). We keep it as the alternative if we are ahead of the benchmark and want to protect the lead.
-
-Full study and code: `research/replica_study.py` in our repository.
