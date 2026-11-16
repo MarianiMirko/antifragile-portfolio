@@ -1,58 +1,58 @@
 {
- "generated_at": "2026-11-16T17:14:50.583333+00:00",
+ "generated_at": "2026-11-16T17:19:58.516622+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 54 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 54 shares (about $27,463).",
+   "title": "Rebalance AMD: buy 55 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 55 shares (about $27,912).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 92 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 92 shares (about $26,511).",
+   "title": "Rebalance GOOGL: buy 97 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 97 shares (about $27,871).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 101 shares",
-   "message": "AMZN is 0.3% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 101 shares (about $26,160).",
+   "title": "Rebalance AMZN: buy 103 shares",
+   "message": "AMZN is 0.3% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 103 shares (about $26,622).",
    "ticker": "AMZN"
   },
   {
    "severity": "warning",
    "title": "Rebalance ASML: buy 13 shares",
-   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,583).",
+   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,544).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
    "title": "Rebalance META: buy 22 shares",
-   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 22 shares (about $13,830).",
+   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 22 shares (about $13,815).",
    "ticker": "META"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 77 shares",
-   "message": "PLTR is 0.1% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 77 shares (about $12,593).",
+   "title": "Rebalance PLTR: buy 83 shares",
+   "message": "PLTR is 0.1% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 83 shares (about $13,522).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AVGO: buy 36 shares",
-   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 36 shares (about $12,052).",
+   "title": "Rebalance AVGO: buy 38 shares",
+   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 38 shares (about $12,683).",
    "ticker": "AVGO"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 128 shares",
-   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 128 shares (about $11,718).",
+   "title": "Rebalance BABA: buy 126 shares",
+   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 126 shares (about $11,526).",
    "ticker": "BABA"
   },
   {
    "severity": "warning",
    "title": "Rebalance MU: buy 15 shares",
-   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 15 shares (about $10,996).",
+   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 15 shares (about $10,955).",
    "ticker": "MU"
   }
  ],
@@ -89,7 +89,7 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -2.4% (PM)",
+   "current": "worst is -2.3% (NFLX)",
    "status": "ok"
   },
   {
