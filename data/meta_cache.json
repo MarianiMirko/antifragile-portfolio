@@ -6,21 +6,21 @@
   "asset_class": "Equity"
  },
  "MSFT": {
-  "name": "MSFT",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "Microsoft Corporation",
+  "sector": "Technology",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "AAPL": {
-  "name": "AAPL",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "Apple Inc.",
+  "sector": "Technology",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "ASML": {
-  "name": "ASML",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "ASML Holding N.V.",
+  "sector": "Technology",
+  "country": "Netherlands",
   "asset_class": "Equity"
  },
  "TSM": {
@@ -30,15 +30,15 @@
   "asset_class": "Equity"
  },
  "JPM": {
-  "name": "JPM",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "JPMorgan Chase & Co.",
+  "sector": "Financial Services",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "UNH": {
-  "name": "UNH",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "UnitedHealth Group Incorporated",
+  "sector": "Healthcare",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "NVO": {
@@ -48,27 +48,27 @@
   "asset_class": "Equity"
  },
  "XOM": {
-  "name": "XOM",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "Exxon Mobil Corporation",
+  "sector": "Energy",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "CAT": {
-  "name": "CAT",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "Caterpillar Inc.",
+  "sector": "Industrials",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "PG": {
-  "name": "PG",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "The Procter & Gamble Company",
+  "sector": "Consumer Defensive",
+  "country": "United States",
   "asset_class": "Equity"
  },
  "LIN": {
-  "name": "LIN",
-  "sector": "Unclassified",
-  "country": "Unknown",
+  "name": "Linde plc",
+  "sector": "Basic Materials",
+  "country": "Ireland",
   "asset_class": "Equity"
  },
  "GLD": {

@@ -16,7 +16,7 @@
   "risk_free_rate": 0.04,
   "display_timezone": "Europe/Amsterdam",
   "marketwatch_game": "iim202627",
-  "demo_mode": true,
+  "demo_mode": false,
   "private_area": {
     "supabase_url": "https://djrmmlsfqwowkcdxghwp.supabase.co",
     "supabase_publishable_key": "sb_publishable_8IvpYKrvlKxe4aqymMftEg_O50owcAh"

@@ -275,8 +275,8 @@ def fetch_meta(tickers, cache, cfg, holdings, online=True):
     """Name, sector, country and asset class per ticker, cached in data/meta_cache.json."""
     mw_names = {p["ticker"].upper(): p.get("name") for p in (holdings or {}).get("positions", [])}
     for t in tickers:
-        if t in cache and cache[t].get("sector"):
-            continue
+        if t in cache and cache[t].get("sector") not in (None, "", "Unclassified"):
+            continue  # placeholders are looked up again on the next run
         entry = {"name": mw_names.get(t) or t, "sector": "Unclassified", "country": "Unknown", "asset_class": "Equity"}
         if online:
             try:
