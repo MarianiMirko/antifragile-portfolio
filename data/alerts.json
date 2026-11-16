@@ -1,65 +1,59 @@
 {
- "generated_at": "2026-11-16T16:46:30.177304+00:00",
+ "generated_at": "2026-11-16T17:12:23.733012+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 95 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 95 shares (about $27,398).",
-   "ticker": "GOOGL"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance AMD: buy 53 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 53 shares (about $27,044).",
+   "title": "Rebalance AMD: buy 54 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 54 shares (about $27,491).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 84 shares",
-   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 84 shares (about $21,912).",
+   "title": "Rebalance GOOGL: buy 92 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 92 shares (about $26,527).",
+   "ticker": "GOOGL"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AMZN: buy 99 shares",
+   "message": "AMZN is 0.3% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 99 shares (about $25,670).",
    "ticker": "AMZN"
   },
   {
    "severity": "warning",
    "title": "Rebalance ASML: buy 13 shares",
-   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,623).",
+   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 13 shares (about $18,590).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
    "title": "Rebalance META: buy 22 shares",
-   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 22 shares (about $13,857).",
+   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 22 shares (about $13,834).",
    "ticker": "META"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 76 shares",
-   "message": "PLTR is 0.1% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 76 shares (about $12,457).",
+   "title": "Rebalance PLTR: buy 77 shares",
+   "message": "PLTR is 0.1% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 77 shares (about $12,596).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 124 shares",
-   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 124 shares (about $11,387).",
-   "ticker": "BABA"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance MU: buy 15 shares",
-   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 15 shares (about $10,993).",
-   "ticker": "MU"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance AVGO: buy 32 shares",
-   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 32 shares (about $10,771).",
+   "title": "Rebalance AVGO: buy 36 shares",
+   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 36 shares (about $12,057).",
    "ticker": "AVGO"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AAPL: buy 29 shares",
-   "message": "AAPL is 0.1% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 29 shares (about $10,261).",
-   "ticker": "AAPL"
+   "title": "Rebalance BABA: buy 129 shares",
+   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 129 shares (about $11,815).",
+   "ticker": "BABA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 14 shares",
+   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 14 shares (about $10,277).",
+   "ticker": "MU"
   }
  ],
  "rules": [
@@ -95,14 +89,14 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -2.3% (NFLX)",
+   "current": "worst is -2.2% (PM)",
    "status": "ok"
   },
   {
    "id": "var",
    "rule": "One-day 95% VaR",
    "limit": "at most 4.1%",
-   "current": "1.78%",
+   "current": "1.80%",
    "status": "ok"
   },
   {
@@ -123,7 +117,7 @@
    "id": "drift",
    "rule": "Drift from target weight",
    "limit": "orders of $10,000 or more",
-   "current": "largest is -0.3 pts (GOOGL)",
+   "current": "largest is -0.3 pts (AMD)",
    "status": "warning"
   }
  ],
