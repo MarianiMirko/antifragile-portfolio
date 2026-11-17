@@ -8,11 +8,11 @@
   "currency": "USD",
   "benchmark": {
     "ticker": "^GSPC",
-    "name": "max(0, S&P 500)",
+    "name": "S&P 500",
     "start_level": 7422.24,
-    "floor_at_zero": true,
+    "floor_at_zero": false,
     "sector_proxy": "SPY",
-    "note": "Benchmark of the game: max(0; S&P 500 return) from the opening level of 9 November 2026 (7,422.24, to be confirmed by the lecturer).",
+    "note": "S&P 500 price index from its opening level of 9 November 2026 (7,422.24, to be confirmed by the lecturer). The game grades the bonus against max(0; S&P 500 return); the site compares with the plain index.",
     "is_placeholder": false
   },
   "start_date": "2026-11-08",
