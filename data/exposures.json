@@ -2,23 +2,23 @@
  "sector": [
   {
    "name": "Technology",
-   "weight": 0.434112
+   "weight": 0.434107
   },
   {
    "name": "Communication Services",
-   "weight": 0.159671
+   "weight": 0.159673
   },
   {
    "name": "Consumer Cyclical",
-   "weight": 0.147211
+   "weight": 0.14721
   },
   {
    "name": "Financial Services",
-   "weight": 0.079811
+   "weight": 0.079813
   },
   {
    "name": "Healthcare",
-   "weight": 0.0702
+   "weight": 0.070201
   },
   {
    "name": "Consumer Defensive",
@@ -45,11 +45,11 @@
  "country": [
   {
    "name": "United States",
-   "weight": 0.902267
+   "weight": 0.90227
   },
   {
    "name": "Netherlands",
-   "weight": 0.03511
+   "weight": 0.035106
   },
   {
    "name": "China",
@@ -68,11 +68,11 @@
  "region": [
   {
    "name": "North America",
-   "weight": 0.902267
+   "weight": 0.90227
   },
   {
    "name": "Europe",
-   "weight": 0.039554
+   "weight": 0.03955
   },
   {
    "name": "Asia Pacific",
