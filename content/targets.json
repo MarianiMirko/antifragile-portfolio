@@ -1,7 +1,7 @@
 {
- "note": "Target weights from IGfinal, prices of 2026-11-13. Phase: Speculative sleeve on, until the IPO. Fractions of the fund; CASH is the cash target. Written by scripts/run_igfinal.py on every run of the model. To set the weights by hand instead, change source to \"manual\".",
+ "note": "Target weights from IGfinal, prices of 2026-11-16. Phase: Speculative sleeve on, until the IPO. Fractions of the fund; CASH is the cash target. Written by scripts/run_igfinal.py on every run of the model. To set the weights by hand instead, change source to \"manual\".",
  "source": "igfinal",
- "generated": "2026-11-13",
+ "generated": "2026-11-16",
  "targets": {
   "AAPL": 0.09685,
   "MSFT": 0.11012,
