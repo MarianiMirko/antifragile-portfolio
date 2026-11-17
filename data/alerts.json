@@ -1,59 +1,53 @@
 {
- "generated_at": "2026-11-17T15:35:26.659941+00:00",
+ "generated_at": "2026-11-17T15:38:40.729838+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 63 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 63 shares (about $31,235).",
+   "title": "Rebalance AMD: buy 66 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 66 shares (about $32,619).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 111 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 111 shares (about $31,266).",
+   "title": "Rebalance GOOGL: buy 104 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 104 shares (about $29,331).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
    "title": "Rebalance ASML: buy 18 shares",
-   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $24,829).",
+   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $24,766).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MSFT: buy 43 shares",
-   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 43 shares (about $21,733).",
+   "title": "Rebalance MSFT: buy 45 shares",
+   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 45 shares (about $22,717).",
    "ticker": "MSFT"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 246 shares",
-   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 246 shares (about $21,518).",
-   "ticker": "BABA"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance PLTR: buy 122 shares",
-   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 122 shares (about $19,292).",
+   "title": "Rebalance PLTR: buy 135 shares",
+   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 135 shares (about $21,236).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 25 shares",
-   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 25 shares (about $17,197).",
+   "title": "Rebalance BABA: buy 237 shares",
+   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 237 shares (about $20,761).",
+   "ticker": "BABA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 26 shares",
+   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 26 shares (about $17,839).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 58 shares",
-   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 58 shares (about $14,959).",
+   "title": "Rebalance AMZN: buy 56 shares",
+   "message": "AMZN is 0.1% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 56 shares (about $14,445).",
    "ticker": "AMZN"
-  },
-  {
-   "severity": "warning",
-   "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,748,358; MarketWatch showed $9,839,465 at its last sync.",
-   "ticker": null
   }
  ],
  "rules": [
@@ -68,7 +62,7 @@
    "id": "sector",
    "rule": "Largest sector",
    "limit": "at most 60%",
-   "current": "43.2% (Technology)",
+   "current": "43.1% (Technology)",
    "status": "ok"
   },
   {
@@ -89,14 +83,14 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -6.4% (MU)",
+   "current": "worst is -6.7% (MU)",
    "status": "ok"
   },
   {
    "id": "var",
    "rule": "One-day 95% VaR",
    "limit": "at most 4.1%",
-   "current": "1.81%",
+   "current": "1.80%",
    "status": "ok"
   },
   {
