@@ -1,53 +1,59 @@
 {
- "generated_at": "2026-11-17T20:35:40.673961+00:00",
+ "generated_at": "2026-11-17T21:15:49.275485+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 66 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 66 shares (about $32,558).",
-   "ticker": "AMD"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance GOOGL: buy 116 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 116 shares (about $32,535).",
+   "title": "Rebalance GOOGL: buy 125 shares",
+   "message": "GOOGL is 0.4% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 125 shares (about $35,022).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance ASML: buy 19 shares",
-   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $25,983).",
-   "ticker": "ASML"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance BABA: buy 266 shares",
-   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 266 shares (about $23,089).",
+   "title": "Rebalance BABA: buy 280 shares",
+   "message": "BABA is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 280 shares (about $24,262).",
    "ticker": "BABA"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 135 shares",
-   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 135 shares (about $21,188).",
+   "title": "Rebalance ASML: buy 16 shares",
+   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 16 shares (about $22,145).",
+   "ticker": "ASML"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance PLTR: buy 147 shares",
+   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 147 shares (about $23,010).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MSFT: buy 33 shares",
-   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 33 shares (about $16,718).",
+   "title": "Rebalance AMD: buy 45 shares",
+   "message": "AMD is 0.2% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 45 shares (about $22,666).",
+   "ticker": "AMD"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MSFT: buy 37 shares",
+   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 37 shares (about $18,733).",
    "ticker": "MSFT"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 20 shares",
-   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 20 shares (about $14,049).",
+   "title": "Rebalance AMZN: buy 55 shares",
+   "message": "AMZN is 0.1% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 55 shares (about $14,182).",
+   "ticker": "AMZN"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 17 shares",
+   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 17 shares (about $12,111).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 50 shares",
-   "message": "AMZN is 0.1% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 50 shares (about $12,892).",
-   "ticker": "AMZN"
+   "title": "Rebalance META: buy 19 shares",
+   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $11,759).",
+   "ticker": "META"
   }
  ],
  "rules": [
@@ -62,7 +68,7 @@
    "id": "sector",
    "rule": "Largest sector",
    "limit": "at most 60%",
-   "current": "43.2% (Technology)",
+   "current": "43.4% (Technology)",
    "status": "ok"
   },
   {
@@ -83,7 +89,7 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -6.3% (IBM)",
+   "current": "worst is -6.4% (IBM)",
    "status": "ok"
   },
   {
@@ -111,7 +117,7 @@
    "id": "drift",
    "rule": "Drift from target weight",
    "limit": "orders of $10,000 or more",
-   "current": "largest is -0.3 pts (AMD)",
+   "current": "largest is -0.4 pts (GOOGL)",
    "status": "warning"
   }
  ],
