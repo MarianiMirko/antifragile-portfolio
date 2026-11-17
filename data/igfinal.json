@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-17T04:40:25+00:00",
- "checked_at": "2026-11-17T04:40:25+00:00",
+ "generated_at": "2026-11-17T12:50:37+00:00",
+ "checked_at": "2026-11-17T12:50:37+00:00",
  "asof": "2026-11-16",
  "origin": "live Yahoo Finance prices, last date 2026-11-16 (copy saved as data/snapshots/prices_2026-11-16.csv)",
  "days_left": 22,
@@ -58,15 +58,15 @@
   "max": 1.0,
   "fully_invested": true,
   "p_bonus": 0.25505,
-  "beta": 1.2337550530097234,
+  "beta": 1.2337550530097232,
   "p_market_up": 0.5437,
-  "expected_return": -0.00791363614125762,
+  "expected_return": -0.007913636141257627,
   "return_q05": -0.11228128142403128,
   "return_q95": 0.10158467105114503
  },
  "active_es": {
   "with_sleeve": 0.03377275543579033,
-  "replica_only": 0.01980418917047726,
+  "replica_only": 0.019804189170477254,
   "limit": 0.04,
   "target_book": 0.03377275543579033,
   "current_book": 0.030823495977129214

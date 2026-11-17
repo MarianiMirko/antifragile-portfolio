@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T04:40:33.573293+00:00",
+ "generated_at": "2026-11-17T12:50:44.963364+00:00",
  "alerts": [
   {
    "severity": "warning",
@@ -40,7 +40,7 @@
   {
    "severity": "warning",
    "title": "Rebalance BABA: buy 139 shares",
-   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 139 shares (about $12,598).",
+   "message": "BABA is 0.1% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 139 shares (about $12,597).",
    "ticker": "BABA"
   },
   {
@@ -52,7 +52,7 @@
   {
    "severity": "warning",
    "title": "Rebalance AVGO: buy 32 shares",
-   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 32 shares (about $10,678).",
+   "message": "AVGO is 0.1% below its 3.2% target (orders under $10,000 are skipped). Proposed: buy 32 shares (about $10,679).",
    "ticker": "AVGO"
   }
  ],
