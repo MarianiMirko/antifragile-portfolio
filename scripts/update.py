@@ -251,7 +251,8 @@ def fetch_sector_benchmark(cfg, start_date):
 
     weights, approx = dict(SECTOR_WEIGHTS_FALLBACK), True
     try:
-        raw = yf.Ticker(yahoo_symbol(cfg["benchmark"]["ticker"], cfg)).funds_data.sector_weightings or {}
+        proxy = cfg["benchmark"].get("sector_proxy") or cfg["benchmark"]["ticker"]
+        raw = yf.Ticker(yahoo_symbol(proxy, cfg)).funds_data.sector_weightings or {}
         norm = {"".join(c for c in k.lower() if c.isalpha()): k for k in SECTOR_ETFS}
         norm["realestate"] = "Real Estate"
         got = {norm["".join(c for c in k.lower() if c.isalpha())]: float(v) for k, v in raw.items()
@@ -391,7 +392,11 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
     nav_o = cash + (shares * po[traded]).sum(axis=1) if traded else cash.copy()
     nav_c = cash + (shares * pc[traded]).sum(axis=1) if traded else cash.copy()
     has_bench = bench in pc.columns and not pc[bench].dropna().empty
-    bench_rebased = (pc[bench] / po[bench].iloc[0] * capital) if has_bench else pd.Series(np.nan, index=grid)
+    # the game's benchmark: the S&P 500 from its level at the start of the game (cfg benchmark.start_level), rebased to the
+    # starting capital. History keeps the plain index; the floor max(0, S&P 500 return) is applied to what the site shows.
+    b_cfg = cfg["benchmark"]
+    b_base = float(b_cfg["start_level"]) if b_cfg.get("start_level") else (float(po[bench].iloc[0]) if has_bench else 1.0)
+    bench_rebased = (pc[bench] / b_base * capital) if has_bench else pd.Series(np.nan, index=grid)
 
     # ---- persistent history: old bars survive when the data source drops them
     hist_path = out_dir / "nav_history.json"
@@ -427,6 +432,10 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
                         index=pd.to_datetime([k for k, _ in rows], unit="s", utc=True)).astype(float)
 
     hourly, hourly_b, dcandles, daily_b = build_candles(bars)
+    daily_b_index = daily_b                                    # the plain index, for beta and tracking
+    if b_cfg.get("floor_at_zero"):
+        hourly_b = [{"time": x["time"], "value": max(x["value"], capital)} for x in hourly_b]
+        daily_b = [{"time": x["time"], "value": max(x["value"], capital)} for x in daily_b]
     write_json(out_dir / "candles_1h.json", {"candles": hourly, "benchmark": hourly_b}, compact=True)
     write_json(out_dir / "candles_1d.json", {"candles": dcandles, "benchmark": daily_b}, compact=True)
 
@@ -439,9 +448,10 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
     rets.index = closes.index
     n_days = len(rets)
     bcl = pd.Series([c["value"] for c in daily_b], index=pd.to_datetime([c["time"] for c in daily_b]))
-    brets = pd.concat([pd.Series([capital]), bcl]).pct_change().iloc[1:] if len(bcl) else pd.Series(dtype=float)
-    if len(bcl):
-        brets.index = bcl.index
+    bix = pd.Series([c["value"] for c in daily_b_index], index=pd.to_datetime([c["time"] for c in daily_b_index]))
+    brets = pd.concat([pd.Series([capital]), bix]).pct_change().iloc[1:] if len(bix) else pd.Series(dtype=float)
+    if len(bix):
+        brets.index = bix.index
     bench_return = float(bcl.iloc[-1] / capital - 1) if len(bcl) else None
     total_return = nav / capital - 1
 

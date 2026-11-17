@@ -7,9 +7,13 @@
   "initial_capital": 10000000,
   "currency": "USD",
   "benchmark": {
-    "ticker": "SPY",
-    "name": "S&P 500 (SPY)",
-    "is_placeholder": true
+    "ticker": "^GSPC",
+    "name": "max(0, S&P 500)",
+    "start_level": 7422.24,
+    "floor_at_zero": true,
+    "sector_proxy": "SPY",
+    "note": "Benchmark of the game: max(0; S&P 500 return) from the opening level of 9 November 2026 (7,422.24, to be confirmed by the lecturer).",
+    "is_placeholder": false
   },
   "start_date": "2026-11-08",
   "end_date": "2026-12-17",
