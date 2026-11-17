@@ -1,58 +1,58 @@
 {
- "generated_at": "2026-11-17T15:32:55.462845+00:00",
+ "generated_at": "2026-11-17T15:35:26.659941+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 111 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 111 shares (about $31,309).",
-   "ticker": "GOOGL"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance AMD: buy 60 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 60 shares (about $29,872).",
+   "title": "Rebalance AMD: buy 63 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 63 shares (about $31,235).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
+   "title": "Rebalance GOOGL: buy 111 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 111 shares (about $31,266).",
+   "ticker": "GOOGL"
+  },
+  {
+   "severity": "warning",
    "title": "Rebalance ASML: buy 18 shares",
-   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $24,842).",
+   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $24,829).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 246 shares",
-   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 246 shares (about $21,547).",
-   "ticker": "BABA"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance MSFT: buy 41 shares",
-   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 41 shares (about $20,769).",
+   "title": "Rebalance MSFT: buy 43 shares",
+   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 43 shares (about $21,733).",
    "ticker": "MSFT"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 133 shares",
-   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 133 shares (about $20,978).",
+   "title": "Rebalance BABA: buy 246 shares",
+   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 246 shares (about $21,518).",
+   "ticker": "BABA"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance PLTR: buy 122 shares",
+   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 122 shares (about $19,292).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
    "title": "Rebalance MU: buy 25 shares",
-   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 25 shares (about $17,270).",
+   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 25 shares (about $17,197).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
    "title": "Rebalance AMZN: buy 58 shares",
-   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 58 shares (about $14,981).",
+   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 58 shares (about $14,959).",
    "ticker": "AMZN"
   },
   {
    "severity": "warning",
    "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,761,505; MarketWatch showed $9,839,465 at its last sync.",
+   "message": "We compute $9,748,358; MarketWatch showed $9,839,465 at its last sync.",
    "ticker": null
   }
  ],
@@ -89,7 +89,7 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -6.0% (MU)",
+   "current": "worst is -6.4% (MU)",
    "status": "ok"
   },
   {
@@ -117,7 +117,7 @@
    "id": "drift",
    "rule": "Drift from target weight",
    "limit": "orders of $10,000 or more",
-   "current": "largest is -0.3 pts (GOOGL)",
+   "current": "largest is -0.3 pts (AMD)",
    "status": "warning"
   }
  ],
