@@ -1,53 +1,65 @@
 {
- "generated_at": "2026-11-17T15:38:40.729838+00:00",
+ "generated_at": "2026-11-17T16:35:34.036971+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 66 shares",
-   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 66 shares (about $32,619).",
+   "title": "Rebalance AMD: buy 67 shares",
+   "message": "AMD is 0.3% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 67 shares (about $32,850).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 104 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 104 shares (about $29,331).",
+   "title": "Rebalance GOOGL: buy 101 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 101 shares (about $28,318).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance ASML: buy 18 shares",
-   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $24,766).",
+   "title": "Rebalance ASML: buy 19 shares",
+   "message": "ASML is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $25,842).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MSFT: buy 45 shares",
-   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 45 shares (about $22,717).",
+   "title": "Rebalance MSFT: buy 53 shares",
+   "message": "MSFT is 0.3% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 53 shares (about $26,473).",
    "ticker": "MSFT"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 135 shares",
-   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 135 shares (about $21,236).",
+   "title": "Rebalance PLTR: buy 145 shares",
+   "message": "PLTR is 0.2% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 145 shares (about $22,573).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
    "title": "Rebalance BABA: buy 237 shares",
-   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 237 shares (about $20,761).",
+   "message": "BABA is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 237 shares (about $20,619).",
    "ticker": "BABA"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 26 shares",
-   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 26 shares (about $17,839).",
+   "title": "Rebalance AMZN: buy 74 shares",
+   "message": "AMZN is 0.2% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 74 shares (about $18,851).",
+   "ticker": "AMZN"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MU: buy 24 shares",
+   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 24 shares (about $16,465).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 56 shares",
-   "message": "AMZN is 0.1% below its 8.7% target (orders under $10,000 are skipped). Proposed: buy 56 shares (about $14,445).",
-   "ticker": "AMZN"
+   "title": "Rebalance META: buy 18 shares",
+   "message": "META is 0.1% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 18 shares (about $11,083).",
+   "ticker": "META"
+  },
+  {
+   "severity": "warning",
+   "title": "Fund value differs from MarketWatch",
+   "message": "We compute $9,675,899; MarketWatch showed $9,746,076 at its last sync.",
+   "ticker": null
   }
  ],
  "rules": [
@@ -55,7 +67,7 @@
    "id": "position",
    "rule": "Largest single position",
    "limit": "at most 15%",
-   "current": "10.8% (MSFT)",
+   "current": "10.7% (MSFT)",
    "status": "ok"
   },
   {
