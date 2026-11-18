@@ -1,52 +1,64 @@
 {
- "generated_at": "2026-11-18T17:35:42.492301+00:00",
+ "generated_at": "2026-11-18T18:35:50.517784+00:00",
  "alerts": [
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 116 shares",
-   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 116 shares (about $32,739).",
+   "title": "Rebalance GOOGL: buy 110 shares",
+   "message": "GOOGL is 0.3% below its 9.7% target (orders under $10,000 are skipped). Proposed: buy 110 shares (about $31,104).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BABA: buy 335 shares",
-   "message": "BABA is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 335 shares (about $28,798).",
+   "title": "Rebalance BABA: buy 328 shares",
+   "message": "BABA is 0.3% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 328 shares (about $28,241).",
    "ticker": "BABA"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MSFT: buy 52 shares",
-   "message": "MSFT is 0.3% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 52 shares (about $26,269).",
-   "ticker": "MSFT"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance PLTR: buy 162 shares",
-   "message": "PLTR is 0.3% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 162 shares (about $25,348).",
+   "title": "Rebalance PLTR: buy 158 shares",
+   "message": "PLTR is 0.3% below its 4.5% target (orders under $10,000 are skipped). Proposed: buy 158 shares (about $24,757).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance ASML: buy 15 shares",
-   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 15 shares (about $20,949).",
+   "title": "Rebalance ASML: buy 17 shares",
+   "message": "ASML is 0.2% below its 3.8% target (orders under $10,000 are skipped). Proposed: buy 17 shares (about $23,599).",
    "ticker": "ASML"
   },
   {
    "severity": "warning",
-   "title": "Rebalance META: buy 25 shares",
-   "message": "META is 0.2% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 25 shares (about $15,451).",
+   "title": "Rebalance MSFT: buy 41 shares",
+   "message": "MSFT is 0.2% below its 11.0% target (orders under $10,000 are skipped). Proposed: buy 41 shares (about $20,829).",
+   "ticker": "MSFT"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance META: buy 26 shares",
+   "message": "META is 0.2% below its 6.3% target (orders under $10,000 are skipped). Proposed: buy 26 shares (about $16,056).",
    "ticker": "META"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 19 shares",
-   "message": "MU is 0.1% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $13,492).",
+   "title": "Rebalance MU: buy 21 shares",
+   "message": "MU is 0.2% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 21 shares (about $14,765).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
+   "title": "Rebalance AMZN: sell 48 shares",
+   "message": "AMZN is 0.1% above its 8.7% target (orders under $10,000 are skipped). Proposed: sell 48 shares (about $12,849).",
+   "ticker": "AMZN"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance AMD: buy 20 shares",
+   "message": "AMD is 0.1% below its 5.5% target (orders under $10,000 are skipped). Proposed: buy 20 shares (about $10,369).",
+   "ticker": "AMD"
+  },
+  {
+   "severity": "warning",
    "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,784,644; MarketWatch showed $9,735,939 at its last sync.",
+   "message": "We compute $9,785,237; MarketWatch showed $9,735,939 at its last sync.",
    "ticker": null
   }
  ],
@@ -55,7 +67,7 @@
    "id": "position",
    "rule": "Largest single position",
    "limit": "at most 15%",
-   "current": "10.7% (MSFT)",
+   "current": "10.8% (MSFT)",
    "status": "ok"
   },
   {
@@ -83,7 +95,7 @@
    "id": "stop",
    "rule": "Stop-loss",
    "limit": "sell at -30% from average cost",
-   "current": "worst is -12.9% (UNH)",
+   "current": "worst is -13.8% (UNH)",
    "status": "ok"
   },
   {
