@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-18T20:35:34+00:00",
- "checked_at": "2026-11-18T20:35:34+00:00",
+ "generated_at": "2026-11-18T21:15:25+00:00",
+ "checked_at": "2026-11-18T21:15:25+00:00",
  "asof": "2026-11-17",
  "origin": "live Yahoo Finance prices, last date 2026-11-17 (copy saved as data/snapshots/prices_2026-11-17.csv)",
  "days_left": 21,
@@ -60,13 +60,13 @@
   "p_bonus": 0.22915,
   "beta": 1.2333504889832996,
   "p_market_up": 0.45955,
-  "expected_return": -0.01826392918834271,
+  "expected_return": -0.018263929188342718,
   "return_q05": -0.12777883329572112,
   "return_q95": 0.09589454511380709
  },
  "active_es": {
   "with_sleeve": 0.032711625724113715,
-  "replica_only": 0.01934233357997437,
+  "replica_only": 0.019342333579974367,
   "limit": 0.04,
   "target_book": 0.032711625724113715,
   "current_book": 0.030054917648290772
@@ -1073,7 +1073,7 @@
      "Current",
      "ES Student-t, fitted (nu 3.7 / 6.8)",
      "8.20%",
-     "798,625",
+     "798,624",
      "2.65%"
     ],
     [
