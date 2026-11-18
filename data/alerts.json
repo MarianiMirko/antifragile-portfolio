@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T22:14:38.522082+00:00",
+ "generated_at": "2026-11-18T22:30:46.049024+00:00",
  "alerts": [
   {
    "severity": "warning",
@@ -9,8 +9,8 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: sell 1,986 shares",
-   "message": "PLTR is 3.2% above its 1.1% target (orders under $10,000 are skipped). Proposed: sell 1,986 shares (about $311,166).",
+   "title": "Rebalance PLTR: sell 1,985 shares",
+   "message": "PLTR is 3.2% above its 1.1% target (orders under $10,000 are skipped). Proposed: sell 1,985 shares (about $311,010).",
    "ticker": "PLTR"
   },
   {
@@ -46,7 +46,7 @@
   {
    "severity": "warning",
    "title": "Rebalance BRK.B: buy 157 shares",
-   "message": "BRK.B is 0.9% below its 2.9% target (orders under $10,000 are skipped). Proposed: buy 157 shares (about $90,160).",
+   "message": "BRK.B is 0.9% below its 2.9% target (orders under $10,000 are skipped). Proposed: buy 157 shares (about $90,162).",
    "ticker": "BRK.B"
   },
   {
@@ -70,7 +70,7 @@
   {
    "severity": "warning",
    "title": "Rebalance JPM: buy 247 shares",
-   "message": "JPM is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 247 shares (about $80,058).",
+   "message": "JPM is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 247 shares (about $80,055).",
    "ticker": "JPM"
   },
   {
@@ -208,7 +208,7 @@
   {
    "severity": "warning",
    "title": "Rebalance TXN: buy 82 shares",
-   "message": "TXN is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 82 shares (about $23,982).",
+   "message": "TXN is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 82 shares (about $23,986).",
    "ticker": "TXN"
   },
   {
@@ -285,8 +285,8 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance PANW: buy 51 shares",
-   "message": "PANW is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 51 shares (about $17,412).",
+   "title": "Rebalance PANW: buy 50 shares",
+   "message": "PANW is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 50 shares (about $17,104).",
    "ticker": "PANW"
   },
   {
