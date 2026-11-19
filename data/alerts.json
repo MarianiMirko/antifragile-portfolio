@@ -300,6 +300,12 @@
    "title": "Rebalance CRWD: buy 52 shares",
    "message": "CRWD is 0.1% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 52 shares (about $13,118).",
    "ticker": "CRWD"
+  },
+  {
+   "severity": "warning",
+   "title": "Prices are not up to date",
+   "ticker": null,
+   "message": "The price download failed, so the site shows the last prices read from MarketWatch."
   }
  ],
  "rules": [

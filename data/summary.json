@@ -1,19 +1,19 @@
 {
  "generated_at": "2026-11-19T16:35:29.969655+00:00",
- "as_of": "2026-11-19T16:35:29.969655+00:00",
- "status": "ok",
- "price_source": "yfinance",
+ "as_of": "2026-11-19T16:40:00+01:00",
+ "status": "stale",
+ "price_source": "marketwatch",
  "demo": false,
  "initial_capital": 10000000.0,
- "nav": 9808434.33,
+ "nav": 9781103.65,
  "cash": 2318578.251394,
  "cash_weight": 0.236386,
  "invested": 7489856.078606,
  "n_positions": 50,
  "day_change": 30832.38,
  "day_change_pct": 0.003153,
- "total_change": -191565.67,
- "total_return": -0.019157,
+ "total_change": -218896.35,
+ "total_return": -0.02189,
  "benchmark": {
   "ticker": "^GSPC",
   "name": "S&P 500",
@@ -39,5 +39,6 @@
  },
  "rules_ok": 8,
  "rules_total": 9,
- "n_alerts": 50
+ "n_alerts": 50,
+ "stale_since": "2026-11-19T16:50:25.719413+00:00"
 }
