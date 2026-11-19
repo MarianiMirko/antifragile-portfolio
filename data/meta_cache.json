@@ -334,5 +334,11 @@
   "sector": "Consumer Cyclical",
   "country": "China",
   "asset_class": "Equity"
+ },
+ "C": {
+  "name": "Citigroup Inc.",
+  "sector": "Financial Services",
+  "country": "United States",
+  "asset_class": "Equity"
  }
 }

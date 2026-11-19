@@ -2,96 +2,84 @@
  "sector": [
   {
    "name": "Technology",
-   "weight": 0.439791
+   "weight": 0.288864
   },
   {
    "name": "Communication Services",
-   "weight": 0.161375
-  },
-  {
-   "name": "Consumer Cyclical",
-   "weight": 0.14967
+   "weight": 0.087708
   },
   {
    "name": "Financial Services",
-   "weight": 0.077065
+   "weight": 0.081627
+  },
+  {
+   "name": "Consumer Cyclical",
+   "weight": 0.076611
   },
   {
    "name": "Healthcare",
-   "weight": 0.066426
+   "weight": 0.066441
   },
   {
    "name": "Consumer Defensive",
-   "weight": 0.038646
+   "weight": 0.038757
   },
   {
    "name": "Industrials",
-   "weight": 0.020015
+   "weight": 0.020019
   },
   {
    "name": "Energy",
-   "weight": 0.019731
+   "weight": 0.019837
   },
   {
    "name": "Basic Materials",
-   "weight": 0.004391
+   "weight": 0.004404
   },
   {
    "name": "Cash",
-   "weight": 0.022889,
+   "weight": 0.31573,
    "is_cash": true
   }
  ],
  "country": [
   {
    "name": "United States",
-   "weight": 0.90225
-  },
-  {
-   "name": "Netherlands",
-   "weight": 0.035598
-  },
-  {
-   "name": "China",
-   "weight": 0.034871
+   "weight": 0.679866
   },
   {
    "name": "Ireland",
-   "weight": 0.004391
+   "weight": 0.004404
   },
   {
    "name": "Cash",
-   "weight": 0.022889,
+   "weight": 0.31573,
    "is_cash": true
   }
  ],
  "region": [
   {
    "name": "North America",
-   "weight": 0.90225
+   "weight": 0.679866
   },
   {
    "name": "Europe",
-   "weight": 0.03999
-  },
-  {
-   "name": "Asia Pacific",
-   "weight": 0.034871
+   "weight": 0.004404
   },
   {
    "name": "Cash",
-   "weight": 0.022889,
+   "weight": 0.31573,
    "is_cash": true
   }
  ],
  "asset_class": [
   {
    "name": "Equity",
-   "weight": 0.977111
+   "weight": 0.68427
   },
   {
    "name": "Cash",
-   "weight": 0.022889,
+   "weight": 0.31573,
    "is_cash": true
   }
  ]
