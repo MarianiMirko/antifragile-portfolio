@@ -58,6 +58,10 @@ if exited:
     ph_mult, ph_label = 0.0, f"Sleeve sold ({ex['reason'][0]}): replica only"
 sleeve_on = C.SLEEVE_SIZE * ph_mult > 0; rep_method = C.REPLICA_CATCH_UP if sleeve_on else C.REPLICA_HOLD
 w_rep = L.replica_weights(rep_method, Rrep, Rrep[C.BENCH].values)
+_fx = pd.Series(getattr(C, "FIXED_WEIGHTS", {}) or {}, dtype=float)
+if len(_fx):                                          # fixed holdings (portfolio manager): set weight, the replica fills the rest
+    _rest = w_rep.drop([t for t in _fx.index if t in w_rep.index])
+    w_rep = pd.concat([_rest * (1 - _fx.sum()) / _rest.sum(), _fx])
 rep_d = Rw[w_rep.index].values @ w_rep.values; te_rep = L.sd(rep_d - rm) * math.sqrt(252); beta_rep = np.cov(rep_d, rm)[0, 1] / np.var(rm, ddof=1)
 
 # ---- 4. speculative sleeve and active risk -------------------------------------------
@@ -287,6 +291,8 @@ body = "".join([
     "<h2>What the rules say today</h2><ul>",
     f"<li>Phase: {H.esc(ph_label)}. Sleeve target {pct(C.SLEEVE_SIZE * ph_mult * s, 0)} of the portfolio ({', '.join(C.SLEEVE)}), replica {pct(1 - C.SLEEVE_SIZE * ph_mult * s, 0)}.</li>",
     (f'<li class="WARNING">{" and ".join(C.NOT_IN_SP500)} are US-listed but not S&amp;P 500 constituents. The case says the universe is the constituents: confirm they are allowed.</li>' if sleeve_on and C.NOT_IN_SP500 else ""),
+    (("<li>Fixed holdings set by the portfolio manager: " + ", ".join(t + " " + pct(v, 0) for t, v in C.FIXED_WEIGHTS.items())
+      + "; the replica fills the rest.</li>") if getattr(C, "FIXED_WEIGHTS", None) else "") +
     f"<li>Replica: {len(w_rep)} largest S&amp;P 500 companies without {', '.join(C.REPLICA_EXCLUDE)}, " + ("at index weights (catch-up phase: beta close to 1)" if rep_method == "index" else "at minimum-tracking-error weights (holding phase: smallest drift from the index)")
     + f". Beta over the window {beta_rep:.2f}, tracking error {pct(te_rep, 1)} a year.</li>",
     (f"<li>Exit rule: the sleeve is sold once the lead over the benchmark reaches {pct(C.EXIT_TRIGGER, 1)} or on the IPO date. Today the excess is {pct(excess_t)}" if C.EXIT_TRIGGER is not None

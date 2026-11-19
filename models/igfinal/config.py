@@ -28,7 +28,9 @@ VOL_INDEX = "^VIX"
 #              but beta about 0.93-0.96 out of sample. Used once there is a lead to hold.
 INDEX_WEIGHTS_FILE = "input/sp500_index_weights.csv"   # SPY holdings of 12 Nov 2026, NVIDIA already left out
 REPLICA_N = 50
-REPLICA_EXCLUDE = ["NVDA"]
+REPLICA_EXCLUDE = ["NVDA", "ORCL"]   # ORCL: portfolio manager, 19 Nov (sold and replaced; the next-largest company enters the 50)
+FIXED_WEIGHTS = {"BRK-B": 0.10}     # portfolio manager, 19 Nov: Berkshire held at 10% of the fund as a hedge for a falling market.
+                                    # The rest of the replica is scaled to fill the other 90%. Empty dict = plain replica.
 REPLICA_CATCH_UP = "index"     # while the sleeve is on
 REPLICA_HOLD = "index"         # after the sleeve is sold. Was "min_te"; the portfolio manager asked on 15 Nov for the replica
                                # of the team's study in both phases, pending the result of the research in research/
