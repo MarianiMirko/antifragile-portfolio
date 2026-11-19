@@ -392,6 +392,76 @@
       "side": "buy",
       "rationale": "S&P 500 replica: one of the 50 largest index companies (NVIDIA excluded), at its index weight within the 70% replica. Initial build of the 70/30 plan from the allocation model (13 Nov closes), bought at 99% of model size to keep about 1% cash and avoid margin.",
       "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "ASML",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Whole position sold: it was held only for the sleeve and is not in the S&P 500.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "BABA",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Whole position sold: it was held only for the sleeve and is not in the S&P 500.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "MSFT",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "GOOGL",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "AMZN",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "META",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "AMD",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "PLTR",
+      "side": "sell",
+      "rationale": "IPO sleeve closed on the day of the Anthropic IPO, after the New York open, as planned. Sold the shares bought for the 3.75% sleeve on 16 Nov; the shares that belong to the S&P 500 replica are kept.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "ORCL",
+      "side": "sell",
+      "rationale": "Portfolio manager's decision: Oracle leaves the replica and is replaced by a non-tech company of similar size and beta, to lower the replica's technology tilt.",
+      "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "C",
+      "side": "buy",
+      "rationale": "Replaces Oracle in the S&P 500 replica with the proceeds of the sale: the next-largest company in the index outside technology, with a beta close to Oracle's (1.38 against 1.34 over the past year), so the replica keeps its market exposure.",
+      "approved_by": "Mirko"
     }
   ]
 }

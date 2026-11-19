@@ -364,6 +364,76 @@
    "side": "buy",
    "shares": 756.0,
    "price": 169.48
+  },
+  {
+   "date": "2026-11-19T10:24:00",
+   "ticker": "ASML",
+   "side": "sell",
+   "shares": 247.0,
+   "price": 1425.62
+  },
+  {
+   "date": "2026-11-19T10:25:00",
+   "ticker": "AMZN",
+   "side": "sell",
+   "shares": 1393.0,
+   "price": 268.21
+  },
+  {
+   "date": "2026-11-19T10:25:00",
+   "ticker": "GOOGL",
+   "side": "sell",
+   "shares": 1255.0,
+   "price": 290.55
+  },
+  {
+   "date": "2026-11-19T10:25:00",
+   "ticker": "MSFT",
+   "side": "sell",
+   "shares": 709.0,
+   "price": 516.4
+  },
+  {
+   "date": "2026-11-19T10:25:00",
+   "ticker": "BABA",
+   "side": "sell",
+   "shares": 3933.0,
+   "price": 87.14
+  },
+  {
+   "date": "2026-11-19T10:26:00",
+   "ticker": "ORCL",
+   "side": "sell",
+   "shares": 368.0,
+   "price": 114.73
+  },
+  {
+   "date": "2026-11-19T10:26:00",
+   "ticker": "PLTR",
+   "side": "sell",
+   "shares": 2208.0,
+   "price": 161.01
+  },
+  {
+   "date": "2026-11-19T10:26:00",
+   "ticker": "AMD",
+   "side": "sell",
+   "shares": 695.0,
+   "price": 523.28
+  },
+  {
+   "date": "2026-11-19T10:26:00",
+   "ticker": "META",
+   "side": "sell",
+   "shares": 579.0,
+   "price": 619.2
+  },
+  {
+   "date": "2026-11-19T10:28:00",
+   "ticker": "C",
+   "side": "buy",
+   "shares": 358.0,
+   "price": 117.61
   }
  ]
 }
