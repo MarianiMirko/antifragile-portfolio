@@ -434,6 +434,13 @@
    "side": "buy",
    "shares": 358.0,
    "price": 117.61
+  },
+  {
+   "date": "2026-11-19T10:39:00",
+   "ticker": "BRK.B",
+   "side": "buy",
+   "shares": 1381.0,
+   "price": 567.8
   }
  ]
 }

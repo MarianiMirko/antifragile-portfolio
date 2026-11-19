@@ -462,6 +462,13 @@
       "side": "buy",
       "rationale": "Replaces Oracle in the S&P 500 replica with the proceeds of the sale: the next-largest company in the index outside technology, with a beta close to Oracle's (1.38 against 1.34 over the past year), so the replica keeps its market exposure.",
       "approved_by": "Mirko"
+    },
+    {
+      "date": "2026-11-19",
+      "ticker": "BRK.B",
+      "side": "buy",
+      "rationale": "Portfolio manager's decision: Berkshire Hathaway raised to 10% of the fund as a hedge. Its beta is low (about 0.1 to 0.35 over the past year), so it should lose less than the market in a fall; it also brings the portfolio's beta from about 1.1 towards 1. Within the 15% single-name limit.",
+      "approved_by": "Mirko"
     }
   ]
 }
