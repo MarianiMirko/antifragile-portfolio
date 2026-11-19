@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T22:47:28.136224+00:00",
+ "generated_at": "2026-11-19T23:06:17.743625+00:00",
  "models": [
   {
    "id": "allocation_plan",
@@ -43,7 +43,7 @@
     },
     {
      "name": "Orders to reach the target",
-     "value": "47",
+     "value": "46",
      "comment": "Turnover 24% of the fund; orders below $10,000 are left out. Nothing is traded until the portfolio manager approves each order."
     },
     {
@@ -185,7 +185,7 @@
    },
    "tables": [
     {
-     "title": "Trade list to reach the target (47 orders)",
+     "title": "Trade list to reach the target (46 orders)",
      "table": {
       "columns": [
        "Ticker",
@@ -216,13 +216,13 @@
         "BRK.B",
         "572.04",
         "1723",
-        "1692",
-        "-31",
-        "-17,733",
+        "1723",
+        "0",
+        "0",
         "10.18",
         "10",
         "10",
-        "SELL"
+        "-"
        ],
        [
         "MSFT",

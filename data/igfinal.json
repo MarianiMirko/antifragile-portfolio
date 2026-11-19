@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-19T22:47:10+00:00",
- "checked_at": "2026-11-19T22:47:10+00:00",
+ "generated_at": "2026-11-19T23:06:00+00:00",
+ "checked_at": "2026-11-19T23:06:00+00:00",
  "asof": "2026-11-19",
  "origin": "live Yahoo Finance prices, last date 2026-11-19 (copy saved as data/snapshots/prices_2026-11-19.csv)",
  "days_left": 19,
@@ -73,9 +73,9 @@
   "current_book": 0.022793157765256446
  },
  "orders": {
-  "count": 47,
-  "turnover": 0.23949951886220322,
-  "cash_after": 34958.80023956299,
+  "count": 46,
+  "turnover": 0.23766817375498056,
+  "cash_after": 17225.560920715332,
   "min_order_usd": 10000.0
  },
  "constraints_status": "OK",
@@ -367,13 +367,13 @@
      "BRK.B",
      "572.04",
      "1723",
-     "1692",
-     "-31",
-     "-17,733",
+     "1723",
+     "0",
+     "0",
      10.18,
      10,
      10,
-     "SELL"
+     "-"
     ],
     [
      "MSFT",

@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-19T22:47:28.136224+00:00",
+ "generated_at": "2026-11-19T23:06:17.743625+00:00",
  "alerts": [
   {
    "severity": "warning",
    "title": "Rebalance AAPL: buy 871 shares",
-   "message": "AAPL is 3.1% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 871 shares (about $304,066).",
+   "message": "AAPL is 3.1% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 871 shares (about $304,075).",
    "ticker": "AAPL"
   },
   {
@@ -52,7 +52,7 @@
   {
    "severity": "warning",
    "title": "Rebalance MU: buy 100 shares",
-   "message": "MU is 0.7% below its 2.2% target (orders under $10,000 are skipped). Proposed: buy 100 shares (about $68,998).",
+   "message": "MU is 0.7% below its 2.2% target (orders under $10,000 are skipped). Proposed: buy 100 shares (about $69,012).",
    "ticker": "MU"
   },
   {
@@ -82,7 +82,7 @@
   {
    "severity": "warning",
    "title": "Rebalance JNJ: buy 172 shares",
-   "message": "JNJ is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 172 shares (about $45,945).",
+   "message": "JNJ is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 172 shares (about $45,950).",
    "ticker": "JNJ"
   },
   {
@@ -148,7 +148,7 @@
   {
    "severity": "warning",
    "title": "Rebalance PG: buy 133 shares",
-   "message": "PG is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 133 shares (about $22,333).",
+   "message": "PG is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 133 shares (about $22,335).",
    "ticker": "PG"
   },
   {
@@ -160,7 +160,7 @@
   {
    "severity": "warning",
    "title": "Rebalance AMAT: buy 64 shares",
-   "message": "AMAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 64 shares (about $21,682).",
+   "message": "AMAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 64 shares (about $21,686).",
    "ticker": "AMAT"
   },
   {
@@ -190,13 +190,13 @@
   {
    "severity": "warning",
    "title": "Rebalance INTC: buy 369 shares",
-   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 369 shares (about $20,535).",
+   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 369 shares (about $20,546).",
    "ticker": "INTC"
   },
   {
    "severity": "warning",
    "title": "Rebalance PM: buy 109 shares",
-   "message": "PM is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 109 shares (about $20,322).",
+   "message": "PM is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 109 shares (about $20,318).",
    "ticker": "PM"
   },
   {
@@ -286,7 +286,7 @@
   {
    "severity": "warning",
    "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,681,671; MarketWatch showed $9,781,104 at its last sync.",
+   "message": "We compute $9,681,773; MarketWatch showed $9,781,104 at its last sync.",
    "ticker": null
   }
  ],
