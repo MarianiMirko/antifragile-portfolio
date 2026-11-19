@@ -95,7 +95,8 @@ start_sens = pd.DataFrame(rows)
 w_tgt = L.combine_weights(w_rep, a_s, e_star); w_tgt = w_tgt[w_tgt.abs() > 1e-6]
 tk = list(dict.fromkeys(list(w_tgt.index) + list(pos.index)))
 cur_sh = pos.reindex(tk).fillna(0.0); tgt_w = w_tgt.reindex(tk).fillna(0.0)
-tgt_sh = np.trunc(tgt_w * nw / px[tk]); w_cur = cur_sh * px[tk] / nw
+_inv = nw - float(getattr(C, "CASH_RESERVE_USD", 0) or 0)   # portfolio manager: cash kept aside, the target weights apply to the rest
+tgt_sh = np.trunc(tgt_w * _inv / px[tk]); w_cur = cur_sh * px[tk] / nw
 _small = ((tgt_sh - cur_sh).abs() * px[tk]) < getattr(C, "MIN_ORDER_USD", 0)     # plan rule: orders too small to matter are not placed
 tgt_sh = tgt_sh.where(~_small, cur_sh)
 for _t in (getattr(C, "FIXED_NO_SELL", []) or []):     # portfolio manager: these are never sold to bring them back to target
