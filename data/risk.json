@@ -301,14 +301,14 @@
    "ticker": "AVGO",
    "weight": 0.03346,
    "vol": 0.488844,
-   "beta": 2.205373,
+   "beta": 2.205374,
    "risk_contribution": 0.05686
   },
   {
    "ticker": "AAPL",
    "weight": 0.096921,
    "vol": 0.248324,
-   "beta": 0.631792,
+   "beta": 0.631793,
    "risk_contribution": 0.046619
   },
   {
@@ -350,7 +350,7 @@
    "ticker": "AMAT",
    "weight": 0.005408,
    "vol": 0.639765,
-   "beta": 2.876147,
+   "beta": 2.876148,
    "risk_contribution": 0.010601
   },
   {
@@ -455,7 +455,7 @@
    "ticker": "LLY",
    "weight": 0.020498,
    "vol": 0.352951,
-   "beta": 0.34323,
+   "beta": 0.343231,
    "risk_contribution": 0.002454
   },
   {
@@ -482,7 +482,7 @@
   {
    "ticker": "WFC",
    "weight": 0.00461,
-   "vol": 0.260527,
+   "vol": 0.260526,
    "beta": 0.69107,
    "risk_contribution": 0.001882
   },
@@ -490,7 +490,7 @@
    "ticker": "MA",
    "weight": 0.00967,
    "vol": 0.234912,
-   "beta": 0.303684,
+   "beta": 0.303683,
    "risk_contribution": 0.001797
   },
   {
@@ -518,7 +518,7 @@
    "ticker": "GILD",
    "weight": 0.00394,
    "vol": 0.272888,
-   "beta": 0.394511,
+   "beta": 0.394512,
    "risk_contribution": 0.000835
   },
   {
@@ -581,14 +581,14 @@
    "ticker": "WMT",
    "weight": 0.010559,
    "vol": 0.268674,
-   "beta": -0.053341,
+   "beta": -0.053342,
    "risk_contribution": -0.001279
   },
   {
    "ticker": "COST",
    "weight": 0.008971,
    "vol": 0.203664,
-   "beta": -0.160564,
+   "beta": -0.160563,
    "risk_contribution": -0.001344
   },
   {
@@ -3488,7 +3488,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.299082,
-   "fund_usd": -2924321.795698,
+   "fund_usd": -2924321.968808,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3649,13 +3649,13 @@
     },
     {
      "ticker": "AMAT",
-     "return": -0.404095,
+     "return": -0.404094,
      "impact": -0.002185,
      "estimated": false
     },
     {
      "ticker": "LRCX",
-     "return": -0.422345,
+     "return": -0.422346,
      "impact": -0.002176,
      "estimated": false
     },
@@ -3697,7 +3697,7 @@
     },
     {
      "ticker": "CSCO",
-     "return": -0.252538,
+     "return": -0.252539,
      "impact": -0.001952,
      "estimated": false
     },
@@ -3709,7 +3709,7 @@
     },
     {
      "ticker": "PG",
-     "return": -0.221141,
+     "return": -0.221142,
      "impact": -0.001637,
      "estimated": false
     },
@@ -3751,7 +3751,7 @@
     },
     {
      "ticker": "MRK",
-     "return": -0.183554,
+     "return": -0.183555,
      "impact": -0.001171,
      "estimated": false
     },
@@ -3813,7 +3813,7 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.306276,
-   "fund_usd": -2994668.175063,
+   "fund_usd": -2994668.261894,
    "estimated_positions": 1,
    "positions": [
     {
@@ -3854,7 +3854,7 @@
     },
     {
      "ticker": "AAPL",
-     "return": -0.236787,
+     "return": -0.236786,
      "impact": -0.02295,
      "estimated": false
     },
@@ -4022,13 +4022,13 @@
     },
     {
      "ticker": "WMT",
-     "return": -0.082396,
+     "return": -0.082395,
      "impact": -0.00087,
      "estimated": false
     },
     {
      "ticker": "WFC",
-     "return": -0.187937,
+     "return": -0.187938,
      "impact": -0.000866,
      "estimated": false
     },
@@ -4088,13 +4088,13 @@
     },
     {
      "ticker": "UNH",
-     "return": 0.00503,
+     "return": 0.005031,
      "impact": 3e-05,
      "estimated": false
     },
     {
      "ticker": "AMGN",
-     "return": 0.11379,
+     "return": 0.113789,
      "impact": 0.000511,
      "estimated": false
     },
@@ -4138,7 +4138,7 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.214918,
-   "fund_usd": -2101400.68891,
+   "fund_usd": -2101400.698776,
    "estimated_positions": 0,
    "positions": [
     {
@@ -4389,7 +4389,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.049971,
+     "return": -0.049972,
      "impact": -0.000616,
      "estimated": false
     },
