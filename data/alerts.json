@@ -306,6 +306,12 @@
    "title": "Fund value differs from MarketWatch",
    "message": "We compute $9,686,418; MarketWatch showed $9,781,104 at its last sync.",
    "ticker": null
+  },
+  {
+   "severity": "warning",
+   "title": "Prices are not up to date",
+   "ticker": null,
+   "message": "The price download failed, so the site shows the last prices read from MarketWatch."
   }
  ],
  "rules": [
