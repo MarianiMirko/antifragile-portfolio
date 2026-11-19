@@ -2,7 +2,7 @@
  "status": "error",
  "message": "The model did not complete its last run (KeyError: \"['ORCL'] not in index\"). The figures below are from its previous run.",
  "generated_at": "2026-11-19T15:20:24+00:00",
- "checked_at": "2026-11-19T22:22:59+00:00",
+ "checked_at": "2026-11-19T22:30:30+00:00",
  "asof": "2026-11-18",
  "origin": "live Yahoo Finance prices, last date 2026-11-18 (copy saved as data/snapshots/prices_2026-11-18.csv)",
  "days_left": 20,
