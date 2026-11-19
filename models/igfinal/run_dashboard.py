@@ -31,7 +31,9 @@ pos = Hd[(Hd.ticker != "CASH") & (Hd.shares != 0)].groupby("ticker")["shares"].s
 
 # ---- 2. data -----------------------------------------------------------------
 rep_names = list(L.replica_names().index)
-universe = list(dict.fromkeys(rep_names + list(C.SLEEVE) + list(pos.index)))
+_lastf = "state/last_holdings.csv"                    # names held at the previous run: their prices value the trades in the log
+_prev_names = [t for t in pd.read_csv(_lastf).ticker if t != "CASH"] if os.path.exists(_lastf) else []
+universe = list(dict.fromkeys(rep_names + list(C.SLEEVE) + list(pos.index) + _prev_names))
 P_full = load_prices(universe + [C.BENCH, C.VOL_INDEX], SRC); origin = P_full.attrs["origin"]
 P = P_full.dropna(subset=universe + [C.BENCH])                 # common history of all names held
 asof = P.index[-1].date(); px = P[universe].iloc[-1]; vix = float(P[C.VOL_INDEX].iloc[-1]) / 100; sp_now = float(P[C.BENCH].iloc[-1])
