@@ -98,6 +98,9 @@ cur_sh = pos.reindex(tk).fillna(0.0); tgt_w = w_tgt.reindex(tk).fillna(0.0)
 tgt_sh = np.trunc(tgt_w * nw / px[tk]); w_cur = cur_sh * px[tk] / nw
 _small = ((tgt_sh - cur_sh).abs() * px[tk]) < getattr(C, "MIN_ORDER_USD", 0)     # plan rule: orders too small to matter are not placed
 tgt_sh = tgt_sh.where(~_small, cur_sh)
+for _t in (getattr(C, "FIXED_NO_SELL", []) or []):     # portfolio manager: these are never sold to bring them back to target
+    if _t in tgt_sh.index:
+        tgt_sh[_t] = max(tgt_sh[_t], cur_sh[_t])
 trades = pd.DataFrame({"ticker": [t.replace("-", ".") for t in tk], "price": px[tk].round(2).values, "cur_shares": cur_sh.values, "tgt_shares": tgt_sh.values,
                        "trade": (tgt_sh - cur_sh).values, "trade_usd": ((tgt_sh - cur_sh) * px[tk]).round().values, "cur_w": (100 * w_cur).round(2).values,
                        "tgt_w": (100 * tgt_w).round(2).values, "replica_w": (100 * w_rep.reindex(tk).fillna(0)).round(2).values})

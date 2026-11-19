@@ -11,6 +11,7 @@ All follow decisions taken by the portfolio manager on 15 November; each can be 
 | Orders under $10,000 are not placed | `MIN_ORDER_USD = 10_000` | target shares stay at current shares when the order would be smaller |
 | Oracle leaves the replica (19 Nov): the next-largest company takes its place among the 50 | `REPLICA_EXCLUDE = ["NVDA", "ORCL"]` | none |
 | Berkshire Hathaway held at 10% of the fund as a hedge (19 Nov); the replica fills the other 90% | `FIXED_WEIGHTS = {"BRK-B": 0.10}` | after the replica weights are built, the fixed names are set to their weight and the rest is scaled to fill the remainder; one line in the dashboard text |
+| Berkshire is never sold to bring it back to 10% (20 Nov) | `FIXED_NO_SELL = ["BRK-B"]` | after the small-order rule, target shares of these names are never below current shares |
 | Names sold since the previous run keep their prices (19 Nov fix: the trade log failed on ORCL after it left the replica) | none | `universe` also includes the names in `state/last_holdings.csv` |
 | The replica of the team's study in both phases, pending the research in `research/` | `REPLICA_HOLD = "index"` (was `"min_te"`) | none |
 
