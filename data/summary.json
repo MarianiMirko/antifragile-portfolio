@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T22:30:39.637930+00:00",
+ "generated_at": "2026-11-19T22:47:28.136224+00:00",
  "as_of": "2026-11-19T21:00:00+00:00",
  "status": "ok",
  "price_source": "yfinance",
@@ -39,5 +39,5 @@
  },
  "rules_ok": 8,
  "rules_total": 9,
- "n_alerts": 51
+ "n_alerts": 48
 }
