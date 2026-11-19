@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-19T14:35:31+00:00",
- "checked_at": "2026-11-19T14:35:31+00:00",
+ "generated_at": "2026-11-19T15:20:24+00:00",
+ "checked_at": "2026-11-19T15:20:24+00:00",
  "asof": "2026-11-18",
  "origin": "live Yahoo Finance prices, last date 2026-11-18 (copy saved as data/snapshots/prices_2026-11-18.csv)",
  "days_left": 20,
@@ -49,7 +49,7 @@
   "excluded": [
    "NVDA"
   ],
-  "beta": 1.1142290610362564,
+  "beta": 1.1142290610362569,
   "tracking_error": 0.05062399075947129
  },
  "exposure": {
@@ -58,18 +58,18 @@
   "max": 1.0,
   "fully_invested": true,
   "p_bonus": 0.2036,
-  "beta": 1.1142290610362564,
+  "beta": 1.1142290610362569,
   "p_market_up": 0.4317,
   "expected_return": -0.015692031284315466,
   "return_q05": -0.10575194106961543,
   "return_q95": 0.07700299087804338
  },
  "active_es": {
-  "with_sleeve": 0.019400584732237217,
-  "replica_only": 0.019400584732237217,
+  "with_sleeve": 0.019400584732237214,
+  "replica_only": 0.019400584732237214,
   "limit": 0.03,
-  "target_book": 0.019400584732237217,
-  "current_book": 0.03191352707156402
+  "target_book": 0.019400584732237214,
+  "current_book": 0.031913527071564016
  },
  "orders": {
   "count": 52,
@@ -1073,7 +1073,7 @@
      "Current",
      "ES Student-t, fitted (nu 3.7 / 6.9)",
      "8.27%",
-     "808,458",
+     "808,459",
      "2.71%"
     ],
     [
