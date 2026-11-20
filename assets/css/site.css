@@ -257,6 +257,11 @@ table.heat td.strong { color: #fff; }
 .brief { border-top: 1px solid var(--rule); padding: 14px 0 6px; }
 .brief h4 { font-size: 1rem; font-weight: 500; margin: 0 0 6px; }
 .brief .prose p { font-size: 0.93rem; margin: 0; }
+.brief-meta { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+table.mini { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0 0 10px; font-variant-numeric: tabular-nums; }
+table.mini th, table.mini td { padding: 3px 0; text-align: right; border-bottom: 1px solid var(--rule); }
+table.mini th { font-weight: 500; color: var(--muted); }
+table.mini .l { text-align: left; }
 @media (max-width: 900px) { .briefs { grid-template-columns: 1fr; } }
 .note { border-top: 1px solid var(--ink); padding: 20px 0 26px; }
 .note-meta { color: var(--muted); font-size: 0.9rem; margin: 4px 0 14px; }

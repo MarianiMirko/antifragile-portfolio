@@ -25,21 +25,14 @@
   let html = "";
   if (withMetrics.length) {
     const bm = await App.getJSON("content/fundamental/benchmark.json", null);
-    const rows = withMetrics.filter((n) => !n.meta.benchmark);
-    if (bm) rows.push({ meta: { ...bm, ticker: bm.name, benchmark: true } });
-    const by = withMetrics.find((n) => !n.meta.benchmark)?.meta || {};
-    html += `<div class="table-scroll"><table class="data fund-table">
-      <thead><tr><th class="l">Company</th><th class="l">Role</th><th>Price</th>${METRICS.map(([, l]) => `<th>${l}</th>`).join("")}</tr></thead>
-      <tbody>${rows.map(({ meta }) => {
-        const t = String(meta.ticker).toUpperCase(), px = price[t];
-        return `<tr${meta.benchmark ? ' class="bench-row"' : ""}><td class="l"><b style="font-weight:500">${esc(meta.benchmark ? meta.ticker : t)}</b>${meta.benchmark ? "" : ` <span class="muted">${esc(meta.title || "")}</span>`}</td>
-          <td class="l muted">${esc(meta.role || "")}</td><td>${px && !meta.benchmark ? usd(px, 2) : ""}</td>
-          ${METRICS.map(([k]) => `<td>${esc(meta[k] || "–")}</td>`).join("")}</tr>`;
-      }).join("")}</tbody></table></div>
-      <p class="note-meta" style="margin-top:8px">${by.updated ? "Updated " + App.date(by.updated) : ""}${by.author ? " by " + esc(by.author) : ""}. Price: latest close.</p>
-      <div class="briefs">${withMetrics.filter((n) => !n.meta.benchmark && n.body.trim()).map(({ meta, body }) => `
-        <div class="brief"><h4>${esc(meta.title || meta.ticker)} <span class="muted">${esc(String(meta.ticker).toUpperCase())}</span></h4>
-          <div class="prose">${App.md(body)}</div></div>`).join("")}</div>`;
+    html += `<div class="briefs">${withMetrics.filter((n) => !n.meta.benchmark).map(({ meta, body }) => {
+      const t = String(meta.ticker).toUpperCase(), px = price[t];
+      return `<div class="brief"><h4>${esc(meta.title || t)} <span class="muted">${esc(t)}</span></h4>
+        <p class="brief-meta">${esc(meta.role || "")}${px ? " · " + usd(px, 2) : ""}</p>
+        <table class="mini"><thead><tr><th class="l"></th><th>${esc(t)}</th>${bm ? `<th>${esc(bm.name)}</th>` : ""}</tr></thead>
+          <tbody>${METRICS.map(([k, l]) => `<tr><td class="l">${l}</td><td>${esc(meta[k] || "–")}</td>${bm ? `<td class="muted">${esc(bm[k] || "–")}</td>` : ""}</tr>`).join("")}</tbody></table>
+        <div class="prose">${App.md(body)}</div></div>`;
+    }).join("")}</div>`;
   }
   html += classic.map(({ meta, body }) => {
     const t = meta.ticker.toUpperCase(), px = price[t], tp = parseFloat(meta.target_price);
@@ -55,7 +48,6 @@
           ["Upside to target", up == null ? "" : `<span class="${sign(up)}">${pctSigned(up, 1)}</span>`, 1],
           ["Horizon", meta.horizon && esc(meta.horizon)],
           ["Catalysts", meta.catalysts && esc(meta.catalysts)],
-          ["Updated", meta.updated ? App.date(meta.updated) + (meta.author ? " by " + esc(meta.author) : "") : ""],
         ].filter(([, v]) => v).map(([k, v, num]) => `<dt>${k}</dt><dd${num ? "" : ' class="plain"'}>${v}</dd>`).join("")}
         </dl>
       </div>
