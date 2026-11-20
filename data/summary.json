@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T23:08:37.055190+00:00",
+ "generated_at": "2026-11-20T01:24:41.271274+00:00",
  "as_of": "2026-11-19T21:00:00+00:00",
  "status": "ok",
  "price_source": "yfinance",
@@ -20,7 +20,7 @@
   "return": -0.032966
  },
  "excess_return": 0.001133,
- "volatility": 0.10752,
+ "volatility": 0.106627,
  "volatility_basis": "at current weights",
  "sharpe": null,
  "max_drawdown": -0.032428,

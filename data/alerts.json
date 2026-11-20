@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T23:08:37.055190+00:00",
+ "generated_at": "2026-11-20T01:24:41.271274+00:00",
  "alerts": [
   {
    "severity": "warning",
@@ -330,7 +330,7 @@
    "id": "var",
    "rule": "One-day 95% VaR",
    "limit": "at most 4.1%",
-   "current": "1.05%",
+   "current": "1.04%",
    "status": "ok"
   },
   {

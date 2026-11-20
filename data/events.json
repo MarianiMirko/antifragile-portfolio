@@ -1,11 +1,6 @@
 {
- "generated_at": "2026-11-19T23:08:37.055190+00:00",
+ "generated_at": "2026-11-20T01:24:41.271274+00:00",
  "events": [
-  {
-   "date": "2026-11-12",
-   "ticker": "AAPL",
-   "event": "Ex-dividend date"
-  },
   {
    "date": "2026-11-13",
    "ticker": "LLY",
