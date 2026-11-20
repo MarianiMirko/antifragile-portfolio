@@ -1,9 +1,34 @@
 {
   "team": [
-    { "name": "Mirko", "initials": "MM", "role": "Portfolio Manager, Trading & Monitoring", "bio": "Coordinates the team, approves and places every order on MarketWatch and keeps the trade log. Built this website and its price database." },
-    { "name": "Lorenzo", "initials": "L", "role": "Volatility & Risk", "bio": "Built the allocation and risk model: active expected shortfall against the S&P 500, Euler and Shapley risk split, stress tests and the projection of the bonus." },
-    { "name": "Riccardo", "initials": "R", "role": "Backtesting", "bio": "Designed the S&P 500 replica (the 50 largest companies at index weights, without NVIDIA) and tested its tracking error and beta." },
-    { "name": "Andrea", "initials": "A", "role": "Macro & News", "bio": "Tracks the macro regime, the news on our holdings and ESG risks, and runs the daily review before the New York open." },
-    { "name": "Marek", "initials": "M", "role": "Short-term Fundamental Analysis", "bio": "Checks the fundamentals of our largest holdings: valuation multiples, margins, return on capital and leverage." }
+    {
+      "name": "Mirko Mariani",
+      "initials": "MM",
+      "role": "Portfolio Manager, Trading & Monitoring",
+      "bio": "Coordinates the team, approves and places every order on MarketWatch and keeps the trade log. Built this website and its price database."
+    },
+    {
+      "name": "Lorenzo De Luca",
+      "initials": "LD",
+      "role": "Volatility & Risk",
+      "bio": "Built the allocation and risk model: active expected shortfall against the S&P 500, Euler and Shapley risk split, stress tests and the projection of the bonus."
+    },
+    {
+      "name": "Riccardo Randazzo",
+      "initials": "RR",
+      "role": "Backtesting",
+      "bio": "Designed the S&P 500 replica (the 50 largest companies at index weights, without NVIDIA) and tested its tracking error and beta."
+    },
+    {
+      "name": "Andrea Algisi",
+      "initials": "AA",
+      "role": "Macro & News",
+      "bio": "Tracks the macro regime, the news on our holdings and ESG risks, and runs the daily review before the New York open."
+    },
+    {
+      "name": "Marek Uličný",
+      "initials": "MU",
+      "role": "Short-term Fundamental Analysis",
+      "bio": "Checks the fundamentals of our largest holdings: valuation multiples, margins, return on capital and leverage."
+    }
   ]
 }
