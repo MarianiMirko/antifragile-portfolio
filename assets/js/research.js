@@ -24,7 +24,9 @@
   const box = document.getElementById("fundamental");
   let html = "";
   if (withMetrics.length) {
-    const rows = withMetrics.slice().sort((a, b) => (a.meta.benchmark ? 1 : 0) - (b.meta.benchmark ? 1 : 0));
+    const bm = await App.getJSON("content/fundamental/benchmark.json", null);
+    const rows = withMetrics.filter((n) => !n.meta.benchmark);
+    if (bm) rows.push({ meta: { ...bm, ticker: bm.name, benchmark: true } });
     const by = withMetrics.find((n) => !n.meta.benchmark)?.meta || {};
     html += `<div class="table-scroll"><table class="data fund-table">
       <thead><tr><th class="l">Company</th><th class="l">Role</th><th>Price</th>${METRICS.map(([, l]) => `<th>${l}</th>`).join("")}</tr></thead>
