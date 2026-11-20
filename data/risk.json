@@ -322,7 +322,7 @@
    "ticker": "MU",
    "weight": 0.01518,
    "vol": 0.843679,
-   "beta": 3.408848,
+   "beta": 3.408847,
    "risk_contribution": 0.053744
   },
   {
@@ -337,7 +337,7 @@
    "weight": 0.024385,
    "vol": 0.417188,
    "beta": 1.374097,
-   "risk_contribution": 0.043662
+   "risk_contribution": 0.043661
   },
   {
    "ticker": "BRK.B",
@@ -364,7 +364,7 @@
    "ticker": "LRCX",
    "weight": 0.005006,
    "vol": 0.691614,
-   "beta": 3.325883,
+   "beta": 3.325882,
    "risk_contribution": 0.017483
   },
   {
@@ -391,7 +391,7 @@
   {
    "ticker": "CSCO",
    "weight": 0.007608,
-   "vol": 0.371399,
+   "vol": 0.3714,
    "beta": 1.278097,
    "risk_contribution": 0.011267
   },
@@ -448,7 +448,7 @@
    "ticker": "GEV",
    "weight": 0.00383,
    "vol": 0.555684,
-   "beta": 1.986267,
+   "beta": 1.986268,
    "risk_contribution": 0.008001
   },
   {
@@ -483,7 +483,7 @@
    "ticker": "HD",
    "weight": 0.006402,
    "vol": 0.273834,
-   "beta": 0.681917,
+   "beta": 0.681916,
    "risk_contribution": 0.005318
   },
   {
@@ -497,21 +497,21 @@
    "ticker": "IBM",
    "weight": 0.003977,
    "vol": 0.48426,
-   "beta": 0.815021,
+   "beta": 0.815022,
    "risk_contribution": 0.004641
   },
   {
    "ticker": "WFC",
    "weight": 0.004638,
    "vol": 0.260995,
-   "beta": 0.696245,
+   "beta": 0.696244,
    "risk_contribution": 0.004001
   },
   {
    "ticker": "TMO",
    "weight": 0.00484,
    "vol": 0.300392,
-   "beta": 0.700789,
+   "beta": 0.70079,
    "risk_contribution": 0.00388
   },
   {
@@ -546,14 +546,14 @@
    "ticker": "GILD",
    "weight": 0.003922,
    "vol": 0.272416,
-   "beta": 0.406963,
+   "beta": 0.406962,
    "risk_contribution": 0.002467
   },
   {
    "ticker": "RTX",
    "weight": 0.004955,
    "vol": 0.259124,
-   "beta": 0.308253,
+   "beta": 0.308254,
    "risk_contribution": 0.001912
   },
   {
@@ -567,7 +567,7 @@
    "ticker": "ABBV",
    "weight": 0.009517,
    "vol": 0.253318,
-   "beta": 0.008086,
+   "beta": 0.008085,
    "risk_contribution": 0.000931
   },
   {
@@ -595,7 +595,7 @@
    "ticker": "WMT",
    "weight": 0.010559,
    "vol": 0.268719,
-   "beta": -0.061056,
+   "beta": -0.061057,
    "risk_contribution": 0.000179
   },
   {
@@ -616,7 +616,7 @@
    "ticker": "CVX",
    "weight": 0.007659,
    "vol": 0.248858,
-   "beta": -0.524745,
+   "beta": -0.524746,
    "risk_contribution": -0.005161
   },
   {
@@ -3292,7 +3292,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.234138,
-   "fund_usd": -2266843.167815,
+   "fund_usd": -2266843.250999,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3399,7 +3399,7 @@
     },
     {
      "ticker": "LLY",
-     "return": -0.154654,
+     "return": -0.154655,
      "impact": -0.00313,
      "estimated": false
     },
@@ -3411,7 +3411,7 @@
     },
     {
      "ticker": "ABBV",
-     "return": -0.31485,
+     "return": -0.314851,
      "impact": -0.002996,
      "estimated": false
     },
@@ -3495,7 +3495,7 @@
     },
     {
      "ticker": "CSCO",
-     "return": -0.252538,
+     "return": -0.252539,
      "impact": -0.001921,
      "estimated": false
     },
@@ -3537,7 +3537,7 @@
     },
     {
      "ticker": "TXN",
-     "return": -0.260573,
+     "return": -0.260572,
      "impact": -0.00133,
      "estimated": false
     },
@@ -3573,7 +3573,7 @@
     },
     {
      "ticker": "AMGN",
-     "return": -0.166084,
+     "return": -0.166083,
      "impact": -0.000745,
      "estimated": false
     },
@@ -3605,7 +3605,7 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.181077,
-   "fund_usd": -1753127.724998,
+   "fund_usd": -1753128.011155,
    "estimated_positions": 1,
    "positions": [
     {
@@ -3808,7 +3808,7 @@
     },
     {
      "ticker": "MS",
-     "return": -0.21615,
+     "return": -0.216151,
      "impact": -0.000852,
      "estimated": false
     },
@@ -3832,7 +3832,7 @@
     },
     {
      "ticker": "IBM",
-     "return": -0.103595,
+     "return": -0.103596,
      "impact": -0.000412,
      "estimated": false
     },
@@ -3918,7 +3918,7 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.14178,
-   "fund_usd": -1372668.265769,
+   "fund_usd": -1372668.194438,
    "estimated_positions": 0,
    "positions": [
     {
@@ -4157,7 +4157,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.049972,
+     "return": -0.049971,
      "impact": -0.000609,
      "estimated": false
     },
