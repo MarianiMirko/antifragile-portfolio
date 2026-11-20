@@ -1,6 +1,12 @@
 {
- "generated_at": "2026-11-20T01:53:14.591648+00:00",
+ "generated_at": "2026-11-20T02:22:19.517204+00:00",
  "alerts": [
+  {
+   "severity": "breach",
+   "title": "Active risk above its limit",
+   "message": "Active expected shortfall is 3.18%; the limit is 3%. Sell the positions that contribute most to it.",
+   "ticker": null
+  },
   {
    "severity": "warning",
    "title": "Rebalance AAPL: buy 871 shares",
@@ -309,8 +315,8 @@
    "id": "active_es",
    "rule": "Active risk vs S&P 500 (5-day 97.5% ES)",
    "limit": "at most 3%",
-   "current": "2.28% (after rebalancing 1.80%)",
-   "status": "ok"
+   "current": "3.18% (after rebalancing 2.75%)",
+   "status": "breach"
   },
   {
    "id": "margin",
@@ -335,6 +341,6 @@
   }
  ],
  "rules_are_placeholder": false,
- "rules_ok": 5,
+ "rules_ok": 4,
  "rules_total": 6
 }
