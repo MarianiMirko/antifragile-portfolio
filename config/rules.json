@@ -16,15 +16,17 @@
     "min_order_value": 10000
   },
   "buy_criteria": [
-    "Replica of the S&P 500 with beta close to 1: 50 of its largest companies without NVIDIA and Oracle, at index weights. Its job is to follow the index; it is not a bet.",
-    "Berkshire Hathaway is held at 10% of the fund as a hedge for a falling market (portfolio manager, 19 November); the replica fills the other 90%.",
-    "From 16 to 19 November a sleeve of 30% of the fund (AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR, BABA) was held for the Anthropic IPO; it was sold on 19 November.",
+    "Replica of the S&P 500: its 50 largest companies at index weights, without NVIDIA (very high volatility) and, since 19 November, without Oracle (replaced by Citigroup on Andrea's recommendation).",
+    "Berkshire Hathaway is held at 10% of the fund as a defensive position (portfolio manager, 19 November); the replica fills the other 90%.",
+    "From 16 to 19 November a sleeve of 30% of the fund (AMD, ASML, MSFT, GOOGL, AMZN, META, PLTR, BABA, 3.75% each) was held for the Anthropic IPO.",
+    "On 20 November: with a lead over the benchmark of at least 0.5 points the fund moves to the sector-balanced replica; otherwise it keeps the 50 largest. At the 19 November close the fund was 3.17 points behind, so it keeps the 50 largest.",
     "Every order is approved by the portfolio manager and recorded in the trade log with its reason."
   ],
   "sell_criteria": [
-    "On Friday 20 November the cash is invested and the fund is brought to its target weights, always fully invested.",
-    "From the following week the fund is brought back to its target weights every Friday before the open.",
+    "The IPO sleeve was sold in full on 19 November after the New York open, as fixed in advance (even if the IPO had been delayed).",
+    "From 27 November the fund is brought back to its target weights every Friday morning, always fully invested.",
     "An order smaller than $10,000 (0.1% of the fund) is not placed: it costs a commission and changes almost nothing.",
-    "A breached limit on the dashboard is fixed before any other trade."
+    "A breached limit is fixed before any other trade: a stock above 15% is trimmed back to its target; if active expected shortfall is above its limit, the positions that contribute most to it are sold.",
+    "Market orders only; no margin and no short selling."
   ]
 }

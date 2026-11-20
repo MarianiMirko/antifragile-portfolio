@@ -1,12 +1,19 @@
 {
  "fundamental": [
+  "AAPL.md",
+  "AMD.md",
+  "AMZN.md",
   "ASML.md",
+  "BABA.md",
+  "GOOGL.md",
+  "META.md",
   "MSFT.md",
-  "XOM.md"
+  "PLTR.md"
  ],
  "macro": [
-  "2026-11-03-earnings.md",
-  "2026-11-10-regime.md"
+  "2026-11-18-hawkish-regime.md",
+  "2026-11-19-anthropic-ipo.md",
+  "2026-11-19-esg.md"
  ],
  "backtest": [
   "sp500-replica.md"

@@ -16,7 +16,7 @@
   /* company research */
   const files = await Promise.all((idx.fundamental || []).map((f) => App.getText("content/fundamental/" + f)));
   const notes = files.map(App.frontMatter).filter((n) => n.meta.ticker)
-    .sort((a, b) => String(b.meta.updated || "").localeCompare(String(a.meta.updated || "")));
+    .sort((a, b) => String(b.meta.updated || "").localeCompare(String(a.meta.updated || "")) || (parseFloat(a.meta.order) || 99) - (parseFloat(b.meta.order) || 99));
   document.getElementById("fundamental").innerHTML = notes.length ? notes.map(({ meta, body }) => {
     const t = meta.ticker.toUpperCase(), px = price[t], tp = parseFloat(meta.target_price);
     const up = px && tp ? tp / px - 1 : null;
@@ -24,14 +24,16 @@
       <div class="entry-side">
         <h3>${esc(meta.title || t)}</h3>
         <p class="ticker-line">${esc(t)}${held.has(t) ? ", in the portfolio" : ", not held"}</p>
-        <dl class="facts">
-          <dt>Rating</dt><dd>${esc(meta.rating || "–")}</dd>
-          <dt>Target price</dt><dd>${tp ? usd(tp, 2) : "–"}</dd>
-          <dt>Latest price</dt><dd>${px ? usd(px, 2) : "–"}</dd>
-          <dt>Upside to target</dt><dd class="${sign(up)}">${up == null ? "–" : pctSigned(up, 1)}</dd>
-          <dt>Horizon</dt><dd class="plain">${esc(meta.horizon || "–")}</dd>
-          <dt>Catalysts</dt><dd class="plain">${esc(meta.catalysts || "–")}</dd>
-          <dt>Updated</dt><dd class="plain">${meta.updated ? App.date(meta.updated) : "–"}${meta.author ? " by " + esc(meta.author) : ""}</dd>
+        <dl class="facts">${[
+          ["Rating", meta.rating && esc(meta.rating)],
+          ["Target price", tp ? usd(tp, 2) : "", 1],
+          ["Latest price", px ? usd(px, 2) : "–", 1],
+          ["Upside to target", up == null ? "" : `<span class="${sign(up)}">${pctSigned(up, 1)}</span>`, 1],
+          ["Role in the fund", meta.group && esc(meta.group)],
+          ["Horizon", meta.horizon && esc(meta.horizon)],
+          ["Catalysts", meta.catalysts && esc(meta.catalysts)],
+          ["Updated", meta.updated ? App.date(meta.updated) + (meta.author ? " by " + esc(meta.author) : "") : ""],
+        ].filter(([, v]) => v).map(([k, v, num]) => `<dt>${k}</dt><dd${num ? "" : ' class="plain"'}>${v}</dd>`).join("")}
         </dl>
       </div>
       <div class="prose">${App.md(body)}</div>

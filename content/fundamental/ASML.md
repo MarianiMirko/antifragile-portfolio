@@ -1,17 +1,20 @@
 ---
 ticker: ASML
 title: ASML Holding
-rating: Hold
-target_price: 1020
-horizon: 2 months
-catalysts: January order intake; export-control headlines
+group: IPO sleeve only; sold in full on 19 November
+order: 8
 author: Marek
-updated: 2026-11-06
+updated: 2026-11-19
 ---
-Example thesis. Replace with your own.
+| Metric | ASML | S&P 500 |
+|---|---|---|
+| Forward P/E | 23.4 | 17.8 |
+| EV/EBITDA | 30.0 | 15.4 |
+| PEG | 1.71 | – |
+| FCF yield | 2.0% | 3.3% |
+| EV/Sales | 12.3 | – |
+| Operating margin | 38.6% | 16.5% |
+| ROIC | 92.1% | 10.5% |
+| Debt/EBITDA | 0.12 | 1.39 |
 
-**Thesis.** The EUV monopoly is intact and the order book covers 2027, but the share price already discounts most of it.
-
-**Valuation.** Close to our target price, so we hold rather than add.
-
-**What would change our mind.** A pull-back of more than 10% without a change in order intake would make it a Buy again.
+Strong operating quality: a 38.6% operating margin, a 92.1% return on invested capital and almost no debt (0.12x debt/EBITDA).

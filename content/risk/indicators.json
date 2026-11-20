@@ -1,10 +1,12 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-19",
   "author": "Lorenzo",
   "indicators": [
-    { "name": "VIX level", "value": "17.4", "signal": "normal", "comment": "Below the 20 threshold we use for cutting gross exposure" },
-    { "name": "VIX term structure", "value": "Contango", "signal": "normal", "comment": "No stress priced in for the next month" },
-    { "name": "GARCH(1,1) one-day forecast", "value": "0.92%", "signal": "normal", "comment": "Forecast portfolio volatility for tomorrow" },
-    { "name": "Tech-cluster average correlation", "value": "0.71", "signal": "caution", "comment": "Our five technology names behave like one large position" }
+    { "name": "Active ES (5-day, 97.5%)", "value": "1.80%", "signal": "normal", "comment": "Target book after the IPO; limit 3%" },
+    { "name": "Largest position", "value": "12.8% (AAPL)", "signal": "normal", "comment": "Limit 15%; warning above 13.5%" },
+    { "name": "Beta to the S&P 500", "value": "1.06", "signal": "normal", "comment": "Slightly above 1 by design (replica tilted to technology)" },
+    { "name": "Tracking error", "value": "4.6%", "signal": "normal", "comment": "Annual, replica against the index" },
+    { "name": "VIX", "value": "28.4", "signal": "caution", "comment": "Market volatility well above normal; the model scales risk to today's volatility" },
+    { "name": "Bonus probability (simulation)", "value": "22.8%", "signal": "caution", "comment": "Fund 3.17 points behind the benchmark at the 19 November close" }
   ]
 }

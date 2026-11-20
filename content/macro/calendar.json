@@ -1,9 +1,16 @@
 {
   "events": [
-    { "date": "2026-11-19", "event": "NVDA earnings", "relevance": "Largest position; expect a move of 6 to 8% either way" },
-    { "date": "2026-11-26", "event": "US Thanksgiving, markets closed", "relevance": "Thin liquidity on the 27th" },
-    { "date": "2026-12-04", "event": "US jobs report", "relevance": "Sets the tone for the Fed meeting" },
-    { "date": "2026-12-10", "event": "US CPI (November)", "relevance": "Rate-sensitive holdings: JPM, GLD" },
-    { "date": "2026-12-16", "event": "FOMC decision", "relevance": "Last trading day before the game ends" }
+    { "date": "2026-11-18", "event": "Anthropic IPO pricing; FOMC minutes", "relevance": "Priced at USD 83, above the range" },
+    { "date": "2026-11-19", "event": "Anthropic debut on Nasdaq (ANT); Alibaba and Walmart earnings", "relevance": "The 30% IPO sleeve was sold at the New York open" },
+    { "date": "2026-11-20", "event": "Investment plan due; full rebalance into the replica", "relevance": "Top-50 or sector-balanced replica, depending on our lead over the benchmark" },
+    { "date": "2026-11-24", "event": "Analog Devices Q4 earnings", "relevance": "Relevant only if we switch to the sector-balanced replica" },
+    { "date": "2026-11-26", "event": "Thanksgiving, US markets closed", "relevance": "Shortened session on the 27th; weekly rebalance that day" },
+    { "date": "2026-12-01", "event": "US JOLTS job openings (October)", "relevance": "Labour-demand check" },
+    { "date": "2026-12-04", "event": "US nonfarm payrolls (November)", "relevance": "Direct driver of the December Fed decision" },
+    { "date": "2026-12-09", "event": "FOMC rate decision and projections", "relevance": "Risk of a 25–50 bp hike" },
+    { "date": "2026-12-10", "event": "US CPI (November)", "relevance": "Released the day after the Fed decision" },
+    { "date": "2026-12-15", "event": "US PPI (November)", "relevance": "Wholesale inflation check" },
+    { "date": "2026-12-16", "event": "US retail sales (November)", "relevance": "Holiday spending" },
+    { "date": "2026-12-17", "event": "Last valid close of the game", "relevance": "Final evaluation on 18 December, 13:00 CET" }
   ]
 }
