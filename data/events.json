@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T03:38:01.222335+00:00",
+ "generated_at": "2026-11-20T14:35:39.193413+00:00",
  "events": [
   {
    "date": "2026-11-13",
@@ -28,18 +28,8 @@
   },
   {
    "date": "2026-11-19",
-   "ticker": "BABA",
-   "event": "Earnings"
-  },
-  {
-   "date": "2026-11-19",
    "ticker": "MSFT",
    "event": "Ex-dividend date"
-  },
-  {
-   "date": "2026-11-19",
-   "ticker": "WMT",
-   "event": "Earnings"
   },
   {
    "date": "2026-11-20",
