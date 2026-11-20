@@ -262,6 +262,9 @@ table.mini { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin:
 table.mini th, table.mini td { padding: 3px 0; text-align: right; border-bottom: 1px solid var(--rule); }
 table.mini th { font-weight: 500; color: var(--muted); }
 table.mini .l { text-align: left; }
+#calendar td { padding-top: 7px; padding-bottom: 7px; vertical-align: top; }
+#calendar .cal-date { white-space: nowrap; color: var(--muted); width: 1%; padding-right: 18px; }
+#calendar .cal-why { display: block; color: var(--muted); font-size: 0.86rem; }
 @media (max-width: 900px) { .briefs { grid-template-columns: 1fr; } }
 .note { border-top: 1px solid var(--ink); padding: 20px 0 26px; }
 .note-meta { color: var(--muted); font-size: 0.9rem; margin: 4px 0 14px; }

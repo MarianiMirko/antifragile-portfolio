@@ -59,20 +59,25 @@
   /* macro notes */
   const mfiles = await Promise.all((idx.macro || []).map((f) => App.getText("content/macro/" + f)));
   const mnotes = mfiles.map(App.frontMatter).sort((a, b) => String(b.meta.date || "").localeCompare(String(a.meta.date || "")));
-  if (mnotes.length && mnotes[0].meta.regime) {
-    const r = document.getElementById("regime");
-    r.hidden = false;
-    r.innerHTML = `<span class="muted">Current regime</span><b>${esc(mnotes[0].meta.regime)}</b><span class="muted">as of ${App.date(mnotes[0].meta.date)}</span>`;
-  }
   document.getElementById("macro").innerHTML = mnotes.length ? mnotes.map(({ meta, body }) => `
     <article class="note"><h3>${esc(meta.title || "Note")}</h3>
       <p class="note-meta">${meta.date ? App.date(meta.date) : ""}${meta.author ? " by " + esc(meta.author) : ""}</p>
       <div class="prose">${App.md(body)}</div></article>`).join("") : '<p class="chart-empty">No macro notes yet. Add a file to content/macro.</p>';
 
-  const today = new Date().toISOString().slice(0, 10);
-  const autoRows = (auto.events || []).map((e) => ({ date: e.date, event: `${e.ticker} ${e.event.toLowerCase()}`, relevance: "Added automatically for a company we hold or target" }));
-  cal.events = [...(cal.events || []), ...autoRows.filter((a) => !(cal.events || []).some((m) => m.date === a.date && m.event.toUpperCase().includes(a.event.split(" ")[0])))];
-  document.querySelector("#calendar tbody").innerHTML = (cal.events || []).sort((a, b) => a.date.localeCompare(b.date)).map((e) => `
-    <tr class="${e.date < today ? "muted" : ""}"><td class="l">${App.date(e.date)}</td><td class="l wrap-cell" style="min-width:14ch"><b style="font-weight:500">${esc(e.event)}</b></td>
-    <td class="l wrap-cell">${esc(e.relevance || "")}</td></tr>`).join("");
+  /* calendar: upcoming only, one row per day; earnings of held stocks inside the game added automatically */
+  const today = new Date().toISOString().slice(0, 10), end = App.cfg.end_date || "9999-12-31";
+  const byDay = {};
+  const add = (date, text, why) => { (byDay[date] = byDay[date] || { items: [], earnings: [] }).items.push({ text, why }); };
+  (cal.events || []).forEach((e) => add(e.date, e.event, e.relevance));
+  (auto.events || []).filter((e) => /earnings/i.test(e.event) && held.has(e.ticker) && e.date <= end)
+    .forEach((e) => { const d = (byDay[e.date] = byDay[e.date] || { items: [], earnings: [] });
+      if (!d.items.some((i) => i.text.toUpperCase().includes(e.ticker))) d.earnings.push(e.ticker); });
+  const days = Object.keys(byDay).filter((d) => d >= today).sort();
+  const short = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+  document.querySelector("#calendar tbody").innerHTML = days.map((d) => {
+    const { items, earnings } = byDay[d];
+    const lines = items.map((i) => `<div><b style="font-weight:500">${esc(i.text)}</b>${i.why ? `<span class="cal-why">${esc(i.why)}</span>` : ""}</div>`);
+    if (earnings.length) lines.push(`<div><b style="font-weight:500">Earnings: ${earnings.map(esc).join(", ")}</b></div>`);
+    return `<tr><td class="l cal-date">${short(d)}</td><td class="l wrap-cell">${lines.join("")}</td></tr>`;
+  }).join("") || '<tr><td class="l muted" colspan="2">No upcoming events.</td></tr>';
 })();
