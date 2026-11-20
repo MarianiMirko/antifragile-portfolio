@@ -17,7 +17,29 @@
   const files = await Promise.all((idx.fundamental || []).map((f) => App.getText("content/fundamental/" + f)));
   const notes = files.map(App.frontMatter).filter((n) => n.meta.ticker)
     .sort((a, b) => String(b.meta.updated || "").localeCompare(String(a.meta.updated || "")) || (parseFloat(a.meta.order) || 99) - (parseFloat(b.meta.order) || 99));
-  document.getElementById("fundamental").innerHTML = notes.length ? notes.map(({ meta, body }) => {
+  const METRICS = [["pe", "Fwd P/E"], ["ev_ebitda", "EV/EBITDA"], ["peg", "PEG"], ["fcf_yield", "FCF yield"],
+    ["ev_sales", "EV/Sales"], ["op_margin", "Op. margin"], ["roic", "ROIC"], ["debt_ebitda", "Debt/EBITDA"]];
+  const withMetrics = notes.filter((n) => n.meta.pe);
+  const classic = notes.filter((n) => !n.meta.pe);
+  const box = document.getElementById("fundamental");
+  let html = "";
+  if (withMetrics.length) {
+    const rows = withMetrics.slice().sort((a, b) => (a.meta.benchmark ? 1 : 0) - (b.meta.benchmark ? 1 : 0));
+    const by = withMetrics.find((n) => !n.meta.benchmark)?.meta || {};
+    html += `<div class="table-scroll"><table class="data fund-table">
+      <thead><tr><th class="l">Company</th><th class="l">Role</th><th>Price</th>${METRICS.map(([, l]) => `<th>${l}</th>`).join("")}</tr></thead>
+      <tbody>${rows.map(({ meta }) => {
+        const t = String(meta.ticker).toUpperCase(), px = price[t];
+        return `<tr${meta.benchmark ? ' class="bench-row"' : ""}><td class="l"><b style="font-weight:500">${esc(meta.benchmark ? meta.ticker : t)}</b>${meta.benchmark ? "" : ` <span class="muted">${esc(meta.title || "")}</span>`}</td>
+          <td class="l muted">${esc(meta.role || "")}</td><td>${px && !meta.benchmark ? usd(px, 2) : ""}</td>
+          ${METRICS.map(([k]) => `<td>${esc(meta[k] || "–")}</td>`).join("")}</tr>`;
+      }).join("")}</tbody></table></div>
+      <p class="note-meta" style="margin-top:8px">${by.updated ? "Updated " + App.date(by.updated) : ""}${by.author ? " by " + esc(by.author) : ""}. Price: latest close.</p>
+      <div class="briefs">${withMetrics.filter((n) => !n.meta.benchmark && n.body.trim()).map(({ meta, body }) => `
+        <div class="brief"><h4>${esc(meta.title || meta.ticker)} <span class="muted">${esc(String(meta.ticker).toUpperCase())}</span></h4>
+          <div class="prose">${App.md(body)}</div></div>`).join("")}</div>`;
+  }
+  html += classic.map(({ meta, body }) => {
     const t = meta.ticker.toUpperCase(), px = price[t], tp = parseFloat(meta.target_price);
     const up = px && tp ? tp / px - 1 : null;
     return `<article class="entry">
@@ -29,7 +51,6 @@
           ["Target price", tp ? usd(tp, 2) : "", 1],
           ["Latest price", px ? usd(px, 2) : "–", 1],
           ["Upside to target", up == null ? "" : `<span class="${sign(up)}">${pctSigned(up, 1)}</span>`, 1],
-          ["Role in the fund", meta.group && esc(meta.group)],
           ["Horizon", meta.horizon && esc(meta.horizon)],
           ["Catalysts", meta.catalysts && esc(meta.catalysts)],
           ["Updated", meta.updated ? App.date(meta.updated) + (meta.author ? " by " + esc(meta.author) : "") : ""],
@@ -38,7 +59,8 @@
       </div>
       <div class="prose">${App.md(body)}</div>
     </article>`;
-  }).join("") : '<p class="chart-empty">No company research yet. Add a file to content/fundamental.</p>';
+  }).join("");
+  box.innerHTML = html || '<p class="chart-empty">No company research yet. Add a file to content/fundamental.</p>';
 
   /* macro notes */
   const mfiles = await Promise.all((idx.macro || []).map((f) => App.getText("content/macro/" + f)));

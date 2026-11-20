@@ -251,6 +251,13 @@ table.heat td.strong { color: #fff; }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 0.93rem; margin: 0; }
 .facts dt { color: var(--muted); } .facts dd { margin: 0; font-weight: 500; }
 .facts dd.plain { font-weight: 400; }
+.fund-table td, .fund-table th { white-space: nowrap; }
+.fund-table .bench-row td { border-top: 1px solid var(--ink); color: var(--muted); }
+.briefs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 18px; }
+.brief { border-top: 1px solid var(--rule); padding: 14px 0 6px; }
+.brief h4 { font-size: 1rem; font-weight: 500; margin: 0 0 6px; }
+.brief .prose p { font-size: 0.93rem; margin: 0; }
+@media (max-width: 900px) { .briefs { grid-template-columns: 1fr; } }
 .note { border-top: 1px solid var(--ink); padding: 20px 0 26px; }
 .note-meta { color: var(--muted); font-size: 0.9rem; margin: 4px 0 14px; }
 .regime { background: var(--mist); padding: 18px 22px; display: flex; flex-wrap: wrap; gap: 6px 24px; align-items: baseline; margin-bottom: 28px; }
