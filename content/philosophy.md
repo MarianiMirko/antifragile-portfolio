@@ -15,14 +15,6 @@ Our benchmark is max(0; S&P 500): beating it earns a bonus, missing it costs not
 2. **News, macro and ESG.** Andrea follows the news on our holdings, the macro data and ESG events.
 3. **Decision.** The portfolio manager approves every order one by one; each trade is recorded with its reason in the trade log.
 
-| Area | Owner |
-|---|---|
-| Orders, rebalancing and trade log | Mirko, portfolio manager |
-| Risk model, limits and projection | Lorenzo |
-| Replica design and backtests | Riccardo |
-| Macro, news and ESG review | Andrea |
-| Fundamental check of the holdings | Marek |
-
 ## Risk limits and response
 
 Our main risk measure is the 5-day 97.5% expected shortfall of active returns (fund minus S&P 500), with a limit of 4% while the IPO sleeve was held and 3% for the replica. Other limits: at most 15% in one stock, at most 60 stocks, no short positions and no borrowed cash. A limit shows a warning at 90% of its level. A breach is fixed before any other trade: a stock above its limit is trimmed back to its target, and if the expected shortfall is too high the positions that contribute most to it are sold until it is back inside.
