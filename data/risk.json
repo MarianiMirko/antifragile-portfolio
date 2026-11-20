@@ -308,7 +308,7 @@
    "ticker": "MSFT",
    "weight": 0.070364,
    "vol": 0.34004,
-   "beta": 1.005891,
+   "beta": 1.00589,
    "risk_contribution": 0.120719
   },
   {
@@ -322,7 +322,7 @@
    "ticker": "GOOGL",
    "weight": 0.055524,
    "vol": 0.337162,
-   "beta": 1.265748,
+   "beta": 1.265747,
    "risk_contribution": 0.105157
   },
   {
@@ -357,7 +357,7 @@
    "ticker": "MU",
    "weight": 0.013397,
    "vol": 0.854609,
-   "beta": 3.40196,
+   "beta": 3.401961,
    "risk_contribution": 0.04722
   },
   {
@@ -405,7 +405,7 @@
   {
    "ticker": "LLY",
    "weight": 0.020669,
-   "vol": 0.353306,
+   "vol": 0.353305,
    "beta": 0.346313,
    "risk_contribution": 0.014308
   },
@@ -455,21 +455,21 @@
    "ticker": "TXN",
    "weight": 0.004828,
    "vol": 0.451884,
-   "beta": 1.659841,
+   "beta": 1.659842,
    "risk_contribution": 0.008638
   },
   {
    "ticker": "GS",
    "weight": 0.004435,
    "vol": 0.335769,
-   "beta": 1.664604,
+   "beta": 1.664605,
    "risk_contribution": 0.008605
   },
   {
    "ticker": "V",
    "weight": 0.013194,
    "vol": 0.231005,
-   "beta": 0.332687,
+   "beta": 0.332688,
    "risk_contribution": 0.008494
   },
   {
@@ -510,7 +510,7 @@
   {
    "ticker": "MA",
    "weight": 0.009737,
-   "vol": 0.235743,
+   "vol": 0.235742,
    "beta": 0.300992,
    "risk_contribution": 0.006073
   },
@@ -525,21 +525,21 @@
    "ticker": "IBM",
    "weight": 0.004083,
    "vol": 0.483696,
-   "beta": 0.759084,
+   "beta": 0.759085,
    "risk_contribution": 0.004826
   },
   {
    "ticker": "WFC",
    "weight": 0.004635,
    "vol": 0.261652,
-   "beta": 0.683344,
+   "beta": 0.683343,
    "risk_contribution": 0.004205
   },
   {
    "ticker": "TMO",
    "weight": 0.004822,
    "vol": 0.30121,
-   "beta": 0.699004,
+   "beta": 0.699005,
    "risk_contribution": 0.004107
   },
   {
@@ -560,7 +560,7 @@
    "ticker": "MRK",
    "weight": 0.006409,
    "vol": 0.301417,
-   "beta": 0.283993,
+   "beta": 0.283994,
    "risk_contribution": 0.003043
   },
   {
@@ -637,7 +637,7 @@
    "ticker": "KO",
    "weight": 0.007216,
    "vol": 0.190117,
-   "beta": -0.194105,
+   "beta": -0.194106,
    "risk_contribution": -0.000636
   },
   {
@@ -3320,7 +3320,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.231346,
-   "fund_usd": -2186258.062595,
+   "fund_usd": -2186258.265394,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3332,12 +3332,12 @@
     {
      "ticker": "AAPL",
      "return": -0.306687,
-     "impact": -0.029915,
+     "impact": -0.029916,
      "estimated": false
     },
     {
      "ticker": "MSFT",
-     "return": -0.273922,
+     "return": -0.273921,
      "impact": -0.019274,
      "estimated": false
     },
@@ -3427,7 +3427,7 @@
     },
     {
      "ticker": "LLY",
-     "return": -0.154655,
+     "return": -0.154654,
      "impact": -0.003197,
      "estimated": false
     },
@@ -3469,7 +3469,7 @@
     },
     {
      "ticker": "C",
-     "return": -0.546572,
+     "return": -0.546573,
      "impact": -0.002292,
      "estimated": false
     },
@@ -3505,7 +3505,7 @@
     },
     {
      "ticker": "AMAT",
-     "return": -0.404094,
+     "return": -0.404095,
      "impact": -0.001938,
      "estimated": false
     },
@@ -3535,7 +3535,7 @@
     },
     {
      "ticker": "PG",
-     "return": -0.221141,
+     "return": -0.221142,
      "impact": -0.001685,
      "estimated": false
     },
@@ -3619,7 +3619,7 @@
     },
     {
      "ticker": "GILD",
-     "return": 0.08814,
+     "return": 0.088139,
      "impact": 0.000354,
      "estimated": false
     }
@@ -3633,7 +3633,7 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.175608,
-   "fund_usd": -1659524.641542,
+   "fund_usd": -1659524.430684,
    "estimated_positions": 1,
    "positions": [
     {
@@ -3896,7 +3896,7 @@
     },
     {
      "ticker": "UNH",
-     "return": 0.005031,
+     "return": 0.00503,
      "impact": 3e-05,
      "estimated": false
     },
@@ -3920,7 +3920,7 @@
     },
     {
      "ticker": "CVX",
-     "return": 0.35892,
+     "return": 0.358921,
      "impact": 0.002842,
      "estimated": false
     },
@@ -3946,13 +3946,13 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.138238,
-   "fund_usd": -1306369.508001,
+   "fund_usd": -1306369.767975,
    "estimated_positions": 0,
    "positions": [
     {
      "ticker": "AAPL",
      "return": -0.295871,
-     "impact": -0.02886,
+     "impact": -0.028861,
      "estimated": false
     },
     {
@@ -4101,7 +4101,7 @@
     },
     {
      "ticker": "AMAT",
-     "return": -0.2574,
+     "return": -0.257399,
      "impact": -0.001234,
      "estimated": false
     },
@@ -4185,7 +4185,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.049971,
+     "return": -0.049972,
      "impact": -0.000633,
      "estimated": false
     },

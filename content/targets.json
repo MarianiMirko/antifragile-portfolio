@@ -1,7 +1,7 @@
 {
- "note": "Target weights from IGfinal, prices of 2026-11-19. Phase: Sleeve sold on the IPO day (Thu 19 Nov, after the New York open): S&P 500 replica only. Fractions of the fund; CASH is the cash target. Written by scripts/run_igfinal.py on every run of the model. To set the weights by hand instead, change source to \"manual\".",
+ "note": "Target weights from IGfinal, prices of 2026-11-20. Phase: Sleeve sold on the IPO day (Thu 19 Nov, after the New York open): S&P 500 replica only. Fractions of the fund; CASH is the cash target. Written by scripts/run_igfinal.py on every run of the model. To set the weights by hand instead, change source to \"manual\".",
  "source": "igfinal",
- "generated": "2026-11-19",
+ "generated": "2026-11-20",
  "targets": {
   "AAPL": 0.12843,
   "MSFT": 0.09631,
