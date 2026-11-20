@@ -6,7 +6,9 @@
     App.getText("content/philosophy.md"), App.getJSON("config/rules.json", {}), App.data("alerts.json", { rules: [] }),
   ]);
   await App.libs;
-  document.getElementById("philosophy").innerHTML = App.md(text);
+  /* one block per "## " section, laid out on two columns */
+  const parts = text.split(/\n(?=## )/).map((t) => t.trim()).filter(Boolean);
+  document.getElementById("philosophy").innerHTML = parts.map((t) => `<div class="prose ph-part">${App.md(t)}</div>`).join("");
   document.querySelector("#rules-table tbody").innerHTML = (alerts.rules || []).map((r) => `<tr>
     <td class="l"><b style="font-weight:500">${esc(r.rule)}</b></td><td class="l">${esc(r.limit)}</td><td class="l">${esc(r.current)}</td></tr>`).join("");
   document.getElementById("rules-placeholder").hidden = !rules.is_placeholder;
