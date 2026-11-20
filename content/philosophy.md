@@ -17,13 +17,13 @@ Our benchmark is max(0; S&P 500): beating it earns a bonus, missing it costs not
 
 ## Risk limits and response
 
-Our main risk measure is the 5-day 97.5% expected shortfall of active returns (fund minus S&P 500), with a limit of 4% while the IPO sleeve was held and 3% for the replica. Other limits: at most 15% in one stock, at most 60 stocks, no short positions and no borrowed cash. A limit shows a warning at 90% of its level. A breach is fixed before any other trade: a stock above its limit is trimmed back to its target, and if the expected shortfall is too high the positions that contribute most to it are sold until it is back inside.
+Our main risk measure is the 5-day 97.5% expected shortfall of active returns (fund minus S&P 500), with a limit of 4% while the IPO sleeve was held and 3% for the replica. Other limits: at most 15% in one stock, at most 60 stocks and no short positions. A limit shows a warning at 90% of its level. A breach is fixed before any other trade: a stock above its limit is trimmed back to its target, and if the expected shortfall is too high the positions that contribute most to it are sold until it is back inside.
 
 ## Alert levels
 
 - **Green:** data and earnings in line, every limit respected. Hold and wait for the weekly rebalance.
 - **Amber:** a macro surprise, a regulatory or ESG shock on one of the ten largest positions, active risk within 0.3 points of its limit, or a stock above 14%. Team risk review before the next New York open.
-- **Red:** a limit breached or cash borrowed. Corrective market order at the next open, approved by the portfolio manager and logged.
+- **Red:** a limit breached. Corrective market order at the next open, approved by the portfolio manager and logged.
 
 ## ESG
 

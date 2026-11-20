@@ -1,17 +1,18 @@
 {
   "is_placeholder": false,
-  "note": "Limits and rules of the investment plan. The limits are monitored by the allocation model (models/igfinal/config.py); the buy and sell rules were set by the portfolio manager on 15 November 2026.",
+  "note": "Limits of the investment plan. A limit set to null is not checked. Active risk (5-day 97.5% expected shortfall against the S&P 500) is calculated by the allocation model (models/igfinal/config.py).",
   "limits": {
     "max_position_weight": 0.15,
-    "max_sector_weight": 0.6,
-    "min_cash_weight": 0,
-    "max_cash_weight": 0.6,
-    "min_positions": 40,
+    "max_active_es_5d": 0.03,
+    "max_sector_weight": null,
+    "min_cash_weight": null,
+    "max_cash_weight": null,
+    "min_positions": null,
     "max_positions": 60,
-    "stop_loss_pct": -0.3,
+    "stop_loss_pct": null,
     "drift_threshold": 0.01,
-    "max_var_95_1d": 0.0413,
-    "allow_margin": false,
+    "max_var_95_1d": null,
+    "allow_margin": null,
     "allow_short": false,
     "min_order_value": 10000
   },
@@ -27,6 +28,6 @@
     "From 27 November the fund is brought back to its target weights every Friday morning, always fully invested.",
     "An order smaller than $10,000 (0.1% of the fund) is not placed: it costs a commission and changes almost nothing.",
     "A breached limit is fixed before any other trade: a stock above 15% is trimmed back to its target; if active expected shortfall is above its limit, the positions that contribute most to it are sold.",
-    "Market orders only; no margin and no short selling."
+    "Market orders only; no short selling."
   ]
 }

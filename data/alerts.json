@@ -299,44 +299,23 @@
    "status": "ok"
   },
   {
-   "id": "sector",
-   "rule": "Largest sector",
-   "limit": "at most 60%",
-   "current": "28.6% (Technology)",
-   "status": "ok"
-  },
-  {
-   "id": "cash",
-   "rule": "Cash",
-   "limit": "0% to 60%",
-   "current": "23.9%",
-   "status": "ok"
-  },
-  {
    "id": "count",
    "rule": "Number of positions",
-   "limit": "40 to 60",
+   "limit": "at most 60",
    "current": "50",
    "status": "ok"
   },
   {
-   "id": "stop",
-   "rule": "Stop-loss",
-   "limit": "sell at -30% from average cost",
-   "current": "worst is -19.7% (UNH)",
-   "status": "ok"
-  },
-  {
-   "id": "var",
-   "rule": "One-day 95% VaR",
-   "limit": "at most 4.1%",
-   "current": "1.04%",
+   "id": "active_es",
+   "rule": "Active risk vs S&P 500 (5-day 97.5% ES)",
+   "limit": "at most 3%",
+   "current": "2.28% (after rebalancing 1.80%)",
    "status": "ok"
   },
   {
    "id": "margin",
    "rule": "Borrowing (margin)",
-   "limit": "not allowed",
+   "limit": "not used at the moment",
    "current": "none",
    "status": "ok"
   },
@@ -349,13 +328,13 @@
   },
   {
    "id": "drift",
-   "rule": "Drift from target weight",
-   "limit": "orders of $10,000 or more",
-   "current": "largest is -3.1 pts (AAPL)",
+   "rule": "Rebalancing to target weights",
+   "limit": "every Friday; only orders of $10,000 or more",
+   "current": "largest gap -3.1 pts (AAPL)",
    "status": "warning"
   }
  ],
  "rules_are_placeholder": false,
- "rules_ok": 8,
- "rules_total": 9
+ "rules_ok": 5,
+ "rules_total": 6
 }

@@ -667,7 +667,7 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
         if t not in tgt and p:                      # held but not in the target list: no proposal, just show it
             n = 0
         blocked = None
-        if p and n > 0 and p["unrealized_pct"] <= lim["stop_loss_pct"]:
+        if p and n > 0 and lim.get("stop_loss_pct") is not None and p["unrealized_pct"] <= lim["stop_loss_pct"]:
             n = 0                                   # never propose adding to a position that hit its stop-loss
             blocked = "Stop-loss hit: no top-up"
         worth = (abs(n) * price >= min_order) if (min_order and price) else abs(drift) > thr
@@ -706,50 +706,84 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
               f"{p['ticker']} is {pct(p['weight'])} of the fund; the limit is {pct(lim['max_position_weight'], 0)}.", p["ticker"])
 
     sectors = [s for s in exposures["sector"] if not s.get("is_cash")]
-    over_s = [s for s in sectors if s["weight"] > lim["max_sector_weight"]]
-    rule("sector", "Largest sector", f"at most {pct(lim['max_sector_weight'], 0)}",
-         f"{pct(sectors[0]['weight'])} ({sectors[0]['name']})" if sectors else "no positions", not over_s)
-    for s in over_s:
-        alert("breach", f"{s['name']} above the sector limit",
-              f"{s['name']} is {pct(s['weight'])} of the fund; the limit is {pct(lim['max_sector_weight'], 0)}.")
+    if lim.get("max_sector_weight") is not None:            # a limit set to null in config/rules.json is not checked
+        over_s = [s for s in sectors if s["weight"] > lim["max_sector_weight"]]
+        rule("sector", "Largest sector", f"at most {pct(lim['max_sector_weight'], 0)}",
+             f"{pct(sectors[0]['weight'])} ({sectors[0]['name']})" if sectors else "no positions", not over_s)
+        for s in over_s:
+            alert("breach", f"{s['name']} above the sector limit",
+                  f"{s['name']} is {pct(s['weight'])} of the fund; the limit is {pct(lim['max_sector_weight'], 0)}.")
 
-    cash_ok = lim["min_cash_weight"] <= cash_w <= lim["max_cash_weight"]
-    rule("cash", "Cash", f"{pct(lim['min_cash_weight'], 0)} to {pct(lim['max_cash_weight'], 0)}", pct(cash_w), cash_ok,
-         "breach" if cash_w < lim["min_cash_weight"] else "warning")
-    if cash_w < lim["min_cash_weight"]:
-        alert("breach", "Cash below the minimum", f"Cash is {pct(cash_w)}; the minimum is {pct(lim['min_cash_weight'], 0)}.")
-    elif cash_w > lim["max_cash_weight"]:
-        alert("warning", "Cash above the maximum", f"Cash is {pct(cash_w)}; the maximum is {pct(lim['max_cash_weight'], 0)}.")
+    if lim.get("min_cash_weight") is not None and lim.get("max_cash_weight") is not None:
+        cash_ok = lim["min_cash_weight"] <= cash_w <= lim["max_cash_weight"]
+        rule("cash", "Cash", f"{pct(lim['min_cash_weight'], 0)} to {pct(lim['max_cash_weight'], 0)}", pct(cash_w), cash_ok,
+             "breach" if cash_w < lim["min_cash_weight"] else "warning")
+        if cash_w < lim["min_cash_weight"]:
+            alert("breach", "Cash below the minimum", f"Cash is {pct(cash_w)}; the minimum is {pct(lim['min_cash_weight'], 0)}.")
+        elif cash_w > lim["max_cash_weight"]:
+            alert("warning", "Cash above the maximum", f"Cash is {pct(cash_w)}; the maximum is {pct(lim['max_cash_weight'], 0)}.")
 
     n_pos = len(positions)
-    n_ok = lim["min_positions"] <= n_pos <= lim["max_positions"]
-    rule("count", "Number of positions", f"{lim['min_positions']} to {lim['max_positions']}", str(n_pos), n_ok, "warning")
+    lo_n = lim.get("min_positions") or 0
+    n_ok = lo_n <= n_pos <= lim["max_positions"]
+    rng = f"{lo_n} to {lim['max_positions']}" if lo_n else f"at most {lim['max_positions']}"
+    rule("count", "Number of positions", rng, str(n_pos), n_ok, "warning")
     if not n_ok:
-        alert("warning", "Number of positions outside the range",
-              f"The fund holds {n_pos} positions; the range is {lim['min_positions']} to {lim['max_positions']}.")
+        alert("warning", "Number of positions outside the limit", f"The fund holds {n_pos} positions; the limit is {rng}.")
 
-    stopped = [p for p in positions if p["unrealized_pct"] <= lim["stop_loss_pct"]]
-    worst = min(positions, key=lambda p: p["unrealized_pct"]) if positions else None
-    rule("stop", "Stop-loss", f"sell at {pct(lim['stop_loss_pct'], 0)} from average cost",
-         f"worst is {pct(worst['unrealized_pct'])} ({worst['ticker']})" if worst else "no positions", not stopped)
-    for p in stopped:
-        alert("breach", f"{p['ticker']} hit its stop-loss",
-              f"{p['ticker']} is {pct(p['unrealized_pct'])} from its average cost; the stop-loss is {pct(lim['stop_loss_pct'], 0)}.", p["ticker"])
+    if lim.get("stop_loss_pct") is not None:
+        stopped = [p for p in positions if p["unrealized_pct"] <= lim["stop_loss_pct"]]
+        worst = min(positions, key=lambda p: p["unrealized_pct"]) if positions else None
+        rule("stop", "Stop-loss", f"sell at {pct(lim['stop_loss_pct'], 0)} from average cost",
+             f"worst is {pct(worst['unrealized_pct'])} ({worst['ticker']})" if worst else "no positions", not stopped)
+        for p in stopped:
+            alert("breach", f"{p['ticker']} hit its stop-loss",
+                  f"{p['ticker']} is {pct(p['unrealized_pct'])} from its average cost; the stop-loss is {pct(lim['stop_loss_pct'], 0)}.", p["ticker"])
 
-    if ex.get("available"):
-        var_ok = ex["var_95_hist"] <= lim["max_var_95_1d"]
-        rule("var", "One-day 95% VaR", f"at most {pct(lim['max_var_95_1d'])}", pct(ex["var_95_hist"], 2), var_ok)
-        if not var_ok:
-            alert("breach", "VaR above its limit",
-                  f"One-day 95% VaR is {pct(ex['var_95_hist'], 2)} of the fund; the limit is {pct(lim['max_var_95_1d'])}.")
-    else:
-        rule("var", "One-day 95% VaR", f"at most {pct(lim['max_var_95_1d'])}", "not available yet", True)
+    if lim.get("max_var_95_1d") is not None:
+        if ex.get("available"):
+            var_ok = ex["var_95_hist"] <= lim["max_var_95_1d"]
+            rule("var", "One-day 95% VaR", f"at most {pct(lim['max_var_95_1d'])}", pct(ex["var_95_hist"], 2), var_ok)
+            if not var_ok:
+                alert("breach", "VaR above its limit",
+                      f"One-day 95% VaR is {pct(ex['var_95_hist'], 2)} of the fund; the limit is {pct(lim['max_var_95_1d'])}.")
+        else:
+            rule("var", "One-day 95% VaR", f"at most {pct(lim['max_var_95_1d'])}", "not available yet", True)
+
+
+    # active risk against the S&P 500, from the allocation model (data/igfinal.json)
+    if lim.get("max_active_es_5d") is not None:
+        try:
+            ig = json.loads((ROOT / "data" / "igfinal.json").read_text())
+            es = (ig.get("active_es") or {})
+            cur, tgt_es = es.get("current_book"), es.get("target_book")
+        except Exception:
+            cur = tgt_es = None
+        lim_es = lim["max_active_es_5d"]
+        if cur is not None:
+            txt = pct(cur, 2) + (f" (after rebalancing {pct(tgt_es, 2)})" if tgt_es is not None and abs(tgt_es - cur) > 0.0005 else "")
+            es_ok = cur <= lim_es
+            rule("active_es", "Active risk vs S&P 500 (5-day 97.5% ES)", f"at most {pct(lim_es, 0)}", txt,
+                 es_ok and cur <= 0.9 * lim_es, "breach" if not es_ok else "warning")
+            if not es_ok:
+                alert("breach", "Active risk above its limit",
+                      f"Active expected shortfall is {pct(cur, 2)}; the limit is {pct(lim_es, 0)}. Sell the positions that contribute most to it.")
+            elif cur > 0.9 * lim_es:
+                alert("warning", "Active risk close to its limit", f"Active expected shortfall is {pct(cur, 2)}; the limit is {pct(lim_es, 0)}.")
+        else:
+            rule("active_es", "Active risk vs S&P 500 (5-day 97.5% ES)", f"at most {pct(lim_es, 0)}", "not available yet", True)
 
     margin_used = cash_now < -1
-    rule("margin", "Borrowing (margin)", "allowed" if lim["allow_margin"] else "not allowed",
-         "in use" if margin_used else "none", lim["allow_margin"] or not margin_used)
-    if margin_used and not lim["allow_margin"]:
-        alert("breach", "Margin in use", f"The fund has borrowed ${-cash_now:,.0f}; our rules do not allow borrowing.")
+    if lim.get("allow_margin") is None:                     # no rule decided: we only report it
+        rule("margin", "Borrowing (margin)", "not used at the moment", f"${-cash_now:,.0f} borrowed" if margin_used else "none",
+             not margin_used, "warning")
+        if margin_used:
+            alert("warning", "Margin in use", f"The fund has borrowed ${-cash_now:,.0f}.")
+    else:
+        rule("margin", "Borrowing (margin)", "allowed" if lim["allow_margin"] else "not allowed",
+             "in use" if margin_used else "none", lim["allow_margin"] or not margin_used)
+        if margin_used and not lim["allow_margin"]:
+            alert("breach", "Margin in use", f"The fund has borrowed ${-cash_now:,.0f}; our rules do not allow borrowing.")
     shorts = [p["ticker"] for p in positions if p["shares"] < 0]
     rule("short", "Short positions", "allowed" if lim["allow_short"] else "not allowed",
          ", ".join(shorts) if shorts else "none", lim["allow_short"] or not shorts)
@@ -758,8 +792,8 @@ def compute(cfg, rules, targets, holdings, txs, po, pc, daily, meta, out_dir, no
 
     drifts = [r for r in table if r.get("drift") is not None and r["ticker"] != "CASH"]
     maxd = max(drifts, key=lambda r: abs(r["drift"])) if drifts else None
-    rule("drift", "Drift from target weight", f"orders of ${min_order:,.0f} or more" if min_order else f"rebalance beyond {pct(thr, 0)}",
-         f"largest is {maxd['drift'] * 100:+.1f} pts ({maxd['ticker']})" if maxd else "no targets set",
+    rule("drift", "Rebalancing to target weights", f"every Friday; only orders of ${min_order:,.0f} or more" if min_order else f"rebalance beyond {pct(thr, 0)}",
+         f"largest gap {maxd['drift'] * 100:+.1f} pts ({maxd['ticker']})" if maxd else "no targets set",
          not suggestions, "warning")
     for s in suggestions:
         alert("warning", f"Rebalance {s['ticker']}: {s['action']} {s['shares']:,} shares",
