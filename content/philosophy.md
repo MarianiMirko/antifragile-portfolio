@@ -12,7 +12,7 @@ Our benchmark is max(0; S&P 500): beating it earns a bonus, missing it costs not
 ## How we decide
 
 1. **Model.** Every evening at 23:30 CET Lorenzo's model recalculates risk, target weights and the list of orders on closing prices.
-2. **News, macro and ESG.** At 15:00 CET, before New York opens, Andrea reviews the news on our holdings, the macro data and ESG events.
+2. **News, macro and ESG.** Andrea follows the news on our holdings, the macro data and ESG events.
 3. **Decision.** The portfolio manager approves every order one by one; each trade is recorded with its reason in the trade log.
 
 | Area | Owner |
