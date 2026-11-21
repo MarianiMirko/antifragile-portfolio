@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-21T02:21:28.076358+00:00",
+ "generated_at": "2026-11-21T03:20:08.075485+00:00",
  "alerts": [
   {
    "severity": "breach",
    "title": "Active risk above its limit",
-   "message": "Active expected shortfall is 5.44%; the limit is 3%. Sell the positions that contribute most to it.",
+   "message": "Active expected shortfall is 3.04%; the limit is 3%. Sell the positions that contribute most to it.",
    "ticker": null
   },
   {
@@ -321,7 +321,7 @@
    "id": "active_es",
    "rule": "Active risk vs S&P 500 (5-day 97.5% ES)",
    "limit": "at most 3%",
-   "current": "5.44% (after rebalancing 4.93%)",
+   "current": "3.04% (after rebalancing 1.80%)",
    "status": "breach"
   },
   {
