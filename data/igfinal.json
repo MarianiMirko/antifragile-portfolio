@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-23T16:05:34+00:00",
- "checked_at": "2026-11-23T16:05:34+00:00",
+ "generated_at": "2026-11-23T16:20:27+00:00",
+ "checked_at": "2026-11-23T16:20:27+00:00",
  "asof": "2026-11-20",
  "origin": "live Yahoo Finance prices, last date 2026-11-20 (copy saved as data/snapshots/prices_2026-11-20.csv)",
  "days_left": 18,
@@ -50,7 +50,7 @@
    "NVDA",
    "ORCL"
   ],
-  "beta": 1.0522887764028295,
+  "beta": 1.052288776402828,
   "tracking_error": 0.0461878347084821
  },
  "exposure": {
@@ -59,11 +59,11 @@
   "max": 1.0,
   "fully_invested": true,
   "p_bonus": 0.2108,
-  "beta": 1.0522887764028295,
+  "beta": 1.052288776402828,
   "p_market_up": 0.14905,
-  "expected_return": -0.04966581896486768,
-  "return_q05": -0.1627096895228459,
-  "return_q95": 0.06598182301290083
+  "expected_return": -0.049665818964867686,
+  "return_q05": -0.16270968952284579,
+  "return_q95": 0.06598182301290081
  },
  "active_es": {
   "with_sleeve": 0.01803909057365031,

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T16:05:47.552106+00:00",
+ "generated_at": "2026-11-23T16:20:40.391769+00:00",
  "alerts": [
   {
    "severity": "breach",
@@ -9,302 +9,296 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance AAPL: buy 872 shares",
-   "message": "AAPL is 3.1% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 872 shares (about $304,476).",
+   "title": "Rebalance AAPL: buy 881 shares",
+   "message": "AAPL is 3.2% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 881 shares (about $307,451).",
    "ticker": "AAPL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MSFT: buy 495 shares",
-   "message": "MSFT is 2.6% below its 9.6% target (orders under $10,000 are skipped). Proposed: buy 495 shares (about $247,418).",
+   "title": "Rebalance MSFT: buy 498 shares",
+   "message": "MSFT is 2.6% below its 9.6% target (orders under $10,000 are skipped). Proposed: buy 498 shares (about $249,035).",
    "ticker": "MSFT"
   },
   {
    "severity": "warning",
-   "title": "Rebalance GOOGL: buy 717 shares",
-   "message": "GOOGL is 2.1% below its 7.8% target (orders under $10,000 are skipped). Proposed: buy 717 shares (about $201,965).",
+   "title": "Rebalance GOOGL: buy 713 shares",
+   "message": "GOOGL is 2.1% below its 7.8% target (orders under $10,000 are skipped). Proposed: buy 713 shares (about $201,501).",
    "ticker": "GOOGL"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMZN: buy 630 shares",
-   "message": "AMZN is 1.7% below its 6.5% target (orders under $10,000 are skipped). Proposed: buy 630 shares (about $162,036).",
+   "title": "Rebalance AMZN: buy 631 shares",
+   "message": "AMZN is 1.7% below its 6.5% target (orders under $10,000 are skipped). Proposed: buy 631 shares (about $162,546).",
    "ticker": "AMZN"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AVGO: buy 419 shares",
-   "message": "AVGO is 1.3% below its 4.3% target (orders under $10,000 are skipped). Proposed: buy 419 shares (about $129,861).",
+   "title": "Rebalance AVGO: buy 412 shares",
+   "message": "AVGO is 1.3% below its 4.3% target (orders under $10,000 are skipped). Proposed: buy 412 shares (about $128,633).",
    "ticker": "AVGO"
   },
   {
    "severity": "warning",
    "title": "Rebalance META: buy 161 shares",
-   "message": "META is 1.0% below its 3.4% target (orders under $10,000 are skipped). Proposed: buy 161 shares (about $95,470).",
+   "message": "META is 1.0% below its 3.4% target (orders under $10,000 are skipped). Proposed: buy 161 shares (about $95,628).",
    "ticker": "META"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMD: buy 173 shares",
-   "message": "AMD is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 173 shares (about $78,910).",
+   "title": "Rebalance AMD: buy 169 shares",
+   "message": "AMD is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 169 shares (about $77,857).",
    "ticker": "AMD"
   },
   {
    "severity": "warning",
    "title": "Rebalance LLY: buy 54 shares",
-   "message": "LLY is 0.8% below its 2.8% target (orders under $10,000 are skipped). Proposed: buy 54 shares (about $74,198).",
+   "message": "LLY is 0.8% below its 2.8% target (orders under $10,000 are skipped). Proposed: buy 54 shares (about $74,470).",
    "ticker": "LLY"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MU: buy 93 shares",
-   "message": "MU is 0.7% below its 2.2% target (orders under $10,000 are skipped). Proposed: buy 93 shares (about $65,811).",
+   "title": "Rebalance MU: buy 90 shares",
+   "message": "MU is 0.7% below its 2.2% target (orders under $10,000 are skipped). Proposed: buy 90 shares (about $64,261).",
    "ticker": "MU"
   },
   {
    "severity": "warning",
-   "title": "Rebalance JPM: buy 199 shares",
-   "message": "JPM is 0.7% below its 2.3% target (orders under $10,000 are skipped). Proposed: buy 199 shares (about $63,423).",
+   "title": "Rebalance JPM: buy 198 shares",
+   "message": "JPM is 0.7% below its 2.3% target (orders under $10,000 are skipped). Proposed: buy 198 shares (about $63,355).",
    "ticker": "JPM"
   },
   {
    "severity": "warning",
-   "title": "Rebalance TSLA: buy 160 shares",
-   "message": "TSLA is 0.6% below its 2.8% target (orders under $10,000 are skipped). Proposed: buy 160 shares (about $62,350).",
+   "title": "Rebalance TSLA: buy 157 shares",
+   "message": "TSLA is 0.6% below its 2.8% target (orders under $10,000 are skipped). Proposed: buy 157 shares (about $61,593).",
    "ticker": "TSLA"
   },
   {
    "severity": "warning",
-   "title": "Rebalance XOM: buy 304 shares",
-   "message": "XOM is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 304 shares (about $48,058).",
+   "title": "Rebalance XOM: buy 305 shares",
+   "message": "XOM is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 305 shares (about $48,259).",
    "ticker": "XOM"
   },
   {
    "severity": "warning",
-   "title": "Rebalance V: buy 108 shares",
-   "message": "V is 0.5% below its 1.8% target (orders under $10,000 are skipped). Proposed: buy 108 shares (about $44,342).",
+   "title": "Rebalance V: buy 109 shares",
+   "message": "V is 0.5% below its 1.8% target (orders under $10,000 are skipped). Proposed: buy 109 shares (about $44,770).",
    "ticker": "V"
   },
   {
    "severity": "warning",
-   "title": "Rebalance JNJ: buy 162 shares",
-   "message": "JNJ is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 162 shares (about $43,968).",
+   "title": "Rebalance JNJ: buy 163 shares",
+   "message": "JNJ is 0.5% below its 1.7% target (orders under $10,000 are skipped). Proposed: buy 163 shares (about $44,274).",
    "ticker": "JNJ"
   },
   {
    "severity": "warning",
-   "title": "Rebalance UNH: buy 103 shares",
-   "message": "UNH is 0.3% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 103 shares (about $33,701).",
+   "title": "Rebalance UNH: buy 101 shares",
+   "message": "UNH is 0.3% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 101 shares (about $33,348).",
    "ticker": "UNH"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MA: buy 51 shares",
-   "message": "MA is 0.3% below its 1.3% target (orders under $10,000 are skipped). Proposed: buy 51 shares (about $32,483).",
+   "title": "Rebalance MA: buy 52 shares",
+   "message": "MA is 0.3% below its 1.3% target (orders under $10,000 are skipped). Proposed: buy 52 shares (about $33,127).",
    "ticker": "MA"
   },
   {
    "severity": "warning",
    "title": "Rebalance ABBV: buy 107 shares",
-   "message": "ABBV is 0.3% below its 1.3% target (orders under $10,000 are skipped). Proposed: buy 107 shares (about $30,896).",
+   "message": "ABBV is 0.3% below its 1.3% target (orders under $10,000 are skipped). Proposed: buy 107 shares (about $30,948).",
    "ticker": "ABBV"
   },
   {
    "severity": "warning",
-   "title": "Rebalance WMT: buy 240 shares",
-   "message": "WMT is 0.3% below its 1.4% target (orders under $10,000 are skipped). Proposed: buy 240 shares (about $30,806).",
+   "title": "Rebalance WMT: buy 239 shares",
+   "message": "WMT is 0.3% below its 1.4% target (orders under $10,000 are skipped). Proposed: buy 239 shares (about $30,774).",
    "ticker": "WMT"
   },
   {
    "severity": "warning",
    "title": "Rebalance COST: buy 26 shares",
-   "message": "COST is 0.3% below its 1.2% target (orders under $10,000 are skipped). Proposed: buy 26 shares (about $28,451).",
+   "message": "COST is 0.3% below its 1.2% target (orders under $10,000 are skipped). Proposed: buy 26 shares (about $28,514).",
    "ticker": "COST"
   },
   {
    "severity": "warning",
    "title": "Rebalance CVX: buy 137 shares",
-   "message": "CVX is 0.3% below its 1.1% target (orders under $10,000 are skipped). Proposed: buy 137 shares (about $28,371).",
+   "message": "CVX is 0.3% below its 1.1% target (orders under $10,000 are skipped). Proposed: buy 137 shares (about $28,408).",
    "ticker": "CVX"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MRK: buy 191 shares",
-   "message": "MRK is 0.3% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 191 shares (about $25,795).",
+   "title": "Rebalance MRK: buy 192 shares",
+   "message": "MRK is 0.3% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 192 shares (about $25,972).",
    "ticker": "MRK"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 162 shares",
-   "message": "PLTR is 0.3% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 162 shares (about $25,661).",
+   "title": "Rebalance PLTR: buy 157 shares",
+   "message": "PLTR is 0.3% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 157 shares (about $25,111).",
    "ticker": "PLTR"
   },
   {
    "severity": "warning",
-   "title": "Rebalance KO: buy 239 shares",
-   "message": "KO is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 239 shares (about $22,997).",
+   "title": "Rebalance KO: buy 241 shares",
+   "message": "KO is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 241 shares (about $23,171).",
    "ticker": "KO"
   },
   {
    "severity": "warning",
-   "title": "Rebalance CSCO: buy 230 shares",
-   "message": "CSCO is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 230 shares (about $22,050).",
+   "title": "Rebalance CSCO: buy 228 shares",
+   "message": "CSCO is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 228 shares (about $21,938).",
    "ticker": "CSCO"
   },
   {
    "severity": "warning",
-   "title": "Rebalance BAC: buy 443 shares",
-   "message": "BAC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 443 shares (about $21,388).",
-   "ticker": "BAC"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance PG: buy 124 shares",
-   "message": "PG is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 124 shares (about $21,147).",
+   "title": "Rebalance PG: buy 125 shares",
+   "message": "PG is 0.2% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 125 shares (about $21,320).",
    "ticker": "PG"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PM: buy 113 shares",
-   "message": "PM is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 113 shares (about $20,858).",
+   "title": "Rebalance PM: buy 115 shares",
+   "message": "PM is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 115 shares (about $21,185).",
    "ticker": "PM"
   },
   {
    "severity": "warning",
-   "title": "Rebalance AMAT: buy 60 shares",
-   "message": "AMAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 60 shares (about $20,665).",
-   "ticker": "AMAT"
+   "title": "Rebalance BAC: buy 437 shares",
+   "message": "BAC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 437 shares (about $21,216).",
+   "ticker": "BAC"
   },
   {
    "severity": "warning",
    "title": "Rebalance GE: buy 64 shares",
-   "message": "GE is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 64 shares (about $20,641).",
+   "message": "GE is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 64 shares (about $20,669).",
    "ticker": "GE"
   },
   {
    "severity": "warning",
-   "title": "Rebalance LRCX: buy 98 shares",
-   "message": "LRCX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 98 shares (about $20,435).",
+   "title": "Rebalance AMAT: buy 60 shares",
+   "message": "AMAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 60 shares (about $20,741).",
+   "ticker": "AMAT"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance LRCX: buy 97 shares",
+   "message": "LRCX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 97 shares (about $20,357).",
    "ticker": "LRCX"
   },
   {
    "severity": "warning",
    "title": "Rebalance CAT: buy 37 shares",
-   "message": "CAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 37 shares (about $20,225).",
+   "message": "CAT is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 37 shares (about $20,309).",
    "ticker": "CAT"
   },
   {
    "severity": "warning",
    "title": "Rebalance BRK.B: sell 35 shares",
-   "message": "BRK.B is 0.2% above its 10.0% target (orders under $10,000 are skipped). Proposed: sell 35 shares (about $20,089).",
+   "message": "BRK.B is 0.2% above its 10.0% target (orders under $10,000 are skipped). Proposed: sell 35 shares (about $20,126).",
    "ticker": "BRK.B"
   },
   {
    "severity": "warning",
    "title": "Rebalance GS: buy 24 shares",
-   "message": "GS is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 24 shares (about $19,795).",
+   "message": "GS is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 24 shares (about $19,891).",
    "ticker": "GS"
   },
   {
    "severity": "warning",
    "title": "Rebalance HD: buy 56 shares",
-   "message": "HD is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 56 shares (about $19,424).",
+   "message": "HD is 0.2% below its 0.9% target (orders under $10,000 are skipped). Proposed: buy 56 shares (about $19,470).",
    "ticker": "HD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance INTC: buy 326 shares",
-   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 326 shares (about $18,768).",
+   "title": "Rebalance INTC: buy 322 shares",
+   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 322 shares (about $18,635).",
    "ticker": "INTC"
   },
   {
    "severity": "warning",
-   "title": "Rebalance TXN: buy 62 shares",
-   "message": "TXN is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 62 shares (about $18,080).",
+   "title": "Rebalance TXN: buy 61 shares",
+   "message": "TXN is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 61 shares (about $17,843).",
    "ticker": "TXN"
   },
   {
    "severity": "warning",
-   "title": "Rebalance CRWD: buy 88 shares",
-   "message": "CRWD is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 88 shares (about $17,661).",
-   "ticker": "CRWD"
-  },
-  {
-   "severity": "warning",
-   "title": "Rebalance NFLX: buy 305 shares",
-   "message": "NFLX is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 305 shares (about $17,678).",
+   "title": "Rebalance NFLX: buy 306 shares",
+   "message": "NFLX is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 306 shares (about $17,748).",
    "ticker": "NFLX"
   },
   {
    "severity": "warning",
-   "title": "Rebalance WFC: buy 218 shares",
-   "message": "WFC is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 218 shares (about $17,514).",
+   "title": "Rebalance WFC: buy 216 shares",
+   "message": "WFC is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 216 shares (about $17,429).",
    "ticker": "WFC"
   },
   {
    "severity": "warning",
-   "title": "Rebalance MS: buy 94 shares",
-   "message": "MS is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 94 shares (about $16,304).",
+   "title": "Rebalance CRWD: buy 84 shares",
+   "message": "CRWD is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 84 shares (about $17,182).",
+   "ticker": "CRWD"
+  },
+  {
+   "severity": "warning",
+   "title": "Rebalance MS: buy 93 shares",
+   "message": "MS is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 93 shares (about $16,182).",
    "ticker": "MS"
   },
   {
    "severity": "warning",
-   "title": "Rebalance RTX: buy 83 shares",
-   "message": "RTX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 83 shares (about $16,071).",
-   "ticker": "RTX"
-  },
-  {
-   "severity": "warning",
    "title": "Rebalance AMGN: buy 35 shares",
-   "message": "AMGN is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 35 shares (about $15,755).",
+   "message": "AMGN is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 35 shares (about $15,830).",
    "ticker": "AMGN"
   },
   {
    "severity": "warning",
+   "title": "Rebalance RTX: buy 82 shares",
+   "message": "RTX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 82 shares (about $15,963).",
+   "ticker": "RTX"
+  },
+  {
+   "severity": "warning",
    "title": "Rebalance ANET: buy 85 shares",
-   "message": "ANET is 0.2% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 85 shares (about $15,428).",
+   "message": "ANET is 0.2% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 85 shares (about $15,435).",
    "ticker": "ANET"
   },
   {
    "severity": "warning",
    "title": "Rebalance IBM: buy 65 shares",
-   "message": "IBM is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 65 shares (about $15,162).",
+   "message": "IBM is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 65 shares (about $15,217).",
    "ticker": "IBM"
   },
   {
    "severity": "warning",
    "title": "Rebalance TMO: buy 21 shares",
-   "message": "TMO is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 21 shares (about $14,525).",
+   "message": "TMO is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 21 shares (about $14,543).",
    "ticker": "TMO"
   },
   {
    "severity": "warning",
    "title": "Rebalance GEV: buy 19 shares",
-   "message": "GEV is 0.2% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $14,455).",
+   "message": "GEV is 0.2% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 19 shares (about $14,498).",
    "ticker": "GEV"
   },
   {
    "severity": "warning",
    "title": "Rebalance LIN: buy 29 shares",
-   "message": "LIN is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 29 shares (about $14,826).",
+   "message": "LIN is 0.2% below its 0.6% target (orders under $10,000 are skipped). Proposed: buy 29 shares (about $14,866).",
    "ticker": "LIN"
   },
   {
    "severity": "warning",
-   "title": "Rebalance GILD: buy 67 shares",
-   "message": "GILD is 0.1% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 67 shares (about $11,351).",
+   "title": "Rebalance GILD: buy 66 shares",
+   "message": "GILD is 0.1% below its 0.5% target (orders under $10,000 are skipped). Proposed: buy 66 shares (about $11,249).",
    "ticker": "GILD"
   },
   {
    "severity": "warning",
-   "title": "Rebalance PANW: buy 29 shares",
-   "message": "PANW is 0.1% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 29 shares (about $10,194).",
-   "ticker": "PANW"
-  },
-  {
-   "severity": "warning",
    "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,686,169; MarketWatch showed $9,446,509 at its last sync.",
+   "message": "We compute $9,705,840; MarketWatch showed $9,446,509 at its last sync.",
    "ticker": null
   }
  ],
@@ -348,7 +342,7 @@
    "id": "drift",
    "rule": "Rebalancing to target weights",
    "limit": "every Friday; only orders of $10,000 or more",
-   "current": "largest gap -3.1 pts (AAPL)",
+   "current": "largest gap -3.2 pts (AAPL)",
    "status": "warning"
   }
  ],
