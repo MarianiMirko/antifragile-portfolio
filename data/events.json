@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T12:54:13.775347+00:00",
+ "generated_at": "2026-11-23T14:35:42.496005+00:00",
  "events": [
   {
    "date": "2026-11-16",
@@ -37,6 +37,11 @@
    "event": "Ex-dividend date"
   },
   {
+   "date": "2026-11-23",
+   "ticker": "CRWD",
+   "event": "Earnings"
+  },
+  {
    "date": "2026-11-24",
    "ticker": "COST",
    "event": "Ex-dividend date"
@@ -45,11 +50,6 @@
    "date": "2026-11-24",
    "ticker": "JNJ",
    "event": "Ex-dividend date"
-  },
-  {
-   "date": "2026-12-01",
-   "ticker": "CRWD",
-   "event": "Earnings"
   },
   {
    "date": "2026-12-01",
@@ -64,6 +64,11 @@
   {
    "date": "2026-12-02",
    "ticker": "LRCX",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-03",
+   "ticker": "HD",
    "event": "Ex-dividend date"
   },
   {
