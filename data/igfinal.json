@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-23T17:20:28+00:00",
- "checked_at": "2026-11-23T17:20:28+00:00",
+ "generated_at": "2026-11-23T17:35:30+00:00",
+ "checked_at": "2026-11-23T17:35:30+00:00",
  "asof": "2026-11-20",
  "origin": "live Yahoo Finance prices, last date 2026-11-20 (copy saved as data/snapshots/prices_2026-11-20.csv)",
  "days_left": 18,
@@ -51,7 +51,7 @@
    "ORCL"
   ],
   "beta": 1.052288776402828,
-  "tracking_error": 0.0461878347084821
+  "tracking_error": 0.046187834708482096
  },
  "exposure": {
   "chosen": 1.0,
@@ -70,7 +70,7 @@
   "replica_only": 0.01803909057365031,
   "limit": 0.03,
   "target_book": 0.01803909057365031,
-  "current_book": 0.03037502305986134
+  "current_book": 0.030375023059861336
  },
  "orders": {
   "count": 46,
