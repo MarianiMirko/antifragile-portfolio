@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-11-23T22:30:46.223803+00:00",
+ "generated_at": "2026-11-24T01:48:57.132915+00:00",
  "alerts": [
   {
    "severity": "breach",
    "title": "Active risk above its limit",
-   "message": "Active expected shortfall is 4.35%; the limit is 3%. Sell the positions that contribute most to it.",
+   "message": "Active expected shortfall is 8.61%; the limit is 3%. Sell the positions that contribute most to it.",
    "ticker": null
   },
   {
    "severity": "warning",
-   "title": "Rebalance AAPL: buy 865 shares",
-   "message": "AAPL is 3.1% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 865 shares (about $302,421).",
+   "title": "Rebalance AAPL: buy 864 shares",
+   "message": "AAPL is 3.1% below its 12.8% target (orders under $10,000 are skipped). Proposed: buy 864 shares (about $302,132).",
    "ticker": "AAPL"
   },
   {
@@ -46,7 +46,7 @@
   {
    "severity": "warning",
    "title": "Rebalance AMD: buy 175 shares",
-   "message": "AMD is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 175 shares (about $79,452).",
+   "message": "AMD is 0.8% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 175 shares (about $79,462).",
    "ticker": "AMD"
   },
   {
@@ -135,8 +135,8 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance PLTR: buy 157 shares",
-   "message": "PLTR is 0.3% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 157 shares (about $25,030).",
+   "title": "Rebalance PLTR: buy 158 shares",
+   "message": "PLTR is 0.3% below its 1.0% target (orders under $10,000 are skipped). Proposed: buy 158 shares (about $25,189).",
    "ticker": "PLTR"
   },
   {
@@ -190,7 +190,7 @@
   {
    "severity": "warning",
    "title": "Rebalance LRCX: buy 96 shares",
-   "message": "LRCX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 96 shares (about $20,142).",
+   "message": "LRCX is 0.2% below its 0.7% target (orders under $10,000 are skipped). Proposed: buy 96 shares (about $20,143).",
    "ticker": "LRCX"
   },
   {
@@ -231,8 +231,8 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance INTC: buy 280 shares",
-   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 280 shares (about $16,710).",
+   "title": "Rebalance INTC: buy 281 shares",
+   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 281 shares (about $16,767).",
    "ticker": "INTC"
   },
   {
@@ -298,7 +298,7 @@
   {
    "severity": "warning",
    "title": "Fund value differs from MarketWatch",
-   "message": "We compute $9,679,259; MarketWatch showed $9,446,509 at its last sync.",
+   "message": "We compute $9,679,460; MarketWatch showed $9,446,509 at its last sync.",
    "ticker": null
   }
  ],
@@ -321,7 +321,7 @@
    "id": "active_es",
    "rule": "Active risk vs S&P 500 (5-day 97.5% ES)",
    "limit": "at most 3%",
-   "current": "4.35% (after rebalancing 2.49%)",
+   "current": "8.61%",
    "status": "breach"
   },
   {
