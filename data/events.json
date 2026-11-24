@@ -1,4 +1,165 @@
 {
- "generated_at": "2026-11-24T17:50:40.082995+00:00",
- "events": []
+ "generated_at": "2026-11-24T18:05:35.202146+00:00",
+ "events": [
+  {
+   "date": "2026-11-18",
+   "ticker": "CVX",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "AMAT",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "MSFT",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-20",
+   "ticker": "AMGN",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-20",
+   "ticker": "RTX",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-23",
+   "ticker": "CRWD",
+   "event": "Earnings"
+  },
+  {
+   "date": "2026-11-24",
+   "ticker": "COST",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-11-24",
+   "ticker": "JNJ",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-01",
+   "ticker": "KO",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-02",
+   "ticker": "GS",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-02",
+   "ticker": "LRCX",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-03",
+   "ticker": "HD",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-03",
+   "ticker": "LIN",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-04",
+   "ticker": "BAC",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-07",
+   "ticker": "GOOGL",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-07",
+   "ticker": "UNH",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-09",
+   "ticker": "AVGO",
+   "event": "Earnings"
+  },
+  {
+   "date": "2026-12-10",
+   "ticker": "COST",
+   "event": "Earnings"
+  },
+  {
+   "date": "2026-12-11",
+   "ticker": "WMT",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-14",
+   "ticker": "ORCL",
+   "event": "Earnings"
+  },
+  {
+   "date": "2026-12-15",
+   "ticker": "GILD",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-15",
+   "ticker": "MRK",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-15",
+   "ticker": "TMO",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2026-12-17",
+   "ticker": "MU",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-04",
+   "ticker": "CSCO",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2027-01-12",
+   "ticker": "UNH",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "C",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "JPM",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "MS",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "WFC",
+   "event": "Earnings"
+  },
+  {
+   "date": "2027-01-15",
+   "ticker": "ABBV",
+   "event": "Ex-dividend date"
+  },
+  {
+   "date": "2027-01-15",
+   "ticker": "BAC",
+   "event": "Earnings"
+  }
+ ]
 }
