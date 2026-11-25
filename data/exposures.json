@@ -2,15 +2,15 @@
  "sector": [
   {
    "name": "Technology",
-   "weight": 0.277414
+   "weight": 0.277408
   },
   {
    "name": "Financial Services",
-   "weight": 0.1666
+   "weight": 0.166602
   },
   {
    "name": "Communication Services",
-   "weight": 0.085902
+   "weight": 0.085897
   },
   {
    "name": "Consumer Cyclical",
@@ -26,7 +26,7 @@
   },
   {
    "name": "Energy",
-   "weight": 0.020287
+   "weight": 0.020295
   },
   {
    "name": "Industrials",
