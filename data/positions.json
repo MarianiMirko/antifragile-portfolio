@@ -1,8 +1,8 @@
 {
  "as_of": "2026-11-24T21:00:00+00:00",
- "nav": 9658713.26,
- "cash": 2320166.751028,
- "cash_weight": 0.240215,
+ "nav": 9659031.1,
+ "cash": 2320484.591028,
+ "cash_weight": 0.24024,
  "invested": 7338546.508972,
  "unrealized_total": -304751.491028,
  "realized_total": -37612.88,
@@ -18,7 +18,7 @@
    "price": 577.400024,
    "prev_close": 572.940002,
    "value": 994860.242065,
-   "weight": 0.103001,
+   "weight": 0.102998,
    "cost_basis": 987611.54,
    "unrealized": 7248.702065,
    "unrealized_pct": 0.00734,
@@ -27,7 +27,7 @@
    "realized": 0.0,
    "contribution": 0.000725,
    "target_weight": 0.1,
-   "drift": 0.003001
+   "drift": 0.002998
   },
   {
    "ticker": "AAPL",
@@ -40,7 +40,7 @@
    "price": 354.190002,
    "prev_close": 349.690002,
    "value": 952771.106567,
-   "weight": 0.098644,
+   "weight": 0.09864,
    "cost_basis": 960599.0,
    "unrealized": -7827.893433,
    "unrealized_pct": -0.008149,
@@ -49,7 +49,7 @@
    "realized": 0.0,
    "contribution": -0.000783,
    "target_weight": 0.12843,
-   "drift": -0.029786
+   "drift": -0.02979
   },
   {
    "ticker": "MSFT",
@@ -62,7 +62,7 @@
    "price": 496.470093,
    "prev_close": 492.970001,
    "value": 680660.497192,
-   "weight": 0.070471,
+   "weight": 0.070469,
    "cost_basis": 719898.39,
    "unrealized": -39237.892808,
    "unrealized_pct": -0.054505,
@@ -71,7 +71,7 @@
    "realized": -6161.21,
    "contribution": -0.00454,
    "target_weight": 0.09631,
-   "drift": -0.025839
+   "drift": -0.025841
   },
   {
    "ticker": "GOOGL",
@@ -84,7 +84,7 @@
    "price": 279.029999,
    "prev_close": 282.309998,
    "value": 551084.247589,
-   "weight": 0.057056,
+   "weight": 0.057054,
    "cost_basis": 580274.75,
    "unrealized": -29190.502411,
    "unrealized_pct": -0.050305,
@@ -93,7 +93,7 @@
    "realized": -4091.3,
    "contribution": -0.003328,
    "target_weight": 0.07829,
-   "drift": -0.021234
+   "drift": -0.021236
   },
   {
    "ticker": "AMZN",
@@ -106,7 +106,7 @@
    "price": 252.309998,
    "prev_close": 255.419998,
    "value": 459456.505554,
-   "weight": 0.047569,
+   "weight": 0.047568,
    "cost_basis": 478394.91,
    "unrealized": -18938.404446,
    "unrealized_pct": -0.039587,
@@ -115,7 +115,7 @@
    "realized": 7661.5,
    "contribution": -0.001128,
    "target_weight": 0.06509,
-   "drift": -0.017521
+   "drift": -0.017522
   },
   {
    "ticker": "AVGO",
@@ -128,7 +128,7 @@
    "price": 301.230011,
    "prev_close": 313.540009,
    "value": 278336.530151,
-   "weight": 0.028817,
+   "weight": 0.028816,
    "cost_basis": 307414.8,
    "unrealized": -29078.269849,
    "unrealized_pct": -0.09459,
@@ -137,7 +137,7 @@
    "realized": 0.0,
    "contribution": -0.002908,
    "target_weight": 0.043,
-   "drift": -0.014183
+   "drift": -0.014184
   },
   {
    "ticker": "META",
@@ -150,7 +150,7 @@
    "price": 590.22998,
    "prev_close": 597.909973,
    "value": 233731.072266,
-   "weight": 0.024199,
+   "weight": 0.024198,
    "cost_basis": 253594.44,
    "unrealized": -19863.367734,
    "unrealized_pct": -0.078327,
@@ -159,7 +159,7 @@
    "realized": -12269.01,
    "contribution": -0.003213,
    "target_weight": 0.03411,
-   "drift": -0.009911
+   "drift": -0.009912
   },
   {
    "ticker": "LLY",
@@ -172,7 +172,7 @@
    "price": 1410.410034,
    "prev_close": 1367.349976,
    "value": 204509.454956,
-   "weight": 0.021174,
+   "weight": 0.021173,
    "cost_basis": 211108.4,
    "unrealized": -6598.945044,
    "unrealized_pct": -0.031259,
@@ -181,7 +181,7 @@
    "realized": 0.0,
    "contribution": -0.00066,
    "target_weight": 0.02829,
-   "drift": -0.007116
+   "drift": -0.007117
   },
   {
    "ticker": "TSLA",
@@ -194,7 +194,7 @@
    "price": 384.73999,
    "prev_close": 385.859985,
    "value": 203912.194824,
-   "weight": 0.021112,
+   "weight": 0.021111,
    "cost_basis": 205168.3,
    "unrealized": -1256.105176,
    "unrealized_pct": -0.006122,
@@ -203,7 +203,7 @@
    "realized": 0.0,
    "contribution": -0.000126,
    "target_weight": 0.02779,
-   "drift": -0.006678
+   "drift": -0.006679
   },
   {
    "ticker": "JPM",
@@ -216,7 +216,7 @@
    "price": 317.279999,
    "prev_close": 316.720001,
    "value": 154515.359406,
-   "weight": 0.015998,
+   "weight": 0.015997,
    "cost_basis": 168312.07,
    "unrealized": -13796.710594,
    "unrealized_pct": -0.081971,
@@ -225,7 +225,7 @@
    "realized": 0.0,
    "contribution": -0.00138,
    "target_weight": 0.0226,
-   "drift": -0.006602
+   "drift": -0.006603
   },
   {
    "ticker": "AMD",
@@ -238,7 +238,7 @@
    "price": 413.244995,
    "prev_close": 454.070007,
    "value": 136370.848389,
-   "weight": 0.014119,
+   "weight": 0.014118,
    "cost_basis": 166138.5,
    "unrealized": -29767.651611,
    "unrealized_pct": -0.179174,
@@ -247,7 +247,7 @@
    "realized": 13781.85,
    "contribution": -0.001599,
    "target_weight": 0.02369,
-   "drift": -0.009571
+   "drift": -0.009572
   },
   {
    "ticker": "MU",
@@ -260,7 +260,7 @@
    "price": 629.789978,
    "prev_close": 707.690002,
    "value": 134145.26532,
-   "weight": 0.013889,
+   "weight": 0.013888,
    "cost_basis": 156567.78,
    "unrealized": -22422.51468,
    "unrealized_pct": -0.143213,
@@ -269,7 +269,7 @@
    "realized": 0.0,
    "contribution": -0.002242,
    "target_weight": 0.02236,
-   "drift": -0.008471
+   "drift": -0.008472
   },
   {
    "ticker": "V",
@@ -282,7 +282,7 @@
    "price": 416.779999,
    "prev_close": 409.660004,
    "value": 129201.799622,
-   "weight": 0.013377,
+   "weight": 0.013376,
    "cost_basis": 133265.9,
    "unrealized": -4064.100378,
    "unrealized_pct": -0.030496,
@@ -291,7 +291,7 @@
    "realized": 0.0,
    "contribution": -0.000406,
    "target_weight": 0.01776,
-   "drift": -0.004383
+   "drift": -0.004384
   },
   {
    "ticker": "JNJ",
@@ -304,7 +304,7 @@
    "price": 276.470001,
    "prev_close": 270.144989,
    "value": 122199.74054,
-   "weight": 0.012652,
+   "weight": 0.012651,
    "cost_basis": 127733.58,
    "unrealized": -5533.83946,
    "unrealized_pct": -0.043323,
@@ -313,7 +313,7 @@
    "realized": 0.0,
    "contribution": -0.000553,
    "target_weight": 0.01695,
-   "drift": -0.004298
+   "drift": -0.004299
   },
   {
    "ticker": "XOM",
@@ -326,7 +326,7 @@
    "price": 158.380005,
    "prev_close": 156.949997,
    "value": 119735.283691,
-   "weight": 0.012397,
+   "weight": 0.012396,
    "cost_basis": 128126.88,
    "unrealized": -8391.596309,
    "unrealized_pct": -0.065494,
@@ -335,7 +335,7 @@
    "realized": 0.0,
    "contribution": -0.000839,
    "target_weight": 0.01731,
-   "drift": -0.004913
+   "drift": -0.004914
   },
   {
    "ticker": "WMT",
@@ -348,7 +348,7 @@
    "price": 132.300003,
    "prev_close": 129.570007,
    "value": 107295.302475,
-   "weight": 0.011109,
+   "weight": 0.011108,
    "cost_basis": 105202.92,
    "unrealized": 2092.382475,
    "unrealized_pct": 0.019889,
@@ -357,7 +357,7 @@
    "realized": 0.0,
    "contribution": 0.000209,
    "target_weight": 0.01394,
-   "drift": -0.002831
+   "drift": -0.002832
   },
   {
    "ticker": "ABBV",
@@ -392,7 +392,7 @@
    "price": 647.565002,
    "prev_close": 635.580017,
    "value": 95192.055359,
-   "weight": 0.009856,
+   "weight": 0.009855,
    "cost_basis": 98196.0,
    "unrealized": -3003.944641,
    "unrealized_pct": -0.030591,
@@ -401,7 +401,7 @@
    "realized": 0.0,
    "contribution": -0.0003,
    "target_weight": 0.01308,
-   "drift": -0.003224
+   "drift": -0.003225
   },
   {
    "ticker": "COST",
@@ -436,7 +436,7 @@
    "price": 208.929993,
    "prev_close": 206.210007,
    "value": 75005.867371,
-   "weight": 0.007766,
+   "weight": 0.007765,
    "cost_basis": 78811.27,
    "unrealized": -3805.402629,
    "unrealized_pct": -0.048285,
@@ -445,7 +445,7 @@
    "realized": 0.0,
    "contribution": -0.000381,
    "target_weight": 0.01061,
-   "drift": -0.002844
+   "drift": -0.002845
   },
   {
    "ticker": "PG",
@@ -458,7 +458,7 @@
    "price": 172.529999,
    "prev_close": 169.820007,
    "value": 73325.249481,
-   "weight": 0.007592,
+   "weight": 0.007591,
    "cost_basis": 73070.25,
    "unrealized": 254.999481,
    "unrealized_pct": 0.00349,
@@ -467,7 +467,7 @@
    "realized": 0.0,
    "contribution": 2.5e-05,
    "target_weight": 0.00968,
-   "drift": -0.002088
+   "drift": -0.002089
   },
   {
    "ticker": "CSCO",
@@ -502,7 +502,7 @@
    "price": 161.229996,
    "prev_close": 159.425003,
    "value": 70457.508133,
-   "weight": 0.007295,
+   "weight": 0.007294,
    "cost_basis": 72428.38,
    "unrealized": -1970.871867,
    "unrealized_pct": -0.027211,
@@ -511,7 +511,7 @@
    "realized": -10443.84,
    "contribution": -0.001241,
    "target_weight": 0.0098,
-   "drift": -0.002505
+   "drift": -0.002506
   },
   {
    "ticker": "KO",
@@ -546,7 +546,7 @@
    "price": 353.779999,
    "prev_close": 346.220001,
    "value": 65095.519775,
-   "weight": 0.00674,
+   "weight": 0.006739,
    "cost_basis": 64032.0,
    "unrealized": 1063.519775,
    "unrealized_pct": 0.016609,
@@ -555,7 +555,7 @@
    "realized": 0.0,
    "contribution": 0.000106,
    "target_weight": 0.00861,
-   "drift": -0.00187
+   "drift": -0.001871
   },
   {
    "ticker": "MRK",
@@ -612,7 +612,7 @@
    "price": 48.575001,
    "prev_close": 48.18,
    "value": 57804.250908,
-   "weight": 0.005985,
+   "weight": 0.005984,
    "cost_basis": 60499.6,
    "unrealized": -2695.349092,
    "unrealized_pct": -0.044552,
@@ -621,7 +621,7 @@
    "realized": 0.0,
    "contribution": -0.00027,
    "target_weight": 0.00814,
-   "drift": -0.002155
+   "drift": -0.002156
   },
   {
    "ticker": "UNH",
@@ -678,7 +678,7 @@
    "price": 184.009995,
    "prev_close": 182.610001,
    "value": 52442.848434,
-   "weight": 0.00543,
+   "weight": 0.005429,
    "cost_basis": 57213.75,
    "unrealized": -4770.901566,
    "unrealized_pct": -0.083387,
@@ -687,7 +687,7 @@
    "realized": 0.0,
    "contribution": -0.000477,
    "target_weight": 0.0076,
-   "drift": -0.00217
+   "drift": -0.002171
   },
   {
    "ticker": "INTC",
@@ -766,7 +766,7 @@
    "price": 695.650024,
    "prev_close": 688.450012,
    "value": 47304.20166,
-   "weight": 0.004898,
+   "weight": 0.004897,
    "cost_basis": 47549.68,
    "unrealized": -245.47834,
    "unrealized_pct": -0.005163,
@@ -775,7 +775,7 @@
    "realized": 0.0,
    "contribution": -2.5e-05,
    "target_weight": 0.00642,
-   "drift": -0.001522
+   "drift": -0.001523
   },
   {
    "ticker": "AMGN",
@@ -832,7 +832,7 @@
    "price": 540.609985,
    "prev_close": 547.450012,
    "value": 45951.848755,
-   "weight": 0.004758,
+   "weight": 0.004757,
    "cost_basis": 49986.8,
    "unrealized": -4034.951245,
    "unrealized_pct": -0.08072,
@@ -841,7 +841,7 @@
    "realized": 0.0,
    "contribution": -0.000403,
    "target_weight": 0.00691,
-   "drift": -0.002152
+   "drift": -0.002153
   },
   {
    "ticker": "NFLX",
@@ -898,7 +898,7 @@
    "price": 258.579987,
    "prev_close": 291.190002,
    "value": 44734.337677,
-   "weight": 0.004632,
+   "weight": 0.004631,
    "cost_basis": 50943.31,
    "unrealized": -6208.972323,
    "unrealized_pct": -0.12188,
@@ -907,7 +907,7 @@
    "realized": 0.0,
    "contribution": -0.000621,
    "target_weight": 0.00708,
-   "drift": -0.002448
+   "drift": -0.002449
   },
   {
    "ticker": "LIN",
@@ -942,7 +942,7 @@
    "price": 806.150024,
    "prev_close": 823.789978,
    "value": 42725.951294,
-   "weight": 0.004424,
+   "weight": 0.004423,
    "cost_basis": 48064.11,
    "unrealized": -5338.158706,
    "unrealized_pct": -0.111063,
@@ -951,7 +951,7 @@
    "realized": 0.0,
    "contribution": -0.000534,
    "target_weight": 0.0066,
-   "drift": -0.002176
+   "drift": -0.002177
   },
   {
    "ticker": "C",
@@ -1074,7 +1074,7 @@
    "price": 720.179993,
    "prev_close": 757.159973,
    "value": 35288.819641,
-   "weight": 0.003654,
+   "weight": 0.003653,
    "cost_basis": 38069.57,
    "unrealized": -2780.750359,
    "unrealized_pct": -0.073044,
@@ -1083,7 +1083,7 @@
    "realized": 0.0,
    "contribution": -0.000278,
    "target_weight": 0.00541,
-   "drift": -0.001756
+   "drift": -0.001757
   },
   {
    "ticker": "ANET",
@@ -1096,7 +1096,7 @@
    "price": 168.600006,
    "prev_close": 178.179993,
    "value": 33888.601227,
-   "weight": 0.003509,
+   "weight": 0.003508,
    "cost_basis": 37741.77,
    "unrealized": -3853.168773,
    "unrealized_pct": -0.102093,
@@ -1105,15 +1105,15 @@
    "realized": 0.0,
    "contribution": -0.000385,
    "target_weight": 0.00536,
-   "drift": -0.001851
+   "drift": -0.001852
   }
  ],
  "closed": [
   {
-   "ticker": "ORCL",
-   "name": "Oracle Corporation",
-   "realized": -2730.56,
-   "contribution": -0.000273
+   "ticker": "ASML",
+   "name": "ASML Holding N.V.",
+   "realized": -2712.06,
+   "contribution": -0.000271
   },
   {
    "ticker": "BABA",
@@ -1122,10 +1122,10 @@
    "contribution": -0.002065
   },
   {
-   "ticker": "ASML",
-   "name": "ASML Holding N.V.",
-   "realized": -2712.06,
-   "contribution": -0.000271
+   "ticker": "ORCL",
+   "name": "Oracle Corporation",
+   "realized": -2730.56,
+   "contribution": -0.000273
   }
  ],
  "transactions": [
@@ -1147,19 +1147,11 @@
   },
   {
    "date": "2026-11-19T15:26:00+00:00",
-   "ticker": "META",
+   "ticker": "ORCL",
    "side": "sell",
-   "shares": 579.0,
-   "price": 619.2,
-   "amount": 358516.8
-  },
-  {
-   "date": "2026-11-19T15:26:00+00:00",
-   "ticker": "AMD",
-   "side": "sell",
-   "shares": 695.0,
-   "price": 523.28,
-   "amount": 363679.6
+   "shares": 368.0,
+   "price": 114.73,
+   "amount": 42220.64
   },
   {
    "date": "2026-11-19T15:26:00+00:00",
@@ -1171,27 +1163,27 @@
   },
   {
    "date": "2026-11-19T15:26:00+00:00",
-   "ticker": "ORCL",
+   "ticker": "AMD",
    "side": "sell",
-   "shares": 368.0,
-   "price": 114.73,
-   "amount": 42220.64
+   "shares": 695.0,
+   "price": 523.28,
+   "amount": 363679.6
+  },
+  {
+   "date": "2026-11-19T15:26:00+00:00",
+   "ticker": "META",
+   "side": "sell",
+   "shares": 579.0,
+   "price": 619.2,
+   "amount": 358516.8
   },
   {
    "date": "2026-11-19T15:25:00+00:00",
-   "ticker": "BABA",
+   "ticker": "AMZN",
    "side": "sell",
-   "shares": 3933.0,
-   "price": 87.14,
-   "amount": 342721.62
-  },
-  {
-   "date": "2026-11-19T15:25:00+00:00",
-   "ticker": "MSFT",
-   "side": "sell",
-   "shares": 709.0,
-   "price": 516.4,
-   "amount": 366127.6
+   "shares": 1393.0,
+   "price": 268.21,
+   "amount": 373616.53
   },
   {
    "date": "2026-11-19T15:25:00+00:00",
@@ -1203,11 +1195,19 @@
   },
   {
    "date": "2026-11-19T15:25:00+00:00",
-   "ticker": "AMZN",
+   "ticker": "MSFT",
    "side": "sell",
-   "shares": 1393.0,
-   "price": 268.21,
-   "amount": 373616.53
+   "shares": 709.0,
+   "price": 516.4,
+   "amount": 366127.6
+  },
+  {
+   "date": "2026-11-19T15:25:00+00:00",
+   "ticker": "BABA",
+   "side": "sell",
+   "shares": 3933.0,
+   "price": 87.14,
+   "amount": 342721.62
   },
   {
    "date": "2026-11-19T15:24:00+00:00",
@@ -1219,403 +1219,11 @@
   },
   {
    "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "MSFT",
+   "ticker": "GILD",
    "side": "buy",
-   "shares": 2080.0,
-   "price": 525.09,
-   "amount": 1092187.2
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AAPL",
-   "side": "buy",
-   "shares": 2690.0,
-   "price": 357.1,
-   "amount": 960599.0
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "GOOGL",
-   "side": "buy",
-   "shares": 3230.0,
-   "price": 293.81,
-   "amount": 949006.3
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AMZN",
-   "side": "buy",
-   "shares": 3214.0,
-   "price": 262.71,
-   "amount": 844349.94
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "META",
-   "side": "buy",
-   "shares": 975.0,
-   "price": 640.39,
-   "amount": 624380.25
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AMD",
-   "side": "buy",
-   "shares": 1025.0,
-   "price": 503.45,
-   "amount": 516036.25
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "PLTR",
-   "side": "buy",
-   "shares": 2645.0,
-   "price": 165.74,
-   "amount": 438382.3
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "ASML",
-   "side": "buy",
-   "shares": 247.0,
-   "price": 1436.6,
-   "amount": 354840.2
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "BABA",
-   "side": "buy",
-   "shares": 3933.0,
-   "price": 92.39,
-   "amount": 363369.87
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AVGO",
-   "side": "buy",
-   "shares": 924.0,
-   "price": 332.7,
-   "amount": 307414.8
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "LLY",
-   "side": "buy",
-   "shares": 145.0,
-   "price": 1455.92,
-   "amount": 211108.4
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "TSLA",
-   "side": "buy",
-   "shares": 530.0,
-   "price": 387.11,
-   "amount": 205168.3
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "BRK.B",
-   "side": "buy",
-   "shares": 342.0,
-   "price": 594.97,
-   "amount": 203479.74
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "JPM",
-   "side": "buy",
-   "shares": 487.0,
-   "price": 345.61,
-   "amount": 168312.07
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "MU",
-   "side": "buy",
-   "shares": 213.0,
-   "price": 735.06,
-   "amount": 156567.78
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "V",
-   "side": "buy",
-   "shares": 310.0,
-   "price": 429.89,
-   "amount": 133265.9
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "XOM",
-   "side": "buy",
-   "shares": 756.0,
-   "price": 169.48,
-   "amount": 128126.88
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "JNJ",
-   "side": "buy",
-   "shares": 442.0,
-   "price": 288.99,
-   "amount": 127733.58
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "WMT",
-   "side": "buy",
-   "shares": 811.0,
-   "price": 129.72,
-   "amount": 105202.92
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "MA",
-   "side": "buy",
-   "shares": 147.0,
-   "price": 668.0,
-   "amount": 98196.0
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "ABBV",
-   "side": "buy",
-   "shares": 325.0,
-   "price": 299.98,
-   "amount": 97493.5
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "COST",
-   "side": "buy",
-   "shares": 80.0,
-   "price": 1110.46,
-   "amount": 88836.8
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "CVX",
-   "side": "buy",
-   "shares": 359.0,
-   "price": 219.53,
-   "amount": 78811.27
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "CSCO",
-   "side": "buy",
-   "shares": 778.0,
-   "price": 94.49,
-   "amount": 73513.22
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "PG",
-   "side": "buy",
-   "shares": 425.0,
-   "price": 171.93,
-   "amount": 73070.25
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "KO",
-   "side": "buy",
-   "shares": 703.0,
-   "price": 100.01,
-   "amount": 70307.03
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "UNH",
-   "side": "buy",
-   "shares": 164.0,
-   "price": 411.61,
-   "amount": 67504.04
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "MRK",
-   "side": "buy",
-   "shares": 453.0,
-   "price": 147.9,
-   "amount": 66998.7
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "HD",
-   "side": "buy",
-   "shares": 184.0,
-   "price": 348.0,
-   "amount": 64032.0
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "GE",
-   "side": "buy",
-   "shares": 191.0,
-   "price": 330.87,
-   "amount": 63196.17
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "BAC",
-   "side": "buy",
-   "shares": 1190.0,
-   "price": 50.84,
-   "amount": 60499.6
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "PM",
-   "side": "buy",
-   "shares": 285.0,
-   "price": 200.75,
-   "amount": 57213.75
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "INTC",
-   "side": "buy",
-   "shares": 942.0,
-   "price": 56.68,
-   "amount": 53392.56
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AMAT",
-   "side": "buy",
-   "shares": 150.0,
-   "price": 348.61,
-   "amount": 52291.5
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "LRCX",
-   "side": "buy",
-   "shares": 238.0,
-   "price": 214.33,
-   "amount": 51010.54
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "TXN",
-   "side": "buy",
-   "shares": 173.0,
-   "price": 294.47,
-   "amount": 50943.31
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "CAT",
-   "side": "buy",
-   "shares": 85.0,
-   "price": 588.08,
-   "amount": 49986.8
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "RTX",
-   "side": "buy",
-   "shares": 248.0,
-   "price": 199.67,
-   "amount": 49518.16
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "GS",
-   "side": "buy",
-   "shares": 53.0,
-   "price": 906.87,
-   "amount": 48064.11
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "PANW",
-   "side": "buy",
-   "shares": 150.0,
-   "price": 319.14,
-   "amount": 47871.0
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "NFLX",
-   "side": "buy",
-   "shares": 776.0,
-   "price": 62.89,
-   "amount": 48802.64
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "WFC",
-   "side": "buy",
-   "shares": 557.0,
-   "price": 86.05,
-   "amount": 47929.85
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "TMO",
-   "side": "buy",
-   "shares": 68.0,
-   "price": 699.26,
-   "amount": 47549.68
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "AMGN",
-   "side": "buy",
-   "shares": 99.0,
-   "price": 472.7,
-   "amount": 46797.3
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "ORCL",
-   "side": "buy",
-   "shares": 368.0,
-   "price": 122.15,
-   "amount": 44951.2
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "LIN",
-   "side": "buy",
-   "shares": 84.0,
-   "price": 528.73,
-   "amount": 44413.32
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "CRWD",
-   "side": "buy",
-   "shares": 191.0,
-   "price": 223.8,
-   "amount": 42745.8
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "IBM",
-   "side": "buy",
-   "shares": 172.0,
-   "price": 246.94,
-   "amount": 42473.68
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "MS",
-   "side": "buy",
-   "shares": 218.0,
-   "price": 188.0,
-   "amount": 40984.0
-  },
-  {
-   "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "GEV",
-   "side": "buy",
-   "shares": 49.0,
-   "price": 776.93,
-   "amount": 38069.57
+   "shares": 228.0,
+   "price": 171.47,
+   "amount": 39095.16
   },
   {
    "date": "2026-11-16T14:31:00+00:00",
@@ -1627,11 +1235,403 @@
   },
   {
    "date": "2026-11-16T14:31:00+00:00",
-   "ticker": "GILD",
+   "ticker": "GEV",
    "side": "buy",
-   "shares": 228.0,
-   "price": 171.47,
-   "amount": 39095.16
+   "shares": 49.0,
+   "price": 776.93,
+   "amount": 38069.57
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "MS",
+   "side": "buy",
+   "shares": 218.0,
+   "price": 188.0,
+   "amount": 40984.0
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "IBM",
+   "side": "buy",
+   "shares": 172.0,
+   "price": 246.94,
+   "amount": 42473.68
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "CRWD",
+   "side": "buy",
+   "shares": 191.0,
+   "price": 223.8,
+   "amount": 42745.8
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "LIN",
+   "side": "buy",
+   "shares": 84.0,
+   "price": 528.73,
+   "amount": 44413.32
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "ORCL",
+   "side": "buy",
+   "shares": 368.0,
+   "price": 122.15,
+   "amount": 44951.2
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AMGN",
+   "side": "buy",
+   "shares": 99.0,
+   "price": 472.7,
+   "amount": 46797.3
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "TMO",
+   "side": "buy",
+   "shares": 68.0,
+   "price": 699.26,
+   "amount": 47549.68
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "WFC",
+   "side": "buy",
+   "shares": 557.0,
+   "price": 86.05,
+   "amount": 47929.85
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "NFLX",
+   "side": "buy",
+   "shares": 776.0,
+   "price": 62.89,
+   "amount": 48802.64
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "PANW",
+   "side": "buy",
+   "shares": 150.0,
+   "price": 319.14,
+   "amount": 47871.0
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "GS",
+   "side": "buy",
+   "shares": 53.0,
+   "price": 906.87,
+   "amount": 48064.11
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "RTX",
+   "side": "buy",
+   "shares": 248.0,
+   "price": 199.67,
+   "amount": 49518.16
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "CAT",
+   "side": "buy",
+   "shares": 85.0,
+   "price": 588.08,
+   "amount": 49986.8
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "TXN",
+   "side": "buy",
+   "shares": 173.0,
+   "price": 294.47,
+   "amount": 50943.31
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "LRCX",
+   "side": "buy",
+   "shares": 238.0,
+   "price": 214.33,
+   "amount": 51010.54
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AMAT",
+   "side": "buy",
+   "shares": 150.0,
+   "price": 348.61,
+   "amount": 52291.5
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "INTC",
+   "side": "buy",
+   "shares": 942.0,
+   "price": 56.68,
+   "amount": 53392.56
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "PM",
+   "side": "buy",
+   "shares": 285.0,
+   "price": 200.75,
+   "amount": 57213.75
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "BAC",
+   "side": "buy",
+   "shares": 1190.0,
+   "price": 50.84,
+   "amount": 60499.6
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "GE",
+   "side": "buy",
+   "shares": 191.0,
+   "price": 330.87,
+   "amount": 63196.17
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "HD",
+   "side": "buy",
+   "shares": 184.0,
+   "price": 348.0,
+   "amount": 64032.0
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "MRK",
+   "side": "buy",
+   "shares": 453.0,
+   "price": 147.9,
+   "amount": 66998.7
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "UNH",
+   "side": "buy",
+   "shares": 164.0,
+   "price": 411.61,
+   "amount": 67504.04
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "KO",
+   "side": "buy",
+   "shares": 703.0,
+   "price": 100.01,
+   "amount": 70307.03
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "PG",
+   "side": "buy",
+   "shares": 425.0,
+   "price": 171.93,
+   "amount": 73070.25
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "CSCO",
+   "side": "buy",
+   "shares": 778.0,
+   "price": 94.49,
+   "amount": 73513.22
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "CVX",
+   "side": "buy",
+   "shares": 359.0,
+   "price": 219.53,
+   "amount": 78811.27
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "COST",
+   "side": "buy",
+   "shares": 80.0,
+   "price": 1110.46,
+   "amount": 88836.8
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "ABBV",
+   "side": "buy",
+   "shares": 325.0,
+   "price": 299.98,
+   "amount": 97493.5
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "MA",
+   "side": "buy",
+   "shares": 147.0,
+   "price": 668.0,
+   "amount": 98196.0
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "WMT",
+   "side": "buy",
+   "shares": 811.0,
+   "price": 129.72,
+   "amount": 105202.92
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "JNJ",
+   "side": "buy",
+   "shares": 442.0,
+   "price": 288.99,
+   "amount": 127733.58
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "XOM",
+   "side": "buy",
+   "shares": 756.0,
+   "price": 169.48,
+   "amount": 128126.88
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "V",
+   "side": "buy",
+   "shares": 310.0,
+   "price": 429.89,
+   "amount": 133265.9
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "MU",
+   "side": "buy",
+   "shares": 213.0,
+   "price": 735.06,
+   "amount": 156567.78
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "JPM",
+   "side": "buy",
+   "shares": 487.0,
+   "price": 345.61,
+   "amount": 168312.07
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "BRK.B",
+   "side": "buy",
+   "shares": 342.0,
+   "price": 594.97,
+   "amount": 203479.74
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "TSLA",
+   "side": "buy",
+   "shares": 530.0,
+   "price": 387.11,
+   "amount": 205168.3
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "LLY",
+   "side": "buy",
+   "shares": 145.0,
+   "price": 1455.92,
+   "amount": 211108.4
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AVGO",
+   "side": "buy",
+   "shares": 924.0,
+   "price": 332.7,
+   "amount": 307414.8
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "BABA",
+   "side": "buy",
+   "shares": 3933.0,
+   "price": 92.39,
+   "amount": 363369.87
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "ASML",
+   "side": "buy",
+   "shares": 247.0,
+   "price": 1436.6,
+   "amount": 354840.2
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "PLTR",
+   "side": "buy",
+   "shares": 2645.0,
+   "price": 165.74,
+   "amount": 438382.3
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AMD",
+   "side": "buy",
+   "shares": 1025.0,
+   "price": 503.45,
+   "amount": 516036.25
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "META",
+   "side": "buy",
+   "shares": 975.0,
+   "price": 640.39,
+   "amount": 624380.25
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AMZN",
+   "side": "buy",
+   "shares": 3214.0,
+   "price": 262.71,
+   "amount": 844349.94
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "GOOGL",
+   "side": "buy",
+   "shares": 3230.0,
+   "price": 293.81,
+   "amount": 949006.3
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "AAPL",
+   "side": "buy",
+   "shares": 2690.0,
+   "price": 357.1,
+   "amount": 960599.0
+  },
+  {
+   "date": "2026-11-16T14:31:00+00:00",
+   "ticker": "MSFT",
+   "side": "buy",
+   "shares": 2080.0,
+   "price": 525.09,
+   "amount": 1092187.2
   }
  ]
 }
