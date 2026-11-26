@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-26T19:50:29+00:00",
- "checked_at": "2026-11-26T19:50:29+00:00",
+ "generated_at": "2026-11-26T20:05:27+00:00",
+ "checked_at": "2026-11-26T20:05:27+00:00",
  "asof": "2026-11-25",
  "origin": "live Yahoo Finance prices, last date 2026-11-25 (copy saved as data/snapshots/prices_2026-11-25.csv)",
  "days_left": 15,
