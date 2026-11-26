@@ -476,14 +476,14 @@
    "ticker": "JPM",
    "weight": 0.016042,
    "vol": 0.231144,
-   "beta": 0.761138,
+   "beta": 0.761137,
    "risk_contribution": 0.016836
   },
   {
    "ticker": "LRCX",
    "weight": 0.004573,
    "vol": 0.712971,
-   "beta": 3.244231,
+   "beta": 3.244232,
    "risk_contribution": 0.016171
   },
   {
@@ -497,7 +497,7 @@
    "ticker": "LLY",
    "weight": 0.020977,
    "vol": 0.35453,
-   "beta": 0.32211,
+   "beta": 0.322111,
    "risk_contribution": 0.014447
   },
   {
@@ -539,14 +539,14 @@
    "ticker": "CAT",
    "weight": 0.004802,
    "vol": 0.426571,
-   "beta": 1.792233,
+   "beta": 1.792234,
    "risk_contribution": 0.009114
   },
   {
    "ticker": "V",
    "weight": 0.013675,
-   "vol": 0.232606,
-   "beta": 0.330166,
+   "vol": 0.232607,
+   "beta": 0.330167,
    "risk_contribution": 0.00898
   },
   {
@@ -672,14 +672,14 @@
    "ticker": "WMT",
    "weight": 0.011115,
    "vol": 0.261127,
-   "beta": 0.019038,
+   "beta": 0.019037,
    "risk_contribution": 0.001807
   },
   {
    "ticker": "ABBV",
    "weight": 0.009945,
    "vol": 0.253262,
-   "beta": 0.006641,
+   "beta": 0.00664,
    "risk_contribution": 0.001555
   },
   {
@@ -700,7 +700,7 @@
    "ticker": "PM",
    "weight": 0.005459,
    "vol": 0.284546,
-   "beta": 0.020915,
+   "beta": 0.020916,
    "risk_contribution": 0.000982
   },
   {
@@ -3404,7 +3404,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.233396,
-   "fund_usd": -2246201.298329,
+   "fund_usd": -2246201.467034,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3451,7 +3451,7 @@
     },
     {
      "ticker": "JPM",
-     "return": -0.425195,
+     "return": -0.425194,
      "impact": -0.006821,
      "estimated": false
     },
@@ -3499,13 +3499,13 @@
     },
     {
      "ticker": "CVX",
-     "return": -0.510384,
+     "return": -0.510385,
      "impact": -0.004017,
      "estimated": false
     },
     {
      "ticker": "LLY",
-     "return": -0.154654,
+     "return": -0.154655,
      "impact": -0.003244,
      "estimated": false
     },
@@ -3565,7 +3565,7 @@
     },
     {
      "ticker": "HD",
-     "return": -0.329024,
+     "return": -0.329025,
      "impact": -0.002273,
      "estimated": false
     },
@@ -3703,7 +3703,7 @@
     },
     {
      "ticker": "GILD",
-     "return": 0.088139,
+     "return": 0.08814,
      "impact": 0.000369,
      "estimated": false
     }
@@ -3717,7 +3717,7 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.177297,
-   "fund_usd": -1706301.254483,
+   "fund_usd": -1706301.378778,
    "estimated_positions": 1,
    "positions": [
     {
@@ -3872,7 +3872,7 @@
     },
     {
      "ticker": "C",
-     "return": -0.334457,
+     "return": -0.334458,
      "impact": -0.00141,
      "estimated": false
     },
@@ -3950,7 +3950,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.032916,
+     "return": -0.032915,
      "impact": -0.000414,
      "estimated": false
     },
@@ -3986,25 +3986,25 @@
     },
     {
      "ticker": "AMGN",
-     "return": 0.113789,
+     "return": 0.11379,
      "impact": 0.000549,
      "estimated": false
     },
     {
      "ticker": "ABBV",
-     "return": 0.063127,
+     "return": 0.063128,
      "impact": 0.000628,
      "estimated": false
     },
     {
      "ticker": "MRK",
-     "return": 0.206093,
+     "return": 0.206092,
      "impact": 0.001362,
      "estimated": false
     },
     {
      "ticker": "CVX",
-     "return": 0.358921,
+     "return": 0.35892,
      "impact": 0.002825,
      "estimated": false
     },
@@ -4030,7 +4030,7 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.139437,
-   "fund_usd": -1341940.400255,
+   "fund_usd": -1341940.590169,
    "estimated_positions": 0,
    "positions": [
     {
@@ -4269,7 +4269,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.049972,
+     "return": -0.049971,
      "impact": -0.000629,
      "estimated": false
     },
@@ -4287,7 +4287,7 @@
     },
     {
      "ticker": "PG",
-     "return": -0.048652,
+     "return": -0.048651,
      "impact": -0.000372,
      "estimated": false
     },
