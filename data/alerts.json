@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T16:35:32.476199+00:00",
+ "generated_at": "2026-11-26T16:50:37.951402+00:00",
  "alerts": [
   {
    "severity": "breach",
@@ -22,7 +22,7 @@
   {
    "severity": "warning",
    "title": "Rebalance GOOGL: buy 785 shares",
-   "message": "GOOGL is 2.2% below its 7.8% target (orders under $10,000 are skipped). Proposed: buy 785 shares (about $214,285).",
+   "message": "GOOGL is 2.2% below its 7.8% target (orders under $10,000 are skipped). Proposed: buy 785 shares (about $214,266).",
    "ticker": "GOOGL"
   },
   {
@@ -33,14 +33,14 @@
   },
   {
    "severity": "warning",
-   "title": "Rebalance AVGO: buy 452 shares",
-   "message": "AVGO is 1.4% below its 4.3% target (orders under $10,000 are skipped). Proposed: buy 452 shares (about $135,851).",
+   "title": "Rebalance AVGO: buy 453 shares",
+   "message": "AVGO is 1.4% below its 4.3% target (orders under $10,000 are skipped). Proposed: buy 453 shares (about $136,122).",
    "ticker": "AVGO"
   },
   {
    "severity": "warning",
    "title": "Rebalance AMD: buy 230 shares",
-   "message": "AMD is 1.0% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 230 shares (about $93,559).",
+   "message": "AMD is 1.0% below its 2.4% target (orders under $10,000 are skipped). Proposed: buy 230 shares (about $93,572).",
    "ticker": "AMD"
   },
   {
@@ -184,7 +184,7 @@
   {
    "severity": "warning",
    "title": "Rebalance INTC: buy 390 shares",
-   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 390 shares (about $21,237).",
+   "message": "INTC is 0.2% below its 0.8% target (orders under $10,000 are skipped). Proposed: buy 390 shares (about $21,232).",
    "ticker": "INTC"
   },
   {
