@@ -399,7 +399,7 @@
    "ticker": "AAPL",
    "weight": 0.099349,
    "vol": 0.24901,
-   "beta": 0.586778,
+   "beta": 0.586777,
    "risk_contribution": 0.1128
   },
   {
@@ -435,7 +435,7 @@
    "weight": 0.013948,
    "vol": 0.753378,
    "beta": 3.274348,
-   "risk_contribution": 0.055221
+   "risk_contribution": 0.055222
   },
   {
    "ticker": "META",
@@ -447,8 +447,8 @@
   {
    "ticker": "MU",
    "weight": 0.013371,
-   "vol": 0.87262,
-   "beta": 3.428213,
+   "vol": 0.872619,
+   "beta": 3.428212,
    "risk_contribution": 0.048256
   },
   {
@@ -475,7 +475,7 @@
   {
    "ticker": "JPM",
    "weight": 0.016042,
-   "vol": 0.231145,
+   "vol": 0.231144,
    "beta": 0.761138,
    "risk_contribution": 0.016836
   },
@@ -525,7 +525,7 @@
    "ticker": "TXN",
    "weight": 0.004852,
    "vol": 0.476976,
-   "beta": 1.73024,
+   "beta": 1.730241,
    "risk_contribution": 0.009218
   },
   {
@@ -539,14 +539,14 @@
    "ticker": "CAT",
    "weight": 0.004802,
    "vol": 0.426571,
-   "beta": 1.792233,
+   "beta": 1.792234,
    "risk_contribution": 0.009114
   },
   {
    "ticker": "V",
    "weight": 0.013674,
    "vol": 0.232607,
-   "beta": 0.330166,
+   "beta": 0.330167,
    "risk_contribution": 0.00898
   },
   {
@@ -581,7 +581,7 @@
    "ticker": "MS",
    "weight": 0.003795,
    "vol": 0.301435,
-   "beta": 1.398864,
+   "beta": 1.398863,
    "risk_contribution": 0.006675
   },
   {
@@ -679,7 +679,7 @@
    "ticker": "ABBV",
    "weight": 0.009944,
    "vol": 0.253262,
-   "beta": 0.006641,
+   "beta": 0.00664,
    "risk_contribution": 0.001555
   },
   {
@@ -700,7 +700,7 @@
    "ticker": "PM",
    "weight": 0.005459,
    "vol": 0.284546,
-   "beta": 0.020916,
+   "beta": 0.020915,
    "risk_contribution": 0.000982
   },
   {
@@ -3404,7 +3404,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.233397,
-   "fund_usd": -2246236.591659,
+   "fund_usd": -2246236.536955,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3547,7 +3547,7 @@
     },
     {
      "ticker": "GEV",
-     "return": -0.653078,
+     "return": -0.653079,
      "impact": -0.002377,
      "estimated": true
     },
@@ -3589,13 +3589,13 @@
     },
     {
      "ticker": "LRCX",
-     "return": -0.422346,
+     "return": -0.422345,
      "impact": -0.001931,
      "estimated": false
     },
     {
      "ticker": "CSCO",
-     "return": -0.252539,
+     "return": -0.252538,
      "impact": -0.001923,
      "estimated": false
     },
@@ -3649,7 +3649,7 @@
     },
     {
      "ticker": "TXN",
-     "return": -0.260573,
+     "return": -0.260572,
      "impact": -0.001264,
      "estimated": false
     },
@@ -3703,7 +3703,7 @@
     },
     {
      "ticker": "GILD",
-     "return": 0.08814,
+     "return": 0.088139,
      "impact": 0.000369,
      "estimated": false
     }
@@ -3717,12 +3717,12 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.177298,
-   "fund_usd": -1706332.014198,
+   "fund_usd": -1706332.353927,
    "estimated_positions": 1,
    "positions": [
     {
      "ticker": "AAPL",
-     "return": -0.236786,
+     "return": -0.236787,
      "impact": -0.023525,
      "estimated": false
     },
@@ -3920,7 +3920,7 @@
     },
     {
      "ticker": "LIN",
-     "return": -0.188464,
+     "return": -0.188465,
      "impact": -0.000863,
      "estimated": false
     },
@@ -3974,13 +3974,13 @@
     },
     {
      "ticker": "RTX",
-     "return": -0.029104,
+     "return": -0.029103,
      "impact": -0.000147,
      "estimated": false
     },
     {
      "ticker": "UNH",
-     "return": 0.00503,
+     "return": 0.005031,
      "impact": 3e-05,
      "estimated": false
     },
@@ -4004,7 +4004,7 @@
     },
     {
      "ticker": "CVX",
-     "return": 0.35892,
+     "return": 0.358921,
      "impact": 0.002825,
      "estimated": false
     },
@@ -4030,7 +4030,7 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.139438,
-   "fund_usd": -1341967.510966,
+   "fund_usd": -1341967.469686,
    "estimated_positions": 0,
    "positions": [
     {
@@ -4089,7 +4089,7 @@
     },
     {
      "ticker": "JPM",
-     "return": -0.2186,
+     "return": -0.218601,
      "impact": -0.003507,
      "estimated": false
     },
