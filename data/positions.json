@@ -1,10 +1,10 @@
 {
  "as_of": "2026-11-27T18:00:00+00:00",
- "nav": 9752318.82,
- "cash": 2321120.378861,
- "cash_weight": 0.238007,
- "invested": 7431198.441139,
- "unrealized_total": -212099.558861,
+ "nav": 9753765.94,
+ "cash": 2321120.384878,
+ "cash_weight": 0.237972,
+ "invested": 7432645.555122,
+ "unrealized_total": -210652.444878,
  "realized_total": -37612.88,
  "positions": [
   {
@@ -15,19 +15,19 @@
    "asset_class": "Equity",
    "shares": 1723.0,
    "avg_cost": 573.193001,
-   "price": 581.77002,
+   "price": 582.72998,
    "prev_close": 579.25,
-   "value": 1002389.743652,
-   "weight": 0.102785,
+   "value": 1004043.756348,
+   "weight": 0.102939,
    "cost_basis": 987611.54,
-   "unrealized": 14778.203652,
-   "unrealized_pct": 0.014964,
-   "day_pnl": 4341.993652,
-   "day_pct": 0.00435,
+   "unrealized": 16432.216348,
+   "unrealized_pct": 0.016638,
+   "day_pnl": 5996.006348,
+   "day_pct": 0.006008,
    "realized": 0.0,
-   "contribution": 0.001478,
+   "contribution": 0.001643,
    "target_weight": 0.1,
-   "drift": 0.002785
+   "drift": 0.002939
   },
   {
    "ticker": "AAPL",
@@ -40,7 +40,7 @@
    "price": 358.700012,
    "prev_close": 355.445007,
    "value": 964903.032837,
-   "weight": 0.098941,
+   "weight": 0.098926,
    "cost_basis": 960599.0,
    "unrealized": 4304.032837,
    "unrealized_pct": 0.004481,
@@ -49,7 +49,7 @@
    "realized": 0.0,
    "contribution": 0.00043,
    "target_weight": 0.12843,
-   "drift": -0.029489
+   "drift": -0.029504
   },
   {
    "ticker": "MSFT",
@@ -62,7 +62,7 @@
    "price": 493.380005,
    "prev_close": 489.75,
    "value": 676423.986694,
-   "weight": 0.06936,
+   "weight": 0.06935,
    "cost_basis": 719898.39,
    "unrealized": -43474.403306,
    "unrealized_pct": -0.06039,
@@ -71,7 +71,7 @@
    "realized": -6161.21,
    "contribution": -0.004964,
    "target_weight": 0.09631,
-   "drift": -0.02695
+   "drift": -0.02696
   },
   {
    "ticker": "GOOGL",
@@ -84,7 +84,7 @@
    "price": 274.779999,
    "prev_close": 272.950012,
    "value": 542690.497589,
-   "weight": 0.055647,
+   "weight": 0.055639,
    "cost_basis": 580274.75,
    "unrealized": -37584.252411,
    "unrealized_pct": -0.06477,
@@ -93,7 +93,7 @@
    "realized": -4091.3,
    "contribution": -0.004168,
    "target_weight": 0.07829,
-   "drift": -0.022643
+   "drift": -0.022651
   },
   {
    "ticker": "AMZN",
@@ -106,7 +106,7 @@
    "price": 254.240005,
    "prev_close": 244.237,
    "value": 462971.050003,
-   "weight": 0.047473,
+   "weight": 0.047466,
    "cost_basis": 478394.91,
    "unrealized": -15423.859997,
    "unrealized_pct": -0.032241,
@@ -115,7 +115,7 @@
    "realized": 7661.5,
    "contribution": -0.000776,
    "target_weight": 0.06509,
-   "drift": -0.017617
+   "drift": -0.017624
   },
   {
    "ticker": "AVGO",
@@ -128,7 +128,7 @@
    "price": 312.23999,
    "prev_close": 300.48999,
    "value": 288509.750977,
-   "weight": 0.029584,
+   "weight": 0.029579,
    "cost_basis": 307414.8,
    "unrealized": -18905.049023,
    "unrealized_pct": -0.061497,
@@ -137,7 +137,7 @@
    "realized": 0.0,
    "contribution": -0.001891,
    "target_weight": 0.043,
-   "drift": -0.013416
+   "drift": -0.013421
   },
   {
    "ticker": "META",
@@ -150,7 +150,7 @@
    "price": 630.0,
    "prev_close": 609.799988,
    "value": 249480.0,
-   "weight": 0.025582,
+   "weight": 0.025578,
    "cost_basis": 253594.44,
    "unrealized": -4114.44,
    "unrealized_pct": -0.016224,
@@ -159,7 +159,7 @@
    "realized": -12269.01,
    "contribution": -0.001638,
    "target_weight": 0.03411,
-   "drift": -0.008528
+   "drift": -0.008532
   },
   {
    "ticker": "TSLA",
@@ -172,7 +172,7 @@
    "price": 400.359985,
    "prev_close": 380.149994,
    "value": 212190.792236,
-   "weight": 0.021758,
+   "weight": 0.021755,
    "cost_basis": 205168.3,
    "unrealized": 7022.492236,
    "unrealized_pct": 0.034228,
@@ -181,7 +181,7 @@
    "realized": 0.0,
    "contribution": 0.000702,
    "target_weight": 0.02779,
-   "drift": -0.006032
+   "drift": -0.006035
   },
   {
    "ticker": "LLY",
@@ -194,7 +194,7 @@
    "price": 1392.48999,
    "prev_close": 1392.27002,
    "value": 201911.048584,
-   "weight": 0.020704,
+   "weight": 0.020701,
    "cost_basis": 211108.4,
    "unrealized": -9197.351416,
    "unrealized_pct": -0.043567,
@@ -203,7 +203,7 @@
    "realized": 0.0,
    "contribution": -0.00092,
    "target_weight": 0.02829,
-   "drift": -0.007586
+   "drift": -0.007589
   },
   {
    "ticker": "JPM",
@@ -213,19 +213,19 @@
    "asset_class": "Equity",
    "shares": 487.0,
    "avg_cost": 345.61,
-   "price": 322.959991,
+   "price": 322.820007,
    "prev_close": 317.019989,
-   "value": 157281.515839,
-   "weight": 0.016128,
+   "value": 157213.343567,
+   "weight": 0.016118,
    "cost_basis": 168312.07,
-   "unrealized": -11030.554161,
-   "unrealized_pct": -0.065536,
-   "day_pnl": 2892.781189,
-   "day_pct": 0.018737,
+   "unrealized": -11098.726433,
+   "unrealized_pct": -0.065941,
+   "day_pnl": 2824.608917,
+   "day_pct": 0.018295,
    "realized": 0.0,
-   "contribution": -0.001103,
+   "contribution": -0.00111,
    "target_weight": 0.0226,
-   "drift": -0.006472
+   "drift": -0.006482
   },
   {
    "ticker": "AMD",
@@ -238,7 +238,7 @@
    "price": 425.86499,
    "prev_close": 406.834991,
    "value": 140535.446777,
-   "weight": 0.01441,
+   "weight": 0.014408,
    "cost_basis": 166138.5,
    "unrealized": -25603.053223,
    "unrealized_pct": -0.154107,
@@ -247,7 +247,7 @@
    "realized": 13781.85,
    "contribution": -0.001182,
    "target_weight": 0.02369,
-   "drift": -0.00928
+   "drift": -0.009282
   },
   {
    "ticker": "MU",
@@ -260,7 +260,7 @@
    "price": 645.369995,
    "prev_close": 604.159973,
    "value": 137463.80896,
-   "weight": 0.014095,
+   "weight": 0.014093,
    "cost_basis": 156567.78,
    "unrealized": -19103.97104,
    "unrealized_pct": -0.122017,
@@ -269,7 +269,7 @@
    "realized": 0.0,
    "contribution": -0.00191,
    "target_weight": 0.02236,
-   "drift": -0.008265
+   "drift": -0.008267
   },
   {
    "ticker": "V",
@@ -279,19 +279,19 @@
    "asset_class": "Equity",
    "shares": 310.0,
    "avg_cost": 429.89,
-   "price": 429.559998,
+   "price": 430.345001,
    "prev_close": 424.529999,
-   "value": 133163.599243,
-   "weight": 0.013655,
+   "value": 133406.950378,
+   "weight": 0.013677,
    "cost_basis": 133265.9,
-   "unrealized": -102.300757,
-   "unrealized_pct": -0.000768,
-   "day_pnl": 1559.299622,
-   "day_pct": 0.011848,
+   "unrealized": 141.050378,
+   "unrealized_pct": 0.001058,
+   "day_pnl": 1802.650757,
+   "day_pct": 0.013698,
    "realized": 0.0,
-   "contribution": -1e-05,
+   "contribution": 1.4e-05,
    "target_weight": 0.01776,
-   "drift": -0.004105
+   "drift": -0.004083
   },
   {
    "ticker": "JNJ",
@@ -301,19 +301,19 @@
    "asset_class": "Equity",
    "shares": 442.0,
    "avg_cost": 288.99,
-   "price": 275.51001,
+   "price": 276.23999,
    "prev_close": 273.940002,
-   "value": 121775.424316,
-   "weight": 0.012487,
+   "value": 122098.075684,
+   "weight": 0.012518,
    "cost_basis": 127733.58,
-   "unrealized": -5958.155684,
-   "unrealized_pct": -0.046645,
-   "day_pnl": 693.943237,
-   "day_pct": 0.005731,
+   "unrealized": -5635.504316,
+   "unrealized_pct": -0.044119,
+   "day_pnl": 1016.594604,
+   "day_pct": 0.008396,
    "realized": 0.0,
-   "contribution": -0.000596,
+   "contribution": -0.000564,
    "target_weight": 0.01695,
-   "drift": -0.004463
+   "drift": -0.004432
   },
   {
    "ticker": "XOM",
@@ -326,7 +326,7 @@
    "price": 160.520004,
    "prev_close": 158.164993,
    "value": 121353.12323,
-   "weight": 0.012444,
+   "weight": 0.012442,
    "cost_basis": 128126.88,
    "unrealized": -6773.75677,
    "unrealized_pct": -0.052868,
@@ -335,7 +335,7 @@
    "realized": 0.0,
    "contribution": -0.000677,
    "target_weight": 0.01731,
-   "drift": -0.004866
+   "drift": -0.004868
   },
   {
    "ticker": "WMT",
@@ -348,7 +348,7 @@
    "price": 133.139999,
    "prev_close": 131.899994,
    "value": 107976.539505,
-   "weight": 0.011072,
+   "weight": 0.01107,
    "cost_basis": 105202.92,
    "unrealized": 2773.619505,
    "unrealized_pct": 0.026364,
@@ -357,7 +357,7 @@
    "realized": 0.0,
    "contribution": 0.000277,
    "target_weight": 0.01394,
-   "drift": -0.002868
+   "drift": -0.00287
   },
   {
    "ticker": "MA",
@@ -367,19 +367,19 @@
    "asset_class": "Equity",
    "shares": 147.0,
    "avg_cost": 668.0,
-   "price": 667.080017,
+   "price": 666.960022,
    "prev_close": 659.72998,
-   "value": 98060.762512,
-   "weight": 0.010055,
+   "value": 98043.12323,
+   "weight": 0.010052,
    "cost_basis": 98196.0,
-   "unrealized": -135.237488,
-   "unrealized_pct": -0.001377,
-   "day_pnl": 1080.455383,
-   "day_pct": 0.011141,
+   "unrealized": -152.87677,
+   "unrealized_pct": -0.001557,
+   "day_pnl": 1062.816101,
+   "day_pct": 0.010959,
    "realized": 0.0,
-   "contribution": -1.4e-05,
+   "contribution": -1.5e-05,
    "target_weight": 0.01308,
-   "drift": -0.003025
+   "drift": -0.003028
   },
   {
    "ticker": "ABBV",
@@ -392,7 +392,7 @@
    "price": 292.75,
    "prev_close": 294.480011,
    "value": 95143.75,
-   "weight": 0.009756,
+   "weight": 0.009755,
    "cost_basis": 97493.5,
    "unrealized": -2349.75,
    "unrealized_pct": -0.024102,
@@ -401,7 +401,7 @@
    "realized": 0.0,
    "contribution": -0.000235,
    "target_weight": 0.0129,
-   "drift": -0.003144
+   "drift": -0.003145
   },
   {
    "ticker": "COST",
@@ -414,7 +414,7 @@
    "price": 1098.430054,
    "prev_close": 1086.75,
    "value": 87874.404297,
-   "weight": 0.009011,
+   "weight": 0.009009,
    "cost_basis": 88836.8,
    "unrealized": -962.395703,
    "unrealized_pct": -0.010833,
@@ -423,7 +423,7 @@
    "realized": 0.0,
    "contribution": -9.6e-05,
    "target_weight": 0.01201,
-   "drift": -0.002999
+   "drift": -0.003001
   },
   {
    "ticker": "CVX",
@@ -436,7 +436,7 @@
    "price": 213.110001,
    "prev_close": 211.005005,
    "value": 76506.490219,
-   "weight": 0.007845,
+   "weight": 0.007844,
    "cost_basis": 78811.27,
    "unrealized": -2304.779781,
    "unrealized_pct": -0.029244,
@@ -445,7 +445,7 @@
    "realized": 0.0,
    "contribution": -0.00023,
    "target_weight": 0.01061,
-   "drift": -0.002765
+   "drift": -0.002766
   },
   {
    "ticker": "CSCO",
@@ -458,7 +458,7 @@
    "price": 97.089996,
    "prev_close": 94.18,
    "value": 75536.017151,
-   "weight": 0.007745,
+   "weight": 0.007744,
    "cost_basis": 73513.22,
    "unrealized": 2022.797151,
    "unrealized_pct": 0.027516,
@@ -467,7 +467,7 @@
    "realized": 0.0,
    "contribution": 0.000202,
    "target_weight": 0.00998,
-   "drift": -0.002235
+   "drift": -0.002236
   },
   {
    "ticker": "PLTR",
@@ -480,7 +480,7 @@
    "price": 172.25,
    "prev_close": 163.589996,
    "value": 75273.25,
-   "weight": 0.007718,
+   "weight": 0.007717,
    "cost_basis": 72428.38,
    "unrealized": 2844.87,
    "unrealized_pct": 0.039278,
@@ -489,7 +489,7 @@
    "realized": -10443.84,
    "contribution": -0.00076,
    "target_weight": 0.0098,
-   "drift": -0.002082
+   "drift": -0.002083
   },
   {
    "ticker": "PG",
@@ -499,19 +499,19 @@
    "asset_class": "Equity",
    "shares": 425.0,
    "avg_cost": 171.93,
-   "price": 172.860001,
+   "price": 173.080002,
    "prev_close": 173.240005,
-   "value": 73465.500259,
-   "weight": 0.007533,
+   "value": 73559.000778,
+   "weight": 0.007542,
    "cost_basis": 73070.25,
-   "unrealized": 395.250259,
-   "unrealized_pct": 0.005409,
-   "day_pnl": -161.502075,
-   "day_pct": -0.002194,
+   "unrealized": 488.750778,
+   "unrealized_pct": 0.006689,
+   "day_pnl": -68.001556,
+   "day_pct": -0.000924,
    "realized": 0.0,
-   "contribution": 4e-05,
+   "contribution": 4.9e-05,
    "target_weight": 0.00968,
-   "drift": -0.002147
+   "drift": -0.002138
   },
   {
    "ticker": "KO",
@@ -524,7 +524,7 @@
    "price": 97.665001,
    "prev_close": 97.650002,
    "value": 68658.495644,
-   "weight": 0.00704,
+   "weight": 0.007039,
    "cost_basis": 70307.03,
    "unrealized": -1648.534356,
    "unrealized_pct": -0.023448,
@@ -533,7 +533,7 @@
    "realized": 0.0,
    "contribution": -0.000165,
    "target_weight": 0.00936,
-   "drift": -0.00232
+   "drift": -0.002321
   },
   {
    "ticker": "HD",
@@ -543,19 +543,19 @@
    "asset_class": "Equity",
    "shares": 184.0,
    "avg_cost": 348.0,
-   "price": 362.170013,
+   "price": 361.350006,
    "prev_close": 361.269989,
-   "value": 66639.282471,
-   "weight": 0.006833,
+   "value": 66488.401123,
+   "weight": 0.006817,
    "cost_basis": 64032.0,
-   "unrealized": 2607.282471,
-   "unrealized_pct": 0.040718,
-   "day_pnl": 165.604492,
-   "day_pct": 0.002491,
+   "unrealized": 2456.401123,
+   "unrealized_pct": 0.038362,
+   "day_pnl": 14.723145,
+   "day_pct": 0.000221,
    "realized": 0.0,
-   "contribution": 0.000261,
+   "contribution": 0.000246,
    "target_weight": 0.00861,
-   "drift": -0.001777
+   "drift": -0.001793
   },
   {
    "ticker": "MRK",
@@ -568,7 +568,7 @@
    "price": 141.190002,
    "prev_close": 140.414993,
    "value": 63959.071106,
-   "weight": 0.006558,
+   "weight": 0.006557,
    "cost_basis": 66998.7,
    "unrealized": -3039.628894,
    "unrealized_pct": -0.045368,
@@ -577,7 +577,7 @@
    "realized": 0.0,
    "contribution": -0.000304,
    "target_weight": 0.00899,
-   "drift": -0.002432
+   "drift": -0.002433
   },
   {
    "ticker": "GE",
@@ -587,19 +587,19 @@
    "asset_class": "Equity",
    "shares": 191.0,
    "avg_cost": 330.87,
-   "price": 323.940002,
+   "price": 323.304993,
    "prev_close": 317.109985,
-   "value": 61872.540466,
-   "weight": 0.006344,
+   "value": 61751.253601,
+   "weight": 0.006331,
    "cost_basis": 63196.17,
-   "unrealized": -1323.629534,
-   "unrealized_pct": -0.020945,
-   "day_pnl": 1304.533264,
-   "day_pct": 0.021538,
+   "unrealized": -1444.916399,
+   "unrealized_pct": -0.022864,
+   "day_pnl": 1183.246399,
+   "day_pct": 0.019536,
    "realized": 0.0,
-   "contribution": -0.000132,
+   "contribution": -0.000144,
    "target_weight": 0.00851,
-   "drift": -0.002166
+   "drift": -0.002179
   },
   {
    "ticker": "BAC",
@@ -612,7 +612,7 @@
    "price": 49.0,
    "prev_close": 48.52,
    "value": 58310.0,
-   "weight": 0.005979,
+   "weight": 0.005978,
    "cost_basis": 60499.6,
    "unrealized": -2189.6,
    "unrealized_pct": -0.036192,
@@ -621,7 +621,7 @@
    "realized": 0.0,
    "contribution": -0.000219,
    "target_weight": 0.00814,
-   "drift": -0.002161
+   "drift": -0.002162
   },
   {
    "ticker": "UNH",
@@ -634,7 +634,7 @@
    "price": 351.519989,
    "prev_close": 346.100006,
    "value": 57649.278198,
-   "weight": 0.005911,
+   "weight": 0.00591,
    "cost_basis": 67504.04,
    "unrealized": -9854.761802,
    "unrealized_pct": -0.145988,
@@ -643,7 +643,7 @@
    "realized": 0.0,
    "contribution": -0.000985,
    "target_weight": 0.00902,
-   "drift": -0.003109
+   "drift": -0.00311
   },
   {
    "ticker": "PANW",
@@ -656,7 +656,7 @@
    "price": 366.980011,
    "prev_close": 356.190002,
    "value": 55047.001648,
-   "weight": 0.005645,
+   "weight": 0.005644,
    "cost_basis": 47871.0,
    "unrealized": 7176.001648,
    "unrealized_pct": 0.149903,
@@ -665,7 +665,7 @@
    "realized": 0.0,
    "contribution": 0.000718,
    "target_weight": 0.00652,
-   "drift": -0.000875
+   "drift": -0.000876
   },
   {
    "ticker": "INTC",
@@ -697,19 +697,19 @@
    "asset_class": "Equity",
    "shares": 285.0,
    "avg_cost": 200.75,
-   "price": 187.539993,
+   "price": 187.154999,
    "prev_close": 184.339996,
-   "value": 53448.898087,
-   "weight": 0.005481,
+   "value": 53339.174652,
+   "weight": 0.005469,
    "cost_basis": 57213.75,
-   "unrealized": -3764.851913,
-   "unrealized_pct": -0.065803,
-   "day_pnl": 911.99913,
-   "day_pct": 0.017359,
+   "unrealized": -3874.575348,
+   "unrealized_pct": -0.067721,
+   "day_pnl": 802.275696,
+   "day_pct": 0.015271,
    "realized": 0.0,
-   "contribution": -0.000376,
+   "contribution": -0.000387,
    "target_weight": 0.0076,
-   "drift": -0.002119
+   "drift": -0.002131
   },
   {
    "ticker": "RTX",
@@ -719,19 +719,19 @@
    "asset_class": "Equity",
    "shares": 248.0,
    "avg_cost": 199.67,
-   "price": 198.115005,
+   "price": 197.654999,
    "prev_close": 196.205002,
-   "value": 49132.521362,
-   "weight": 0.005038,
+   "value": 49018.439697,
+   "weight": 0.005026,
    "cost_basis": 49518.16,
-   "unrealized": -385.638638,
-   "unrealized_pct": -0.007788,
-   "day_pnl": 473.680908,
-   "day_pct": 0.009735,
+   "unrealized": -499.720303,
+   "unrealized_pct": -0.010092,
+   "day_pnl": 359.599243,
+   "day_pct": 0.00739,
    "realized": 0.0,
-   "contribution": -3.9e-05,
+   "contribution": -5e-05,
    "target_weight": 0.00663,
-   "drift": -0.001592
+   "drift": -0.001604
   },
   {
    "ticker": "TXN",
@@ -744,7 +744,7 @@
    "price": 281.809998,
    "prev_close": 269.924988,
    "value": 48753.129578,
-   "weight": 0.004999,
+   "weight": 0.004998,
    "cost_basis": 50943.31,
    "unrealized": -2190.180422,
    "unrealized_pct": -0.042993,
@@ -753,7 +753,7 @@
    "realized": 0.0,
    "contribution": -0.000219,
    "target_weight": 0.00708,
-   "drift": -0.002081
+   "drift": -0.002082
   },
   {
    "ticker": "AMAT",
@@ -766,7 +766,7 @@
    "price": 323.119995,
    "prev_close": 310.609985,
    "value": 48467.999268,
-   "weight": 0.00497,
+   "weight": 0.004969,
    "cost_basis": 52291.5,
    "unrealized": -3823.500732,
    "unrealized_pct": -0.073119,
@@ -775,7 +775,7 @@
    "realized": 0.0,
    "contribution": -0.000382,
    "target_weight": 0.00749,
-   "drift": -0.00252
+   "drift": -0.002521
   },
   {
    "ticker": "CAT",
@@ -851,19 +851,19 @@
    "asset_class": "Equity",
    "shares": 68.0,
    "avg_cost": 699.26,
-   "price": 683.22998,
+   "price": 683.039978,
    "prev_close": 685.460022,
-   "value": 46459.638672,
-   "weight": 0.004764,
+   "value": 46446.718506,
+   "weight": 0.004762,
    "cost_basis": 47549.68,
-   "unrealized": -1090.041328,
-   "unrealized_pct": -0.022924,
-   "day_pnl": -151.642822,
-   "day_pct": -0.003253,
+   "unrealized": -1102.961494,
+   "unrealized_pct": -0.023196,
+   "day_pnl": -164.562988,
+   "day_pct": -0.003531,
    "realized": 0.0,
-   "contribution": -0.000109,
+   "contribution": -0.00011,
    "target_weight": 0.00642,
-   "drift": -0.001656
+   "drift": -0.001658
   },
   {
    "ticker": "LRCX",
@@ -898,7 +898,7 @@
    "price": 82.169998,
    "prev_close": 80.940002,
    "value": 45768.68898,
-   "weight": 0.004693,
+   "weight": 0.004692,
    "cost_basis": 47929.85,
    "unrealized": -2161.16102,
    "unrealized_pct": -0.04509,
@@ -907,7 +907,7 @@
    "realized": 0.0,
    "contribution": -0.000216,
    "target_weight": 0.00643,
-   "drift": -0.001737
+   "drift": -0.001738
   },
   {
    "ticker": "LIN",
@@ -920,7 +920,7 @@
    "price": 532.780029,
    "prev_close": 524.469971,
    "value": 44753.522461,
-   "weight": 0.004589,
+   "weight": 0.004588,
    "cost_basis": 44413.32,
    "unrealized": 340.202461,
    "unrealized_pct": 0.00766,
@@ -929,7 +929,7 @@
    "realized": 0.0,
    "contribution": 3.4e-05,
    "target_weight": 0.00598,
-   "drift": -0.001391
+   "drift": -0.001392
   },
   {
    "ticker": "GS",
@@ -939,19 +939,19 @@
    "asset_class": "Equity",
    "shares": 53.0,
    "avg_cost": 906.87,
-   "price": 812.869995,
+   "price": 810.710022,
    "prev_close": 800.450012,
-   "value": 43082.109741,
-   "weight": 0.004418,
+   "value": 42967.631165,
+   "weight": 0.004405,
    "cost_basis": 48064.11,
-   "unrealized": -4982.000259,
-   "unrealized_pct": -0.103653,
-   "day_pnl": 658.259094,
-   "day_pct": 0.015516,
+   "unrealized": -5096.478835,
+   "unrealized_pct": -0.106035,
+   "day_pnl": 543.780518,
+   "day_pct": 0.012818,
    "realized": 0.0,
-   "contribution": -0.000498,
+   "contribution": -0.00051,
    "target_weight": 0.0066,
-   "drift": -0.002182
+   "drift": -0.002195
   },
   {
    "ticker": "IBM",
@@ -961,19 +961,19 @@
    "asset_class": "Equity",
    "shares": 172.0,
    "avg_cost": 246.94,
-   "price": 248.110001,
+   "price": 247.639999,
    "prev_close": 243.419998,
-   "value": 42674.920105,
-   "weight": 0.004376,
+   "value": 42594.079895,
+   "weight": 0.004367,
    "cost_basis": 42473.68,
-   "unrealized": 201.240105,
-   "unrealized_pct": 0.004738,
-   "day_pnl": 806.68042,
-   "day_pct": 0.019267,
+   "unrealized": 120.399895,
+   "unrealized_pct": 0.002835,
+   "day_pnl": 725.84021,
+   "day_pct": 0.017336,
    "realized": 0.0,
-   "contribution": 2e-05,
+   "contribution": 1.2e-05,
    "target_weight": 0.00572,
-   "drift": -0.001344
+   "drift": -0.001353
   },
   {
    "ticker": "CRWD",
@@ -986,7 +986,7 @@
    "price": 217.210007,
    "prev_close": 209.369995,
    "value": 41487.111282,
-   "weight": 0.004254,
+   "weight": 0.004253,
    "cost_basis": 42745.8,
    "unrealized": -1258.688718,
    "unrealized_pct": -0.029446,
@@ -995,7 +995,7 @@
    "realized": 0.0,
    "contribution": -0.000126,
    "target_weight": 0.0058,
-   "drift": -0.001546
+   "drift": -0.001547
   },
   {
    "ticker": "C",
@@ -1030,7 +1030,7 @@
    "price": 177.160004,
    "prev_close": 176.75,
    "value": 40392.480835,
-   "weight": 0.004142,
+   "weight": 0.004141,
    "cost_basis": 39095.16,
    "unrealized": 1297.320835,
    "unrealized_pct": 0.033184,
@@ -1039,7 +1039,7 @@
    "realized": 0.0,
    "contribution": 0.00013,
    "target_weight": 0.00517,
-   "drift": -0.001028
+   "drift": -0.001029
   },
   {
    "ticker": "MS",
@@ -1074,7 +1074,7 @@
    "price": 732.195007,
    "prev_close": 714.75,
    "value": 35877.555359,
-   "weight": 0.003679,
+   "weight": 0.003678,
    "cost_basis": 38069.57,
    "unrealized": -2192.014641,
    "unrealized_pct": -0.057579,
@@ -1083,7 +1083,7 @@
    "realized": 0.0,
    "contribution": -0.000219,
    "target_weight": 0.00541,
-   "drift": -0.001731
+   "drift": -0.001732
   },
   {
    "ticker": "ANET",
@@ -1093,19 +1093,19 @@
    "asset_class": "Equity",
    "shares": 201.0,
    "avg_cost": 187.77,
-   "price": 174.729996,
+   "price": 174.350006,
    "prev_close": 163.949997,
-   "value": 35120.729141,
-   "weight": 0.003601,
+   "value": 35044.351227,
+   "weight": 0.003593,
    "cost_basis": 37741.77,
-   "unrealized": -2621.040859,
-   "unrealized_pct": -0.069447,
-   "day_pnl": 2166.779755,
-   "day_pct": 0.065752,
+   "unrealized": -2697.418773,
+   "unrealized_pct": -0.07147,
+   "day_pnl": 2090.40184,
+   "day_pct": 0.063434,
    "realized": 0.0,
-   "contribution": -0.000262,
+   "contribution": -0.00027,
    "target_weight": 0.00536,
-   "drift": -0.001759
+   "drift": -0.001767
   }
  ],
  "closed": [
