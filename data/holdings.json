@@ -1,364 +1,364 @@
 {
  "note": "Written by the MarketWatch sync. Do not edit by hand.",
- "as_of": "2026-11-25T23:01:00+01:00",
+ "as_of": "2026-11-27T16:07:00+01:00",
  "source": "marketwatch",
  "game": "iim202627",
- "net_worth": 9624769.7,
- "cash": 2320484.59,
- "buying_power": 11945254.28,
+ "net_worth": 9666663.63,
+ "cash": 2321120.38,
+ "buying_power": 11987784.01,
  "cash_borrowed": 0.0,
  "short_reserve": 0.0,
- "rank": 15,
+ "rank": 16,
  "positions": [
   {
    "ticker": "AAPL",
    "name": "AAPL",
    "shares": 2690.0,
    "avg_cost": 357.1,
-   "last_price": 355.58
+   "last_price": 356.52
   },
   {
    "ticker": "ABBV",
    "name": "ABBV",
    "shares": 325.0,
    "avg_cost": 299.98,
-   "last_price": 294.48
+   "last_price": 291.08
   },
   {
    "ticker": "AMAT",
    "name": "AMAT",
    "shares": 150.0,
    "avg_cost": 348.61,
-   "last_price": 311.18
+   "last_price": 308.85
   },
   {
    "ticker": "AMD",
    "name": "AMD",
    "shares": 330.0,
    "avg_cost": 503.45,
-   "last_price": 406.03
+   "last_price": 400.29
   },
   {
    "ticker": "AMGN",
    "name": "AMGN",
    "shares": 99.0,
    "avg_cost": 472.7,
-   "last_price": 469.24
+   "last_price": 470.49
   },
   {
    "ticker": "AMZN",
    "name": "AMZN",
    "shares": 1821.0,
    "avg_cost": 262.71,
-   "last_price": 244.43
+   "last_price": 249.93
   },
   {
    "ticker": "ANET",
    "name": "ANET",
    "shares": 201.0,
    "avg_cost": 187.77,
-   "last_price": 163.99
+   "last_price": 167.07
   },
   {
    "ticker": "AVGO",
    "name": "AVGO",
    "shares": 924.0,
    "avg_cost": 332.69,
-   "last_price": 300.86
+   "last_price": 307.07
   },
   {
    "ticker": "BAC",
    "name": "BAC",
    "shares": 1190.0,
    "avg_cost": 50.84,
-   "last_price": 48.54
+   "last_price": 49.07
   },
   {
    "ticker": "BRK.B",
    "name": "BRK.B",
    "shares": 1723.0,
    "avg_cost": 573.19,
-   "last_price": 579.32
+   "last_price": 579.87
   },
   {
    "ticker": "C",
    "name": "C",
    "shares": 358.0,
    "avg_cost": 117.6,
-   "last_price": 113.33
+   "last_price": 115.15
   },
   {
    "ticker": "CAT",
    "name": "CAT",
    "shares": 85.0,
    "avg_cost": 588.08,
-   "last_price": 543.69
+   "last_price": 553.33
   },
   {
    "ticker": "COST",
    "name": "COST",
    "shares": 80.0,
    "avg_cost": 1110.46,
-   "last_price": 1086.81
+   "last_price": 1096.47
   },
   {
    "ticker": "CRWD",
    "name": "CRWD",
    "shares": 191.0,
    "avg_cost": 223.8,
-   "last_price": 209.3
+   "last_price": 210.87
   },
   {
    "ticker": "CSCO",
    "name": "CSCO",
    "shares": 778.0,
    "avg_cost": 94.48,
-   "last_price": 94.2
+   "last_price": 95.62
   },
   {
    "ticker": "CVX",
    "name": "CVX",
    "shares": 359.0,
    "avg_cost": 219.53,
-   "last_price": 210.95
+   "last_price": 214.1
   },
   {
    "ticker": "GE",
    "name": "GE",
    "shares": 191.0,
    "avg_cost": 330.87,
-   "last_price": 316.98
+   "last_price": 320.27
   },
   {
    "ticker": "GEV",
    "name": "GEV",
    "shares": 49.0,
    "avg_cost": 776.93,
-   "last_price": 715.0
+   "last_price": 722.57
   },
   {
    "ticker": "GILD",
    "name": "GILD",
    "shares": 228.0,
    "avg_cost": 171.47,
-   "last_price": 176.74
+   "last_price": 175.32
   },
   {
    "ticker": "GOOGL",
    "name": "GOOGL",
    "shares": 1975.0,
    "avg_cost": 293.81,
-   "last_price": 273.1
+   "last_price": 270.42
   },
   {
    "ticker": "GS",
    "name": "GS",
    "shares": 53.0,
    "avg_cost": 906.87,
-   "last_price": 801.03
+   "last_price": 805.91
   },
   {
    "ticker": "HD",
    "name": "HD",
    "shares": 184.0,
    "avg_cost": 348.0,
-   "last_price": 361.26
+   "last_price": 361.61
   },
   {
    "ticker": "IBM",
    "name": "IBM",
    "shares": 172.0,
    "avg_cost": 246.94,
-   "last_price": 243.47
+   "last_price": 246.36
   },
   {
    "ticker": "INTC",
    "name": "INTC",
    "shares": 942.0,
    "avg_cost": 56.68,
-   "last_price": 54.47
+   "last_price": 54.93
   },
   {
    "ticker": "JNJ",
    "name": "JNJ",
    "shares": 442.0,
    "avg_cost": 288.99,
-   "last_price": 273.94
+   "last_price": 274.05
   },
   {
    "ticker": "JPM",
    "name": "JPM",
    "shares": 487.0,
    "avg_cost": 345.61,
-   "last_price": 316.74
+   "last_price": 321.87
   },
   {
    "ticker": "KO",
    "name": "KO",
    "shares": 703.0,
    "avg_cost": 100.01,
-   "last_price": 97.59
+   "last_price": 97.42
   },
   {
    "ticker": "LIN",
    "name": "LIN",
    "shares": 84.0,
    "avg_cost": 528.73,
-   "last_price": 524.61
+   "last_price": 529.19
   },
   {
    "ticker": "LLY",
    "name": "LLY",
    "shares": 145.0,
    "avg_cost": 1455.92,
-   "last_price": 1392.22
+   "last_price": 1384.43
   },
   {
    "ticker": "LRCX",
    "name": "LRCX",
    "shares": 238.0,
-   "avg_cost": 214.32,
-   "last_price": 185.01
+   "avg_cost": 214.33,
+   "last_price": 183.95
   },
   {
    "ticker": "MA",
    "name": "MA",
    "shares": 147.0,
    "avg_cost": 668.0,
-   "last_price": 659.97
+   "last_price": 664.32
   },
   {
    "ticker": "META",
    "name": "META",
    "shares": 396.0,
    "avg_cost": 640.39,
-   "last_price": 609.89
+   "last_price": 623.24
   },
   {
    "ticker": "MRK",
    "name": "MRK",
    "shares": 453.0,
    "avg_cost": 147.9,
-   "last_price": 140.29
+   "last_price": 140.59
   },
   {
    "ticker": "MS",
    "name": "MS",
    "shares": 218.0,
    "avg_cost": 188.0,
-   "last_price": 167.55
+   "last_price": 169.72
   },
   {
    "ticker": "MSFT",
    "name": "MSFT",
    "shares": 1371.0,
    "avg_cost": 525.09,
-   "last_price": 489.93
+   "last_price": 490.16
   },
   {
    "ticker": "MU",
    "name": "MU",
    "shares": 213.0,
    "avg_cost": 735.06,
-   "last_price": 601.25
+   "last_price": 612.86
   },
   {
    "ticker": "NFLX",
    "name": "NFLX",
    "shares": 776.0,
    "avg_cost": 62.89,
-   "last_price": 59.41
+   "last_price": 60.47
   },
   {
    "ticker": "PANW",
    "name": "PANW",
    "shares": 150.0,
    "avg_cost": 319.13,
-   "last_price": 356.14
+   "last_price": 348.85
   },
   {
    "ticker": "PG",
    "name": "PG",
    "shares": 425.0,
    "avg_cost": 171.92,
-   "last_price": 173.23
+   "last_price": 172.88
   },
   {
    "ticker": "PLTR",
    "name": "PLTR",
    "shares": 437.0,
    "avg_cost": 165.74,
-   "last_price": 163.59
+   "last_price": 167.44
   },
   {
    "ticker": "PM",
    "name": "PM",
    "shares": 285.0,
    "avg_cost": 200.75,
-   "last_price": 184.32
+   "last_price": 186.07
   },
   {
    "ticker": "RTX",
    "name": "RTX",
    "shares": 248.0,
    "avg_cost": 199.67,
-   "last_price": 196.19
+   "last_price": 197.12
   },
   {
    "ticker": "TMO",
    "name": "TMO",
    "shares": 68.0,
    "avg_cost": 699.26,
-   "last_price": 685.52
+   "last_price": 674.93
   },
   {
    "ticker": "TSLA",
    "name": "TSLA",
    "shares": 530.0,
-   "avg_cost": 387.11,
-   "last_price": 380.14
+   "avg_cost": 387.1,
+   "last_price": 391.0
   },
   {
    "ticker": "TXN",
    "name": "TXN",
    "shares": 173.0,
    "avg_cost": 294.47,
-   "last_price": 270.19
+   "last_price": 270.97
   },
   {
    "ticker": "UNH",
    "name": "UNH",
    "shares": 164.0,
    "avg_cost": 411.61,
-   "last_price": 346.19
+   "last_price": 351.74
   },
   {
    "ticker": "V",
    "name": "V",
    "shares": 310.0,
    "avg_cost": 429.89,
-   "last_price": 424.39
+   "last_price": 428.42
   },
   {
    "ticker": "WFC",
    "name": "WFC",
    "shares": 557.0,
    "avg_cost": 86.05,
-   "last_price": 80.94
+   "last_price": 81.97
   },
   {
    "ticker": "WMT",
    "name": "WMT",
    "shares": 811.0,
    "avg_cost": 129.72,
-   "last_price": 131.94
+   "last_price": 132.18
   },
   {
    "ticker": "XOM",
    "name": "XOM",
    "shares": 756.0,
    "avg_cost": 169.47,
-   "last_price": 158.08
+   "last_price": 160.43
   }
  ]
 }
