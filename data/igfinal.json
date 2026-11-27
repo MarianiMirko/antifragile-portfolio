@@ -1,8 +1,8 @@
 {
  "status": "ok",
  "message": null,
- "generated_at": "2026-11-27T14:35:29+00:00",
- "checked_at": "2026-11-27T14:35:29+00:00",
+ "generated_at": "2026-11-27T14:50:28+00:00",
+ "checked_at": "2026-11-27T14:50:28+00:00",
  "asof": "2026-11-25",
  "origin": "live Yahoo Finance prices, last date 2026-11-25 (copy saved as data/snapshots/prices_2026-11-25.csv)",
  "days_left": 15,
@@ -51,7 +51,7 @@
    "ORCL"
   ],
   "beta": 1.0397336087112696,
-  "tracking_error": 0.04713212401335394
+  "tracking_error": 0.047132124013353933
  },
  "exposure": {
   "chosen": 1.0,
@@ -61,15 +61,15 @@
   "p_bonus": 0.1393,
   "beta": 1.0397336087112696,
   "p_market_up": 0.2448,
-  "expected_return": -0.03477084396677653,
+  "expected_return": -0.03477084396677652,
   "return_q05": -0.11813893151075996,
   "return_q95": 0.050326361410955
  },
  "active_es": {
-  "with_sleeve": 0.023721279596887142,
-  "replica_only": 0.023721279596887142,
+  "with_sleeve": 0.023721279596887145,
+  "replica_only": 0.023721279596887145,
   "limit": 0.03,
-  "target_book": 0.023721279596887142,
+  "target_book": 0.023721279596887145,
   "current_book": 0.043455650944444715
  },
  "orders": {
@@ -994,7 +994,7 @@
      "Target",
      "ES Student-t, fitted (nu 3.2 / 4.6)",
      "7.38%",
-     "710,272",
+     "710,271",
      "1.87%"
     ],
     [
