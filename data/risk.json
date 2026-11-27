@@ -464,7 +464,7 @@
    "ticker": "META",
    "weight": 0.025578,
    "vol": 0.426555,
-   "beta": 1.398651,
+   "beta": 1.39865,
    "risk_contribution": 0.049272
   },
   {
@@ -506,7 +506,7 @@
    "ticker": "AMAT",
    "weight": 0.004969,
    "vol": 0.664544,
-   "beta": 2.879365,
+   "beta": 2.879364,
    "risk_contribution": 0.015014
   },
   {
@@ -534,7 +534,7 @@
    "ticker": "TXN",
    "weight": 0.004998,
    "vol": 0.478699,
-   "beta": 1.745314,
+   "beta": 1.745313,
    "risk_contribution": 0.009626
   },
   {
@@ -569,7 +569,7 @@
    "ticker": "GS",
    "weight": 0.004405,
    "vol": 0.338031,
-   "beta": 1.599085,
+   "beta": 1.599084,
    "risk_contribution": 0.008458
   },
   {
@@ -590,7 +590,7 @@
    "ticker": "C",
    "weight": 0.004234,
    "vol": 0.302414,
-   "beta": 1.238611,
+   "beta": 1.23861,
    "risk_contribution": 0.006628
   },
   {
@@ -618,7 +618,7 @@
    "ticker": "HD",
    "weight": 0.006817,
    "vol": 0.269631,
-   "beta": 0.578305,
+   "beta": 0.578304,
    "risk_contribution": 0.005486
   },
   {
@@ -639,7 +639,7 @@
    "ticker": "TMO",
    "weight": 0.004752,
    "vol": 0.30133,
-   "beta": 0.676612,
+   "beta": 0.676611,
    "risk_contribution": 0.004025
   },
   {
@@ -680,8 +680,8 @@
   {
    "ticker": "RTX",
    "weight": 0.005026,
-   "vol": 0.259733,
-   "beta": 0.347764,
+   "vol": 0.259734,
+   "beta": 0.347763,
    "risk_contribution": 0.0023
   },
   {
@@ -723,7 +723,7 @@
    "ticker": "PM",
    "weight": 0.005469,
    "vol": 0.282132,
-   "beta": 0.017235,
+   "beta": 0.017234,
    "risk_contribution": 0.000855
   },
   {
@@ -743,7 +743,7 @@
   {
    "ticker": "CVX",
    "weight": 0.007844,
-   "vol": 0.248373,
+   "vol": 0.248374,
    "beta": -0.476667,
    "risk_contribution": -0.00513
   },
@@ -751,7 +751,7 @@
    "ticker": "XOM",
    "weight": 0.012442,
    "vol": 0.273938,
-   "beta": -0.506187,
+   "beta": -0.506186,
    "risk_contribution": -0.008667
   }
  ],
@@ -3420,7 +3420,7 @@
    "benchmark_return": -0.33925,
    "benchmark_is_approximate": false,
    "fund_return": -0.234691,
-   "fund_usd": -2289104.889416,
+   "fund_usd": -2289104.92216,
    "estimated_positions": 2,
    "positions": [
     {
@@ -3437,7 +3437,7 @@
     },
     {
      "ticker": "MSFT",
-     "return": -0.273922,
+     "return": -0.273921,
      "impact": -0.018997,
      "estimated": false
     },
@@ -3515,7 +3515,7 @@
     },
     {
      "ticker": "CVX",
-     "return": -0.510385,
+     "return": -0.510384,
      "impact": -0.004003,
      "estimated": false
     },
@@ -3527,7 +3527,7 @@
     },
     {
      "ticker": "LLY",
-     "return": -0.154654,
+     "return": -0.154655,
      "impact": -0.003202,
      "estimated": false
     },
@@ -3539,7 +3539,7 @@
     },
     {
      "ticker": "ABBV",
-     "return": -0.314851,
+     "return": -0.31485,
      "impact": -0.003071,
      "estimated": false
     },
@@ -3581,7 +3581,7 @@
     },
     {
      "ticker": "HD",
-     "return": -0.329024,
+     "return": -0.329025,
      "impact": -0.002243,
      "estimated": false
     },
@@ -3599,7 +3599,7 @@
     },
     {
      "ticker": "AMAT",
-     "return": -0.404094,
+     "return": -0.404095,
      "impact": -0.002008,
      "estimated": false
     },
@@ -3733,12 +3733,12 @@
    "benchmark_return": -0.254251,
    "benchmark_is_approximate": false,
    "fund_return": -0.179491,
-   "fund_usd": -1750701.828114,
+   "fund_usd": -1750701.795297,
    "estimated_positions": 1,
    "positions": [
     {
      "ticker": "AAPL",
-     "return": -0.236787,
+     "return": -0.236786,
      "impact": -0.023425,
      "estimated": false
     },
@@ -3882,7 +3882,7 @@
     },
     {
      "ticker": "COST",
-     "return": -0.173027,
+     "return": -0.173026,
      "impact": -0.001559,
      "estimated": false
     },
@@ -3966,7 +3966,7 @@
     },
     {
      "ticker": "JNJ",
-     "return": -0.032915,
+     "return": -0.032916,
      "impact": -0.000412,
      "estimated": false
     },
@@ -4002,7 +4002,7 @@
     },
     {
      "ticker": "AMGN",
-     "return": 0.11379,
+     "return": 0.113789,
      "impact": 0.000548,
      "estimated": false
     },
@@ -4046,7 +4046,7 @@
    "benchmark_return": -0.189022,
    "benchmark_is_approximate": false,
    "fund_return": -0.140929,
-   "fund_usd": -1374578.960585,
+   "fund_usd": -1374579.01847,
    "estimated_positions": 0,
    "positions": [
     {
@@ -4105,7 +4105,7 @@
     },
     {
      "ticker": "JPM",
-     "return": -0.218601,
+     "return": -0.2186,
      "impact": -0.003523,
      "estimated": false
     },
@@ -4189,7 +4189,7 @@
     },
     {
      "ticker": "AMAT",
-     "return": -0.2574,
+     "return": -0.257399,
      "impact": -0.001279,
      "estimated": false
     },
